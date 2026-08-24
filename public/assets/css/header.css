@@ -1,0 +1,358 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.main-header {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 3px solid #650019;
+
+    position: relative;
+
+    z-index: 1000;
+}
+
+
+/* ==========================================
+   HEADER INNER
+========================================== */
+
+.header-inner {
+
+    width: 100%;
+
+    max-width: 1430px;
+
+    height: 70px;
+
+    margin: auto;
+
+    padding: 0 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+.brand img {
+
+    width: 115px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    margin-left: auto;
+
+    margin-right: 25px;
+
+    height: 100%;
+}
+
+
+.nav-link {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    height: 100%;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+
+.nav-link:hover {
+
+    color: #650019;
+}
+
+
+/* ==========================================
+   CHEVRON
+========================================== */
+
+.dropdown-toggle-custom i {
+
+    font-size: 9px;
+
+    margin-top: 2px;
+}
+
+
+/* ==========================================
+   DROPDOWN
+========================================== */
+
+.nav-dropdown {
+
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.dropdown-menu-custom {
+
+    position: absolute;
+
+    top: 65px;
+
+    left: 0;
+
+    min-width: 190px;
+
+    padding: 8px 0;
+
+    background: #ffffff;
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition: 0.2s ease;
+
+    z-index: 999;
+}
+
+
+.nav-dropdown:hover .dropdown-menu-custom {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.dropdown-menu-custom a {
+
+    display: block;
+
+    padding: 10px 18px;
+
+    color: #333333;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+
+.dropdown-menu-custom a:hover {
+
+    background: #f8eef1;
+
+    color: #650019;
+}
+
+
+/* ==========================================
+   BUTTON PENGADUAN
+========================================== */
+
+.btn-pengaduan {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 34px;
+
+    padding: 0 18px;
+
+    border-radius: 20px;
+
+    background: #650019;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+
+    box-shadow:
+        0 3px 8px rgba(101, 0, 25, 0.20);
+}
+
+
+.btn-pengaduan:hover {
+
+    background: #820021;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   MOBILE BUTTON
+========================================== */
+
+.mobile-toggle {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 27px;
+
+    color: #650019;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+    .header-inner {
+
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+    .main-nav {
+
+        gap: 15px;
+
+        margin-right: 15px;
+    }
+
+    .nav-link {
+
+        font-size: 12px;
+    }
+
+    .brand img {
+
+        width: 100px;
+    }
+
+    .btn-pengaduan {
+
+        padding: 0 13px;
+
+        font-size: 9px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .header-inner {
+
+        height: 65px;
+    }
+
+    .main-nav {
+
+        display: none;
+    }
+
+    .btn-pengaduan {
+
+        display: none;
+    }
+
+    .mobile-toggle {
+
+        display: block;
+    }
+
+    .brand img {
+
+        width: 105px;
+    }
+}
