@@ -108,7 +108,7 @@
 
 
             <a
-                href="<?= base_url('berita') ?>"
+                href="<?= base_url('/berita') ?>"
                 class="nav-link"
             >
                 Berita

@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
 /* =========================================
    RESET
 ========================================= */
@@ -705,4 +716,491 @@ body {
     .layanan-wrapper {
         grid-template-columns: 190px;
     }
+}
+
+
+
+/* =====================================================
+   INFORMASI LANDING PAGE
+   BERITA - KEGIATAN - POSTINGAN
+===================================================== */
+
+.informasi-section {
+    width: 100%;
+    padding: 55px 0;
+    background: #ffffff;
+}
+
+.informasi-container {
+    width: 94%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+/* =====================================================
+   BOX
+===================================================== */
+
+.informasi-box {
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   KOLOM KANAN
+===================================================== */
+
+.informasi-kanan {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* =====================================================
+   JUDUL
+===================================================== */
+
+.informasi-title {
+    margin-bottom: 20px;
+}
+
+.informasi-title h2 {
+    margin: 0;
+
+    color: #64101c;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    line-height: 1.2;
+}
+
+.informasi-title span {
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    margin-top: 6px;
+
+    background: #64101c;
+}
+
+
+/* =====================================================
+   BERITA
+===================================================== */
+
+.berita-box {
+    min-height: 100%;
+}
+
+.berita-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.berita-item {
+    display: flex;
+
+    gap: 13px;
+
+    padding: 7px;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    min-height: 120px;
+
+    box-sizing: border-box;
+}
+
+.berita-image {
+    width: 150px;
+    min-width: 150px;
+
+    height: 120px;
+
+    overflow: hidden;
+
+    border-radius: 7px;
+}
+
+.berita-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.berita-content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 4px 2px;
+}
+
+.berita-date {
+    color: #7b1e2b;
+
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 600;
+
+    margin-bottom: 6px;
+}
+
+.berita-content h3 {
+    margin: 0 0 7px;
+
+    color: #222222;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+.berita-content p {
+    margin: 0 0 8px;
+
+    color: #555555;
+
+    font-size: 9px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   BUTTON BACA BERITA
+===================================================== */
+
+.btn-berita {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 3px 12px;
+
+    border: 1px solid #8c3340;
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    color: #640d1c;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.btn-berita i {
+    font-size: 10px;
+}
+
+.btn-berita:hover {
+    background: #640d1c;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   BUTTON LIHAT SEMUA
+===================================================== */
+
+.informasi-button {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 18px;
+}
+
+.btn-informasi {
+    min-width: 155px;
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 6px 15px;
+
+    background: #640d1c;
+
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.btn-informasi i {
+    font-size: 15px;
+}
+
+.btn-informasi:hover {
+    background: #86172a;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   KEGIATAN
+===================================================== */
+
+.kegiatan-box {
+    min-height: 345px;
+}
+
+.kegiatan-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px 24px;
+}
+
+.kegiatan-item {
+    position: relative;
+
+    height: 98px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    display: block;
+
+    text-decoration: none;
+}
+
+.kegiatan-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.3s ease;
+}
+
+.kegiatan-item:hover img {
+    transform: scale(1.05);
+}
+
+.kegiatan-tahun {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    color: #ffffff;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =====================================================
+   POSTINGAN INSTAGRAM
+===================================================== */
+
+.postingan-box {
+    min-height: 245px;
+}
+
+.postingan-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+.postingan-item {
+    height: 98px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    display: block;
+}
+
+.postingan-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.3s ease;
+}
+
+.postingan-item:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   DATA KOSONG
+===================================================== */
+
+.informasi-empty {
+    padding: 30px 10px;
+
+    text-align: center;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .informasi-container {
+        grid-template-columns: 1fr;
+    }
+
+    .informasi-kanan {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .informasi-section {
+        padding: 35px 0;
+    }
+
+    .informasi-container {
+        width: 92%;
+
+        display: block;
+    }
+
+    .informasi-box {
+        padding: 18px;
+
+        margin-bottom: 15px;
+    }
+
+    .informasi-kanan {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .informasi-title h2 {
+        font-size: 18px;
+    }
+
+    .berita-item {
+        min-height: auto;
+    }
+
+    .berita-image {
+        width: 110px;
+        min-width: 110px;
+
+        height: 100px;
+    }
+
+    .berita-content h3 {
+        font-size: 11px;
+    }
+
+    .berita-content p {
+        display: none;
+    }
+
+    .kegiatan-grid {
+        gap: 12px;
+    }
+
+    .kegiatan-item {
+        height: 90px;
+    }
+
+    .postingan-item {
+        height: 90px;
+    }
+
+    .btn-informasi {
+        min-width: 140px;
+    }
+
 }

@@ -1,0 +1,2394 @@
+/* =========================================================
+   BERITA PAGE
+========================================================= */
+
+.berita-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 4px;
+
+}
+
+
+/* =========================================================
+   JUDUL
+========================================================= */
+
+.berita-header-text h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #550B18;
+
+}
+
+
+.berita-header-text p {
+
+    margin: 4px 0 0;
+
+    font-size: 16px;
+
+    color: #550B18;
+
+}
+
+
+/* =========================================================
+   BUTTON HEADER
+========================================================= */
+
+.berita-header-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: -45px;
+
+    margin-bottom: 46px;
+
+}
+
+
+.btn-tambah-berita,
+.btn-import-berita {
+
+    height: 40px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 2px solid #550B18;
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+     transition: all .3s ease;
+
+}
+
+
+.btn-tambah-berita {
+
+    background: #ffffff;
+
+    color: #550B18;
+
+}
+
+
+.btn-import-berita {
+
+    background: #ffffff;
+
+    color: #550B18;
+
+}
+
+
+.btn-tambah-berita:hover,
+.btn-import-berita:hover {
+background: #550B18;
+    color: #fff;
+
+}
+
+
+/* =========================================================
+   FLASH MESSAGE
+========================================================= */
+
+.berita-alert {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   STATISTIC
+========================================================= */
+
+.berita-statistik {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-bottom: 66px;
+
+}
+
+
+.berita-stat-card {
+
+    min-height: 123px;
+
+    padding: 16px 26px;
+
+    background: #ffffff;
+
+    border: 1px solid #dedede;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.berita-stat-card span {
+
+    font-size: 14px;
+
+    color: #111;
+
+    margin-bottom: 5px;
+
+}
+
+
+.berita-stat-card strong {
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #000;
+
+}
+
+
+.berita-stat-card small {
+
+    margin-top: 11px;
+
+    font-size: 13px;
+
+    color: #111;
+
+}
+
+
+/* =========================================================
+   TAB FILTER
+========================================================= */
+
+.berita-filter {
+
+    width: 100%;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 34px;
+
+    padding-left: 63px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #dddddd;
+
+    border-bottom: 1px solid #dddddd;
+
+}
+
+
+.berita-tab {
+
+    position: relative;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+}
+
+
+.berita-tab span {
+
+    margin-left: 3px;
+
+}
+
+
+.berita-tab.active {
+
+    color: #65091c;
+
+    font-weight: 600;
+
+}
+
+
+.berita-tab.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background: #65091c;
+
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.berita-table-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.berita-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+}
+
+
+.berita-table thead {
+
+    background: #dedede;
+
+}
+
+
+.berita-table th {
+
+    height: 36px;
+
+    padding: 8px 12px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #111;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+}
+
+
+.berita-table td {
+
+    height: 91px;
+
+    padding: 10px 12px;
+
+    border-bottom: 1px solid #dedede;
+
+    font-size: 13px;
+
+    color: #111;
+
+    vertical-align: middle;
+
+}
+
+
+/* =========================================================
+   COLUMN WIDTH
+========================================================= */
+
+.no-column {
+
+    width: 70px;
+
+    text-align: center !important;
+
+}
+
+
+.gambar-column {
+
+    width: 120px;
+
+}
+
+
+.judul-column {
+
+    width: 27%;
+
+}
+
+
+.penulis-column {
+
+    width: 115px;
+
+}
+
+
+.tanggal-column {
+
+    width: 125px;
+
+}
+
+
+.dilihat-column {
+
+    width: 90px;
+
+}
+
+
+.status-column {
+
+    width: 150px;
+
+}
+
+
+.aksi-column {
+
+    width: 110px;
+
+}
+
+
+/* =========================================================
+   THUMBNAIL INDEX
+========================================================= */
+
+.berita-thumbnail {
+
+    width: 90px !important;
+
+    height: 58px !important;
+
+    min-width: 90px;
+
+    max-width: 90px;
+
+    min-height: 58px;
+
+    max-height: 58px;
+
+    display: block;
+
+    object-fit: cover !important;
+
+    object-position: center;
+
+    border-radius: 4px;
+
+}
+
+
+/* =========================================================
+   THUMBNAIL KOSONG
+========================================================= */
+
+.berita-thumbnail-empty {
+
+    width: 90px;
+
+    height: 58px;
+
+    max-width: 90px;
+
+    max-height: 58px;
+
+    background: #d9d9d9;
+
+    border-radius: 4px;
+
+}
+
+
+/* =========================================================
+   JUDUL BERITA
+========================================================= */
+
+.judul-berita {
+
+    display: block;
+
+    max-width: 310px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-draft,
+.status-publik {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 12px;
+
+    border-radius: 14px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+.status-draft {
+
+    color: #f0a51a;
+
+    background: #fffaf0;
+
+    border: 1px solid #f0a51a;
+
+}
+
+
+.status-publik {
+
+    color: #58a96d;
+
+    background: #f0faf3;
+
+    border: 1px solid #58a96d;
+
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.berita-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+.btn-edit-berita,
+.btn-delete-berita {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+}
+
+
+.btn-edit-berita {
+
+    background: #f9b62d;
+
+    color: #111;
+
+}
+
+
+.btn-delete-berita {
+
+    background: #df3046;
+
+    color: #ffffff;
+
+}
+
+
+.btn-edit-berita:hover {
+
+    color: #111;
+
+    opacity: .9;
+
+}
+
+
+.btn-delete-berita:hover {
+
+    color: #ffffff;
+
+    opacity: .9;
+
+}
+
+
+/* =========================================================
+   EMPTY DATA
+========================================================= */
+
+.berita-empty {
+
+    height: 120px !important;
+
+    text-align: center;
+
+    color: #777 !important;
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.berita-pagination {
+
+    min-height: 76px;
+
+    padding: 19px 58px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+.pagination-item {
+
+    width: 25px;
+
+    height: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+}
+
+
+.pagination-item.active {
+
+    background: #65091c;
+
+    border-color: #65091c;
+
+    color: #ffffff;
+
+}
+
+
+.pagination-item:hover {
+
+    color: #65091c;
+
+}
+
+
+/* =========================================================
+   FORM TAMBAH / EDIT BERITA
+========================================================= */
+
+.berita-form-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 38px;
+
+}
+
+
+.berita-form-header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #65091c;
+
+}
+
+
+.berita-form-header p {
+
+    margin: 5px 0 0;
+
+    font-size: 15px;
+
+    color: #65091c;
+
+}
+
+
+/* =========================================================
+   TOMBOL KEMBALI
+========================================================= */
+
+.btn-kembali-berita {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    height: 40px;
+
+    padding: 0 17px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+}
+
+
+.btn-kembali-berita:hover {
+
+    color: #ffffff;
+
+    opacity: .9;
+
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+========================================================= */
+
+.berita-form-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 74px;
+
+}
+
+
+.berita-form-left,
+.berita-form-right {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group-berita {
+
+    margin-bottom: 30px;
+
+}
+
+
+.form-group-berita label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+    color: #111;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-group-berita input[type="text"],
+.form-group-berita input[type="number"] {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cdb2b8;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+.form-group-berita input:focus {
+
+    border-color: #65091c;
+
+    box-shadow: 0 0 0 2px rgba(101, 9, 28, .08);
+
+}
+
+
+.form-group-berita small {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    color: #999;
+
+}
+
+
+/* =========================================================
+   ISI BERITA
+========================================================= */
+
+.isi-berita-group textarea {
+
+    width: 100%;
+
+    height: 236px;
+
+    padding: 12px;
+
+    resize: vertical;
+
+    border: 1px solid #cdb2b8;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+.isi-berita-group textarea:focus {
+
+    border-color: #65091c;
+
+}
+
+
+/* =========================================================
+   UPLOAD BOX BERITA
+========================================================= */
+
+.upload-box-berita {
+
+    width: 100%;
+
+    min-height: 160px;
+
+    border: 1px solid #bdbdbd;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    transition: 0.2s ease;
+
+}
+
+
+.upload-box-berita:hover {
+
+    border-color: #650b1b;
+
+}
+
+
+.upload-box-berita > i {
+
+    font-size: 22px;
+
+    color: #333333;
+
+    margin-bottom: 10px;
+
+}
+
+
+.upload-box-berita p {
+
+    margin: 0 0 5px;
+
+    font-size: 14px;
+
+    color: #222222;
+
+}
+
+
+.upload-box-berita small {
+
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    color: #9b9b9b;
+
+}
+
+
+/* =========================================================
+   BROWSE BUTTON
+========================================================= */
+
+.browse-button {
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 28px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d5d9df;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #555 !important;
+
+    font-size: 12px !important;
+
+    cursor: pointer;
+
+    margin: 0 !important;
+
+}
+
+
+.browse-button:hover {
+
+    border-color: #65091c;
+
+    color: #65091c !important;
+
+}
+
+
+.browse-button input[type="file"] {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   UPLOADED PREVIEW
+========================================================= */
+
+.uploaded-preview {
+
+    display: none;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+}
+
+
+.uploaded-preview h3 {
+
+    margin: 0 0 10px;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    color: #555;
+
+}
+
+
+/* =========================================================
+   UPLOADED ITEM
+========================================================= */
+
+.uploaded-item {
+
+    width: 100%;
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 8px 12px;
+
+    border: 2px solid #22b83d;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   THUMBNAIL PREVIEW HASIL UPLOAD
+========================================================= */
+
+.uploaded-thumbnail {
+
+    width: 55px !important;
+
+    height: 55px !important;
+
+    min-width: 55px;
+
+    max-width: 55px;
+
+    min-height: 55px;
+
+    max-height: 55px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #eeeeee;
+
+}
+
+
+/* =========================================================
+   GAMBAR PREVIEW
+========================================================= */
+
+.uploaded-thumbnail img {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    min-width: 0 !important;
+
+    max-width: 100% !important;
+
+    min-height: 0 !important;
+
+    max-height: 100% !important;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+/* =========================================================
+   FILE NAME
+========================================================= */
+
+.uploaded-name {
+
+    flex: 1;
+
+    min-width: 0;
+
+    margin-left: 14px;
+
+    font-size: 15px;
+
+    color: #333333;
+
+    overflow: hidden;
+
+}
+
+
+.uploaded-name span {
+
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   DELETE UPLOAD
+========================================================= */
+
+.delete-upload {
+
+    width: 34px;
+
+    height: 34px;
+
+    margin-left: 10px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff1f1;
+
+    color: #ff5555;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.delete-upload:hover {
+
+    background: #ffe1e1;
+
+}
+
+
+.delete-upload i {
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   UPLOAD ERROR
+========================================================= */
+
+.upload-error {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 12px;
+
+    color: #dc3545;
+
+}
+
+
+/* =========================================================
+   FORM RIGHT
+========================================================= */
+
+.berita-form-right {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   FORM ACTION
+========================================================= */
+
+.berita-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: auto;
+
+    padding-top: 10px;
+
+}
+
+
+.btn-draft-berita,
+.btn-publikasi-berita {
+
+    height: 40px;
+
+    padding: 0 22px;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.btn-draft-berita {
+
+    background: #ffffff;
+
+    color: #65091c;
+
+    border: 1px solid #65091c;
+
+}
+
+
+.btn-publikasi-berita {
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    border: 1px solid #65091c;
+
+}
+
+
+.btn-draft-berita:hover,
+.btn-publikasi-berita:hover {
+
+    opacity: .9;
+
+}
+
+
+/* =========================================================
+   FORM EDIT CARD
+========================================================= */
+
+.berita-form-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 30px 32px;
+
+    border-radius: 6px;
+
+}
+
+
+/* =========================================================
+   FORM EDIT GROUP
+========================================================= */
+
+.berita-form-group {
+
+    margin-bottom: 25px;
+
+}
+
+
+.berita-form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #222;
+
+}
+
+
+.berita-form-group .form-control {
+
+    width: 100%;
+
+    min-height: 38px;
+
+    border: 1px solid #d8b8bf;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+}
+
+
+.berita-form-group .form-control:focus {
+
+    border-color: #65091c;
+
+    box-shadow: 0 0 0 2px rgba(101, 9, 28, .08);
+
+}
+
+
+/* =========================================================
+   TEXTAREA EDIT
+========================================================= */
+
+.berita-textarea {
+
+    min-height: 280px;
+
+    resize: vertical;
+
+}
+
+
+/* =========================================================
+   CURRENT IMAGE EDIT
+========================================================= */
+
+.berita-current-image {
+
+    margin-bottom: 12px;
+
+}
+
+
+.berita-current-image img {
+
+    display: block;
+
+    width: 150px !important;
+
+    height: 95px !important;
+
+    max-width: 150px;
+
+    max-height: 95px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    border: 1px solid #ddd;
+
+    margin-bottom: 6px;
+
+}
+
+
+.berita-current-image small {
+
+    font-size: 12px;
+
+    color: #777;
+
+}
+
+
+/* =========================================================
+   BUTTON EDIT
+========================================================= */
+
+.btn-batal-berita {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 9px 20px;
+
+    border: 1px solid #65091c;
+
+    border-radius: 5px;
+
+    color: #65091c;
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+
+.btn-batal-berita:hover {
+
+    color: #65091c;
+
+    background: #f8eeee;
+
+}
+
+
+.btn-simpan-berita {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 9px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+}
+
+
+.btn-simpan-berita:hover {
+
+    background: #520716;
+
+}
+
+
+/* =========================================================
+   IMPORT CARD
+========================================================= */
+
+.import-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 8px;
+
+}
+
+
+.import-card-body {
+
+    padding: 24px;
+
+}
+
+
+/* =========================================================
+   IMPORT INFO
+========================================================= */
+
+.import-info {
+
+    padding: 16px 18px;
+
+    margin-bottom: 22px;
+
+    background: #f5f9ff;
+
+    border: 1px solid #cfe2ff;
+
+    border-radius: 6px;
+
+}
+
+
+.import-info-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: #084298;
+
+    font-size: 13px;
+
+}
+
+
+.import-info-title i {
+
+    font-size: 16px;
+
+}
+
+
+.import-info ul {
+
+    margin: 0;
+
+    padding-left: 22px;
+
+}
+
+
+.import-info li {
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+
+    color: #333;
+
+}
+
+
+.import-info li:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   IMPORT SECTION TITLE
+========================================================= */
+
+.import-section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: #65091c;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.import-section-title i {
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   FORMAT EXCEL
+========================================================= */
+
+.import-format-card {
+
+    margin-bottom: 24px;
+
+    padding: 16px;
+
+    background: #fafafa;
+
+    border: 1px solid #e0e0e0;
+
+    border-radius: 6px;
+
+}
+
+
+.import-description {
+
+    margin: 0 0 12px;
+
+    font-size: 11px;
+
+    color: #555;
+
+}
+
+
+.import-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+.import-format-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.import-format-table th {
+
+    padding: 9px 10px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+}
+
+
+.import-format-table td {
+
+    padding: 9px 10px;
+
+    border: 1px solid #dddddd;
+
+    font-size: 10px;
+
+    color: #333;
+
+}
+
+
+.import-format-table tbody tr:nth-child(even) {
+
+    background: #f8f8f8;
+
+}
+
+
+/* =========================================================
+   IMPORT UPLOAD GROUP
+========================================================= */
+
+.import-upload-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.import-upload-group > label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #65091c;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.import-upload-group > label i {
+
+    margin-right: 5px;
+
+}
+
+
+/* =========================================================
+   IMPORT UPLOAD BOX
+========================================================= */
+
+.import-upload-box {
+
+    min-height: 133px;
+
+    border: 1px solid #d9bfc5;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.import-upload-box > i {
+
+    margin-bottom: 8px;
+
+    color: #555;
+
+    font-size: 22px;
+
+}
+
+
+.import-upload-box p {
+
+    margin: 0 0 4px;
+
+    color: #333;
+
+    font-size: 11px;
+
+}
+
+
+.import-upload-box small {
+
+    color: #999;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   IMPORT BROWSE
+========================================================= */
+
+.import-browse-button {
+
+    margin-top: 10px;
+
+    padding: 6px 14px;
+
+    border: 1px solid #d9dfe5;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #555;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+}
+
+
+.import-browse-button:hover {
+
+    border-color: #65091c;
+
+    color: #65091c;
+
+}
+
+
+.import-browse-button input {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   IMPORT FILE PREVIEW
+========================================================= */
+
+.import-file-preview {
+
+    display: none;
+
+    min-height: 72px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d9bfc5;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+}
+
+
+.import-file-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #f8e9ed;
+
+    color: #65091c;
+
+    font-size: 21px;
+
+    flex-shrink: 0;
+
+}
+
+
+.import-file-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.import-file-info strong {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #333;
+
+    font-size: 11px;
+
+}
+
+
+.import-file-info small {
+
+    color: #999;
+
+    font-size: 9px;
+
+}
+
+
+.import-remove-file {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #df3046;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+}
+
+
+.import-remove-file:hover {
+
+    opacity: .9;
+
+}
+
+
+/* =========================================================
+   IMPORT ERROR
+========================================================= */
+
+.import-file-error {
+
+    display: block;
+
+    min-height: 15px;
+
+    margin-top: 5px;
+
+    color: #dc3545;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   ZIP INFO
+========================================================= */
+
+.import-zip-info {
+
+    margin-top: 8px;
+
+    margin-bottom: 24px;
+
+    padding: 16px;
+
+    background: #f8f8f8;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 6px;
+
+}
+
+
+.import-zip-info p {
+
+    margin: 0 0 10px;
+
+    font-size: 11px;
+
+    color: #444;
+
+}
+
+
+.import-zip-info > small {
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+.zip-structure {
+
+    padding: 10px 13px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+}
+
+
+.zip-structure pre {
+
+    margin: 0;
+
+    color: #444;
+
+    font-family: Consolas, monospace;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   IMPORT ACTION
+========================================================= */
+
+.import-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+.btn-import-batal {
+
+    height: 38px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #ced4da;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.btn-import-batal:hover {
+
+    color: #333;
+
+    background: #f5f5f5;
+
+}
+
+
+.btn-import-submit {
+
+    height: 38px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.btn-import-submit:hover {
+
+    background: #520716;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .berita-statistik {
+
+        gap: 18px;
+
+    }
+
+
+    .berita-header-buttons {
+
+        margin-top: 0;
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .berita-form-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .berita-form-actions {
+
+        margin-top: 10px;
+
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .berita-statistik {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .berita-header {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+
+    .berita-header-buttons {
+
+        justify-content: flex-start;
+
+        margin-top: 0;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .berita-filter {
+
+        padding-left: 20px;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .import-card-body {
+
+        padding: 16px;
+
+    }
+
+
+    .import-format-table {
+
+        min-width: 600px;
+
+    }
+
+
+    .import-form-actions {
+
+        justify-content: flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.berita-pagination {
+
+    min-height: 76px;
+
+    padding: 19px 58px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+/* UL */
+
+.berita-pagination ul {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+/* LI */
+
+.berita-pagination li {
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+/* LINK */
+
+.berita-pagination a,
+.berita-pagination span {
+
+    width: 25px;
+
+    height: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+}
+
+
+/* HOVER */
+
+.berita-pagination a:hover {
+
+    background: #f5f5f5;
+
+    color: #65091c;
+
+    border-color: #65091c;
+
+}
+
+
+/* ACTIVE */
+
+.berita-pagination .active a,
+.berita-pagination .active span {
+
+    background: #65091c;
+
+    border-color: #65091c;
+
+    color: #ffffff;
+
+}
+
+
+/* DISABLED */
+
+.berita-pagination .disabled span {
+
+    color: #aaaaaa;
+
+    background: #f5f5f5;
+
+    border-color: #dddddd;
+
+}

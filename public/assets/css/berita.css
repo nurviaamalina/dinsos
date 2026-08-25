@@ -1,0 +1,1102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+/* Separator breadcrumb */
+.breadcrumb {
+    --bs-breadcrumb-divider: ">";
+}
+
+/* Link Beranda */
+.breadcrumb-item a {
+    color: #737475;      /* Hitam */
+    text-decoration: none;
+}
+
+/* Saat di-hover tetap hitam */
+.breadcrumb-item a:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+/* Halaman aktif */
+.breadcrumb-item.active {
+    color: #4A0D18; 
+    font-weight: bold;   
+}
+
+
+/* =========================================
+   HALAMAN BERITA
+========================================= */
+
+.berita-page{
+    padding-top:60px;
+    padding-bottom:60px;
+    background:#fff;
+}
+
+
+/* =========================================
+   JUDUL
+========================================= */
+
+.judul-berita-page{
+    margin:0 0 45px;
+
+    font-size:40px;
+    line-height:1.2;
+
+    font-weight:700;
+
+    color:#4A0D18;
+}
+
+
+/* =========================================
+   LAYOUT BERITA
+========================================= */
+
+.berita-layout{
+
+    display:grid;
+
+    grid-template-columns:1.4fr 1fr;
+
+    gap:35px;
+
+    align-items:stretch;
+
+}
+
+
+/* =========================================
+   CARD BERITA
+========================================= */
+
+.berita-card{
+
+    position:relative;
+
+    display:block;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    border-radius:20px;
+
+    background:#eee;
+
+}
+
+
+/* =========================================
+   GAMBAR
+========================================= */
+
+.berita-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform .4s ease;
+
+}
+
+
+/* Efek hover */
+
+.berita-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+
+/* =========================================
+   BERITA UTAMA
+========================================= */
+
+.berita-utama{
+
+    min-height:400px;
+
+}
+
+
+.utama-card{
+
+    width:100%;
+
+    height:400px;
+
+}
+
+
+/* =========================================
+   BERITA KECIL
+========================================= */
+
+.berita-kecil{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+
+.kecil-card{
+
+    height:192px;
+
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.berita-overlay{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    padding:25px 25px 20px;
+
+    color:#fff;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.05)
+    );
+
+}
+
+
+/* =========================================
+   JUDUL BERITA UTAMA
+========================================= */
+
+.utama-card .berita-overlay h2{
+
+    margin:0 0 12px;
+
+    font-size:30px;
+
+    line-height:1.25;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+
+/* =========================================
+   JUDUL BERITA KECIL
+========================================= */
+
+.kecil-card .berita-overlay{
+
+    padding:18px;
+
+}
+
+
+.kecil-card .berita-overlay h3{
+
+    margin:0 0 8px;
+
+    font-size:17px;
+
+    line-height:1.3;
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+
+/* =========================================
+   TANGGAL
+========================================= */
+
+.berita-overlay span{
+
+    display:block;
+
+    font-size:13px;
+
+    color:#fff;
+
+    font-style:italic;
+
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:45px;
+
+}
+
+
+.pagination-wrapper .pagination{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:0;
+
+}
+
+
+/* Tombol pagination */
+
+.pagination-wrapper .page-item .page-link{
+
+    min-width:38px;
+
+    height:38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid #e2e2e2;
+
+    border-radius:8px;
+
+    color:#333;
+
+    background:#fff;
+
+    text-decoration:none;
+
+}
+
+
+/* Hover */
+
+.pagination-wrapper .page-item .page-link:hover{
+
+    background:#f5f5f5;
+
+    color:#4A0D18;
+
+}
+
+
+/* Halaman aktif */
+
+.pagination-wrapper .page-item.active .page-link{
+
+    background:#7d0715;
+
+    border-color:#7d0715;
+
+    color:#fff;
+
+}
+
+
+/* =========================================
+   JIKA TIDAK ADA BERITA
+========================================= */
+
+.berita-kosong{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    color:#4A0D18;
+
+}
+
+.berita-kosong h4{
+
+    color:#4A0D18;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+    .berita-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .utama-card{
+
+        height:380px;
+
+    }
+
+    .kecil-card{
+
+        height:200px;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .berita-page{
+
+        padding-top:40px;
+
+        padding-bottom:40px;
+
+    }
+
+
+    .judul-berita-page{
+
+        font-size:30px;
+
+        margin-bottom:30px;
+
+    }
+
+
+    .berita-layout{
+
+        display:block;
+
+    }
+
+
+    .berita-utama{
+
+        margin-bottom:20px;
+
+    }
+
+
+    .utama-card{
+
+        height:300px;
+
+    }
+
+
+    .berita-kecil{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:12px;
+
+    }
+
+
+    .kecil-card{
+
+        height:160px;
+
+    }
+
+
+    .utama-card .berita-overlay h2{
+
+        font-size:22px;
+
+    }
+
+
+    .kecil-card .berita-overlay h3{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+@media(max-width:480px){
+
+    .berita-kecil{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .kecil-card{
+
+        height:200px;
+
+    }
+
+}
+
+/*DETAIL BERITA CSS*/
+
+/* =========================================
+   DETAIL BERITA
+========================================= */
+
+.detail-berita-page{
+    padding-top:60px;
+    padding-bottom:70px;
+    background:#fff;
+}
+
+
+/* =========================================
+   BREADCRUMB DETAIL
+========================================= */
+
+.detail-berita-page .breadcrumb{
+    --bs-breadcrumb-divider: ">";
+    margin-bottom:35px;
+}
+
+.detail-berita-page .breadcrumb-item a{
+    color:#212529;
+    text-decoration:none;
+}
+
+.detail-berita-page .breadcrumb-item a:hover{
+    color:#212529;
+}
+
+.detail-berita-page .breadcrumb-item.active{
+    color:#6b0716;
+    font-weight:600;
+}
+
+
+/* =========================================
+   HEADER DETAIL
+========================================= */
+
+.detail-header{
+
+    display:grid;
+
+    grid-template-columns:400px 1fr;
+
+    gap:30px;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+
+/* =========================================
+   GAMBAR DETAIL
+========================================= */
+
+.detail-image{
+
+    width:100%;
+
+    height:280px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+}
+
+.detail-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+/* =========================================
+   JUDUL DETAIL
+========================================= */
+
+.detail-info h1{
+
+    margin:0;
+
+    color:#000;
+
+    font-size:36px;
+
+    line-height:1.3;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================
+   META
+========================================= */
+
+.detail-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:28px;
+
+    margin-top:35px;
+
+}
+
+
+.detail-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#243746;
+
+    font-size:15px;
+
+}
+
+
+.detail-meta i{
+
+    font-size:17px;
+
+    color:#173b49;
+
+}
+
+
+/* =========================================
+   ISI BERITA
+========================================= */
+
+.detail-content{
+
+    margin-top:30px;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#111;
+
+    text-align:justify;
+
+}
+
+
+.detail-content p{
+
+    margin-bottom:30px;
+
+}
+
+
+.detail-content h2{
+
+    margin-top:35px;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+
+.detail-content h3{
+
+    margin-top:30px;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+
+.detail-content img{
+
+    max-width:100%;
+
+    height:auto;
+
+    border-radius:15px;
+
+    margin:20px 0;
+
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.detail-social{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:35px;
+
+}
+
+
+.detail-social a{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+
+.detail-social a:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+.social-facebook{
+
+    background:#4267B2;
+
+}
+
+
+.social-whatsapp{
+
+    background:#25D366;
+
+}
+
+
+.social-instagram{
+
+    background:#C13584;
+
+}
+
+
+.social-share{
+
+    background:#2997D8;
+
+}
+
+
+/* =========================================
+   BUTTON KEMBALI DETAIL
+========================================= */
+
+.btn-kembali-detail{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:30px;
+
+    padding:10px 20px;
+
+    border:1.5px solid #6b0716;
+
+    border-radius:25px;
+
+    background:#fff;
+
+    color:#6b0716;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+.btn-kembali-detail:hover{
+
+    background:#6b0716;
+
+    color:#fff;
+
+}
+
+
+.btn-kembali-detail i{
+
+    font-size:18px;
+
+}
+
+
+/* =========================================
+   BERITA TIDAK DITEMUKAN
+========================================= */
+
+.berita-kosong{
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+
+.berita-kosong h4{
+
+    margin-bottom:25px;
+
+    color:#112250;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+    .detail-header{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .detail-image{
+
+        height:350px;
+
+    }
+
+    .detail-info h1{
+
+        font-size:32px;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .detail-berita-page{
+
+        padding-top:40px;
+
+    }
+
+    .detail-image{
+
+        height:280px;
+
+    }
+
+    .detail-info h1{
+
+        font-size:27px;
+
+    }
+
+    .detail-meta{
+
+        gap:15px;
+
+        flex-direction:column;
+
+    }
+
+    .detail-content{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.berita-pagination {
+
+    min-height: 76px;
+
+    padding: 19px 58px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+/* =========================================================
+   PAGINATION LIST
+========================================================= */
+
+.berita-pagination ul {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+/* =========================================================
+   PAGINATION ITEM
+========================================================= */
+
+.berita-pagination li {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+/* =========================================================
+   PAGINATION LINK
+========================================================= */
+
+.berita-pagination li a,
+.berita-pagination li span {
+
+    width: 25px;
+
+    height: 25px;
+
+    padding: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.berita-pagination li a:hover {
+
+    background: #f5f5f5;
+
+    border-color: #65091c;
+
+    color: #65091c;
+
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.berita-pagination li.active a,
+.berita-pagination li.active span {
+
+    background: #65091c;
+
+    border-color: #65091c;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.berita-pagination li.disabled a,
+.berita-pagination li.disabled span {
+
+    background: #ffffff;
+
+    border-color: #dddddd;
+
+    color: #aaaaaa;
+
+    cursor: default;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   FIRST / LAST
+========================================================= */
+
+.berita-pagination li:first-child a,
+.berita-pagination li:last-child a {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.berita-pagination li a:focus {
+
+    outline: none;
+
+    box-shadow: none;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .berita-pagination {
+
+        padding: 15px 20px;
+
+        justify-content: center;
+
+    }
+
+    .berita-pagination ul {
+
+        gap: 5px;
+
+    }
+
+}
