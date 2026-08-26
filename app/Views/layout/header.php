@@ -27,6 +27,8 @@
         rel="stylesheet"
         href="<?= base_url('assets/css/header.css') ?>"
     >
+
+    <link rel="stylesheet" href="<?= base_url('assets/css/footer.css') ?>">
 </head>
 
 <body>
@@ -67,16 +69,24 @@
 
                 <div class="dropdown-menu-custom">
 
-                    <a href="<?= base_url('profil') ?>">
-                        Profil Dinas
+                    <a href="<?= base_url('profil#sejarah') ?>">
+                        Sejarah
                     </a>
 
-                    <a href="<?= base_url('struktur') ?>">
+                    <a href="<?= base_url('profil#visi-misi') ?>">
+                        Visi & Misi
+                    </a>
+
+                    <a href="<?= base_url('profil#struktur-organisasi') ?>">
                         Struktur Organisasi
                     </a>
 
-                    <a href="<?= base_url('visi-misi') ?>">
-                        Visi & Misi
+                    <a href="<?= base_url('profil#sasaran-strategis') ?>">
+                        Sasaran Strategis
+                    </a>
+
+                    <a href="<?= base_url('profil#maklumat-pelayanan') ?>">
+                        Maklumat Pelayanan
                     </a>
 
                 </div>

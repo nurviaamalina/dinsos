@@ -31,36 +31,73 @@
      PROFIL
 ===================================== -->
 
-<section class="profil-section">
+<section class="profil-home">
 
-    <div class="profil-wrapper">
+    <div class="profil-home-container">
 
 
-        <!-- KEPALA DINAS -->
+        <!-- =========================================
+             ANGGOTA ID 1
+             PROFIL UTAMA DI SEBELAH KIRI
+        ========================================== -->
 
-        <div class="kepala-dinas">
+        <div class="profil-kepala">
 
-            <div class="logo-dinas">
+            <?php if (!empty($anggota[0])): ?>
 
-                <img
-                    src="<?= base_url('assets/images/logo-banyuwangi.png') ?>"
-                    alt="Logo Kabupaten Banyuwangi"
-                >
+                <?php $utama = $anggota[0]; ?>
 
-            </div>
 
-            <h3>
-                Dea Cipta Ningrum, S.Tr.Kom
-            </h3>
+                <!-- FOTO -->
 
-            <p>
-                Kepala Dinas Sosial Kabupaten Banyuwangi
-            </p>
+                <div class="profil-logo">
+
+                    <?php if (!empty($utama['foto'])): ?>
+
+                        <img
+                            src="<?= base_url(
+                                'uploads/profil/' . $utama['foto']
+                            ) ?>"
+                            alt="<?= esc($utama['nama']) ?>"
+                        >
+
+                    <?php endif; ?>
+
+                </div>
+
+
+                <!-- NAMA -->
+
+                <h2>
+                    <?= esc($utama['nama']) ?>
+                </h2>
+
+
+                <!-- JABATAN -->
+
+<p class="profil-jabatan">
+
+    <span>
+        KEPALA DINAS SOSIAL DAN PEMBERDAYAAN PEREMPUAN
+    </span>
+
+    <span>
+        KABUPATEN BANYUWANGI
+    </span>
+
+</p>
+
+            <?php endif; ?>
 
         </div>
 
 
-        <!-- CARD BIDANG -->
+        <!-- =========================================
+             ANGGOTA ID 2 DAN SETERUSNYA
+             CARD DI SEBELAH KANAN
+        ========================================== -->
+
+           <!-- CARD BIDANG -->
 
         <div class="bidang-wrapper">
 
@@ -165,12 +202,41 @@
 
             </div>
 
+              <!-- DAYASOS -->
+
+            <div class="bidang-card">
+
+                <div class="bidang-icon">
+                    <i class="bi bi-pencil-square"></i>
+                </div>
+
+                <h3>
+                    Bidang<br>
+                    PPDKB
+                </h3>
+
+                <p>
+                    Pemberdayaan<br>
+                    Sosial
+                </p>
+
+                <a href="#" class="btn-detail">
+                    Detail →
+                </a>
+
+            </div>
+
+            
+
+        </div>
+
+
         </div>
 
     </div>
 
+    
 </section>
-
 <!-- =====================================
      JENIS LAYANAN
 ===================================== -->

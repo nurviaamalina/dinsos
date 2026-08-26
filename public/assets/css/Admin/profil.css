@@ -1,0 +1,1676 @@
+/* =========================================================
+   PROFIL ADMIN
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f6f7f8;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.profil-content {
+
+    margin-left: 247px;
+
+    min-height: calc(100vh - 70px);
+
+    padding: 30px 55px;
+
+    background: #f6f7f8;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.profil-header {
+
+    margin-bottom: 28px;
+
+}
+
+.profil-header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #111;
+
+}
+
+.profil-header p {
+
+    margin: 4px 0 0;
+
+    font-size: 16px;
+
+    color: #222;
+
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.profil-toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 32px;
+
+}
+
+
+/* SEARCH */
+
+.profil-search {
+
+    position: relative;
+
+    width: 370px;
+
+    height: 27px;
+
+}
+
+.profil-search input {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 0 40px 0 15px;
+
+    border: 1px solid #6b091c;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: #fff;
+
+    font-family: "Poppins", sans-serif;
+
+}
+
+.profil-search button {
+
+    position: absolute;
+
+    right: 8px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #65091b;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+}
+
+
+/* TAMBAH */
+
+.btn-tambah {
+
+    width: 172px;
+
+    height: 29px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 6px;
+
+    background: #65091b;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+.btn-tambah:hover {
+
+    background: #4d0614;
+
+    color: white;
+
+}
+
+.btn-tambah i {
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   ANGGOTA GRID
+========================================================= */
+
+.anggota-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 43px;
+
+    margin-bottom: 24px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.anggota-card {
+
+    min-height: 433px;
+
+    background: #fff;
+
+    border: 1px solid #720b20;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 22px 25px;
+
+}
+
+
+/* =========================================================
+   FOTO
+========================================================= */
+
+.anggota-foto {
+
+    width: 159px;
+
+    height: 180px;
+
+    margin-bottom: 21px;
+
+    overflow: hidden;
+
+}
+
+.anggota-foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.foto-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #c6c6c6;
+
+}
+
+
+/* =========================================================
+   JABATAN
+========================================================= */
+
+.anggota-card h2 {
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #090909;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   NAMA
+========================================================= */
+
+.anggota-nama {
+
+    margin: 18px 0 0;
+
+    font-size: 14px;
+
+    color: #111;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   TUGAS
+========================================================= */
+
+.anggota-tugas {
+
+    width: 90%;
+
+    margin: 18px 0 0;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+
+    color: #111;
+
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.anggota-action {
+
+    display: flex;
+
+    gap: 6px;
+
+    margin-top: auto;
+
+}
+
+
+.btn-edit,
+.btn-delete {
+
+    width: 38px;
+
+    height: 37px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 20px;
+
+}
+
+
+/* EDIT */
+
+.btn-edit {
+
+    background: #ffb633;
+
+    color: #101010;
+
+}
+
+.btn-edit:hover {
+
+    background: #e8a022;
+
+    color: #101010;
+
+}
+
+
+/* DELETE */
+
+.btn-delete {
+
+    background: #e93648;
+
+}
+
+.btn-delete:hover {
+
+    background: #c92537;
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   SEJARAH DINAS
+========================================================= */
+
+.sejarah-box {
+
+    background: white;
+
+    border: 1px solid #c9c9c9;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    min-height: 305px;
+
+}
+
+
+/* =========================================================
+   SEJARAH HEADER
+========================================================= */
+
+.sejarah-header {
+
+    height: 57px;
+
+    padding: 0 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    border-bottom: 1px solid #d4d4d4;
+
+}
+
+.sejarah-header h2 {
+
+    margin: 0;
+
+    color: #68091c;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+
+/* EDIT SEJARAH */
+
+.btn-edit-sejarah {
+
+    height: 29px;
+
+    padding: 0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #65091b;
+
+    border-radius: 6px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+.btn-edit-sejarah:hover {
+
+    background: #4d0614;
+
+    color: white;
+
+}
+
+.btn-edit-sejarah i {
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.sejarah-tabs {
+
+    height: 45px;
+
+    padding-left: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 43px;
+
+}
+
+
+.sejarah-tab {
+
+    height: 100%;
+
+    padding: 0 5px;
+
+    border: none;
+
+    border-bottom: 2px solid transparent;
+
+    background: transparent;
+
+    color: #777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.sejarah-tab:hover {
+
+    color: #68091c;
+
+}
+
+
+.sejarah-tab.active {
+
+    color: #68091c;
+
+    font-weight: 600;
+
+    border-bottom-color: #68091c;
+
+}
+
+
+/* =========================================================
+   TAB CONTENT
+========================================================= */
+
+.sejarah-content {
+
+    padding: 19px 42px 35px;
+
+}
+
+
+.tab-content {
+
+    display: none;
+
+}
+
+.tab-content.active {
+
+    display: block;
+
+}
+
+
+.tab-content p {
+
+    margin: 0;
+
+    color: #65091b;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    line-height: 1.55;
+
+    max-width: 870px;
+
+}
+
+
+.tab-content h3 {
+
+    color: #65091b;
+
+    font-size: 19px;
+
+    margin: 0 0 8px;
+
+}
+
+
+.tab-content h3:not(:first-child) {
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .profil-content {
+
+        padding: 30px;
+
+    }
+
+    .anggota-grid {
+
+        gap: 20px;
+
+    }
+
+    .anggota-card {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .profil-content {
+
+        margin-left: 0;
+
+    }
+
+    .anggota-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .profil-content {
+
+        padding: 20px;
+
+    }
+
+    .profil-toolbar {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .profil-search {
+
+        width: 100%;
+
+    }
+
+    .btn-tambah {
+
+        width: 100%;
+
+    }
+
+    .anggota-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .sejarah-header {
+
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+    }
+
+    .sejarah-tabs {
+
+        height: auto;
+
+        padding: 0 15px;
+
+        gap: 15px;
+
+        overflow-x: auto;
+
+    }
+
+    .sejarah-tab {
+
+        white-space: nowrap;
+
+        padding: 12px 5px;
+
+    }
+
+    .sejarah-content {
+
+        padding: 20px;
+
+    }
+
+}
+
+/* =========================================================
+   TAMBAH SEJARAH DINAS
+========================================================= */
+
+.profil-create-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.profil-create-header {
+    margin-bottom: 42px;
+}
+
+.profil-create-header h1 {
+    margin: 0;
+
+    color: #111;
+
+    font-size: 26px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+.profil-create-header p {
+    margin: 5px 0 0;
+
+    color: #222;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.profil-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    column-gap: 34px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #111;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-control-profil {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 8px 13px;
+
+    border: 1px solid #bcbcbc;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #222;
+}
+
+.form-control-profil:focus {
+    border-color: #68091c;
+
+    box-shadow: 0 0 0 2px rgba(104, 9, 28, .08);
+}
+
+
+/* =========================================================
+   EDITOR
+========================================================= */
+
+.editor-group {
+    margin-bottom: 40px;
+}
+
+
+.editor-wrapper {
+    width: 100%;
+
+    height: 235px;
+
+    background: #fff;
+
+    border: 1px solid #bcbcbc;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.editor-toolbar {
+    height: 42px;
+
+    padding: 0 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    border-bottom: 1px solid #d2d2d2;
+
+    background: #fff;
+}
+
+
+.editor-toolbar button {
+    width: 27px;
+
+    height: 29px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+}
+
+
+.editor-toolbar button:hover {
+    background: #f1f1f1;
+}
+
+
+.editor-toolbar button:disabled {
+    color: #c5c5c5;
+
+    cursor: default;
+}
+
+
+.editor-toolbar button i {
+    font-size: 15px;
+}
+
+
+.toolbar-divider {
+    width: 1px;
+
+    height: 20px;
+
+    background: #eee;
+
+    margin: 0 3px;
+}
+
+
+.toolbar-spacer {
+    flex: 1;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.editor-area {
+    width: 100%;
+
+    height: 192px;
+
+    display: block;
+
+    padding: 12px;
+
+    border: none;
+
+    outline: none;
+
+    resize: none;
+
+    background: #fff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   KONTAK / EMAIL / SOSIAL
+========================================================= */
+
+.profil-form-left .form-group:not(.editor-group) {
+    margin-bottom: 27px;
+}
+
+
+/* =========================================================
+   STRUKTUR ORGANISASI
+========================================================= */
+
+.struktur-group {
+    margin-top: 38px;
+
+    margin-bottom: 0;
+}
+
+
+.upload-box {
+    width: 100%;
+
+    height: 297px;
+
+    border: 1px solid #bcbcbc;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .2s;
+}
+
+
+.upload-box.drag-active {
+    border: 2px dashed #68091c;
+
+    background: #fff8fa;
+}
+
+
+.upload-icon {
+    margin-bottom: 22px;
+
+    color: #333;
+
+    font-size: 25px;
+}
+
+
+.upload-title {
+    color: #30323a;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+.upload-info {
+    margin-top: 7px;
+
+    color: #a5a7b0;
+
+    font-size: 15px;
+
+    text-align: center;
+}
+
+
+.btn-browse {
+    min-width: 136px;
+
+    height: 40px;
+
+    margin-top: 25px;
+
+    padding: 0 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #c7ccd8;
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    color: #555b66;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.btn-browse:hover {
+    background: #f7f7f7;
+
+    border-color: #68091c;
+
+    color: #68091c;
+}
+
+
+/* =========================================================
+   BUTTON SIMPAN
+========================================================= */
+
+.button-wrapper {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 75px;
+
+    margin-bottom: 10px;
+}
+
+
+.btn-simpan-profil {
+    width: 217px;
+
+    height: 41px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #65091b;
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 19px;
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.btn-simpan-profil:hover {
+    background: #4e0715;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .profil-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profil-form-right {
+        margin-top: 20px;
+    }
+
+    .button-wrapper {
+        margin-top: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .profil-create-header {
+        margin-bottom: 25px;
+    }
+
+    .profil-create-header h1 {
+        font-size: 22px;
+    }
+
+    .form-group label {
+        font-size: 18px;
+    }
+
+    .editor-wrapper {
+        height: 220px;
+    }
+
+    .editor-toolbar {
+        overflow-x: auto;
+    }
+
+    .upload-box {
+        height: 250px;
+    }
+
+    .upload-title {
+        font-size: 15px;
+    }
+
+    .upload-info {
+        font-size: 13px;
+    }
+
+    .button-wrapper {
+        justify-content: stretch;
+    }
+
+    .btn-simpan-profil {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   TAMBAH ANGGOTA DINAS
+========================================================= */
+
+.anggota-create-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.anggota-create-header {
+    margin-bottom: 68px;
+}
+
+.anggota-create-header h1 {
+    margin: 0;
+
+    font-size: 26px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+.anggota-create-header p {
+    margin: 5px 0 0;
+
+    font-size: 16px;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.anggota-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, .65fr);
+
+    column-gap: 48px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.anggota-form-group {
+    margin-bottom: 43px;
+}
+
+.anggota-form-group label,
+.foto-form-group > label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #111;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.anggota-input {
+    width: 100%;
+
+    height: 43px;
+
+    padding: 8px 13px;
+
+    background: #fff;
+
+    border: 1px solid #bcbcbc;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+.anggota-input:focus {
+    border-color: #68091c;
+
+    box-shadow:
+        0 0 0 2px rgba(104, 9, 28, .08);
+}
+
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.caption-group {
+    margin-bottom: 0;
+}
+
+.caption-editor {
+    width: 100%;
+
+    height: 235px;
+
+    background: #fff;
+
+    border: 1px solid #bcbcbc;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.caption-toolbar {
+    height: 42px;
+
+    padding: 0 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.caption-toolbar button {
+    width: 27px;
+
+    height: 29px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+}
+
+.caption-toolbar button:hover {
+    background: #f1f1f1;
+}
+
+.caption-toolbar button:disabled {
+    color: #c5c5c5;
+
+    cursor: default;
+}
+
+.caption-toolbar button i {
+    font-size: 15px;
+}
+
+.toolbar-divider {
+    width: 1px;
+
+    height: 20px;
+
+    background: #eee;
+
+    margin: 0 3px;
+}
+
+.toolbar-spacer {
+    flex: 1;
+}
+
+
+/* =========================================================
+   CAPTION AREA
+========================================================= */
+
+.caption-area {
+    width: 100%;
+
+    height: 192px;
+
+    display: block;
+
+    padding: 12px;
+
+    border: none;
+
+    outline: none;
+
+    resize: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOTO
+========================================================= */
+
+.foto-form-group {
+    width: 100%;
+}
+
+
+.foto-upload-box {
+    width: 100%;
+
+    height: 281px;
+
+    background: #fff;
+
+    border: 1px solid #bcbcbc;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .2s;
+}
+
+.foto-upload-box.drag-active {
+    border: 2px dashed #68091c;
+
+    background: #fff8fa;
+}
+
+
+.foto-upload-icon {
+    margin-bottom: 21px;
+
+    font-size: 24px;
+
+    color: #333;
+}
+
+
+.foto-upload-title {
+    color: #30323a;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+.foto-upload-info {
+    margin-top: 7px;
+
+    color: #a5a7b0;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+.btn-browse-foto {
+    min-width: 97px;
+
+    height: 30px;
+
+    margin-top: 18px;
+
+    padding: 0 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #c7ccd8;
+
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #555b66;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.btn-browse-foto:hover {
+    border-color: #68091c;
+
+    color: #68091c;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.foto-preview-wrapper {
+    display: none;
+
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+.foto-preview-wrapper img {
+    max-width: 180px;
+
+    max-height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    border: 1px solid #ddd;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.anggota-button-wrapper {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 42px;
+}
+
+
+.btn-simpan-anggota {
+    width: 217px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #65091b;
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-simpan-anggota:hover {
+    background: #4e0715;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .anggota-form-grid {
+        grid-template-columns: 1fr;
+
+        row-gap: 35px;
+    }
+
+    .anggota-button-wrapper {
+        margin-top: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .anggota-create-header {
+        margin-bottom: 35px;
+    }
+
+    .anggota-create-header h1 {
+        font-size: 22px;
+    }
+
+    .anggota-form-group label,
+    .foto-form-group > label {
+        font-size: 18px;
+    }
+
+    .btn-simpan-anggota {
+        width: 100%;
+    }
+
+    .anggota-button-wrapper {
+        justify-content: stretch;
+    }
+
+}
+.foto-lama {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.foto-lama-wrapper {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.foto-lama-text {
+    margin-top: 5px;
+    color: #999;
+    font-size: 12px;
+}

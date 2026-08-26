@@ -1,0 +1,651 @@
+/* =========================================================
+   PROFIL PAGE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: #4b0f1b;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.profil-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 330px;
+
+    background-image: url("../images/hero-profil.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* overlay merah */
+
+.profil-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(73, 4, 17, 0.88),
+            rgba(95, 11, 27, 0.60),
+            rgba(0, 0, 0, 0.10)
+        );
+}
+
+
+/* isi hero */
+
+.profil-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 48px;
+}
+
+
+.profil-hero-content h1 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 36px;
+
+    line-height: 1.45;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+.profil-hero-content p {
+
+    margin-top: 12px;
+
+    margin-bottom: 0;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   TENTANG KAMI
+========================================================= */
+
+.tentang-kami {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 38px 20px 50px;
+}
+
+
+.tentang-container {
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: auto;
+}
+
+
+/* TITLE */
+
+.tentang-title {
+
+    text-align: center;
+
+    margin-bottom: 34px;
+}
+
+
+.tentang-title h2 {
+
+    margin: 0;
+
+    color: #6b1424;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.tentang-title span {
+
+    display: block;
+
+    width: 110px;
+
+    height: 2px;
+
+    margin: 11px auto 0;
+
+    background: #6b1424;
+}
+
+/* =========================================================
+   SEJARAH
+========================================================= */
+
+.profil-sejarah {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.profil-sejarah-card {
+    width: 100%;
+    max-width: 1120px;
+    min-height: 295px;
+
+    margin: 0 auto;
+    padding: 35px 45px;
+
+    background: #f4eef0;
+
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   JUDUL
+========================================================= */
+
+.profil-section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profil-section-title h2 {
+    margin: 0;
+
+    color: #700019;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.profil-section-title span {
+    display: block;
+
+    width: 80px;
+    height: 3px;
+
+    margin: 10px auto 0;
+
+    background: #700019;
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   ISI SEJARAH
+========================================================= */
+
+.sejarah-content {
+    color: #333;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    text-align: justify;
+
+    word-wrap: break-word;
+}
+/* =========================================================
+   VISI MISI
+========================================================= */
+
+.visi-misi {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+
+/* CARD */
+
+.visi-card,
+.misi-card {
+
+    min-height: 150px;
+
+    padding: 20px 20px;
+
+    background: #f1ebed;
+
+    border-radius: 5px;
+}
+
+
+/* heading */
+
+.visi-card h3,
+.misi-card h3 {
+
+    margin: 0 0 14px;
+
+    color: #5d1020;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/* visi */
+
+.visi-card p {
+
+    margin: 0;
+
+    color: #5d1020;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    font-weight: 500;
+}
+
+
+/* misi */
+
+.misi-card ol {
+
+    margin: 0;
+
+    padding-left: 19px;
+
+    color: #5d1020;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    font-weight: 500;
+}
+
+
+.misi-card li {
+
+    padding-left: 2px;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   STRUKTUR ORGANISASI
+========================================================= */
+
+.struktur-organisasi {
+    width: 100%;
+    padding: 20px 20px 50px;
+    background: #ffffff;
+}
+
+.struktur-container {
+    width: 100%;
+    max-width: 1120px;
+    min-height: 295px;
+
+    margin: 0 auto;
+    padding: 16px 40px 36px;
+
+    background: #f1ebed;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+
+/* FOTO STRUKTUR */
+
+.struktur-image-wrapper {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+}
+
+.struktur-image {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* JIKA FOTO BELUM ADA */
+
+.struktur-placeholder {
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .struktur-organisasi {
+        padding: 15px 15px 40px;
+    }
+
+    .struktur-container {
+        padding: 15px 20px 25px;
+    }
+
+    .struktur-image-wrapper {
+        max-width: 100%;
+        height: 190px;
+    }
+}
+
+/* =========================================================
+   SASARAN STRATEGIS
+========================================================= */
+
+.profil-sasaran {
+
+    width: 100%;
+
+    padding: 0 0 40px;
+
+}
+
+
+.profil-sasaran-container {
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding: 14px 30px 35px;
+
+    background: #f1ecee;
+
+    border-radius: 14px;
+
+}
+
+
+.profil-sasaran-container h2 {
+
+    margin: 0 0 20px;
+
+    text-align: center;
+
+    color: #650916;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.sasaran-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 98px;
+
+    row-gap: 21px;
+
+    max-width: 997px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+
+
+
+.sasaran-card p {
+
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .profil-sasaran-container {
+
+        width: calc(100% - 30px);
+
+        padding: 18px 15px 25px;
+
+    }
+
+
+    .sasaran-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .sasaran-card {
+
+        min-height: 70px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SASARAN STRATEGIS
+========================================================= */
+
+.profil-maklumat-pelayanan {
+
+    width: 100%;
+
+    padding: 0 0 40px;
+
+}
+
+
+.profil-maklumat-pelayanan-container {
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding: 14px 30px 35px;
+
+    background: #f1ecee;
+
+    border-radius: 14px;
+
+}
+
+
+.profil-maklumat-pelayanan-container h2 {
+
+    margin: 0 0 20px;
+
+    text-align: center;
+
+    color: #650916;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.maklumat-pelayanan-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 98px;
+
+    row-gap: 21px;
+
+    max-width: 997px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+
+
+
+.maklumat-pelayanan-card p {
+
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .profil-maklumat-pelayanan-container {
+
+        width: calc(100% - 30px);
+
+        padding: 18px 15px 25px;
+
+    }
+
+
+    .maklumat-pelayanan-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .maklumat-pelayanan-card {
+
+        min-height: 70px;
+
+    }
+
+}
+
