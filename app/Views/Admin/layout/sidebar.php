@@ -205,23 +205,70 @@ $currentUrl = uri_string();
 
 
         <!-- =================================================
-             DATA UTAMA
-        ================================================== -->
+     DATA UTAMA DROPDOWN
+================================================== -->
+
+<div class="sidebar-dropdown">
+
+    <div
+        class="sidebar-item sidebar-dropdown-toggle
+        <?= (
+            strpos($currentUrl, 'admin/bidang') === 0 ||
+            strpos($currentUrl, 'admin/kecamatan') === 0
+        ) ? 'active' : '' ?>"
+    >
+
+        <i class="bi bi-star"></i>
+
+        <span>
+            Data Utama
+        </span>
+
+        <i class="bi bi-chevron-down sidebar-dropdown-icon"></i>
+
+    </div>
+
+
+    <!-- SUB MENU -->
+
+    <div class="sidebar-dropdown-menu">
+
+        <!-- BIDANG -->
 
         <a
-            href="<?= base_url('admin/data-utama') ?>"
-            class="sidebar-item <?= strpos($currentUrl, 'admin/data-utama') === 0 ? 'active' : '' ?>"
+            href="<?= base_url('admin/bidang') ?>"
+            class="sidebar-dropdown-item
+            <?= strpos($currentUrl, 'admin/bidang') === 0 ? 'active' : '' ?>"
         >
 
-            <i class="bi bi-star"></i>
+            <i class="bi bi-briefcase"></i>
 
             <span>
-                Data Utama
+                Bidang
             </span>
 
-            <i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+
+
+        <!-- KECAMATAN -->
+
+        <a
+            href="<?= base_url('admin/kecamatan') ?>"
+            class="sidebar-dropdown-item
+            <?= strpos($currentUrl, 'admin/kecamatan') === 0 ? 'active' : '' ?>"
+        >
+
+            <i class="bi bi-geo-alt"></i>
+
+            <span>
+                Kecamatan
+            </span>
 
         </a>
+
+    </div>
+
+</div>
 
 
         <!-- =================================================

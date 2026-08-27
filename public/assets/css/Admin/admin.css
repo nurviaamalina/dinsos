@@ -267,6 +267,160 @@ body {
 
 
 /* =========================================================
+   SIDEBAR DROPDOWN
+========================================================= */
+
+.sidebar-dropdown {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   DROPDOWN TOGGLE
+========================================================= */
+
+.sidebar-dropdown-toggle {
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+/* =========================================================
+   ICON CHEVRON
+========================================================= */
+
+.sidebar-dropdown-icon {
+
+    margin-left: auto;
+
+    font-size: 12px;
+
+    transition: transform .2s ease;
+
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.sidebar-dropdown-menu {
+
+    display: none;
+
+    margin: 2px 0 5px 18px;
+
+    padding: 5px;
+
+    background: #65091c;
+
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    border-radius: 6px;
+
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM
+========================================================= */
+
+.sidebar-dropdown-item {
+
+    min-height: 36px;
+
+    padding: 8px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM ICON
+========================================================= */
+
+.sidebar-dropdown-item i {
+
+    width: 16px;
+
+    min-width: 16px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.sidebar-dropdown-item:hover {
+
+    background: rgba(255, 255, 255, .10);
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   ACTIVE SUB MENU
+========================================================= */
+
+.sidebar-dropdown-item.active {
+
+    background: #c98236;
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   TAMPILKAN DROPDOWN
+========================================================= */
+
+.sidebar-dropdown:hover .sidebar-dropdown-menu {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   CHEVRON SAAT HOVER
+========================================================= */
+
+.sidebar-dropdown:hover
+.sidebar-dropdown-icon {
+
+    transform: rotate(180deg);
+
+}
+
+/* =========================================================
    CONTENT
 ========================================================= */
 

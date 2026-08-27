@@ -132,7 +132,7 @@
             <div class="bidang-card">
 
                 <div class="bidang-icon">
-                    <i class="bi bi-pencil-square"></i>
+                    <i class="bi bi-shield"></i>
                 </div>
 
                 <h3>
@@ -158,7 +158,7 @@
             <div class="bidang-card">
 
                 <div class="bidang-icon">
-                    <i class="bi bi-pencil-square"></i>
+                    <i class="bi bi-person-hearts"></i>
                 </div>
 
                 <h3>
@@ -183,7 +183,7 @@
             <div class="bidang-card">
 
                 <div class="bidang-icon">
-                    <i class="bi bi-pencil-square"></i>
+                    <i class="bi bi-person-arms-up"></i>
                 </div>
 
                 <h3>
@@ -202,12 +202,12 @@
 
             </div>
 
-              <!-- DAYASOS -->
+              <!-- PPDKB -->
 
             <div class="bidang-card">
 
                 <div class="bidang-icon">
-                    <i class="bi bi-pencil-square"></i>
+                    <i class="bi bi-people-fill"></i>
                 </div>
 
                 <h3>
@@ -225,7 +225,6 @@
                 </a>
 
             </div>
-
             
 
         </div>
