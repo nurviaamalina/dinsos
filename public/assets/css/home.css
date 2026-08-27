@@ -1344,3 +1344,270 @@ body {
     }
 
 }
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-home {
+    position: relative;
+
+    min-height: 390px;
+
+    background-image:
+        url('../images/hero-banyuwangi.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    overflow: visible;
+
+    display: flex;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(70, 0, 15, 0.80),
+            rgba(70, 0, 15, 0.35),
+            rgba(0, 0, 0, 0.05)
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    margin-left: 8%;
+
+    padding-top: 55px;
+
+    color: white;
+}
+
+
+.hero-content h1 {
+    margin: 0;
+
+    font-size: 40px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.hero-content p {
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   AKSES CEPAT
+========================================================= */
+
+.akses-cepat {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 8%;
+    right: 8%;
+
+    /* NAIKKAN CARD */
+    bottom: 35px;
+
+    background: #ffffff;
+
+    padding: 12px 20px 16px;
+
+    border-radius: 3px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* HEADER */
+
+.akses-header {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.akses-header span {
+    color: #650019;
+
+    font-size: 7px;
+
+    font-weight: 800;
+}
+
+.akses-header::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #d8aeb8;
+
+    margin-left: 8px;
+}
+
+
+/* MENU */
+
+.akses-menu {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    width: 100%;
+}
+
+
+/* ITEM */
+
+.akses-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    padding: 0 6px;
+}
+
+
+/* ICON */
+
+.akses-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    margin-bottom: 5px;
+}
+
+.akses-icon i {
+    color: #650019;
+
+    font-size: 15px;
+}
+
+
+/* WARNA */
+
+.icon-pink {
+    background: #f0d9df;
+}
+
+.icon-purple {
+    background: #e8d9eb;
+}
+
+.icon-orange {
+    background: #f5ddd5;
+}
+
+.icon-green {
+    background: #dcebdc;
+}
+
+.icon-yellow {
+    background: #f5e6bd;
+}
+
+.icon-blue {
+    background: #dcebed;
+}
+
+
+/* NAMA */
+
+.akses-name {
+    min-height: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #650019;
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* GARIS */
+
+.akses-line {
+    width: 40px;
+
+    height: 1px;
+
+    background: #d8aeb8;
+
+    margin: 3px 0;
+}
+
+
+/* DESKRIPSI */
+
+.akses-description {
+    color: #8c6870;
+
+    font-size: 4.5px;
+
+    white-space: nowrap;
+}

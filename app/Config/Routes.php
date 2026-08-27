@@ -14,6 +14,12 @@ $routes->get('berita/(:segment)', 'Berita::detail/$1');
 //route profil
 $routes->get('profil', 'Profil::index');
 
+// =====================================================
+// BIDANG
+// =====================================================
+
+$routes->get('bidang', 'Bidang::index');
+
 /* ROUTE ADMINN */
 $routes->group('admin', function ($routes) {
 
