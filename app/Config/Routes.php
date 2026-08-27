@@ -25,7 +25,17 @@ $routes->group('admin', function ($routes) {
 
     $routes->get( 'dashboard','Admin\Dashboard::index');
 
-
+ /*
+    |--------------------------------------------------------------------------
+    | DATA MASTER BIDANG
+    |--------------------------------------------------------------------------
+    */
+    $routes->get('bidang','Admin\Bidang::index');
+    $routes->get('bidang/create','Admin\Bidang::create');
+    $routes->post('bidang/store','Admin\Bidang::store');
+    $routes->get('bidang/edit/(:num)','Admin\Bidang::edit/$1' );
+     $routes->post('bidang/update/(:num)', 'Admin\Bidang::update/$1');
+     $routes->get('bidang/delete/(:num)', 'Admin\Bidang::delete/$1');
       /*
     |--------------------------------------------------------------------------
     | BERITA
