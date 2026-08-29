@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 class Bidang extends BaseController
 {
+
+
     public function detail($slug)
     {
         $bidang = [
@@ -345,5 +347,6 @@ class Bidang extends BaseController
         return view('layout/header')
             . view('bidang/detail', $data)
             . view('layout/footer');
+
     }
 }

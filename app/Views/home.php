@@ -11,6 +11,11 @@
 
     <div class="hero-overlay"></div>
 
+
+    <!-- ==========================================
+         JUDUL HERO
+    =========================================== -->
+
     <div class="hero-content">
 
         <h1>
@@ -21,6 +26,143 @@
         <p>
             KABUPATEN BANYUWANGI
         </p>
+
+    </div>
+
+
+    <!-- ==========================================
+         AKSES CEPAT
+    =========================================== -->
+
+    <div class="akses-cepat">
+
+        <div class="akses-header">
+            <span>Akses Cepat</span>
+        </div>
+
+
+        <div class="akses-menu">
+
+            <!-- LAYANAN KAMI -->
+            <a href="<?= base_url('layanan') ?>" class="akses-item">
+
+                <div class="akses-icon icon-pink">
+                    <i class="bi bi-pencil-square"></i>
+                </div>
+
+                <div class="akses-name">
+                    Layanan Kami
+                </div>
+
+                <div class="akses-line"></div>
+
+                <div class="akses-description">
+                    Layanan Dinas
+                </div>
+
+            </a>
+
+
+            <!-- BERITA -->
+            <a href="<?= base_url('berita') ?>" class="akses-item">
+
+                <div class="akses-icon icon-purple">
+                    <i class="bi bi-newspaper"></i>
+                </div>
+
+                <div class="akses-name">
+                    Berita
+                </div>
+
+                <div class="akses-line"></div>
+
+                <div class="akses-description">
+                    Berita terbaru
+                </div>
+
+            </a>
+
+
+            <!-- KEGIATAN -->
+            <a href="<?= base_url('kegiatan') ?>" class="akses-item">
+
+                <div class="akses-icon icon-orange">
+                    <i class="bi bi-images"></i>
+                </div>
+
+                <div class="akses-name">
+                    Kegiatan
+                </div>
+
+                <div class="akses-line"></div>
+
+                <div class="akses-description">
+                    Kegiatan Dinas
+                </div>
+
+            </a>
+
+
+            <!-- PENGADUAN -->
+            <a href="<?= base_url('pengaduan') ?>" class="akses-item">
+
+                <div class="akses-icon icon-green">
+                    <i class="bi bi-telephone"></i>
+                </div>
+
+                <div class="akses-name">
+                    Pengaduan
+                </div>
+
+                <div class="akses-line"></div>
+
+                <div class="akses-description">
+                    Sampaikan pengaduan
+                </div>
+
+            </a>
+
+
+            <!-- DOKUMEN -->
+            <a href="<?= base_url('dokumen') ?>" class="akses-item">
+
+                <div class="akses-icon icon-yellow">
+                    <i class="bi bi-folder"></i>
+                </div>
+
+                <div class="akses-name">
+                    Dokumen
+                </div>
+
+                <div class="akses-line"></div>
+
+                <div class="akses-description">
+                    Dokumen publik
+                </div>
+
+            </a>
+
+
+            <!-- STATISTIK -->
+            <a href="<?= base_url('statistik') ?>" class="akses-item">
+
+                <div class="akses-icon icon-blue">
+                    <i class="bi bi-graph-up"></i>
+                </div>
+
+                <div class="akses-name">
+                    Dashboard Statistik
+                </div>
+
+                <div class="akses-line"></div>
+
+                <div class="akses-description">
+                    Data statistik
+                </div>
+
+            </a>
+
+        </div>
 
     </div>
 

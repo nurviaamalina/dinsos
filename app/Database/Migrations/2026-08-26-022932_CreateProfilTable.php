@@ -36,6 +36,11 @@ class CreateProfilTable extends Migration
                 'null' => true,
             ],
 
+             'maklumat_pelayanan' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+
             'kontak' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 100,
