@@ -30,6 +30,18 @@ $routes->group('admin', function ($routes) {
     $routes->get('bidang/edit/(:num)','Admin\Bidang::edit/$1' );
      $routes->post('bidang/update/(:num)', 'Admin\Bidang::update/$1');
      $routes->get('bidang/delete/(:num)', 'Admin\Bidang::delete/$1');
+
+ /*
+    |--------------------------------------------------------------------------
+    | DATA MASTER KECAMATAN
+    |--------------------------------------------------------------------------
+    */
+     $routes->get('kecamatan','Admin\Kecamatan::index');
+    $routes->get('kecamatan/create','Admin\Kecamatan::create');
+    $routes->post('kecamatan/store','Admin\Kecamatan::store');
+    $routes->get('kecamatan/edit/(:num)','Admin\Kecamatan::edit/$1');
+    $routes->post('kecamatan/update/(:num)','Admin\Kecamatan::update/$1');
+    $routes->get('kecamatan/delete/(:num)','Admin\Kecamatan::delete/$1');
       /*
     |--------------------------------------------------------------------------
     | BERITA

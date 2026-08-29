@@ -272,7 +272,7 @@ $currentUrl = uri_string();
 
 
         <!-- =================================================
-             DATA CAPAIAN
+             DATA PELAYANANA
         ================================================== -->
 
         <a
@@ -283,7 +283,7 @@ $currentUrl = uri_string();
             <i class="bi bi-bullseye"></i>
 
             <span>
-                Data Capaian
+                Data Pelayanan
             </span>
 
         </a>
