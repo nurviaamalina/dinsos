@@ -67,4 +67,17 @@ $routes->group('admin', function ($routes) {
     $routes->get('profil/anggota/edit/(:num)','Admin\Profil::anggotaEdit/$1');
 
     $routes->post('profil/anggota/update/(:num)','Admin\Profil::anggotaUpdate/$1');
+
+    /*
+    |--------------------------------------------------------------------------
+    | LAYANAN (TAMBAHAN BARU)
+    |--------------------------------------------------------------------------
+    */
+    $routes->get('layanan', 'Admin\Layanan::index');
+    $routes->get('layanan/create', 'Admin\Layanan::create');
+    $routes->post('layanan/store', 'Admin\Layanan::store');
+    $routes->get('layanan/edit/(:num)', 'Admin\Layanan::edit/$1');
+    $routes->post('layanan/update/(:num)', 'Admin\Layanan::update/$1');
+    $routes->get('layanan/delete/(:num)', 'Admin\Layanan::delete/$1');
+    $routes->post('layanan/toggle-status/(:num)', 'Admin\Layanan::toggleStatus/$1');
 });
