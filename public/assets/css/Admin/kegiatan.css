@@ -1,0 +1,1788 @@
+/* =========================================================
+   KEGIATAN PAGE
+========================================================= */
+
+.kegiatan-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+}
+
+
+.kegiatan-header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+.kegiatan-header p {
+
+    margin: 5px 0 0;
+
+    font-size: 15px;
+
+    color: #555;
+}
+
+
+.btn-tambah-berita,
+.btn-import-berita {
+
+    height: 40px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 2px solid #550B18;
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+     transition: all .3s ease;
+
+}
+
+
+.btn-tambah-berita {
+
+    background: #ffffff;
+
+    color: #550B18;
+
+}
+
+
+.btn-import-berita {
+
+    background: #ffffff;
+
+    color: #550B18;
+
+}
+
+
+.btn-tambah-berita:hover,
+.btn-import-berita:hover {
+background: #550B18;
+    color: #fff;
+
+}
+/* =========================================================
+   BUTTON TAMBAH
+========================================================= */
+
+.btn-tambah-kegiatan {
+
+    height: 40px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 2px solid #550B18;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #550B18;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+
+.btn-tambah-kegiatan:hover {
+
+    background: #550B18;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.kegiatan-table-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+
+.kegiatan-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+.kegiatan-table thead {
+
+    background: #dedede;
+}
+
+
+.kegiatan-table th {
+
+    height: 40px;
+
+    padding: 8px 14px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-align: left;
+}
+
+
+.kegiatan-table td {
+
+    height: 90px;
+
+    padding: 10px 14px;
+
+    border-bottom: 1px solid #dedede;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   THUMBNAIL INDEX
+========================================================= */
+
+.kegiatan-thumbnail {
+
+    width: 90px;
+
+    height: 58px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+}
+
+
+.kegiatan-thumbnail-empty {
+
+    width: 90px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eeeeee;
+
+    color: #999;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   TANGGAL
+========================================================= */
+
+.tanggal-error {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    color: #dc3545;
+}
+
+
+#tanggal {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cdb2b8;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+#tanggal:focus {
+
+    border-color: #65091c;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(101, 9, 28, .08);
+}
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.kegiatan-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.btn-edit-kegiatan,
+.btn-delete-kegiatan {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+}
+
+
+.btn-edit-kegiatan {
+
+    background: #f9b62d;
+
+    color: #111;
+}
+
+
+.btn-delete-kegiatan {
+
+    background: #df3046;
+
+    color: #ffffff;
+}
+
+
+.btn-edit-kegiatan:hover,
+.btn-delete-kegiatan:hover {
+
+    opacity: .9;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.kegiatan-empty {
+
+    height: 120px !important;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.kegiatan-form-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 35px;
+}
+
+
+.kegiatan-form-header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #65091c;
+}
+
+
+.kegiatan-form-header p {
+
+    margin: 5px 0 0;
+
+    font-size: 15px;
+
+    color: #65091c;
+}
+
+
+/* =========================================================
+   KEMBALI
+========================================================= */
+
+.btn-kembali-kegiatan {
+
+    height: 40px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+========================================================= */
+
+.kegiatan-form-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+}
+
+
+.kegiatan-form-left,
+.kegiatan-form-right {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group-kegiatan {
+
+    margin-bottom: 28px;
+}
+
+
+.form-group-kegiatan label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 17px;
+
+    color: #111;
+}
+
+
+.form-group-kegiatan input[type="text"],
+.form-group-kegiatan input[type="date"] {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cdb2b8;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.form-group-kegiatan textarea {
+
+    width: 100%;
+
+    min-height: 220px;
+
+    padding: 12px;
+
+    border: 1px solid #cdb2b8;
+
+    border-radius: 5px;
+
+    resize: vertical;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.form-group-kegiatan input:focus,
+.form-group-kegiatan textarea:focus {
+
+    border-color: #65091c;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(101, 9, 28, .08);
+}
+
+
+/* =========================================================
+   UPLOAD BOX
+========================================================= */
+
+.kegiatan-upload-box {
+
+    width: 100%;
+
+    min-height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #cdb2b8;
+
+    border-radius: 6px;
+}
+
+
+.kegiatan-upload-box > i {
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+
+    color: #555;
+}
+
+
+.kegiatan-upload-box p {
+
+    margin: 0 0 5px;
+
+    font-size: 13px;
+
+    color: #333;
+}
+
+
+.kegiatan-upload-box small {
+
+    margin-bottom: 12px;
+
+    font-size: 10px;
+
+    color: #999;
+}
+
+
+/* =========================================================
+   BROWSE
+========================================================= */
+
+.browse-button-kegiatan {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 14px;
+
+    border: 1px solid #d5d9df;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #555;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.browse-button-kegiatan:hover {
+
+    color: #65091c;
+
+    border-color: #65091c;
+}
+
+
+.browse-button-kegiatan input {
+
+    display: none;
+}
+
+
+/* =========================================================
+   FORM ACTION
+========================================================= */
+
+.kegiatan-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.btn-batal-kegiatan {
+
+    height: 40px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #65091c;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #65091c;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+.btn-simpan-kegiatan {
+
+    height: 40px;
+
+    padding: 0 20px;
+
+    border: 1px solid #65091c;
+
+    border-radius: 5px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+
+/* =========================================================
+   UPLOADED PREVIEW
+========================================================= */
+
+.kegiatan-uploaded-preview {
+
+    display: none;
+
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+
+.kegiatan-uploaded-preview h3,
+.kegiatan-dokumentasi-preview h3 {
+
+    margin: 0 0 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+.kegiatan-uploaded-item {
+
+    width: 100%;
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 8px 10px;
+
+    border: 2px solid #22b83d;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   THUMBNAIL PREVIEW
+========================================================= */
+
+.kegiatan-uploaded-thumbnail {
+
+    width: 65px;
+
+    height: 55px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #eeeeee;
+}
+
+
+.kegiatan-uploaded-thumbnail img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   FILE NAME
+========================================================= */
+
+.kegiatan-uploaded-name {
+
+    flex: 1;
+
+    min-width: 0;
+
+    margin-left: 12px;
+
+    font-size: 13px;
+
+    color: #333;
+
+    overflow: hidden;
+}
+
+
+.kegiatan-uploaded-name span {
+
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DELETE PREVIEW
+========================================================= */
+
+.delete-upload-kegiatan {
+
+    width: 32px;
+
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 10px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff1f1;
+
+    color: #ff5555;
+
+    cursor: pointer;
+}
+
+
+.delete-upload-kegiatan:hover {
+
+    background: #ffe1e1;
+}
+
+
+/* =========================================================
+   DOKUMENTASI PREVIEW
+========================================================= */
+
+.kegiatan-dokumentasi-preview {
+
+    display: none;
+
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+
+.kegiatan-preview-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+.kegiatan-preview-item {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+}
+
+
+.kegiatan-preview-image {
+
+    width: 100%;
+
+    height: 90px;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+}
+
+
+.kegiatan-preview-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.kegiatan-preview-info {
+
+    padding: 6px 8px;
+}
+
+
+.kegiatan-preview-info span {
+
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    color: #555;
+}
+
+/* =========================================================
+   EXISTING DOCUMENTATION
+========================================================= */
+
+.kegiatan-existing-gallery {
+
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+
+
+.kegiatan-existing-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+.kegiatan-existing-item {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 95px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    background: #eeeeee;
+
+    border: 1px solid #dddddd;
+}
+
+
+.kegiatan-existing-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   DELETE FOTO
+========================================================= */
+
+.kegiatan-delete-foto {
+
+    position: absolute;
+
+    top: 6px;
+
+    right: 6px;
+
+    width: 27px;
+
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 5px;
+
+    background: #df3046;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+}
+
+
+.kegiatan-delete-foto:hover {
+
+    color: #ffffff;
+
+    opacity: .9;
+}
+
+
+/* =========================================================
+   CURRENT THUMBNAIL
+========================================================= */
+
+.kegiatan-current-image {
+
+    margin-bottom: 12px;
+}
+
+
+.kegiatan-current-image img {
+
+    width: 150px;
+
+    height: 95px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    border: 1px solid #dddddd;
+
+    margin-bottom: 5px;
+}
+
+
+.kegiatan-current-image small {
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   NO PHOTO
+========================================================= */
+
+.kegiatan-no-foto {
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    border: 1px dashed #cccccc;
+
+    border-radius: 6px;
+
+    background: #fafafa;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+/* =========================================================
+   RESPONSIVE PREVIEW
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .kegiatan-preview-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .kegiatan-existing-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .kegiatan-preview-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .kegiatan-existing-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .kegiatan-form-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   IMPORT KEGIATAN
+========================================================= */
+
+.import-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 8px;
+
+}
+
+
+.import-card-body {
+
+    padding: 24px;
+
+}
+
+
+/* =========================================================
+   PETUNJUK IMPORT
+========================================================= */
+
+.import-info {
+
+    padding: 16px 18px;
+
+    margin-bottom: 22px;
+
+    background: #f5f9ff;
+
+    border: 1px solid #cfe2ff;
+
+    border-radius: 6px;
+
+}
+
+
+.import-section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: #65091c;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.import-section-title i {
+
+    font-size: 16px;
+
+}
+
+
+.import-info ul {
+
+    margin: 0;
+
+    padding-left: 22px;
+
+}
+
+
+.import-info li {
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+
+    color: #333;
+
+}
+
+
+.import-info li:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   FORMAT EXCEL
+========================================================= */
+
+.import-format-card {
+
+    margin-bottom: 24px;
+
+    padding: 16px;
+
+    background: #fafafa;
+
+    border: 1px solid #e0e0e0;
+
+    border-radius: 6px;
+
+}
+
+
+.import-description {
+
+    margin: 0 0 12px;
+
+    font-size: 11px;
+
+    color: #555;
+
+}
+
+
+.import-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+.import-format-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.import-format-table th {
+
+    padding: 9px 10px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+}
+
+
+.import-format-table td {
+
+    padding: 9px 10px;
+
+    border: 1px solid #dddddd;
+
+    font-size: 10px;
+
+    color: #333;
+
+}
+
+
+.import-format-table tbody tr:nth-child(even) {
+
+    background: #f8f8f8;
+
+}
+
+
+/* =========================================================
+   UPLOAD GROUP
+========================================================= */
+
+.import-upload-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.import-upload-group > label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #65091c;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.import-upload-group > label i {
+
+    margin-right: 5px;
+
+}
+
+
+/* =========================================================
+   UPLOAD BOX
+========================================================= */
+
+.import-upload-box {
+
+    min-height: 133px;
+
+    border: 1px solid #d9bfc5;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition: 0.2s ease;
+
+}
+
+
+.import-upload-box:hover {
+
+    border-color: #65091c;
+
+}
+
+
+.import-upload-box > i {
+
+    margin-bottom: 8px;
+
+    color: #555;
+
+    font-size: 22px;
+
+}
+
+
+.import-upload-box p {
+
+    margin: 0 0 4px;
+
+    color: #333;
+
+    font-size: 11px;
+
+}
+
+
+.import-upload-box small {
+
+    color: #999;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   BROWSE BUTTON
+========================================================= */
+
+.import-browse-button {
+
+    margin-top: 10px;
+
+    padding: 6px 14px;
+
+    border: 1px solid #d9dfe5;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #555;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.import-browse-button:hover {
+
+    border-color: #65091c;
+
+    color: #65091c;
+
+}
+
+
+.import-browse-button input {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   FILE PREVIEW
+========================================================= */
+
+.import-file-preview {
+
+    display: none;
+
+    min-height: 72px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d9bfc5;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+}
+
+
+.import-file-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #f8e9ed;
+
+    color: #65091c;
+
+    font-size: 21px;
+
+    flex-shrink: 0;
+
+}
+
+
+.import-file-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.import-file-info strong {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #333;
+
+    font-size: 11px;
+
+}
+
+
+.import-file-info small {
+
+    color: #999;
+
+    font-size: 9px;
+
+}
+
+
+.import-remove-file {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #df3046;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+}
+
+
+.import-remove-file:hover {
+
+    opacity: .9;
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.import-file-error {
+
+    display: block;
+
+    min-height: 15px;
+
+    margin-top: 5px;
+
+    color: #dc3545;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   PETUNJUK ZIP
+========================================================= */
+
+.import-zip-info {
+
+    margin-top: 8px;
+
+    margin-bottom: 24px;
+
+    padding: 16px;
+
+    background: #f8f8f8;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 6px;
+
+}
+
+
+.import-zip-info p {
+
+    margin: 0 0 10px;
+
+    font-size: 11px;
+
+    color: #444;
+
+}
+
+
+.import-zip-info > small {
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+.zip-structure {
+
+    padding: 10px 13px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    overflow-x: auto;
+
+}
+
+
+.zip-structure pre {
+
+    margin: 0;
+
+    color: #444;
+
+    font-family: Consolas, monospace;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   IMPORT FORM ACTION
+========================================================= */
+
+.import-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+.btn-import-batal {
+
+    height: 38px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #65091c;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #65091c;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.btn-import-batal:hover {
+
+    color: #65091c;
+
+    background: #f8eeee;
+
+}
+
+
+.btn-import-submit {
+
+    height: 38px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.btn-import-submit:hover {
+
+    background: #520716;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE IMPORT
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .import-card-body {
+
+        padding: 16px;
+
+    }
+
+
+    .import-format-table {
+
+        min-width: 600px;
+
+    }
+
+
+    .import-form-actions {
+
+        justify-content: flex-start;
+
+    }
+
+}

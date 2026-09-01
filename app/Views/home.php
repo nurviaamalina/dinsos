@@ -633,86 +633,88 @@
                  KEGIATAN
             ================================== -->
 
+
             <div class="informasi-box kegiatan-box">
 
                 <div class="informasi-title">
-                    <h2>KEGIATAN</h2>
+
+                    <h2>
+                        KEGIATAN
+                    </h2>
+
                     <span></span>
+
                 </div>
 
-                <div class="kegiatan-grid">
 
-                    <?php if (!empty($kegiatan)): ?>
+                <?php if (!empty($tahunKegiatan)): ?>
 
-                        <?php foreach (array_slice($kegiatan, 0, 4) as $item): ?>
+                    <div class="kegiatan-tahun-home">
+
+                        <?php foreach (
+                            array_slice($tahunKegiatan, 0, 4)
+                            as $item
+                        ): ?>
 
                             <a
-                                href="<?= base_url('kegiatan/' . $item['id']) ?>"
-                                class="kegiatan-item"
+                                href="<?= base_url(
+                                    'kegiatan/tahun/' .
+                                    $item['tahun']
+                                ) ?>"
+                                class="kegiatan-tahun-card-home"
                             >
 
-                                <img
-                                    src="<?= base_url('uploads/kegiatan/' . $item['gambar']) ?>"
-                                    alt="<?= esc($item['tahun']) ?>"
-                                >
+                                <?php if (!empty($item['thumbnail'])): ?>
 
-                                <div class="kegiatan-tahun">
+                                    <img
+                                        src="<?= base_url(
+                                            'uploads/kegiatan/thumbnail/' .
+                                            $item['thumbnail']
+                                        ) ?>"
+                                        alt="Kegiatan Tahun <?= esc(
+                                            $item['tahun']
+                                        ) ?>"
+                                    >
+
+                                <?php else: ?>
+
+                                    <div class="kegiatan-tahun-no-image">
+                                        <i class="bi bi-calendar-event"></i>
+                                    </div>
+
+                                <?php endif; ?>
+
+
+                                <div class="kegiatan-tahun-overlay"></div>
+
+
+                                <div class="kegiatan-tahun-text">
+
                                     <?= esc($item['tahun']) ?>
+
                                 </div>
 
                             </a>
 
                         <?php endforeach; ?>
 
-                    <?php else: ?>
+                    </div>
 
-                        <div class="kegiatan-item">
-                            <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
-                                alt="2026"
-                            >
 
-                            <div class="kegiatan-tahun">
-                                2026
-                            </div>
-                        </div>
+                <?php else: ?>
 
-                        <div class="kegiatan-item">
-                            <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
-                                alt="2025"
-                            >
+                    <div class="informasi-empty">
 
-                            <div class="kegiatan-tahun">
-                                2025
-                            </div>
-                        </div>
+                        Belum ada kegiatan.
 
-                        <div class="kegiatan-item">
-                            <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
-                                alt="2024"
-                            >
+                    </div>
 
-                            <div class="kegiatan-tahun">
-                                2024
-                            </div>
-                        </div>
+                <?php endif; ?>
 
-                        <div class="kegiatan-item">
-                            <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
-                                alt="2023"
-                            >
 
-                            <div class="kegiatan-tahun">
-                                2023
-                            </div>
-                        </div>
-
-                    <?php endif; ?>
-
-                </div>
+                <!-- =================================================
+                    LIHAT SEMUA
+                ================================================== -->
 
                 <div class="informasi-button">
 
@@ -720,8 +722,11 @@
                         href="<?= base_url('kegiatan') ?>"
                         class="btn-informasi"
                     >
+
                         Lihat Semua
+
                         <i class="bi bi-arrow-right"></i>
+
                     </a>
 
                 </div>

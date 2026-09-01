@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\BeritaModel;
 use App\Models\ProfilAnggotaModel;
+use App\Models\KegiatanModel;
 
 class Home extends BaseController
 {
@@ -13,6 +14,7 @@ class Home extends BaseController
     {
         $this->beritaModel = new BeritaModel();
         $this->anggotaModel = new ProfilAnggotaModel();
+        $this->kegiatanModel = new KegiatanModel();
     } 
     public function index()
     {
@@ -27,14 +29,46 @@ class Home extends BaseController
             ->orderBy('id', 'ASC')
             ->findAll();
 
+        
+              // =====================================================
+        // TAHUN KEGIATAN
+        // =====================================================
+
+        $tahunKegiatan = $this->kegiatanModel
+            ->select('tahun')
+            ->distinct()
+            ->where('tahun IS NOT NULL')
+            ->orderBy('tahun', 'DESC')
+            ->findAll();
+
+
+        // =====================================================
+        // AMBIL THUMBNAIL SETIAP TAHUN
+        // =====================================================
+
+        foreach ($tahunKegiatan as &$item) {
+
+            $kegiatan = $this->kegiatanModel
+                ->where('tahun', $item['tahun'])
+                ->orderBy('tanggal', 'DESC')
+                ->first();
+
+
+            $item['thumbnail'] =
+                $kegiatan['thumbnail'] ?? null;
+        }
+
+        unset($item);
 
         $data = [
 
             'berita' => $berita,
             'anggota' => $anggota,
+            'tahunKegiatan' => $tahunKegiatan,
         ];
 
         return view('home', $data);
     }
+    
 
 }

@@ -18,34 +18,60 @@ class AdminBerita extends BaseController
     }
 
     public function index()
-    {
-        $data = [
+{
+    $status = $this->request->getGet('status');
 
-            'title' => 'Berita dan Pengumuman',
+    $beritaQuery = new BeritaModel();
 
-            'totalBerita' => $this->beritaModel->countAll(),
 
-            'totalDraft' => $this->beritaModel
+    // Filter
+    if ($status === 'publik') {
+
+        $beritaQuery->where('status', 'publik');
+
+    } elseif ($status === 'draft') {
+
+        $beritaQuery->where('status', 'draft');
+
+    }
+
+
+    $data = [
+
+        'title' => 'Berita dan Pengumuman',
+
+        'totalBerita' =>
+            $this->beritaModel->countAll(),
+
+        'totalDraft' =>
+            $this->beritaModel
                 ->where('status', 'draft')
                 ->countAllResults(),
 
-            'totalPublik' => $this->beritaModel
+        'totalPublik' =>
+            $this->beritaModel
                 ->where('status', 'publik')
                 ->countAllResults(),
 
-            'berita' => $this->beritaModel
+        'berita' =>
+            $beritaQuery
                 ->orderBy('id', 'DESC')
                 ->paginate(5),
 
-           'pager' => $this->beritaModel->pager,
+        'pager' =>
+            $beritaQuery->pager,
 
-        ];
+        'status' =>
+            $status
 
-        return view(
-            'Admin/Berita/index',
-            $data
-        );
-    }
+    ];
+
+
+    return view(
+        'Admin/Berita/index',
+        $data
+    );
+}
 
      public function create()
     {

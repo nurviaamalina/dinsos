@@ -1,0 +1,471 @@
+/* =========================================================
+   KEGIATAN PAGE
+========================================================= */
+
+.kegiatan-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: #fff;
+}
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+/* Separator breadcrumb */
+.breadcrumb {
+    --bs-breadcrumb-divider: ">";
+}
+
+/* Link Beranda */
+.breadcrumb-item a {
+    color: #737475;      /* Hitam */
+    text-decoration: none;
+}
+
+/* Saat di-hover tetap hitam */
+.breadcrumb-item a:hover {
+    color: #212529;
+    text-decoration: none;
+}
+
+/* Halaman aktif */
+.breadcrumb-item.active {
+    color: #4A0D18; 
+    font-weight: bold;   
+}
+/* =========================================================
+   HEADER
+========================================================= */
+
+.kegiatan-page-header {
+    margin-bottom: 40px;
+}
+
+.kegiatan-page-header h1 {
+    margin: 0 0 8px;
+    color: #4A0D18;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.kegiatan-page-header p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   RECAP TAHUN
+========================================================= */
+
+.kegiatan-tahun-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.kegiatan-tahun-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 22px;
+    border-radius: 12px;
+    background: #65091c;
+    color: #fff;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.kegiatan-tahun-card:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.kegiatan-tahun-card span {
+    font-size: 13px;
+}
+
+.kegiatan-tahun-card strong {
+    font-size: 23px;
+}
+
+.kegiatan-tahun-card i {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   RECAP HEADER
+========================================================= */
+
+.kegiatan-recap-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.kegiatan-recap-header h1 {
+    margin: 0;
+    color: #4A0D18;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.kegiatan-recap-header strong {
+    display: block;
+    color: #4A0D18;
+    font-size: 34px;
+}
+
+.kegiatan-recap-header span {
+    display: block;
+    width: 95px;
+    height: 2px;
+    margin: 15px auto;
+    background: #65091c;
+}
+
+.kegiatan-recap-header p {
+    margin: 0;
+    color: #444;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.kegiatan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.kegiatan-card {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e4e4e4;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.kegiatan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.kegiatan-card-image {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+}
+
+.kegiatan-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: .3s ease;
+}
+
+.kegiatan-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.kegiatan-card-content {
+    padding: 17px;
+}
+
+.kegiatan-card-date {
+    display: block;
+    margin-bottom: 7px;
+    color: #7b1e2b;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.kegiatan-card-content h2 {
+    margin: 0 0 15px;
+    color: #222;
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.kegiatan-card-link {
+    color: #65091c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.kegiatan-card-link i {
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.kegiatan-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.kegiatan-pagination .pagination {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+}
+
+.kegiatan-pagination .page-link {
+    min-width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    color: #333;
+    background: #fff;
+}
+
+.kegiatan-pagination .page-link:hover {
+    color: #4A0D18;
+    background: #f5f5f5;
+}
+
+.kegiatan-pagination .active .page-link {
+    background: #65091c;
+    border-color: #65091c;
+    color: #fff;
+}
+
+
+/* =========================================================
+   DETAIL
+========================================================= */
+
+.detail-kegiatan-page {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    background: #fff;
+}
+
+.detail-kegiatan-header {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.detail-kegiatan-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.detail-kegiatan-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.detail-kegiatan-info h1 {
+    margin: 0;
+    color: #000;
+    font-size: 36px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.detail-kegiatan-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.detail-kegiatan-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #243746;
+    font-size: 14px;
+}
+
+.detail-kegiatan-meta i {
+    color: #65091c;
+}
+
+
+/* =========================================================
+   DESKRIPSI
+========================================================= */
+
+.detail-kegiatan-content {
+    margin-top: 30px;
+    max-width: 850px;
+    color: #111;
+    font-size: 18px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+
+/* =========================================================
+   DOKUMENTASI
+========================================================= */
+
+.kegiatan-dokumentasi {
+    margin-top: 45px;
+}
+
+.kegiatan-section-title {
+    margin-bottom: 20px;
+}
+
+.kegiatan-section-title h2 {
+    margin: 0;
+    color: #4A0D18;
+    font-size: 26px;
+}
+
+.kegiatan-section-title span {
+    display: block;
+    width: 70px;
+    height: 2px;
+    margin-top: 8px;
+    background: #65091c;
+}
+
+.kegiatan-dokumentasi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.dokumentasi-item {
+    height: 220px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.dokumentasi-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .3s ease;
+}
+
+.dokumentasi-item:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   BUTTON KEMBALI
+========================================================= */
+
+.btn-kembali-kegiatan {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 35px;
+    padding: 9px 20px;
+    border: 1.5px solid #65091c;
+    border-radius: 25px;
+    background: #fff;
+    color: #65091c;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-kembali-kegiatan:hover {
+    background: #65091c;
+    color: #fff;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.kegiatan-kosong {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.kegiatan-kosong h4 {
+    color: #4A0D18;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .kegiatan-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kegiatan-tahun-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-kegiatan-header {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .kegiatan-grid,
+    .kegiatan-tahun-list {
+        grid-template-columns: 1fr;
+    }
+
+    .kegiatan-page-header h1 {
+        font-size: 30px;
+    }
+
+    .detail-kegiatan-info h1 {
+        font-size: 28px;
+    }
+
+    .kegiatan-dokumentasi-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}

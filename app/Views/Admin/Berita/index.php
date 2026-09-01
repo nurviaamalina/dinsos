@@ -161,53 +161,60 @@
 
             </div>
 
+<!-- TAB FILTER -->
 
-            <!-- TAB FILTER-->
-
-            <div class="berita-filter">
-
-                <a
-                    href="<?= base_url('admin/berita') ?>"
-                    class="berita-tab active"
-                >
-
-                    Semua
-
-                    <span>
-                        (<?= $totalBerita ?? 0 ?>)
-                    </span>
-
-                </a>
+<div class="berita-filter">
 
 
-                <a
-                    href="<?= base_url('admin/berita?status=publik') ?>"
-                    class="berita-tab"
-                >
+    <!-- SEMUA -->
 
-                    Dipublikasikan
+    <a
+        href="<?= base_url('admin/berita') ?>"
+        class="berita-tab <?= empty($status) ? 'active' : '' ?>"
+    >
 
-                    <span>
-                        (<?= $totalPublik ?? 0 ?>)
-                    </span>
+        Semua
 
-                </a>
+        <span>
+            (<?= $totalBerita ?? 0 ?>)
+        </span>
+
+    </a>
 
 
-                <a
-                    href="<?= base_url('admin/berita?status=draft') ?>"
-                    class="berita-tab"
-                >
+    <!-- PUBLIK -->
 
-                    Draf
+    <a
+        href="<?= base_url('admin/berita?status=publik') ?>"
+        class="berita-tab <?= ($status ?? '') === 'publik' ? 'active' : '' ?>"
+    >
 
-                    <span>
-                        (<?= $totalDraft ?? 0 ?>)
-                    </span>
+        Dipublikasikan
 
-                </a>
+        <span>
+            (<?= $totalPublik ?? 0 ?>)
+        </span>
 
-            </div>
+    </a>
+
+
+    <!-- DRAFT -->
+
+    <a
+        href="<?= base_url('admin/berita?status=draft') ?>"
+        class="berita-tab <?= ($status ?? '') === 'draft' ? 'active' : '' ?>"
+    >
+
+        Draf
+
+        <span>
+            (<?= $totalDraft ?? 0 ?>)
+        </span>
+
+    </a>
+
+
+</div>
 
 
             <!-- Card / tabel -->
