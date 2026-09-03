@@ -26,7 +26,7 @@
                 <i class="bi bi-chevron-right"></i>
             </span>
 
-            <a href="<?= base_url('profil#bidang') ?>">
+            <a href="<?= base_url('/') ?>">
                 Bidang
             </a>
 

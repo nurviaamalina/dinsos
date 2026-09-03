@@ -30,7 +30,7 @@ $routes->get('kegiatan/(:segment)','Kegiatan::detail/$1'
 // BIDANG
 // =====================================================
 
-$routes->get('bidang', 'Bidang::index');
+$routes->get('bidang/(:segment)', 'Bidang::detail/$1');
 
 // =====================================================
 // ISNTAGRAM

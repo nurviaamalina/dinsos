@@ -3,6 +3,9 @@
 namespace App\Controllers;
 use App\Models\BeritaModel;
 use App\Models\ProfilAnggotaModel;
+
+use App\Models\BidangModel;
+
 use App\Models\KegiatanModel;
 
 class Home extends BaseController
@@ -28,6 +31,10 @@ class Home extends BaseController
         $anggota = $this->anggotaModel
             ->orderBy('id', 'ASC')
             ->findAll();
+
+        $bidangModel = new BidangModel();
+    
+
 
         
               // =====================================================
@@ -60,10 +67,16 @@ class Home extends BaseController
 
         unset($item);
 
+
         $data = [
 
             'berita' => $berita,
             'anggota' => $anggota,
+
+             'bidang' => $bidangModel
+                ->where('status', 'Aktif')
+                     ->findAll(),
+
             'tahunKegiatan' => $tahunKegiatan,
         ];
 
