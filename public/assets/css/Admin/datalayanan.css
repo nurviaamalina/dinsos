@@ -1,0 +1,91 @@
+/* ============================================
+   SUBTITLE
+   ============================================ */
+.subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+/* ============================================
+   TAB PEMBAYARAN
+   ============================================ */
+.tab-pembayaran {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.tab-header {
+    padding: 1rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+}
+
+.tab-header h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.tab-header h5 i {
+    margin-right: 10px;
+}
+
+.tab-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.tab-stat-item {
+    text-align: center;
+    padding: 0.5rem;
+    border-right: 1px solid #eee;
+}
+
+.tab-stat-item:last-child {
+    border-right: none;
+}
+
+.tab-stat-item .label {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+}
+
+.tab-stat-item .value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ============================================
+   RESPONSIVE TAB PEMBAYARAN
+   ============================================ */
+@media (max-width: 480px) {
+    .tab-stats {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .tab-stat-item {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 0.8rem;
+    }
+    
+    .tab-stat-item:last-child {
+        border-bottom: none;
+    }
+    
+    .tab-stat-item .value {
+        font-size: 1.2rem;
+    }
+}

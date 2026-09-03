@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\LayananModel;
+use App\Models\BidangModel;
 
 class Layanan extends BaseController
 {
     protected $layananModel;
+    protected $bidangModel; 
 
     public function __construct()
     {
         $this->layananModel = new LayananModel();
+         $this->bidangModel = new BidangModel();
     }
 
     public function index()
@@ -34,7 +37,10 @@ class Layanan extends BaseController
 
     public function create()
     {
-        $data = ['title' => 'Tambah Layanan'];
+        $data = [
+            'title' => 'Tambah Layanan',
+            'bidang_list' => $this->bidangModel->where('status', 'aktif')->findAll(),
+        ];
         return view('admin/layanan/create', $data);
     }
 
@@ -73,7 +79,7 @@ class Layanan extends BaseController
             'deskripsi_layanan' => $this->request->getPost('deskripsi_layanan'),
             'standar_layanan'   => $this->request->getPost('standar_layanan'),
             'prosedur_layanan'  => $this->request->getPost('prosedur_layanan'),
-            'status_layanan'    => $status, // <-- INI YANG BENAR!
+            'status_layanan'    => $status, 
             'dokumen'           => $namaDokumen,
         ]);
 

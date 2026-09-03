@@ -272,12 +272,12 @@ $currentUrl = uri_string();
 
 
         <!-- =================================================
-             DATA PELAYANANA
+            DATA PELAYANAN
         ================================================== -->
 
         <a
-            href="<?= base_url('admin/data-capaian') ?>"
-            class="sidebar-item <?= strpos($currentUrl, 'admin/data-capaian') === 0 ? 'active' : '' ?>"
+            href="<?= base_url('admin/datalayanan') ?>"
+            class="sidebar-item <?= strpos($currentUrl, 'admin/datalayanan') === 0 ? 'active' : '' ?>"
         >
 
             <i class="bi bi-bullseye"></i>

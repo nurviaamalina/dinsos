@@ -157,4 +157,19 @@ $routes->post(
     $routes->post('layanan/update/(:num)', 'Admin\Layanan::update/$1');
     $routes->get('layanan/delete/(:num)', 'Admin\Layanan::delete/$1');
     $routes->post('layanan/toggle-status/(:num)', 'Admin\Layanan::toggleStatus/$1');
+
+    /*
+    |--------------------------------------------------------------------------
+    | DATALAYANAN
+    |--------------------------------------------------------------------------
+    */
+    $routes->get('datalayanan', 'Admin\Datalayanan::index');
+    $routes->get('datalayanan/create', 'Admin\Datalayanan::create');
+    $routes->post('datalayanan/store', 'Admin\Datalayanan::store');
+    $routes->get('datalayanan/edit/(:num)', 'Admin\Datalayanan::edit/$1');
+    $routes->post('datalayanan/update/(:num)', 'Admin\Datalayanan::update/$1');
+    $routes->get('datalayanan/delete/(:num)', 'Admin\Datalayanan::delete/$1');
+    $routes->get('datalayanan/export', 'Admin\Datalayanan::export');
+    $routes->get('datalayanan/import', 'Admin\Datalayanan::import');
+    $routes->post('datalayanan/import', 'Admin\Datalayanan::importProcess');
 });

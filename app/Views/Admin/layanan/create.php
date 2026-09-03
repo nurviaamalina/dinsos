@@ -47,9 +47,11 @@
                         <label>Bidang</label>
                         <select name="bidang" class="form-select" required>
                             <option value="">Pilih Bidang...</option>
-                            <option value="Pengendalian Penduduk" <?= old('bidang') == 'Pengendalian Penduduk' ? 'selected' : '' ?>>Pengendalian Penduduk</option>
-                            <option value="Keluarga Berencana" <?= old('bidang') == 'Keluarga Berencana' ? 'selected' : '' ?>>Keluarga Berencana</option>
-                            <option value="Pemberdayaan Keluarga" <?= old('bidang') == 'Pemberdayaan Keluarga' ? 'selected' : '' ?>>Pemberdayaan Keluarga</option>
+                            <?php foreach ($bidang_list as $b): ?>
+                                <option value="<?= esc($b['nama_bidang']) ?>" <?= old('bidang') == $b['nama_bidang'] ? 'selected' : '' ?>>
+                                    <?= esc($b['nama_bidang']) ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
 
