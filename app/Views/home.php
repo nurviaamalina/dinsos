@@ -131,12 +131,6 @@
                 </div>
 
                 <div class="akses-name">
-                    Dokumen
-                </div>
-
-                <div class="akses-line"></div>
-
-                <div class="akses-description">
                     Dokumen publik
                 </div>
 
@@ -172,6 +166,9 @@
 <!-- =====================================
      PROFIL
 ===================================== -->
+<!-- =====================================
+     PROFIL + BIDANG
+===================================== -->
 
 <section class="profil-home">
 
@@ -179,8 +176,7 @@
 
 
         <!-- =========================================
-             ANGGOTA ID 1
-             PROFIL UTAMA DI SEBELAH KIRI
+             KEPALA DINAS
         ========================================== -->
 
         <div class="profil-kepala">
@@ -188,7 +184,6 @@
             <?php if (!empty($anggota[0])): ?>
 
                 <?php $utama = $anggota[0]; ?>
-
 
                 <!-- FOTO -->
 
@@ -217,17 +212,17 @@
 
                 <!-- JABATAN -->
 
-<p class="profil-jabatan">
+                <p class="profil-jabatan">
 
-    <span>
-        KEPALA DINAS SOSIAL DAN PEMBERDAYAAN PEREMPUAN
-    </span>
+                    <span>
+                        KEPALA DINAS SOSIAL DAN PEMBERDAYAAN PEREMPUAN
+                    </span>
 
-    <span>
-        KABUPATEN BANYUWANGI
-    </span>
+                    <span>
+                        KABUPATEN BANYUWANGI
+                    </span>
 
-</p>
+                </p>
 
             <?php endif; ?>
 
@@ -235,149 +230,134 @@
 
 
         <!-- =========================================
-             ANGGOTA ID 2 DAN SETERUSNYA
-             CARD DI SEBELAH KANAN
+             BIDANG
+             DI SEBELAH KANAN KEPALA DINAS
         ========================================== -->
 
-           <!-- CARD BIDANG -->
+        <div class="bidang-section">
 
-        <div class="bidang-wrapper">
+            <div class="bidang-wrapper">
 
+                <?php if (!empty($bidang)): ?>
 
-            <!-- SEKRETARIAT -->
+                    <?php foreach ($bidang as $item): ?>
 
-            <div class="bidang-card">
+                        <?php
 
-                <div class="bidang-icon">
-                    <i class="bi bi-pencil-square"></i>
-                </div>
-
-                <h3>
-                    Sekretariat
-                </h3>
-
-                <p>
-                    Tata Usaha<br>
-                    Untuk Mendukung<br>
-                    Dinas Sosial
-                </p>
-
-                <a href="#" class="btn-detail">
-                    Detail →
-                </a>
-
-            </div>
+                        $namaBidang = strtolower(
+                            trim($item['nama_bidang'])
+                        );
 
 
-            <!-- LINJAMSOS -->
+                        if ($namaBidang === 'sekretariat') {
 
-            <div class="bidang-card">
+                            $slug = 'sekretariat';
 
-                <div class="bidang-icon">
-                    <i class="bi bi-shield"></i>
-                </div>
+                        } elseif (
+                            strpos($namaBidang, 'linjamsos') !== false
+                        ) {
 
-                <h3>
-                    Bidang<br>
-                    Linjamsos
-                </h3>
+                            $slug = 'linjamsos';
 
-                <p>
-                    Perlindungan<br>
-                    dan Jaminan<br>
-                    Sosial
-                </p>
+                        } elseif (
+                            strpos($namaBidang, 'rehabsos') !== false
+                        ) {
 
-                <a href="#" class="btn-detail">
-                    Detail →
-                </a>
+                            $slug = 'rehabsos';
 
-            </div>
+                        } elseif (
+                            strpos($namaBidang, 'dayasos') !== false
+                        ) {
 
+                            $slug = 'dayasos';
 
-            <!-- REHABSOS -->
+                        } elseif (
+                            strpos($namaBidang, 'ppdkb') !== false
+                        ) {
 
-            <div class="bidang-card">
+                            $slug = 'ppdkb';
 
-                <div class="bidang-icon">
-                    <i class="bi bi-person-hearts"></i>
-                </div>
+                        } else {
 
-                <h3>
-                    Bidang<br>
-                    Rehabsos
-                </h3>
+                            $slug = url_title(
+                                $item['nama_bidang'],
+                                '-',
+                                true
+                            );
 
-                <p>
-                    Rehabilitasi<br>
-                    Sosial
-                </p>
+                        }
 
-                <a href="#" class="btn-detail">
-                    Detail →
-                </a>
-
-            </div>
+                        ?>
 
 
-            <!-- DAYASOS -->
+                        <!-- CARD BIDANG -->
 
-            <div class="bidang-card">
+                        <div class="bidang-card">
 
-                <div class="bidang-icon">
-                    <i class="bi bi-person-arms-up"></i>
-                </div>
 
-                <h3>
-                    Bidang<br>
-                    Dayasos
-                </h3>
+                            <!-- ICON -->
 
-                <p>
-                    Pemberdayaan<br>
-                    Sosial
-                </p>
+                            <div class="bidang-icon">
 
-                <a href="#" class="btn-detail">
-                    Detail →
-                </a>
+                                <i class="bi bi-people-fill"></i>
 
-            </div>
+                            </div>
 
-              <!-- PPDKB -->
 
-            <div class="bidang-card">
+                            <!-- NAMA -->
 
-                <div class="bidang-icon">
-                    <i class="bi bi-people-fill"></i>
-                </div>
+                            <h3>
+                                <?= esc(
+                                    $item['nama_bidang']
+                                ) ?>
+                            </h3>
 
-                <h3>
-                    Bidang<br>
-                    PPDKB
-                </h3>
 
-                <p>
-                    Pemberdayaan<br>
-                    Sosial
-                </p>
+                            <!-- DESKRIPSI -->
 
-                <a href="#" class="btn-detail">
-                    Detail →
-                </a>
+                            <p>
+                                Informasi
+                                <?= esc(
+                                    $item['nama_bidang']
+                                ) ?>
+                            </p>
+
+
+                            <!-- DETAIL -->
+
+                            <a
+                                href="<?= base_url(
+                                    'bidang/' . $slug
+                                ) ?>"
+                                class="btn-detail"
+                            >
+                                Detail →
+                            </a>
+
+                        </div>
+
+
+                    <?php endforeach; ?>
+
+
+                <?php else: ?>
+
+                    <p>
+                        Belum ada data bidang.
+                    </p>
+
+                <?php endif; ?>
 
             </div>
-            
 
         </div>
 
-
-        </div>
 
     </div>
 
-    
 </section>
+
+
 <!-- =====================================
      JENIS LAYANAN
 ===================================== -->
@@ -398,7 +378,9 @@
 
             <p>
                 Jam pelayanan :
-                <strong>Senin - Jumat, 07.30 - 16.00</strong>
+                <strong>
+                    Senin - Jumat, 07.30 - 16.00
+                </strong>
             </p>
 
         </div>
@@ -407,7 +389,6 @@
         <!-- CARD LAYANAN -->
 
         <div class="layanan-wrapper">
-
 
             <!-- CARD 1 -->
 
@@ -428,7 +409,10 @@
                     singkat
                 </p>
 
-                <a href="#" class="btn-layanan-detail">
+                <a
+                    href="#"
+                    class="btn-layanan-detail"
+                >
                     Detail →
                 </a>
 
@@ -454,7 +438,10 @@
                     singkat
                 </p>
 
-                <a href="#" class="btn-layanan-detail">
+                <a
+                    href="#"
+                    class="btn-layanan-detail"
+                >
                     Detail →
                 </a>
 
@@ -480,7 +467,10 @@
                     singkat
                 </p>
 
-                <a href="#" class="btn-layanan-detail">
+                <a
+                    href="#"
+                    class="btn-layanan-detail"
+                >
                     Detail →
                 </a>
 
@@ -506,7 +496,10 @@
                     singkat
                 </p>
 
-                <a href="#" class="btn-layanan-detail">
+                <a
+                    href="#"
+                    class="btn-layanan-detail"
+                >
                     Detail →
                 </a>
 
@@ -515,7 +508,7 @@
         </div>
 
 
-        <!-- TOMBOL SEMUA LAYANAN -->
+        <!-- SEMUA LAYANAN -->
 
         <div class="semua-layanan">
 
@@ -533,6 +526,7 @@
 
 </section>
 
+
 <!-- =====================================
      BERITA, KEGIATAN & POSTINGAN
 ===================================== -->
@@ -541,71 +535,144 @@
 
     <div class="informasi-container">
 
+
         <!-- =================================
              BERITA TERBARU
         ================================== -->
 
         <div class="informasi-box berita-box">
 
+
+            <!-- JUDUL -->
+
             <div class="informasi-title">
-                <h2>BERITA TERBARU</h2>
+
+                <h2>
+                    BERITA TERBARU
+                </h2>
+
                 <span></span>
+
             </div>
+
+
+            <!-- LIST BERITA -->
 
             <div class="berita-list">
 
                 <?php if (!empty($berita)): ?>
 
-                    <?php foreach (array_slice($berita, 0, 3) as $item): ?>
+
+                    <?php foreach (
+                        array_slice(
+                            $berita,
+                            0,
+                            3
+                        ) as $item
+                    ): ?>
+
 
                         <div class="berita-item">
+
+
+                            <!-- GAMBAR -->
 
                             <div class="berita-image">
 
                                 <img
-                                    src="<?= base_url('uploads/berita/' . $item['gambar']) ?>"
-                                    alt="<?= esc($item['judul']) ?>"
+                                    src="<?= base_url(
+                                        'uploads/berita/' .
+                                        $item['gambar']
+                                    ) ?>"
+                                    alt="<?= esc(
+                                        $item['judul']
+                                    ) ?>"
                                 >
 
                             </div>
+
+
+                            <!-- KONTEN -->
 
                             <div class="berita-content">
 
+
                                 <div class="berita-date">
-                                    <?= date('d F Y', strtotime($item['tanggal'])) ?>
+
+                                    <?= date(
+                                        'd F Y',
+                                        strtotime(
+                                            $item['tanggal']
+                                        )
+                                    ) ?>
+
                                 </div>
 
+
                                 <h3>
-                                    <?= esc($item['judul']) ?>
+
+                                    <?= esc(
+                                        $item['judul']
+                                    ) ?>
+
                                 </h3>
 
+
                                 <p>
-                                    <?= esc(substr(strip_tags($item['isi']), 0, 100)) ?>.....
+
+                                    <?= esc(
+                                        substr(
+                                            strip_tags(
+                                                $item['isi']
+                                            ),
+                                            0,
+                                            100
+                                        )
+                                    ) ?>.....
+
                                 </p>
 
-                               <a
-                                    href="<?= base_url('berita/' . $item['slug']) ?>"
+
+                                <a
+                                    href="<?= base_url(
+                                        'berita/' .
+                                        $item['slug']
+                                    ) ?>"
                                     class="btn-berita"
                                 >
+
                                     Baca Selengkapnya
+
                                     <i class="bi bi-arrow-right"></i>
+
                                 </a>
+
 
                             </div>
 
+
                         </div>
+
 
                     <?php endforeach; ?>
 
+
                 <?php else: ?>
 
+
                     <div class="informasi-empty">
+
                         Belum ada berita.
+
                     </div>
+
 
                 <?php endif; ?>
 
             </div>
+
+
+            <!-- TOMBOL -->
 
             <div class="informasi-button">
 
@@ -613,11 +680,15 @@
                     href="<?= base_url('berita') ?>"
                     class="btn-informasi"
                 >
+
                     Lihat Semua
+
                     <i class="bi bi-arrow-right"></i>
+
                 </a>
 
             </div>
+
 
         </div>
 
@@ -635,84 +706,152 @@
 
             <div class="informasi-box kegiatan-box">
 
+
+                <!-- JUDUL -->
+
                 <div class="informasi-title">
-                    <h2>KEGIATAN</h2>
+
+                    <h2>
+                        KEGIATAN
+                    </h2>
+
                     <span></span>
+
                 </div>
+
+
+                <!-- GRID -->
 
                 <div class="kegiatan-grid">
 
                     <?php if (!empty($kegiatan)): ?>
 
-                        <?php foreach (array_slice($kegiatan, 0, 4) as $item): ?>
+
+                        <?php foreach (
+                            array_slice(
+                                $kegiatan,
+                                0,
+                                4
+                            ) as $item
+                        ): ?>
+
 
                             <a
-                                href="<?= base_url('kegiatan/' . $item['id']) ?>"
+                                href="<?= base_url(
+                                    'kegiatan/' .
+                                    $item['id']
+                                ) ?>"
                                 class="kegiatan-item"
                             >
 
+
                                 <img
-                                    src="<?= base_url('uploads/kegiatan/' . $item['gambar']) ?>"
-                                    alt="<?= esc($item['tahun']) ?>"
+                                    src="<?= base_url(
+                                        'uploads/kegiatan/' .
+                                        $item['gambar']
+                                    ) ?>"
+                                    alt="<?= esc(
+                                        $item['tahun']
+                                    ) ?>"
                                 >
 
+
                                 <div class="kegiatan-tahun">
-                                    <?= esc($item['tahun']) ?>
+
+                                    <?= esc(
+                                        $item['tahun']
+                                    ) ?>
+
                                 </div>
+
 
                             </a>
 
+
                         <?php endforeach; ?>
+
 
                     <?php else: ?>
 
+
+                        <!-- DEFAULT 2026 -->
+
                         <div class="kegiatan-item">
+
                             <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
+                                src="<?= base_url(
+                                    'assets/images/kegiatan.jpg'
+                                ) ?>"
                                 alt="2026"
                             >
 
                             <div class="kegiatan-tahun">
                                 2026
                             </div>
+
                         </div>
 
+
+                        <!-- DEFAULT 2025 -->
+
                         <div class="kegiatan-item">
+
                             <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
+                                src="<?= base_url(
+                                    'assets/images/kegiatan.jpg'
+                                ) ?>"
                                 alt="2025"
                             >
 
                             <div class="kegiatan-tahun">
                                 2025
                             </div>
+
                         </div>
 
+
+                        <!-- DEFAULT 2024 -->
+
                         <div class="kegiatan-item">
+
                             <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
+                                src="<?= base_url(
+                                    'assets/images/kegiatan.jpg'
+                                ) ?>"
                                 alt="2024"
                             >
 
                             <div class="kegiatan-tahun">
                                 2024
                             </div>
+
                         </div>
 
+
+                        <!-- DEFAULT 2023 -->
+
                         <div class="kegiatan-item">
+
                             <img
-                                src="<?= base_url('assets/images/kegiatan.jpg') ?>"
+                                src="<?= base_url(
+                                    'assets/images/kegiatan.jpg'
+                                ) ?>"
                                 alt="2023"
                             >
 
                             <div class="kegiatan-tahun">
                                 2023
                             </div>
+
                         </div>
+
 
                     <?php endif; ?>
 
                 </div>
+
+
+                <!-- TOMBOL -->
 
                 <div class="informasi-button">
 
@@ -720,11 +859,15 @@
                         href="<?= base_url('kegiatan') ?>"
                         class="btn-informasi"
                     >
+
                         Lihat Semua
+
                         <i class="bi bi-arrow-right"></i>
+
                     </a>
 
                 </div>
+
 
             </div>
 
@@ -735,56 +878,109 @@
 
             <div class="informasi-box postingan-box">
 
+
+                <!-- JUDUL -->
+
                 <div class="informasi-title">
-                    <h2>Postingan Terbaru</h2>
+
+                    <h2>
+                        Postingan Terbaru
+                    </h2>
+
                     <span></span>
+
                 </div>
+
+
+                <!-- GRID -->
 
                 <div class="postingan-grid">
 
+
                     <?php if (!empty($instagram)): ?>
 
-                        <?php foreach (array_slice($instagram, 0, 2) as $post): ?>
+
+                        <?php foreach (
+                            array_slice(
+                                $instagram,
+                                0,
+                                2
+                            ) as $post
+                        ): ?>
+
 
                             <a
-                                href="<?= esc($post['permalink']) ?>"
+                                href="<?= esc(
+                                    $post['permalink']
+                                ) ?>"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="postingan-item"
                             >
 
+
                                 <img
                                     src="<?= esc(
-                                        !empty($post['thumbnail_url'])
-                                            ? $post['thumbnail_url']
-                                            : $post['media_url']
+                                        !empty(
+                                            $post[
+                                                'thumbnail_url'
+                                            ]
+                                        )
+                                            ? $post[
+                                                'thumbnail_url'
+                                            ]
+                                            : $post[
+                                                'media_url'
+                                            ]
                                     ) ?>"
                                     alt="Postingan Instagram"
                                 >
 
+
                             </a>
+
 
                         <?php endforeach; ?>
 
+
                     <?php else: ?>
 
-                        <div class="postingan-item">
-                            <img
-                                src="<?= base_url('assets/images/postingan.jpg') ?>"
-                                alt="Postingan Instagram"
-                            >
-                        </div>
+
+                        <!-- DEFAULT POST 1 -->
 
                         <div class="postingan-item">
+
                             <img
-                                src="<?= base_url('assets/images/postingan.jpg') ?>"
+                                src="<?= base_url(
+                                    'assets/images/postingan.jpg'
+                                ) ?>"
                                 alt="Postingan Instagram"
                             >
+
                         </div>
+
+
+                        <!-- DEFAULT POST 2 -->
+
+                        <div class="postingan-item">
+
+                            <img
+                                src="<?= base_url(
+                                    'assets/images/postingan.jpg'
+                                ) ?>"
+                                alt="Postingan Instagram"
+                            >
+
+                        </div>
+
 
                     <?php endif; ?>
 
+
                 </div>
+
+
+                <!-- TOMBOL -->
 
                 <div class="informasi-button">
 
@@ -792,18 +988,25 @@
                         href="<?= base_url('instagram') ?>"
                         class="btn-informasi"
                     >
+
                         Lihat Semua
+
                         <i class="bi bi-arrow-right"></i>
+
                     </a>
 
                 </div>
 
+
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
+
 
 <?= $this->include('layout/footer') ?>

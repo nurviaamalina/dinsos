@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use App\Models\BeritaModel;
 use App\Models\ProfilAnggotaModel;
-
+use App\Models\BidangModel;
 class Home extends BaseController
 {
       protected $beritaModel;
@@ -26,12 +26,15 @@ class Home extends BaseController
         $anggota = $this->anggotaModel
             ->orderBy('id', 'ASC')
             ->findAll();
-
-
+        $bidangModel = new BidangModel();
+    
         $data = [
 
             'berita' => $berita,
             'anggota' => $anggota,
+             'bidang' => $bidangModel
+                ->where('status', 'Aktif')
+                ->findAll()
         ];
 
         return view('home', $data);

@@ -18,7 +18,7 @@ $routes->get('profil', 'Profil::index');
 // BIDANG
 // =====================================================
 
-$routes->get('bidang', 'Bidang::index');
+$routes->get('bidang/(:segment)', 'Bidang::detail/$1');
 
 /* ROUTE ADMINN */
 $routes->group('admin', function ($routes) {
