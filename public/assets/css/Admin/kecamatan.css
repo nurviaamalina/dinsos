@@ -1,0 +1,561 @@
+/* =========================================================
+   DATA KECAMATAN
+========================================================= */
+
+.kecamatan-header {
+    margin-bottom: 28px;
+}
+
+.kecamatan-header h2 {
+    margin: 0 0 7px;
+
+    color: #650019;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+.kecamatan-header p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+========================================================= */
+
+.kecamatan-content {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 280px;
+
+    gap: 18px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.kecamatan-table-card {
+    background: #fff;
+
+    border: 1px solid #dedede;
+
+    border-radius: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.kecamatan-search-wrapper {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.kecamatan-search {
+    width: 280px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #9d5263;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.kecamatan-search input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 0 12px;
+
+    font-size: 10px;
+
+    color: #555;
+}
+
+.kecamatan-search button {
+    width: 35px;
+
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #650019;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.kecamatan-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.kecamatan-table thead th {
+    padding: 10px 10px;
+
+    background: #dedede;
+
+    color: #333;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-align: left;
+}
+
+.kecamatan-table tbody td {
+    padding: 16px 10px;
+
+    border-bottom: 1px solid #ead1d6;
+
+    color: #444;
+
+    font-size: 10px;
+
+    vertical-align: middle;
+}
+
+.kecamatan-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.kecamatan-table tbody tr:hover {
+    background: #fffafb;
+}
+
+
+/* =========================================================
+   NAMA
+========================================================= */
+
+.nama-kecamatan {
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-aktif,
+.status-nonaktif {
+    display: inline-block;
+
+    min-width: 48px;
+
+    padding: 3px 8px;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    font-size: 8px;
+}
+
+.status-aktif {
+    background: #e8f7eb;
+
+    border: 1px solid #b6dfbd;
+
+    color: #43894d;
+}
+
+.status-nonaktif {
+    background: #f8e7e7;
+
+    border: 1px solid #dfbaba;
+
+    color: #a23b3b;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.kecamatan-actions {
+    display: flex;
+
+    gap: 5px;
+}
+
+.btn-edit-kecamatan,
+.btn-delete-kecamatan {
+    width: 24px;
+
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 5px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+}
+
+.btn-edit-kecamatan {
+    background: #f4b62e;
+}
+
+.btn-delete-kecamatan {
+    background: #df3e50;
+}
+
+.btn-edit-kecamatan:hover,
+.btn-delete-kecamatan:hover {
+    color: #fff;
+
+    opacity: .85;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.kecamatan-empty {
+    padding: 40px 10px !important;
+
+    text-align: center;
+
+    color: #aaa !important;
+}
+
+.kecamatan-empty i {
+    font-size: 25px;
+}
+
+.kecamatan-empty p {
+    margin: 6px 0 0;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.kecamatan-pagination {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding: 10px;
+}
+
+.kecamatan-pagination .pagination {
+    margin: 0;
+}
+
+.kecamatan-pagination .page-link {
+    color: #650019;
+
+    font-size: 9px;
+}
+
+.kecamatan-pagination .active .page-link {
+    background: #650019;
+
+    border-color: #650019;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.kecamatan-form-card {
+    padding: 18px;
+
+    background: #fff;
+
+    border: 1px solid #dedede;
+
+    min-height: 230px;
+}
+
+.kecamatan-form-card h3 {
+    margin: 0 0 25px;
+
+    color: #650019;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.kecamatan-form-group {
+    margin-bottom: 18px;
+}
+
+.kecamatan-form-group > label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #650019;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.kecamatan-form-group input[type="text"] {
+    width: 100%;
+
+    height: 32px;
+
+    padding: 0 9px;
+
+    border: 1px solid #9b5968;
+
+    border-radius: 4px;
+
+    outline: none;
+
+    font-size: 10px;
+}
+
+.kecamatan-form-group input[type="text"]:focus {
+    border-color: #650019;
+}
+
+
+/* =========================================================
+   RADIO
+========================================================= */
+
+.kecamatan-radio {
+    display: flex;
+
+    gap: 18px;
+}
+
+.kecamatan-radio label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 9px;
+}
+
+.kecamatan-radio input {
+    accent-color: #650019;
+}
+
+
+/* =========================================================
+   FORM ACTION
+========================================================= */
+
+.kecamatan-form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    margin-top: 24px;
+}
+
+.btn-batal-kecamatan,
+.btn-simpan-kecamatan {
+    height: 27px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 0 12px;
+
+    border-radius: 4px;
+
+    font-size: 9px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.btn-batal-kecamatan {
+    background: #fff;
+
+    border: 1px solid #aaa;
+
+    color: #555;
+}
+
+.btn-simpan-kecamatan {
+    border: none;
+
+    background: #650019;
+
+    color: #fff;
+}
+
+.btn-batal-kecamatan:hover {
+    background: #f5f5f5;
+
+    color: #444;
+}
+
+.btn-simpan-kecamatan:hover {
+    background: #820022;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.kecamatan-alert-success {
+    margin: 10px 12px;
+
+    padding: 8px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    background: #e8f7eb;
+
+    border: 1px solid #b6dfbd;
+
+    border-radius: 4px;
+
+    color: #43894d;
+
+    font-size: 9px;
+}
+
+.kecamatan-alert-error {
+    margin-bottom: 20px;
+
+    padding: 12px;
+
+    background: #fbe9e9;
+
+    border: 1px solid #e0b9b9;
+
+    border-radius: 5px;
+
+    color: #963b3b;
+
+    font-size: 11px;
+}
+
+.kecamatan-alert-error ul {
+    margin: 7px 0 0 20px;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   FULL FORM
+========================================================= */
+
+.kecamatan-form-card-full {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 25px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .kecamatan-content {
+        grid-template-columns: 1fr;
+    }
+
+    .kecamatan-form-card {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .kecamatan-search {
+        width: 100%;
+    }
+
+    .kecamatan-table {
+        min-width: 600px;
+    }
+
+}

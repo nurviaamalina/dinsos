@@ -3,7 +3,11 @@
 namespace App\Controllers;
 use App\Models\BeritaModel;
 use App\Models\ProfilAnggotaModel;
+
 use App\Models\BidangModel;
+
+use App\Models\KegiatanModel;
+
 class Home extends BaseController
 {
       protected $beritaModel;
@@ -13,6 +17,7 @@ class Home extends BaseController
     {
         $this->beritaModel = new BeritaModel();
         $this->anggotaModel = new ProfilAnggotaModel();
+        $this->kegiatanModel = new KegiatanModel();
     } 
     public function index()
     {
@@ -26,18 +31,57 @@ class Home extends BaseController
         $anggota = $this->anggotaModel
             ->orderBy('id', 'ASC')
             ->findAll();
+
         $bidangModel = new BidangModel();
     
+
+
+        
+              // =====================================================
+        // TAHUN KEGIATAN
+        // =====================================================
+
+        $tahunKegiatan = $this->kegiatanModel
+            ->select('tahun')
+            ->distinct()
+            ->where('tahun IS NOT NULL')
+            ->orderBy('tahun', 'DESC')
+            ->findAll();
+
+
+        // =====================================================
+        // AMBIL THUMBNAIL SETIAP TAHUN
+        // =====================================================
+
+        foreach ($tahunKegiatan as &$item) {
+
+            $kegiatan = $this->kegiatanModel
+                ->where('tahun', $item['tahun'])
+                ->orderBy('tanggal', 'DESC')
+                ->first();
+
+
+            $item['thumbnail'] =
+                $kegiatan['thumbnail'] ?? null;
+        }
+
+        unset($item);
+
+
         $data = [
 
             'berita' => $berita,
             'anggota' => $anggota,
+
              'bidang' => $bidangModel
                 ->where('status', 'Aktif')
-                ->findAll()
+                     ->findAll(),
+
+            'tahunKegiatan' => $tahunKegiatan,
         ];
 
         return view('home', $data);
     }
+    
 
 }
