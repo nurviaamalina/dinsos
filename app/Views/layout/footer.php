@@ -171,11 +171,6 @@
                 © <?= date('Y') ?> Dinas Sosial Kabupaten Banyuwangi.
                 Seluruh hak dilindungi.
             </p>
-
-            <p class="footer-mockup">
-                Mockup desain — bukan situs resmi
-            </p>
-
         </div>
 
     </div>
