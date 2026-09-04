@@ -30,14 +30,25 @@
         <?php endif; ?>
 
         <div class="form-container" style="max-width: 100%;">
-            <form action="<?= base_url('admin/layanan/update/' . $layanan['id']) ?>" method="POST" enctype="multipart/form-data" id="formLayanan">
-                <?= csrf_field() ?>
+            <form
+    action="<?= base_url('admin/layanan/update/' . $layanan['id']) ?>"
+    method="POST"
+    enctype="multipart/form-data"
+    id="formLayanan"
+>
+    <?= csrf_field() ?>
                 
                 <div class="form-grid">
                     <!-- Nama Layanan -->
                     <div class="form-group">
                         <label>Nama Layanan</label>
-                        <input type="text" name="nama_layanan" class="form-control" value="<?= old('nama_layanan') ?>" required>
+                        <input
+    type="text"
+    name="nama_layanan"
+    class="form-control"
+    value="<?= old('nama_layanan', $layanan['nama_layanan']) ?>"
+    required
+>
                     </div>
 
                     <!-- Bidang -->
@@ -58,14 +69,18 @@
                         <label>Deskripsi Layanan</label>
                         <!-- Input hidden untuk menyimpan HTML dari Quill -->
                         <input type="hidden" name="deskripsi_layanan" id="deskripsi_layanan">
-                        <div id="editor-deskripsi" style="min-height: 150px;"><?= old('deskripsi_layanan') ?></div>
+                        <div id="editor-deskripsi" style="min-height: 150px;">
+    <?= old('deskripsi_layanan', $layanan['deskripsi_layanan'] ?? '') ?>
+</div>
                     </div>
 
                     <!-- Standar Layanan (Editor) -->
                     <div class="form-group">
                         <label>Standar Layanan</label>
                         <input type="hidden" name="standar_layanan" id="standar_layanan">
-                        <div id="editor-standar" style="min-height: 150px;"><?= old('standar_layanan') ?></div>
+                       <div id="editor-standar" style="min-height: 150px;">
+    <?= old('standar_layanan', $layanan['standar_layanan'] ?? '') ?>
+</div>
                     </div>
 
                     <!-- Prosedur Pelayanan (Editor) -->
@@ -73,7 +88,9 @@
                         <label>Prosedur Pelayanan</label>
                         <!-- Input hidden untuk menyimpan HTML dari Quill -->
                         <input type="hidden" name="prosedur_layanan" id="prosedur_layanan">
-                        <div id="editor-prosedur" style="min-height: 200px;"><?= old('prosedur_layanan') ?></div>
+                       <div id="editor-prosedur" style="min-height: 200px;">
+    <?= old('prosedur_layanan', $layanan['prosedur_layanan'] ?? '') ?>
+</div>
                     </div>
                    
 

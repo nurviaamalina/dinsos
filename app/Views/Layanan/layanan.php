@@ -205,15 +205,15 @@
 
     <div class="back-wrapper">
 
-        <a
-            href="javascript:history.back()"
-            class="btn-back"
-        >
-            <i class="bi bi-arrow-left"></i>
-            <span>Kembali</span>
-        </a>
+    <a
+        href="<?= base_url('/') ?>"
+        class="btn-back"
+    >
+        <i class="bi bi-arrow-left"></i>
+        <span>Kembali</span>
+    </a>
 
-    </div>
+</div>
 
 </main>
 

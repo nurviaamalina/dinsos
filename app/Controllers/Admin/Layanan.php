@@ -87,51 +87,88 @@ class Layanan extends BaseController
     }
 
     public function update($id)
-    {
-        // Validasi input
-        if (!$this->validate([
-            'nama_layanan' => 'required',
-            'bidang' => 'required',
-            'deskripsi_layanan' => 'permit_empty',
-        ])) {
-            return redirect()->to('/admin/layanan/edit/' . $id)->withInput()->with('errors', $this->validator->getErrors());
-        }
+{
+    // Cari data lama
+    $layananLama = $this->layananModel->find($id);
 
-        // 1. TENTUKAN STATUS BERDASARKAN TOMBOL YANG DITEKAN
-        $status = $this->request->getPost('draft') ? 'Nonaktif' : 'Aktif';
-
-        $data = [
-            'nama_layanan'      => $this->request->getPost('nama_layanan'),
-            'bidang'            => $this->request->getPost('bidang'),
-            'deskripsi_layanan' => $this->request->getPost('deskripsi_layanan'),
-            'standar_layanan'   => $this->request->getPost('standar_layanan'),
-            'prosedur_layanan'  => $this->request->getPost('prosedur_layanan'),
-            'status_layanan'    => $status, // <-- INI YANG BENAR!
-        ];
-
-        // 2. Upload Dokumen Baru (Jika ada file yang di-upload)
-        $fileDokumen = $this->request->getFile('dokumen');
-        if ($fileDokumen && $fileDokumen->isValid() && !$fileDokumen->hasMoved()) {
-            $layananLama = $this->layananModel->find($id);
-            $uploadPathDokumen = FCPATH . 'uploads/dokumen';
-            
-            if ($layananLama['dokumen'] && file_exists($uploadPathDokumen . '/' . $layananLama['dokumen'])) {
-                unlink($uploadPathDokumen . '/' . $layananLama['dokumen']);
-            }
-
-            if (!is_dir($uploadPathDokumen)) {
-                mkdir($uploadPathDokumen, 0777, true);
-            }
-            $namaDokumen = $fileDokumen->getRandomName();
-            $fileDokumen->move($uploadPathDokumen, $namaDokumen);
-            
-            $data['dokumen'] = $namaDokumen;
-        }
-
-        $this->layananModel->update($id, $data);
-
-        return redirect()->to('/admin/layanan')->with('success', 'Data Layanan berhasil diperbarui.');
+    if (!$layananLama) {
+        return redirect()
+            ->to('/admin/layanan')
+            ->with('error', 'Data layanan tidak ditemukan.');
     }
+
+    // Validasi
+    if (!$this->validate([
+        'nama_layanan' => 'required',
+        'bidang'       => 'required',
+    ])) {
+        return redirect()
+            ->to('/admin/layanan/edit/' . $id)
+            ->withInput()
+            ->with('errors', $this->validator->getErrors());
+    }
+
+    // Status
+    $status = $this->request->getPost('draft')
+        ? 'Nonaktif'
+        : 'Aktif';
+
+    // Data yang akan di-update
+    $data = [
+        'nama_layanan'      => $this->request->getPost('nama_layanan'),
+        'bidang'            => $this->request->getPost('bidang'),
+        'deskripsi_layanan' => $this->request->getPost('deskripsi_layanan'),
+        'standar_layanan'   => $this->request->getPost('standar_layanan'),
+        'prosedur_layanan'  => $this->request->getPost('prosedur_layanan'),
+        'status_layanan'    => $status,
+    ];
+
+    // =========================
+    // UPLOAD DOKUMEN BARU
+    // =========================
+
+    $fileDokumen = $this->request->getFile('dokumen');
+
+    if (
+        $fileDokumen &&
+        $fileDokumen->isValid() &&
+        !$fileDokumen->hasMoved()
+    ) {
+        $uploadPath = FCPATH . 'uploads/dokumen';
+
+        if (!is_dir($uploadPath)) {
+            mkdir($uploadPath, 0777, true);
+        }
+
+        // Hapus dokumen lama
+        if (
+            !empty($layananLama['dokumen']) &&
+            file_exists($uploadPath . '/' . $layananLama['dokumen'])
+        ) {
+            unlink($uploadPath . '/' . $layananLama['dokumen']);
+        }
+
+        // Upload baru
+        $namaDokumen = $fileDokumen->getRandomName();
+
+        $fileDokumen->move(
+            $uploadPath,
+            $namaDokumen
+        );
+
+        $data['dokumen'] = $namaDokumen;
+    }
+
+    // =========================
+    // UPDATE DATA
+    // =========================
+
+    $this->layananModel->update($id, $data);
+
+    return redirect()
+        ->to('/admin/layanan')
+        ->with('success', 'Data Layanan berhasil diperbarui.');
+}
 
     public function delete($id)
     {
@@ -163,4 +200,26 @@ class Layanan extends BaseController
 
     return redirect()->to('/admin/layanan')->with('error', 'Data layanan tidak ditemukan.');
 }
+
+   public function edit($id)
+{
+    $layanan = $this->layananModel->find($id);
+
+    if (!$layanan) {
+        return redirect()->to('/admin/layanan')
+            ->with('error', 'Data layanan tidak ditemukan.');
+    }
+
+    $data = [
+        'title'       => 'Edit Layanan',
+        'layanan'     => $layanan,
+        'bidang_list' => $this->bidangModel
+            ->where('status', 'aktif')
+            ->findAll(),
+    ];
+
+    return view('admin/layanan/edit', $data);
+}
+
+    
 }

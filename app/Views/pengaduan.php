@@ -22,7 +22,7 @@
                 yang berlaku.
             </p>
 
-            <a href="https://span.lapor.go.id/" class="btn-lapor">
+            <a href="https://www.lapor.go.id/" class="btn-lapor">
                 LAPOR
             </a>
 
