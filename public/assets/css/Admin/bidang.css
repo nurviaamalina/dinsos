@@ -1,0 +1,587 @@
+/* =========================================================
+   DATA BIDANG - ADMIN
+========================================================= */
+
+.bidang-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.bidang-page-header h2 {
+    margin: 0 0 6px;
+
+    color: #650019;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.bidang-page-header p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BUTTON TAMBAH
+========================================================= */
+
+.btn-bidang-tambah {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    background: #650019;
+    color: #fff;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.btn-bidang-tambah:hover {
+    background: #820022;
+    color: #fff;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.bidang-card {
+    background: #fff;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.bidang-card-header {
+    padding: 15px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.bidang-search {
+    width: 300px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #c8c8c8;
+
+    border-radius: 20px;
+
+    background: #fff;
+
+    overflow: hidden;
+}
+
+.bidang-search i {
+    margin-left: 12px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.bidang-search input {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 0 10px;
+
+    color: #444;
+
+    font-size: 11px;
+}
+
+.bidang-search:focus-within {
+    border-color: #650019;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.bidang-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.bidang-table thead th {
+    padding: 13px 15px;
+
+    background: #eeeeee;
+
+    color: #333;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.bidang-table tbody td {
+    padding: 14px 15px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    color: #555;
+
+    font-size: 11px;
+
+    vertical-align: middle;
+}
+
+.bidang-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.bidang-table tbody tr:hover {
+    background: #fffafa;
+}
+
+
+/* =========================================================
+   NAMA BIDANG
+========================================================= */
+
+.nama-bidang {
+    color: #444;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-bidang {
+    display: inline-block;
+
+    min-width: 60px;
+
+    padding: 5px 9px;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.status-bidang.aktif {
+    background: #e7f6ea;
+
+    border: 1px solid #b6dfbd;
+
+    color: #388447;
+}
+
+.status-bidang.tidak-aktif {
+    background: #f8e7e7;
+
+    border: 1px solid #e1bcbc;
+
+    color: #a33d3d;
+}
+
+
+/* =========================================================
+   AKSI
+========================================================= */
+
+.bidang-aksi {
+    display: flex;
+
+    gap: 6px;
+}
+
+.aksi-edit,
+.aksi-delete {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .2s;
+}
+
+.aksi-edit {
+    background: #e9ae28;
+}
+
+.aksi-delete {
+    background: #d84353;
+}
+
+.aksi-edit:hover,
+.aksi-delete:hover {
+    color: #fff;
+
+    opacity: .85;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.bidang-empty {
+    padding: 45px 20px !important;
+
+    text-align: center;
+
+    color: #999 !important;
+}
+
+.bidang-empty i {
+    font-size: 28px;
+}
+
+.bidang-empty p {
+    margin: 8px 0 0;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.bidang-pagination {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 15px;
+
+    border-top: 1px solid #eee;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.bidang-alert-success,
+.bidang-alert-error {
+    padding: 12px 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+}
+
+.bidang-alert-success {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #e8f7eb;
+
+    border: 1px solid #b8dfbe;
+
+    color: #397642;
+}
+
+.bidang-alert-error {
+    background: #fbe9e9;
+
+    border: 1px solid #e4b8b8;
+
+    color: #963a3a;
+}
+
+.error-title {
+    font-weight: 600;
+}
+
+.bidang-alert-error ul {
+    margin: 8px 0 0 25px;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.bidang-form-card {
+    width: 100%;
+    max-width: 720px;
+
+    padding: 25px;
+
+    background: #fff;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.bidang-form-group {
+    margin-bottom: 22px;
+}
+
+.bidang-form-group > label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #650019;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.bidang-form-group > label span {
+    color: #d84353;
+}
+
+.bidang-form-group input[type="text"] {
+    width: 100%;
+
+    height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid #c8c8c8;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    color: #444;
+
+    font-size: 12px;
+
+    transition: .2s;
+}
+
+.bidang-form-group input[type="text"]:focus {
+    border-color: #650019;
+
+    box-shadow:
+        0 0 0 2px rgba(101, 0, 25, .08);
+}
+
+.bidang-form-group small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RADIO
+========================================================= */
+
+.bidang-radio-group {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.bidang-radio-group label {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 12px;
+
+    font-weight: 400;
+}
+
+.bidang-radio-group input {
+    accent-color: #650019;
+}
+
+
+/* =========================================================
+   FORM ACTION
+========================================================= */
+
+.bidang-form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+.btn-bidang-batal,
+.btn-bidang-simpan {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 15px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.btn-bidang-batal {
+    background: #fff;
+
+    border: 1px solid #aaa;
+
+    color: #555;
+}
+
+.btn-bidang-simpan {
+    border: none;
+
+    background: #650019;
+
+    color: #fff;
+}
+
+.btn-bidang-batal:hover {
+    background: #f5f5f5;
+
+    color: #444;
+}
+
+.btn-bidang-simpan:hover {
+    background: #820022;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .bidang-page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .bidang-search {
+        width: 100%;
+    }
+
+    .bidang-form-card {
+        padding: 18px;
+    }
+
+    .bidang-radio-group {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+}
+
+.aksi-detail {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .2s;
+}
+
+.aksi-detail {
+    background: #406cb4;
+}

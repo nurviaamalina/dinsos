@@ -1,0 +1,818 @@
+/* =========================================================
+   PENGADUAN PAGE
+========================================================= */
+
+.pengaduan-page {
+    width: 100%;
+    min-height: auto;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.pengaduan-hero {
+    position: relative;
+
+    min-height: 665px;
+
+    background: linear-gradient(
+        to bottom,
+        #65091c 0,
+        #65091c 375px,
+        #ffffff 375px,
+        #ffffff 100%
+    );
+
+    padding: 145px 5.2% 0;
+}
+
+
+/* =========================================================
+   CARD PENGADUAN
+========================================================= */
+
+.pengaduan-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 1150px;
+
+    min-height: 430px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 7px 0 rgba(0, 0, 0, 0.20),
+        0 3px 15px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 60px 55px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   JUDUL
+========================================================= */
+
+.pengaduan-card h1 {
+    margin: 0 0 18px;
+
+    color: #050505;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 40px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   DESKRIPSI
+========================================================= */
+
+.pengaduan-description {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    color: #292929;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   BUTTON LAPOR
+========================================================= */
+
+.btn-lapor {
+    width: 375px;
+    height: 75px;
+
+    margin-top: 35px;
+
+    border-radius: 50px;
+
+    background: #65091c;
+
+    border: 1px solid #b78b00;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 7px 18px rgba(101, 9, 28, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.btn-lapor:hover {
+    background: #7a0b22;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(101, 9, 28, 0.28);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   KETERANGAN DI BAWAH BUTTON
+========================================================= */
+
+.pengaduan-note {
+    margin: 32px 0 0;
+
+    color: #292929;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   TOMBOL KEMBALI
+========================================================= */
+
+.pengaduan-back-wrapper {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto 50px;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+.btn-kembali {
+    width: 145px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    border: 1.5px solid #65091c;
+
+    border-radius: 22px;
+
+    color: #65091c;
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.btn-kembali i {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+.btn-kembali:hover {
+    background: #65091c;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    width: 100%;
+
+    background: #65091c;
+
+    color: #ffffff;
+
+    padding: 38px 0 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+.footer-container {
+    width: 100%;
+    max-width: 1125px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.8fr
+        0.75fr
+        0.9fr
+        1fr
+        1.7fr;
+
+    gap: 40px;
+
+    align-items: start;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.footer-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: #006b78;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+
+.footer-small-title {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 1px;
+}
+
+
+.footer-main-title {
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.footer-brand p {
+    max-width: 280px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER MENU
+========================================================= */
+
+.footer-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.footer-menu h4 {
+    margin: 18px 0 4px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.footer-menu a {
+    color: rgba(255, 255, 255, 0.90);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.footer-menu a:hover {
+    color: #ffffff;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.footer-map {
+    width: 100%;
+
+    height: 180px;
+
+    overflow: hidden;
+}
+
+
+.footer-map iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1125px;
+
+    margin: 15px auto 0;
+
+    padding: 15px 0 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .pengaduan-hero {
+        min-height: 650px;
+
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+
+    .pengaduan-card {
+        max-width: 1000px;
+
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+
+    .pengaduan-card h1 {
+        font-size: 37px;
+    }
+
+
+    .pengaduan-description {
+        font-size: 17px;
+    }
+
+
+    .pengaduan-back-wrapper {
+        max-width: 1000px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr
+            1fr;
+
+        padding: 0 30px;
+
+        gap: 35px;
+    }
+
+
+    .footer-map {
+        grid-column: span 4;
+
+        height: 210px;
+    }
+
+
+    .footer-bottom {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / TABLET KECIL
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .pengaduan-hero {
+
+        min-height: 600px;
+
+        padding:
+            80px
+            20px
+            0;
+
+        background: linear-gradient(
+            to bottom,
+            #65091c 0,
+            #65091c 250px,
+            #ffffff 250px,
+            #ffffff 100%
+        );
+    }
+
+
+    /* CARD */
+
+    .pengaduan-card {
+
+        max-width: 100%;
+
+        min-height: 450px;
+
+        border-radius: 22px;
+
+        padding:
+            50px
+            25px
+            45px;
+    }
+
+
+    .pengaduan-card h1 {
+
+        font-size: 30px;
+
+        line-height: 1.2;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .pengaduan-description {
+
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+
+    /* BUTTON */
+
+    .btn-lapor {
+
+        width: 85%;
+
+        height: 68px;
+
+        margin-top: 30px;
+
+        font-size: 24px;
+    }
+
+
+    /* NOTE */
+
+    .pengaduan-note {
+
+        margin-top: 30px;
+
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    /* KEMBALI */
+
+    .pengaduan-back-wrapper {
+
+        margin:
+            0
+            20px
+            40px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+
+        padding:
+            0
+            25px;
+    }
+
+
+    .footer-brand {
+
+        grid-column: span 2;
+    }
+
+
+    .footer-menu {
+
+        grid-column: span 1;
+    }
+
+
+    .footer-map {
+
+        grid-column: span 2;
+
+        height: 200px;
+    }
+
+
+    .footer-bottom {
+
+        margin-top: 25px;
+
+        padding:
+            18px
+            25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .pengaduan-hero {
+
+        min-height: 560px;
+
+        padding-top: 60px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+
+        background: linear-gradient(
+            to bottom,
+            #65091c 0,
+            #65091c 220px,
+            #ffffff 220px,
+            #ffffff 100%
+        );
+    }
+
+
+    /* CARD */
+
+    .pengaduan-card {
+
+        min-height: 430px;
+
+        padding:
+            40px
+            20px;
+    }
+
+
+    .pengaduan-card h1 {
+
+        font-size: 27px;
+
+        line-height: 1.2;
+    }
+
+
+    .pengaduan-description {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    /* BUTTON */
+
+    .btn-lapor {
+
+        width: 100%;
+
+        height: 62px;
+
+        font-size: 22px;
+    }
+
+
+    /* NOTE */
+
+    .pengaduan-note {
+
+        font-size: 14px;
+    }
+
+
+    /* KEMBALI */
+
+    .pengaduan-back-wrapper {
+
+        margin:
+            0
+            15px
+            35px;
+    }
+
+
+    .btn-kembali {
+
+        width: 135px;
+
+        height: 36px;
+
+        font-size: 14px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding:
+            0
+            25px;
+    }
+
+
+    .footer-brand,
+    .footer-menu,
+    .footer-map {
+
+        grid-column: span 1;
+    }
+
+
+    .footer-brand p {
+
+        max-width: 100%;
+    }
+
+
+    .footer-map {
+
+        height: 190px;
+    }
+
+
+    .footer-bottom {
+
+        padding:
+            18px
+            25px;
+    }
+
+}

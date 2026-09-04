@@ -1,0 +1,620 @@
+/* =========================================================
+   LAYANAN PAGE
+========================================================= */
+
+.layanan-page {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    /* HAPUS min-height: 990px */
+    height: auto;
+    min-height: 0;
+
+    padding: 42px 70px 50px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 11px;
+
+    font-size: 16px;
+    color: #555;
+
+    margin-bottom: 32px;
+}
+
+.breadcrumb i {
+    font-size: 13px;
+    color: #222;
+}
+
+.breadcrumb span {
+    font-weight: 700;
+    color: #65091c;
+}
+
+.breadcrumb a {
+    color: #555;
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.breadcrumb a:hover {
+    color: #65091c;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading {
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    height: auto;
+}
+
+.page-heading h1 {
+    font-size: 38px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    color: #65091c;
+
+    margin: 0 0 13px;
+}
+
+.page-heading p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: #65091c;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-wrapper {
+    width: 295px;
+
+    height: 25px;
+
+    margin-bottom: 33px;
+
+    position: relative;
+}
+
+.search-wrapper input {
+    width: 100%;
+
+    height: 100%;
+
+    border: 1.5px solid #65091c;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    padding: 0 35px 0 12px;
+
+    color: #65091c;
+
+    background: #fff;
+
+    box-sizing: border-box;
+}
+
+.search-wrapper input::placeholder {
+    color: #999;
+}
+
+.search-wrapper input:focus {
+    border-color: #65091c;
+}
+
+.search-wrapper i {
+    position: absolute;
+
+    right: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #65091c;
+
+    font-size: 13px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.layanan-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 34px;
+
+    row-gap: 31px;
+
+    /* PENTING
+       Tinggi grid mengikuti card yang ada */
+    height: auto;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.layanan-card {
+    width: 100%;
+
+    min-height: 210px;
+
+    height: auto;
+
+    border: 1px solid #65091c;
+
+    border-radius: 9px;
+
+    padding: 17px 16px 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #fff;
+
+    box-sizing: border-box;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.layanan-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(101, 9, 28, .10);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.card-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    min-height: 72px;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.layanan-icon {
+    width: 64px;
+
+    height: 64px;
+
+    min-width: 64px;
+
+    background: #d7c0c5;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.layanan-icon i {
+    font-size: 39px;
+
+    color: #65091c;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.layanan-card h3 {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    color: #65091c;
+
+    padding-top: 2px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.layanan-card p {
+    font-size: 11.5px;
+
+    line-height: 1.45;
+
+    color: #65091c;
+
+    margin: 11px 0 14px;
+}
+
+
+/* =========================================================
+   DETAIL BUTTON
+========================================================= */
+
+.btn-detail {
+    width: 110px;
+
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #65091c;
+
+    color: #fff;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    margin-top: auto;
+
+    box-sizing: border-box;
+
+    transition: .2s;
+}
+
+.btn-detail i {
+    font-size: 11px;
+}
+
+.btn-detail:hover {
+    background: #4e0616;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-wrapper {
+    margin-top: 20px;
+
+    padding-left: 0;
+
+    height: auto;
+}
+
+.btn-back {
+    width: 128px;
+
+    height: 31px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    border: 1px solid #65091c;
+
+    border-radius: 20px;
+
+    color: #65091c;
+
+    background: #fff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-sizing: border-box;
+
+    transition: .2s;
+}
+
+.btn-back i {
+    font-size: 19px;
+}
+
+.btn-back:hover {
+    background: #65091c;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   JIKA TIDAK ADA DATA
+========================================================= */
+
+.empty-layanan {
+    width: 100%;
+
+    padding: 35px 20px;
+
+    border: 1px solid #d7c0c5;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    color: #65091c;
+
+    background: #fff;
+
+    box-sizing: border-box;
+}
+
+.empty-layanan p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .layanan-page {
+        max-width: 100%;
+
+        padding-left: 35px;
+
+        padding-right: 35px;
+    }
+
+    .layanan-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   TABLET KECIL
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .layanan-page {
+        padding: 35px 25px 45px;
+    }
+
+    .layanan-grid {
+        column-gap: 25px;
+
+        row-gap: 25px;
+    }
+
+    .layanan-card {
+        min-height: 205px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .layanan-page {
+        width: 100%;
+
+        padding: 30px 20px 40px;
+    }
+
+
+    /* BREADCRUMB */
+
+    .breadcrumb {
+        font-size: 15px;
+
+        gap: 8px;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* HEADING */
+
+    .page-heading {
+        margin-bottom: 23px;
+    }
+
+    .page-heading h1 {
+        font-size: 32px;
+
+        line-height: 1.15;
+    }
+
+    .page-heading p {
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+    .page-heading p br {
+        display: none;
+    }
+
+
+    /* SEARCH */
+
+    .search-wrapper {
+        width: 100%;
+
+        max-width: 295px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* GRID */
+
+    .layanan-grid {
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+
+        row-gap: 20px;
+    }
+
+
+    /* CARD */
+
+    .layanan-card {
+        min-height: 210px;
+
+        padding: 17px 16px;
+    }
+
+
+    /* BACK */
+
+    .back-wrapper {
+        margin-top: 20px;
+
+        padding-left: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE KECIL
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .layanan-page {
+        padding: 25px 15px 35px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+
+        gap: 7px;
+    }
+
+    .page-heading h1 {
+        font-size: 28px;
+    }
+
+    .page-heading p {
+        font-size: 13px;
+    }
+
+    .search-wrapper {
+        width: 100%;
+
+        max-width: none;
+    }
+
+    .layanan-card {
+        min-height: 200px;
+
+        padding: 15px;
+    }
+
+    .card-top {
+        gap: 12px;
+    }
+
+    .layanan-icon {
+        width: 55px;
+
+        height: 55px;
+
+        min-width: 55px;
+    }
+
+    .layanan-icon i {
+        font-size: 32px;
+    }
+
+    .layanan-card h3 {
+        font-size: 14px;
+    }
+
+    .layanan-card p {
+        font-size: 11px;
+    }
+
+    .btn-back {
+        width: 120px;
+    }
+}

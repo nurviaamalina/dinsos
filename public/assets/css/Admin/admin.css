@@ -28,25 +28,32 @@ body {
 /* =========================================================
    SIDEBAR
 ========================================================= */
+/* =========================================================
+   SIDEBAR
+========================================================= */
 
 .sidebar {
 
     width: 247px;
-
     min-width: 247px;
+
+    height: 100vh;
     min-height: 100vh;
-    height: auto;
 
     background: #65091c;
 
     color: white;
 
     display: flex;
-
     flex-direction: column;
 
     flex-shrink: 0;
 
+    /* Sidebar tetap di tempat */
+    position: sticky;
+    top: 0;
+
+    overflow: hidden;
 }
 
 
@@ -71,51 +78,6 @@ body {
         rgba(255, 255, 255, .25);
 
     flex-shrink: 0;
-
-}
-
-
-.sidebar-logo img {
-
-    width: 50px;
-
-    height: 62px;
-
-    object-fit: contain;
-
-    background: white;
-
-    border-radius: 8px;
-
-}
-
-
-.sidebar-logo div {
-
-    display: flex;
-
-    flex-direction: column;
-
-}
-
-
-.sidebar-logo strong {
-
-    font-size: 15px;
-
-    line-height: 1.3;
-
-}
-
-
-.sidebar-logo span {
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    line-height: 1.3;
-
 }
 
 
@@ -132,7 +94,32 @@ body {
         22px;
 
     overflow-y: auto;
+    overflow-x: hidden;
 
+    /* Sembunyikan scrollbar */
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+}
+
+/* Chrome, Edge, Safari */
+.sidebar-menu::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-logout {
+
+    padding:
+        15px
+        30px
+        20px;
+
+    flex-shrink: 0;
 }
 
 
@@ -265,6 +252,160 @@ body {
 
 }
 
+
+/* =========================================================
+   SIDEBAR DROPDOWN
+========================================================= */
+
+.sidebar-dropdown {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   DROPDOWN TOGGLE
+========================================================= */
+
+.sidebar-dropdown-toggle {
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+/* =========================================================
+   ICON CHEVRON
+========================================================= */
+
+.sidebar-dropdown-icon {
+
+    margin-left: auto;
+
+    font-size: 12px;
+
+    transition: transform .2s ease;
+
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.sidebar-dropdown-menu {
+
+    display: none;
+
+    margin: 2px 0 5px 18px;
+
+    padding: 5px;
+
+    background: #65091c;
+
+    border: 1px solid rgba(255, 255, 255, .75);
+
+    border-radius: 6px;
+
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM
+========================================================= */
+
+.sidebar-dropdown-item {
+
+    min-height: 36px;
+
+    padding: 8px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM ICON
+========================================================= */
+
+.sidebar-dropdown-item i {
+
+    width: 16px;
+
+    min-width: 16px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.sidebar-dropdown-item:hover {
+
+    background: rgba(255, 255, 255, .10);
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   ACTIVE SUB MENU
+========================================================= */
+
+.sidebar-dropdown-item.active {
+
+    background: #c98236;
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   TAMPILKAN DROPDOWN
+========================================================= */
+
+.sidebar-dropdown:hover .sidebar-dropdown-menu {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   CHEVRON SAAT HOVER
+========================================================= */
+
+.sidebar-dropdown:hover
+.sidebar-dropdown-icon {
+
+    transform: rotate(180deg);
+
+}
 
 /* =========================================================
    CONTENT
