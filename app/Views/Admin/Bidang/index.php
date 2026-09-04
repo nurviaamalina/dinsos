@@ -224,6 +224,14 @@
 
                                             </a>
 
+                                            <a 
+    href="<?= base_url('admin/bidang/detail/' . $item['id']) ?>" 
+    class="aksi-detail" 
+    title="Detail"
+>
+    <i class="bi bi-eye"></i>
+</a>
+
                                         </div>
 
                                     </td>

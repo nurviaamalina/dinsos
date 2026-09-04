@@ -54,7 +54,38 @@ $routes->group('admin', function ($routes) {
     $routes->get('bidang/edit/(:num)','Admin\Bidang::edit/$1' );
      $routes->post('bidang/update/(:num)', 'Admin\Bidang::update/$1');
      $routes->get('bidang/delete/(:num)', 'Admin\Bidang::delete/$1');
+      $routes->get('bidang/detail/(:num)', 'Admin\Bidang::detail/$1');
 
+       // Detail Bidang
+    $routes->get(
+        'bidang/detail/(:num)',
+        'Admin\BidangDetail::index/$1'
+    );
+
+    $routes->get(
+        'bidang/detail/(:num)/create',
+        'Admin\BidangDetail::create/$1'
+    );
+
+    $routes->post(
+        'bidang/detail/(:num)/store',
+        'Admin\BidangDetail::store/$1'
+    );
+
+    $routes->get(
+        'bidang/detail/edit/(:num)',
+        'Admin\BidangDetail::edit/$1'
+    );
+
+    $routes->post(
+        'bidang/detail/update/(:num)',
+        'Admin\BidangDetail::update/$1'
+    );
+
+    $routes->get(
+        'bidang/detail/delete/(:num)',
+        'Admin\BidangDetail::delete/$1'
+    );
  /*
     |--------------------------------------------------------------------------
     | DATA MASTER KECAMATAN

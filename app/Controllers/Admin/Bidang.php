@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\BidangModel;
+use App\Models\BidangDetailModel;
 
 class Bidang extends BaseController
 {
@@ -268,4 +269,32 @@ class Bidang extends BaseController
                 'Data bidang berhasil dihapus.'
             );
     }
+
+    public function detail($id)
+{
+    $bidangModel = new BidangModel();
+    $detailModel = new BidangDetailModel();
+
+    // Ambil bidang berdasarkan ID
+    $bidang = $bidangModel->find($id);
+
+    if (!$bidang) {
+        return redirect()->to('/admin/bidang')
+            ->with('error', 'Data bidang tidak ditemukan.');
+    }
+
+    // Ambil detail berdasarkan id_bidang
+    $detail = $detailModel
+        ->where('id_bidang', $id)
+        ->first();
+
+    $data = [
+        'title'  => 'Detail Bidang',
+        'bidang' => $bidang,
+        'detail' => $detail,
+    ];
+
+    return view('Admin/Bidang/detail', $data);
 }
+}
+
