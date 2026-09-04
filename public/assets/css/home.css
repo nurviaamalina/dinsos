@@ -1458,23 +1458,20 @@ body {
 /* =========================================================
    AKSES CEPAT
 ========================================================= */
-
 .akses-cepat {
     position: absolute;
-
     z-index: 5;
 
     left: 8%;
     right: 8%;
 
-    /* NAIKKAN CARD */
     bottom: 35px;
 
     background: #ffffff;
 
-    padding: 12px 20px 16px;
+    padding: 20px 28px 24px;
 
-    border-radius: 3px;
+    border-radius: 5px;
 
     box-sizing: border-box;
 
@@ -1483,20 +1480,21 @@ body {
 }
 
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .akses-header {
     display: flex;
-
     align-items: center;
 
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 .akses-header span {
     color: #650019;
 
-    font-size: 7px;
+    font-size: 13px;
 
     font-weight: 800;
 }
@@ -1510,23 +1508,26 @@ body {
 
     background: #d8aeb8;
 
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 
-/* MENU */
+/* =========================================================
+   MENU
+========================================================= */
 
 .akses-menu {
     display: grid;
 
-    grid-template-columns:
-        repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 
     width: 100%;
 }
 
 
-/* ITEM */
+/* =========================================================
+   ITEM
+========================================================= */
 
 .akses-item {
     display: flex;
@@ -1539,15 +1540,17 @@ body {
 
     text-decoration: none;
 
-    padding: 0 6px;
+    padding: 0 10px;
 }
 
 
-/* ICON */
+/* =========================================================
+   ICON
+========================================================= */
 
 .akses-icon {
-    width: 34px;
-    height: 34px;
+    width: 52px;
+    height: 52px;
 
     display: flex;
 
@@ -1556,17 +1559,19 @@ body {
 
     border-radius: 50%;
 
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 }
 
 .akses-icon i {
     color: #650019;
 
-    font-size: 15px;
+    font-size: 23px;
 }
 
 
-/* WARNA */
+/* =========================================================
+   WARNA ICON
+========================================================= */
 
 .icon-pink {
     background: #f0d9df;
@@ -1593,10 +1598,12 @@ body {
 }
 
 
-/* NAMA */
+/* =========================================================
+   NAMA
+========================================================= */
 
 .akses-name {
-    min-height: 15px;
+    min-height: 22px;
 
     display: flex;
 
@@ -1605,39 +1612,44 @@ body {
 
     color: #650019;
 
-    font-size: 6px;
+    font-size: 10px;
 
     font-weight: 700;
 
-    line-height: 1.2;
+    line-height: 1.3;
 
     white-space: nowrap;
 }
 
 
-/* GARIS */
+/* =========================================================
+   GARIS
+========================================================= */
 
 .akses-line {
-    width: 40px;
+    width: 55px;
 
     height: 1px;
 
     background: #d8aeb8;
 
-    margin: 3px 0;
+    margin: 6px 0;
 }
 
 
-/* DESKRIPSI */
+/* =========================================================
+   DESKRIPSI
+========================================================= */
 
 .akses-description {
     color: #8c6870;
 
-    font-size: 4.5px;
+    font-size: 8px;
+
+    line-height: 1.3;
 
     white-space: nowrap;
 }
-
 
 /* =====================================================
    KEGIATAN
