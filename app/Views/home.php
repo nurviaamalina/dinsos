@@ -134,6 +134,12 @@
                     Dokumen publik
                 </div>
 
+                <div class="akses-line"></div>
+
+                <div class="akses-description">
+                    Dokumen resmi
+                </div>
+
             </a>
 
 
