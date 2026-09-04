@@ -125,7 +125,7 @@
 
             <a
                 href="<?= base_url('dokumen') ?>"
-                class="nav-link"
+                class="nav-link active"
             >
                 Dokumen
             </a>

@@ -1,0 +1,950 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f6f8;
+
+    color: #111;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.admin-container {
+    min-height: calc(100vh - 60px);
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+
+    margin-left: 247px;
+
+    min-height: calc(100vh - 60px);
+
+    background: #f5f6f8;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+/* =====================================================
+   HEADER BUTTONS
+===================================================== */
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =====================================================
+   TAMBAH KATEGORI
+===================================================== */
+
+.btn-category {
+    background: #ffffff;
+    color: #650918;
+    border: 1px solid #650918;
+}
+
+
+.btn-category:hover {
+    background: #650918;
+    color: #ffffff;
+}
+
+
+/* ICON */
+
+.btn-category i {
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   BUTTON TAMBAH
+===================================================== */
+
+.btn-add {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    background: #650918;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-top: 4px;
+
+    transition: .2s;
+
+}
+
+
+.btn-add:hover {
+
+    background: #4f0613;
+
+    color: #fff;
+
+}
+
+
+.btn-add i {
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-container {
+
+    padding: 0 48px 16px;
+
+    background: #f5f6f8;
+
+}
+
+
+.search-box {
+
+    width: 277px;
+
+    height: 25px;
+
+    border: 1px solid #70091b;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    padding: 0 10px;
+
+}
+
+
+.search-box button {
+
+    width: 40px;
+
+    height: 100%;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #650918;
+
+    font-size: 17px;
+
+}
+
+
+/* =====================================================
+   TABS
+===================================================== */
+
+.document-tabs {
+
+    height: 39px;
+
+    background: #fff;
+
+    border-top: 1px solid #ddd;
+
+    border-bottom: 1px solid #ddd;
+
+    padding-left: 48px;
+
+    display: flex;
+
+    gap: 32px;
+
+}
+
+
+.document-tabs a {
+
+    height: 39px;
+
+    padding: 11px 14px 8px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 13px;
+
+    position: relative;
+
+}
+
+
+.document-tabs a.active {
+
+    color: #70091b;
+
+}
+
+
+.document-tabs a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background: #70091b;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container {
+
+    width: 100%;
+
+    background: #fff;
+
+    overflow-x: auto;
+
+}
+
+
+.dokumen-table,
+.table-container table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.table-container thead {
+
+    background: #dedede;
+
+}
+
+
+.table-container th {
+
+    height: 37px;
+
+    padding: 0 12px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.table-container td {
+
+    height: 91px;
+
+    padding: 0 12px;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 13px;
+
+}
+
+
+.table-container th:first-child,
+.table-container td:first-child {
+
+    padding-left: 59px;
+
+    width: 70px;
+
+}
+
+
+.table-container th:nth-child(2) {
+
+    width: 30%;
+
+}
+
+
+.table-container th:nth-child(3) {
+
+    width: 18%;
+
+}
+
+
+.table-container th:nth-child(4) {
+
+    width: 13%;
+
+}
+
+
+.table-container th:nth-child(5) {
+
+    width: 8%;
+
+}
+
+
+.table-container th:nth-child(6) {
+
+    width: 12%;
+
+}
+
+
+.table-container th:nth-child(7) {
+
+    width: 12%;
+
+}
+
+
+/* =====================================================
+   NAMA DOKUMEN
+===================================================== */
+
+.document-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.document-name span {
+
+    white-space: nowrap;
+
+}
+
+
+.file-icon {
+
+    width: 28px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #d4d9df;
+
+    border-radius: 2px;
+
+    background: #fff;
+
+}
+
+
+.file-icon.pdf {
+
+    color: #f03333;
+
+}
+
+
+.file-icon.doc {
+
+    color: #3d57d6;
+
+}
+
+
+.file-icon.file {
+
+    color: #777;
+
+}
+
+
+/* =====================================================
+   BADGE KATEGORI
+===================================================== */
+
+.category-badge {
+
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    border: 1px solid;
+}
+
+
+.kategori-laporan {
+
+    color: #ff3030;
+
+    border-color: #ff3030;
+
+    background: #fff;
+}
+
+
+.kategori-perencanaan {
+
+    color: #ff8700;
+
+    border-color: #ff8700;
+
+    background: #fff;
+}
+
+
+.kategori-keputusan {
+
+    color: #f2a72e;
+
+    border-color: #f2a72e;
+
+    background: #fff;
+}
+
+
+.kategori-regulasi {
+
+    color: #75c77c;
+
+    border-color: #75c77c;
+
+    background: #e9f8ea;
+}
+
+
+.kategori-standar {
+
+    color: #3475ed;
+
+    border-color: #3475ed;
+
+    background: #fff;
+}
+
+
+.kategori-pedoman {
+
+    color: #a16cff;
+
+    border-color: #a16cff;
+
+    background: #fff;
+}
+
+
+.kategori-default {
+
+    color: #777;
+
+    border-color: #aaa;
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-badge {
+
+    display: inline-block;
+
+    padding: 5px 11px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.status-published {
+
+    color: #5eb273;
+
+    border: 1px solid #5eb273;
+
+    background: #eef9f0;
+
+}
+
+
+.status-draft {
+
+    color: #f7a51b;
+
+    border: 1px solid #f7a51b;
+
+    background: #fffaf0;
+
+}
+
+
+/* =====================================================
+   ACTION
+===================================================== */
+
+.action-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+ .action-btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+/* Pastikan ikon di dalam tombol aksi tampil */
+.action-btn i,
+.action-btn svg {
+    display: inline-block;
+    color: #fff !important;
+    font-size: 14px;
+    line-height: 1;
+    font-style: normal;
+    opacity: 1;
+}
+
+.action-btn i.fa-solid,
+.action-btn i.fa-regular,
+.action-btn i.fa-brands,
+.action-btn i.fas,
+.action-btn i.far,
+.action-btn i.fab {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+}
+
+.action-btn i.fa-solid,
+.action-btn i.fas {
+    font-weight: 900;
+}
+
+.action-btn i.fa-regular,
+.action-btn i.far {
+    font-weight: 400;
+}
+
+
+.action-btn.download {
+
+    background: #68b17b;
+
+}
+
+
+.action-btn.edit {
+
+    background: #fbb833;
+
+    color: #fff;
+
+}
+
+
+.action-btn.delete {
+
+    background: #dc3545;
+
+}
+
+
+.action-btn:hover {
+    opacity: .9;
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+.action-btn:hover i,
+.action-btn:focus i {
+    color: #fff !important;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty-data {
+
+    text-align: center;
+
+    padding: 50px !important;
+
+}
+
+
+.empty-data i {
+
+    font-size: 35px;
+
+    color: #aaa;
+
+}
+
+
+.empty-data p {
+
+    color: #777;
+
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination {
+
+    height: 87px;
+
+    background: #fff;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    padding-right: 58px;
+
+}
+
+
+.pagination ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 10px;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+.pagination li a,
+.pagination li span {
+
+    width: 25px;
+
+    height: 25px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    text-decoration: none;
+
+    color: #222;
+
+}
+
+
+.pagination li.active a,
+.pagination li.active span {
+
+    background: #650918;
+
+    color: #fff;
+
+    border-color: #650918;
+
+}
+
+
+/* =====================================================
+   KATEGORI SECTION
+===================================================== */
+
+.category-section {
+
+    margin: 16px 48px;
+
+    padding: 13px 16px 18px;
+
+    border: 1px solid #650918;
+
+    border-radius: 10px;
+
+    background: #fff;
+
+}
+
+
+.category-section h3 {
+
+    margin: 0 0 13px;
+
+    font-size: 12px;
+
+    color: #650918;
+
+}
+
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 30px;
+
+}
+
+
+.category-item {
+
+    min-width: 0;
+
+}
+
+
+.category-item p {
+
+    margin: 13px 2px 0;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+
+    color: #222;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.admin-footer {
+
+    margin-left: 247px;
+
+    height: 60px;
+
+    background: #650918;
+
+    color: #fff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 11px;
+
+    font-style: italic;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .main-content {
+
+        margin-left: 220px;
+
+    }
+
+    .admin-footer {
+
+        margin-left: 220px;
+
+    }
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .main-content {
+
+        margin-left: 0;
+
+    }
+
+    .admin-footer {
+
+        margin-left: 0;
+
+    }
+
+    .page-header {
+
+        padding: 25px;
+
+        height: auto;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+    }
+
+    .search-container {
+
+        padding-left: 25px;
+
+    }
+
+    .document-tabs {
+
+        padding-left: 25px;
+
+    }
+
+    .category-section {
+
+        margin: 15px 25px;
+
+    }
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+

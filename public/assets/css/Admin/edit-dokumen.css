@@ -1,0 +1,547 @@
+/* =====================================================
+   ADMIN LAYOUT
+===================================================== */
+
+.admin-layout {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    background: #f5f6f8;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+   SESUAI SIDEBAR 244px
+===================================================== */
+
+.main-content {
+    width: calc(100% - 244px);
+
+    min-height: 100vh;
+
+    margin-left: 244px;
+
+    padding: 0;
+
+    background: #f5f6f8;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   EDIT / CREATE DOCUMENT PAGE
+===================================================== */
+
+.edit-document-page {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 28px 48px 60px;
+
+    background: #f5f6f8;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.edit-header {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto 65px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.edit-header h1 {
+    margin: 0;
+
+    font-size: 27px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+.edit-header p {
+    margin: 5px 0 0;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   BUTTON KEMBALI
+===================================================== */
+
+.btn-back {
+    min-width: 100px;
+
+    height: 45px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    background: #fff;
+
+    color: #650918;
+
+    border: 1px solid #650918;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    box-sizing: border-box;
+
+    transition: .2s ease;
+}
+
+.btn-back i {
+    color: #650918;
+
+    font-size: 13px;
+}
+
+.btn-back:hover {
+    background: #650918;
+
+    color: #fff;
+}
+
+.btn-back:hover i {
+    color: #fff;
+}
+
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.alert {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: -40px auto 20px;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    box-sizing: border-box;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+}
+
+.alert-danger {
+    color: #a61b1b;
+
+    background: #fff2f2;
+
+    border: 1px solid #efb8b8;
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.edit-document-card {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 32px 35px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .04);
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    color: #111;
+}
+
+.form-group label .required {
+    color: #dc3545;
+}
+
+
+/* =====================================================
+   INPUT & SELECT
+===================================================== */
+
+.form-control,
+.form-select {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 14px;
+
+    background: #fff;
+
+    color: #222;
+
+    border: 1px solid #d0d0d0;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    transition: .2s ease;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #650918;
+
+    box-shadow:
+        0 0 0 2px rgba(101, 9, 24, .07);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FILE
+===================================================== */
+
+input[type="file"].form-control {
+    height: 45px;
+
+    padding: 7px 10px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   KETERANGAN
+===================================================== */
+
+.form-group small {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+.status-help,
+.file-help {
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+
+/* =====================================================
+   CURRENT FILE
+===================================================== */
+
+.current-file {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f8f8f8;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+
+    color: #444;
+}
+
+.current-file i {
+    color: #650918;
+
+    font-size: 19px;
+}
+
+.current-file strong {
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   FORM ACTION
+===================================================== */
+
+.form-actions {
+    width: 100%;
+
+    margin-top: 32px;
+
+    padding-top: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    border-top: 1px solid #eee;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.btn-cancel,
+.btn-save {
+    height: 42px;
+
+    padding: 0 19px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 7px;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+/* BATAL */
+
+.btn-cancel {
+    background: #fff;
+
+    color: #333;
+
+    border: 1px solid #ccc;
+}
+
+.btn-cancel:hover {
+    background: #f5f5f5;
+
+    border-color: #aaa;
+}
+
+
+/* SIMPAN */
+
+.btn-save {
+    background: #650918;
+
+    color: #fff;
+
+    border: 1px solid #650918;
+}
+
+.btn-save:hover {
+    background: #4e0613;
+
+    border-color: #4e0613;
+}
+
+
+/* =====================================================
+   VALIDATION
+===================================================== */
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    color: #dc3545;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .main-content {
+        width: calc(100% - 244px);
+
+        margin-left: 244px;
+    }
+
+    .edit-document-page {
+        padding: 28px 30px 50px;
+    }
+
+    .edit-header,
+    .edit-document-card,
+    .alert {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .main-content {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .edit-document-page {
+        padding: 25px 20px 45px;
+    }
+
+    .edit-header {
+        flex-direction: column;
+
+        gap: 18px;
+
+        margin-bottom: 30px;
+    }
+
+    .edit-header h1 {
+        font-size: 24px;
+    }
+
+    .btn-back {
+        align-self: flex-start;
+    }
+
+    .edit-document-card {
+        padding: 25px 20px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .btn-cancel,
+    .btn-save {
+        width: 100%;
+    }
+}

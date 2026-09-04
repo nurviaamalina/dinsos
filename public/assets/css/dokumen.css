@@ -1,0 +1,448 @@
+/* =========================
+   GLOBAL
+========================= */
+
+.dokumen-page {
+    min-height: 100vh;
+    background: #f7f8fa;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.dokumen-container {
+    width: 84%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.dokumen-hero {
+    padding: 35px 0 15px;
+}
+
+
+.dokumen-label {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #a87842;
+
+    margin-bottom: 8px;
+}
+
+
+.dokumen-hero h1 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #2d3f47;
+}
+
+
+.dokumen-hero p {
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #68757c;
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+.dokumen-filter {
+    padding: 10px 0 20px;
+}
+
+
+.filter-wrapper {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* SEARCH */
+
+.search-dokumen {
+    width: 260px;
+    height: 37px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 13px;
+
+    background: #ffffff;
+
+    border: 1px solid #d9dfe3;
+
+    border-radius: 10px;
+}
+
+
+.search-dokumen i {
+    margin-right: 9px;
+
+    font-size: 13px;
+
+    color: #6d777d;
+}
+
+
+.search-dokumen input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 11px;
+}
+
+
+/* FILTER BUTTON */
+
+.filter-action {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.filter-semua {
+    width: 90px;
+    height: 31px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #72101a;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.filter-tahun {
+    width: 80px;
+    height: 31px;
+
+    padding: 0 10px;
+
+    border: 1px solid #d6a574;
+
+    border-radius: 20px;
+
+    background: white;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.dokumen-content {
+    padding-bottom: 40px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.dokumen-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 34px 28px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.dokumen-card {
+    min-height: 190px;
+
+    padding: 20px 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: white;
+
+    border: 1px solid #d8dfe3;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+
+.dokumen-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   CARD TOP
+========================= */
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 8px;
+}
+
+
+/* ICON */
+
+.dokumen-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 10px;
+
+    background: #f2f0e9;
+}
+
+
+.dokumen-icon i {
+    font-size: 17px;
+
+    color: #345460;
+}
+
+
+/* BADGE */
+
+.kategori-badge {
+    padding: 5px 8px;
+
+    background: #f8f4ed;
+
+    border-radius: 5px;
+
+    color: #a87842;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.dokumen-title {
+    margin: 0 0 6px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.55;
+
+    color: #354852;
+}
+
+
+/* META */
+
+.dokumen-meta {
+    display: flex;
+
+    gap: 8px;
+
+    font-size: 10px;
+
+    color: #7b858b;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn-lihat {
+    width: 130px;
+    height: 31px;
+
+    margin-top: auto;
+
+    margin-left: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #72101a;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 12px rgba(100, 0, 0, 0.15);
+}
+
+
+.btn-lihat:hover {
+    background: #560c14;
+
+    color: white;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.dokumen-kosong {
+    grid-column: 1 / -1;
+
+    padding: 70px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 15px;
+}
+
+
+.dokumen-kosong i {
+    font-size: 45px;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+    .dokumen-container {
+        width: 90%;
+    }
+
+    .dokumen-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+    .dokumen-container {
+        width: 90%;
+    }
+
+
+    .dokumen-hero h1 {
+        font-size: 27px;
+    }
+
+
+    .filter-wrapper {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+
+    .search-dokumen {
+        width: 100%;
+    }
+
+
+    .filter-action {
+        justify-content: space-between;
+    }
+
+
+    .dokumen-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+}
+
