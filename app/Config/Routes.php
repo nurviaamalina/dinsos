@@ -14,6 +14,13 @@ $routes->get('berita/(:segment)', 'Berita::detail/$1');
 //route profil
 $routes->get('profil', 'Profil::index');
 
+//layanan
+$routes->get('layanan', 'Layanan::index');
+$routes->get('layanan/detail/(:num)', 'Layanan::detail/$1');
+
+//pengaduan
+$routes->get('pengaduan', 'Pengaduan::index');
+
 // =====================================================
 // KEGIATAN FRONTEND
 // =====================================================

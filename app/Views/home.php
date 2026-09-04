@@ -390,27 +390,50 @@
 
         <div class="layanan-wrapper">
 
-            <!-- CARD 1 -->
+    <?php if (!empty($layanan)): ?>
+
+        <?php foreach ($layanan as $item): ?>
 
             <div class="layanan-card">
 
                 <div class="layanan-icon">
-                    <i class="bi bi-pencil-square"></i>
+
+                    <?php if (!empty($item['gambar'])): ?>
+
+                        <img
+                            src="<?= base_url('uploads/layanan/' . $item['gambar']) ?>"
+                            alt="<?= esc($item['nama_layanan']) ?>"
+                        >
+
+                    <?php else: ?>
+
+                        <i class="bi bi-pencil-square"></i>
+
+                    <?php endif; ?>
+
                 </div>
 
+
                 <h3>
-                    Nama<br>
-                    Layanan
+                    <?= esc($item['nama_layanan']) ?>
                 </h3>
 
+
                 <p>
-                    Deskripsi<br>
-                    layanan<br>
-                    singkat
+                    <?php
+                    $deskripsi = strip_tags($item['deskripsi_layanan'] ?? '');
+
+                    echo esc(
+                        strlen($deskripsi) > 80
+                            ? substr($deskripsi, 0, 80) . '...'
+                            : $deskripsi
+                    );
+                    ?>
                 </p>
 
+
                 <a
-                    href="#"
+                    href="<?= base_url('layanan/detail/' . $item['id']) ?>"
                     class="btn-layanan-detail"
                 >
                     Detail →
@@ -418,94 +441,11 @@
 
             </div>
 
+        <?php endforeach; ?>
 
-            <!-- CARD 2 -->
+    <?php endif; ?>
 
-            <div class="layanan-card">
-
-                <div class="layanan-icon">
-                    <i class="bi bi-pencil-square"></i>
-                </div>
-
-                <h3>
-                    Nama<br>
-                    Layanan
-                </h3>
-
-                <p>
-                    Deskripsi<br>
-                    layanan<br>
-                    singkat
-                </p>
-
-                <a
-                    href="#"
-                    class="btn-layanan-detail"
-                >
-                    Detail →
-                </a>
-
-            </div>
-
-
-            <!-- CARD 3 -->
-
-            <div class="layanan-card">
-
-                <div class="layanan-icon">
-                    <i class="bi bi-pencil-square"></i>
-                </div>
-
-                <h3>
-                    Nama<br>
-                    Layanan
-                </h3>
-
-                <p>
-                    Deskripsi<br>
-                    layanan<br>
-                    singkat
-                </p>
-
-                <a
-                    href="#"
-                    class="btn-layanan-detail"
-                >
-                    Detail →
-                </a>
-
-            </div>
-
-
-            <!-- CARD 4 -->
-
-            <div class="layanan-card">
-
-                <div class="layanan-icon">
-                    <i class="bi bi-pencil-square"></i>
-                </div>
-
-                <h3>
-                    Nama<br>
-                    Layanan
-                </h3>
-
-                <p>
-                    Deskripsi<br>
-                    layanan<br>
-                    singkat
-                </p>
-
-                <a
-                    href="#"
-                    class="btn-layanan-detail"
-                >
-                    Detail →
-                </a>
-
-            </div>
-
-        </div>
+</div>
 
 
         <!-- SEMUA LAYANAN -->

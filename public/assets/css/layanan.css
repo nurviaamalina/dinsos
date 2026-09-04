@@ -1,0 +1,352 @@
+/* =========================================================
+   LAYANAN PAGE
+========================================================= */
+
+.layanan-page {
+    max-width: 1280px;
+    min-height: 990px;
+    margin: 0 auto;
+    padding: 42px 70px 50px;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    font-size: 16px;
+    color: #555;
+
+    margin-bottom: 32px;
+}
+
+.breadcrumb i {
+    font-size: 13px;
+    color: #222;
+}
+
+.breadcrumb span {
+    font-weight: 700;
+    color: #65091c;
+}
+
+.breadcrumb a {
+    color: #555;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #65091c;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-heading h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #65091c;
+    margin-bottom: 13px;
+}
+
+.page-heading p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #65091c;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-wrapper {
+    width: 295px;
+    height: 25px;
+    margin-bottom: 33px;
+    position: relative;
+}
+
+.search-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    border: 1.5px solid #65091c;
+    border-radius: 30px;
+
+    outline: none;
+
+    padding: 0 35px 0 12px;
+
+    color: #65091c;
+}
+
+.search-wrapper i {
+    position: absolute;
+
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #65091c;
+
+    font-size: 13px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.layanan-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 34px;
+    row-gap: 31px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.layanan-card {
+    min-height: 210px;
+
+    border: 1px solid #65091c;
+    border-radius: 9px;
+
+    padding: 17px 16px 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+
+    transition: .2s;
+}
+
+.layanan-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(101, 9, 28, .10);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    min-height: 72px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.layanan-icon {
+    width: 64px;
+    height: 64px;
+
+    min-width: 64px;
+
+    background: #d7c0c5;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layanan-icon i {
+    font-size: 39px;
+    color: #65091c;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.layanan-card h3 {
+    font-size: 15px;
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    color: #65091c;
+
+    padding-top: 2px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.layanan-card p {
+    font-size: 11.5px;
+    line-height: 1.45;
+
+    color: #65091c;
+
+    margin-top: 11px;
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   DETAIL BUTTON
+========================================================= */
+
+.btn-detail {
+    width: 110px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #65091c;
+    color: #fff;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    margin-top: auto;
+
+    transition: .2s;
+}
+
+.btn-detail i {
+    font-size: 11px;
+}
+
+.btn-detail:hover {
+    background: #4e0616;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-wrapper {
+    margin-top: 20px;
+    padding-left: 0px;
+}
+
+.btn-back {
+    width: 128px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    border: 1px solid #65091c;
+    border-radius: 20px;
+
+    color: #65091c;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.btn-back i {
+    font-size: 19px;
+}
+
+.btn-back:hover {
+    background: #65091c;
+    color: #fff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .layanan-page {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .layanan-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .layanan-page {
+        padding: 30px 20px;
+    }
+
+    .breadcrumb {
+        font-size: 15px;
+    }
+
+    .page-heading h1 {
+        font-size: 32px;
+    }
+
+    .page-heading p {
+        font-size: 14px;
+    }
+
+    .page-heading p br {
+        display: none;
+    }
+
+    .search-wrapper {
+        width: 100%;
+    }
+
+    .layanan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .back-wrapper {
+        margin-top: 80px;
+        padding-left: 0;
+    }
+}
