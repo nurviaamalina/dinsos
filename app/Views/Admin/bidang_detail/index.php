@@ -1,230 +1,294 @@
 <?= $this->include('admin/layout/header') ?>
 
-<div class="container-fluid">
+<link rel="stylesheet" href="<?= base_url('assets/css/admin/bidang-detail.css') ?>">
 
-    <!-- HEADER -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex">
 
-        <div>
-            <h4 class="fw-bold mb-1">
-                Detail <?= esc($bidang['nama_bidang']) ?>
-            </h4>
-
-            <p class="text-muted mb-0">
-                Kelola informasi detail bidang
-            </p>
-        </div>
-
-        <?php if (!$detail): ?>
-
-            <a href="<?= base_url('admin/bidang/detail/' . $bidang['id'] . '/create') ?>"
-               class="btn btn-primary">
-
-                <i class="bi bi-plus-lg me-1"></i>
-                Tambah Detail
-
-            </a>
-
-        <?php else: ?>
-
-            <a href="<?= base_url('admin/bidang/detail/edit/' . $detail['id']) ?>"
-               class="btn btn-warning">
-
-                <i class="bi bi-pencil me-1"></i>
-                Edit Detail
-
-            </a>
-
-        <?php endif; ?>
-
-    </div>
+    <!-- SIDEBAR -->
+    <?= $this->include('admin/layout/sidebar') ?>
 
 
-    <!-- ALERT -->
+    <!-- CONTENT -->
+    <div class="content flex-grow-1 p-4 bg-light">
 
-    <?php if (session()->getFlashdata('success')): ?>
+        <!-- HEADER -->
+        <div class="bidang-detail-header">
 
-        <div class="alert alert-success">
-            <?= session()->getFlashdata('success') ?>
-        </div>
+            <div>
 
-    <?php endif; ?>
+                <h2>
+                    Detail <?= esc($bidang['nama_bidang']) ?>
+                </h2>
 
-
-    <?php if (session()->getFlashdata('error')): ?>
-
-        <div class="alert alert-danger">
-            <?= session()->getFlashdata('error') ?>
-        </div>
-
-    <?php endif; ?>
-
-
-    <?php if (!$detail): ?>
-
-        <div class="card border-0 shadow-sm">
-
-            <div class="card-body text-center py-5">
-
-                <i class="bi bi-file-earmark-text fs-1 text-muted"></i>
-
-                <h5 class="mt-3">
-                    Detail bidang belum tersedia
-                </h5>
-
-                <p class="text-muted">
-                    Silakan tambahkan informasi detail untuk
-                    <?= esc($bidang['nama_bidang']) ?>.
+                <p>
+                    Kelola informasi detail bidang
                 </p>
 
-                <a href="<?= base_url('admin/bidang/detail/' . $bidang['id'] . '/create') ?>"
-                   class="btn btn-primary">
+            </div>
 
+
+            <?php if (!$detail): ?>
+
+                <a href="<?= base_url('admin/bidang/detail/' . $bidang['id'] . '/create') ?>"
+                   class="btn-bidang-tambah">
+
+                    <i class="bi bi-plus-lg"></i>
                     Tambah Detail
 
                 </a>
 
-            </div>
+            <?php else: ?>
 
-        </div>
+                <a href="<?= base_url('admin/bidang/detail/edit/' . $detail['id']) ?>"
+                   class="btn-bidang-edit">
 
-    <?php else: ?>
+                    <i class="bi bi-pencil"></i>
+                    Edit Detail
 
+                </a>
 
-        <!-- TENTANG -->
-
-        <div class="card border-0 shadow-sm mb-4">
-
-            <div class="card-header bg-white">
-                <h5 class="fw-bold mb-0">
-                    Tentang Bidang
-                </h5>
-            </div>
-
-            <div class="card-body">
-
-                <?= nl2br(esc($detail['tentang'])) ?>
-
-            </div>
+            <?php endif; ?>
 
         </div>
 
 
-        <!-- RUANG LINGKUP -->
+        <!-- FLASH SUCCESS -->
+        <?php if (session()->getFlashdata('success')): ?>
 
-        <div class="card border-0 shadow-sm mb-4">
+            <div class="bidang-alert-success">
 
-            <div class="card-header bg-white">
-                <h5 class="fw-bold mb-0">
-                    Ruang Lingkup
-                </h5>
-            </div>
+                <i class="bi bi-check-circle"></i>
 
-            <div class="card-body">
-
-                <?= nl2br(esc($detail['ruang_lingkup'])) ?>
+                <?= esc(session()->getFlashdata('success')) ?>
 
             </div>
 
-        </div>
+        <?php endif; ?>
 
 
-        <!-- TUGAS POKOK -->
+        <!-- FLASH ERROR -->
+        <?php if (session()->getFlashdata('error')): ?>
 
-        <div class="card border-0 shadow-sm mb-4">
+            <div class="bidang-alert-error">
 
-            <div class="card-header bg-white">
+                <i class="bi bi-exclamation-circle"></i>
 
-                <h5 class="fw-bold mb-0">
-                    Tugas Pokok
-                </h5>
-
-            </div>
-
-            <div class="card-body">
-
-                <?= nl2br(esc($detail['tugas_pokok'])) ?>
+                <?= esc(session()->getFlashdata('error')) ?>
 
             </div>
 
-        </div>
+        <?php endif; ?>
 
 
-        <!-- PROGRAM & KEGIATAN -->
-
-        <div class="card border-0 shadow-sm mb-4">
-
-            <div class="card-header bg-white">
-
-                <h5 class="fw-bold mb-0">
-                    Program & Kegiatan
-                </h5>
-
-            </div>
-
-            <div class="card-body">
-
-                <?= nl2br(esc($detail['program_kegiatan'])) ?>
-
-            </div>
-
-        </div>
+        <?php if (!$detail): ?>
 
 
-        <!-- KONTAK -->
+            <!-- DETAIL BELUM ADA -->
 
-        <div class="card border-0 shadow-sm">
+            <div class="bidang-detail-card">
 
-            <div class="card-header bg-white">
+                <div class="bidang-detail-empty">
 
-                <h5 class="fw-bold mb-0">
-                    Informasi Kontak
-                </h5>
+                    <i class="bi bi-file-earmark-text"></i>
+
+                    <h5>
+                        Detail bidang belum tersedia
+                    </h5>
+
+                    <p>
+                        Silakan tambahkan informasi detail untuk
+                        <?= esc($bidang['nama_bidang']) ?>.
+                    </p>
+
+                    <a href="<?= base_url('admin/bidang/detail/' . $bidang['id'] . '/create') ?>"
+                       class="btn-bidang-tambah">
+
+                        Tambah Detail
+
+                    </a>
+
+                </div>
 
             </div>
 
-            <div class="card-body">
 
-                <div class="row">
-
-                    <div class="col-md-4">
-
-                        <strong>
-                            <i class="bi bi-telephone me-2"></i>
-                            Telepon
-                        </strong>
-
-                        <p class="text-muted">
-                            <?= esc($detail['telepon']) ?>
-                        </p>
-
-                    </div>
+        <?php else: ?>
 
 
-                    <div class="col-md-4">
+            <!-- =========================================
+                 TENTANG BIDANG
+            ========================================== -->
 
-                        <strong>
-                            <i class="bi bi-envelope me-2"></i>
-                            Email
-                        </strong>
+            <div class="bidang-detail-card">
 
-                        <p class="text-muted">
-                            <?= esc($detail['email']) ?>
-                        </p>
+                <div class="bidang-detail-card-header">
 
-                    </div>
+                    <h5>
+                        Tentang Bidang
+                    </h5>
+
+                </div>
+
+                <div class="bidang-detail-card-body">
+
+                    <?= nl2br(esc($detail['tentang'])) ?>
+
+                </div>
+
+            </div>
 
 
-                    <div class="col-md-4">
+            <!-- =========================================
+                 RUANG LINGKUP
+            ========================================== -->
 
-                        <strong>
-                            <i class="bi bi-geo-alt me-2"></i>
-                            Alamat
-                        </strong>
+            <div class="bidang-detail-card">
 
-                        <p class="text-muted">
-                            <?= esc($detail['alamat']) ?>
-                        </p>
+                <div class="bidang-detail-card-header">
+
+                    <h5>
+                        Ruang Lingkup
+                    </h5>
+
+                </div>
+
+                <div class="bidang-detail-card-body">
+
+                    <?= nl2br(esc($detail['ruang_lingkup'])) ?>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 TUGAS POKOK
+            ========================================== -->
+
+            <div class="bidang-detail-card">
+
+                <div class="bidang-detail-card-header">
+
+                    <h5>
+                        Tugas Pokok
+                    </h5>
+
+                </div>
+
+                <div class="bidang-detail-card-body">
+
+                    <?= nl2br(esc($detail['tugas_pokok'])) ?>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 PROGRAM & KEGIATAN
+            ========================================== -->
+
+            <div class="bidang-detail-card">
+
+                <div class="bidang-detail-card-header">
+
+                    <h5>
+                        Program & Kegiatan
+                    </h5>
+
+                </div>
+
+                <div class="bidang-detail-card-body">
+
+                    <?= nl2br(esc($detail['program_kegiatan'])) ?>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 INFORMASI KONTAK
+            ========================================== -->
+
+            <div class="bidang-detail-card">
+
+                <div class="bidang-detail-card-header">
+
+                    <h5>
+                        Informasi Kontak
+                    </h5>
+
+                </div>
+
+                <div class="bidang-detail-card-body">
+
+                    <div class="row">
+
+                        <!-- TELEPON -->
+                        <div class="col-md-4">
+
+                            <div class="kontak-item">
+
+                                <strong>
+
+                                    <i class="bi bi-telephone"></i>
+
+                                    Telepon
+
+                                </strong>
+
+                                <p>
+                                    <?= esc($detail['telepon']) ?>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="col-md-4">
+
+                            <div class="kontak-item">
+
+                                <strong>
+
+                                    <i class="bi bi-envelope"></i>
+
+                                    Email
+
+                                </strong>
+
+                                <p>
+                                    <?= esc($detail['email']) ?>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ALAMAT -->
+                        <div class="col-md-4">
+
+                            <div class="kontak-item">
+
+                                <strong>
+
+                                    <i class="bi bi-geo-alt"></i>
+
+                                    Alamat
+
+                                </strong>
+
+                                <p>
+                                    <?= esc($detail['alamat']) ?>
+                                </p>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -232,10 +296,29 @@
 
             </div>
 
-        </div>
+<!-- TOMBOL KEMBALI -->
 
-    <?php endif; ?>
+<div class="bidang-detail-footer">
+
+    <a href="<?= base_url('admin/bidang') ?>"
+       class="btn-bidang-kembali">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Kembali
+
+    </a>
 
 </div>
+        <?php endif; ?>
+
+    </div>
+
+    
+
+</div>
+
+
+
 
 <?= $this->include('admin/layout/footer') ?>

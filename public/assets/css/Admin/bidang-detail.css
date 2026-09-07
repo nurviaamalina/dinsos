@@ -1,0 +1,350 @@
+/* =========================================================
+   DETAIL BIDANG - ADMIN
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.bidang-detail-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.bidang-detail-header h2 {
+    margin: 0 0 6px;
+
+    color: #650019;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+.bidang-detail-header p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BUTTON TAMBAH
+========================================================= */
+
+.btn-bidang-tambah,
+.btn-bidang-edit {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+
+/* TAMBAH */
+
+.btn-bidang-tambah {
+    background: #650019;
+
+    color: #fff;
+}
+
+.btn-bidang-tambah:hover {
+    background: #820022;
+
+    color: #fff;
+}
+
+
+/* EDIT */
+
+.btn-bidang-edit {
+    background: #e9ae28;
+
+    color: #fff;
+}
+
+.btn-bidang-edit:hover {
+    background: #d69c16;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.bidang-alert-success,
+.bidang-alert-error {
+    padding: 12px 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+}
+
+
+.bidang-alert-success {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #e8f7eb;
+
+    border: 1px solid #b8dfbe;
+
+    color: #397642;
+}
+
+
+.bidang-alert-error {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #fbe9e9;
+
+    border: 1px solid #e4b8b8;
+
+    color: #963a3a;
+}
+
+
+/* =========================================================
+   CARD DETAIL
+========================================================= */
+
+.bidang-detail-card {
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    background: #fff;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.bidang-detail-card-header {
+    padding: 17px 20px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+.bidang-detail-card-header h5 {
+    margin: 0;
+
+    color: #650019;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.bidang-detail-card-body {
+    padding: 22px 20px;
+
+    color: #444;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    min-height: 80px;
+}
+
+
+/* =========================================================
+   KONTAK
+========================================================= */
+
+.kontak-item strong {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+    color: #650019;
+
+    font-size: 13px;
+}
+
+
+.kontak-item strong i {
+    font-size: 15px;
+}
+
+
+.kontak-item p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY DATA
+========================================================= */
+
+.bidang-detail-empty {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #999;
+}
+
+
+.bidang-detail-empty > i {
+    font-size: 40px;
+
+    color: #aaa;
+}
+
+
+.bidang-detail-empty h5 {
+    margin-top: 15px;
+
+    color: #555;
+
+    font-size: 16px;
+}
+
+
+.bidang-detail-empty p {
+    margin-bottom: 20px;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .bidang-detail-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .bidang-detail-header .btn-bidang-tambah,
+    .bidang-detail-header .btn-bidang-edit {
+        width: auto;
+    }
+
+    .bidang-detail-card-body {
+        padding: 18px 15px;
+    }
+
+}
+
+/* =========================================================
+   FOOTER DETAIL
+========================================================= */
+
+.bidang-detail-footer {
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    margin-top: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   BUTTON KEMBALI
+========================================================= */
+
+.btn-bidang-kembali {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 16px;
+
+    background: #510505;
+
+    border: 1px solid #ede7e7;
+
+    border-radius: 6px;
+
+    color: #f5f1f1;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.btn-bidang-kembali:hover {
+    background: #fff;
+
+    border-color: #510505;
+
+    color: #510505;
+}

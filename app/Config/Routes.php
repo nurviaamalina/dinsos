@@ -65,7 +65,9 @@ $routes->get('instagram', 'Instagram::index');
 $routes->get('dokumen', 'Dokumen::index');
 $routes->get('dokumen/detail/(:num)', 'Dokumen::detail/$1');
 
+//dashboard statistik frontend
 
+$routes->get('statistik', 'Statistik::index');
 // =====================================================
 // ADMIN
 // =====================================================
@@ -116,7 +118,8 @@ $routes->group('admin', function ($routes) {
         'Admin\Bidang::delete/$1'
     );
 
-
+//dashboard statistik
+$routes->get('statistik', 'Admin\Statistik::index');
     // =================================================
     // DETAIL BIDANG
     // =================================================
