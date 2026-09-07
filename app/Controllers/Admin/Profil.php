@@ -521,4 +521,23 @@ public function anggotaUpdate($id)
             'Data anggota berhasil diperbarui.'
         );
 }
+
+ public function delete($id)
+    {
+        $profil = $this->profilModel->find($id);
+
+        if (!$profil) {
+            return redirect()->back()->with(
+                'error',
+                'Data profil tidak ditemukan.'
+            );
+        }
+
+        $this->profilModel->delete($id);
+
+        return redirect()->back()->with(
+            'success',
+            'Data profil berhasil dihapus.'
+        );
+    }
 }
