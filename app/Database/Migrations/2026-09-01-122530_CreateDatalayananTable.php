@@ -15,50 +15,40 @@ class CreateDatalayananTable extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'pendaftar' => [
+            'periode' => [
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+                'null' => false,
+            ],
+            'layanan' => [
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+                'null' => false,
+            ],
+            'bidang' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
                 'null' => false,
             ],
-            'tanggal' => [
-                'type' => 'DATE',
-                'null' => false,
-            ],
-            'status' => [
+            'kecamatan' => [
                 'type' => 'VARCHAR',
-                'constraint' => '50',
+                'constraint' => '100',
                 'null' => false,
-                'default' => 'Pending',
             ],
             'jumlah' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'default' => 0,
             ],
-            'jenis_kendaraan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '50',
-                'null' => true,
+            'selesai' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'default' => 0,
             ],
-            'merek_kendaraan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '50',
-                'null' => true,
-            ],
-            'warna_kendaraan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '30',
-                'null' => true,
-            ],
-            'lokasi_kendaraan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
-                'null' => true,
-            ],
-            'kategori_kendaraan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '50',
-                'null' => true,
+            'proses' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'default' => 0,
             ],
             'created_at' => [
                 'type' => 'TIMESTAMP',

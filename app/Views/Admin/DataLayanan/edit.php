@@ -1,150 +1,145 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets/css/datalayanan.css') ?>">
-</head>
-<body>
-    <div class="datalayanan-container">
-        <!-- Sidebar -->
-        <?= $this->include('admin/layout/sidebar') ?>
+<?= $this->include('admin/layout/header') ?>
+<link rel="stylesheet" href="<?= base_url('assets/css/admin/datalayanan.css') ?>">
+<?= $this->include('admin/layout/sidebar') ?>
 
-        <main class="main-content">
-            <div class="page-header">
-                <div>
-                    <h3>Edit Data Pelayanan</h3>
-                    <p class="subtitle">Kliklah selanjutnya Data</p>
-                </div>
-                <a href="<?= base_url('admin/datalayanan') ?>" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Kembali
+<div class="datalayanan-container">
+    <main class="main-content">
+        <div class="page-header create-page-header">
+            <div>
+                <h3>Edit Data Pelayanan</h3>
+                <p class="subtitle">Kelola seluruh Data</p>
+            </div>
+        </div>
+
+        <?php if(session()->getFlashdata('errors')): ?>
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>Terjadi kesalahan:</span>
+                <ul>
+                    <?php foreach(session()->getFlashdata('errors') as $error): ?>
+                        <li><?= esc($error) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <button class="close-btn" onclick="this.parentElement.remove()">&times;</button>
+            </div>
+        <?php endif; ?>
+
+        <?php if(session()->getFlashdata('success')): ?>
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>
+                <span><?= session()->getFlashdata('success') ?></span>
+                <button class="close-btn" onclick="this.parentElement.remove()">&times;</button>
+            </div>
+        <?php endif; ?>
+
+        <div class="card create-card">
+            <div class="card-header">
+                <h5>Form Edit Data</h5>
+                <a href="<?= base_url('admin/datalayanan/import') ?>" class="create-import-link">
+                    <i class="bi bi-upload"></i> Import Data
                 </a>
             </div>
+            <div class="card-body">
+                <form action="<?= base_url('admin/datalayanan/update/' . $layanan->id) ?>" method="post" class="create-form">
+                    <?= csrf_field() ?>
 
-            <?php if(session()->getFlashdata('errors')): ?>
-                <div class="alert alert-danger">
-                    <span><i class="fas fa-exclamation-circle"></i> Terjadi kesalahan:</span>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                        <?php foreach(session()->getFlashdata('errors') as $error): ?>
-                            <li><?= $error ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <button class="close-btn" onclick="this.parentElement.remove()">&times;</button>
-                </div>
-            <?php endif; ?>
-
-            <div class="card">
-                <div class="card-header">
-                    <h5><i class="fas fa-pen"></i> Form Edit Data Pelayanan</h5>
-                </div>
-                <div class="card-body">
-                    <form action="<?= base_url('admin/datalayanan/update/' . $layanan->id) ?>" method="post">
-                        <?= csrf_field() ?>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="pendaftar">Pendaftar <span class="required">*</span></label>
-                                <input type="text" class="form-control <?= session('errors.pendaftar') ? 'is-invalid' : '' ?>" 
-                                       id="pendaftar" name="pendaftar" value="<?= old('pendaftar', $layanan->pendaftar) ?>" 
-                                       placeholder="Nama pendaftar" required>
-                                <?php if(session('errors.pendaftar')): ?>
-                                    <div class="invalid-feedback"><?= session('errors.pendaftar') ?></div>
-                                <?php endif; ?>
-                            </div>
-                            <div class="form-group">
-                                <label for="tanggal">Tanggal <span class="required">*</span></label>
-                                <input type="date" class="form-control <?= session('errors.tanggal') ? 'is-invalid' : '' ?>" 
-                                       id="tanggal" name="tanggal" value="<?= old('tanggal', $layanan->tanggal) ?>" required>
-                                <?php if(session('errors.tanggal')): ?>
-                                    <div class="invalid-feedback"><?= session('errors.tanggal') ?></div>
-                                <?php endif; ?>
-                            </div>
+                    <div class="create-form-grid">
+                        <div class="form-group create-period-field">
+                            <label for="periode">Periode Bulan dan Tahun <span class="required">*</span></label>
+                            <input type="text" class="form-control <?= session('errors.periode') ? 'is-invalid' : '' ?>"
+                                   id="periode" name="periode" value="<?= old('periode', esc($layanan->periode)) ?>"
+                                   placeholder="Contoh: Juli 2026" required>
+                            <?php if(session('errors.periode')): ?>
+                                <div class="invalid-feedback"><?= esc(session('errors.periode')) ?></div>
+                            <?php endif; ?>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="status">Status <span class="required">*</span></label>
-                                <select class="form-control <?= session('errors.status') ? 'is-invalid' : '' ?>" 
-                                        id="status" name="status" required>
-                                    <option value="Pending" <?= old('status', $layanan->status) == 'Pending' ? 'selected' : '' ?>>Pending</option>
-                                    <option value="Proses" <?= old('status', $layanan->status) == 'Proses' ? 'selected' : '' ?>>Proses</option>
-                                    <option value="Selesai" <?= old('status', $layanan->status) == 'Selesai' ? 'selected' : '' ?>>Selesai</option>
-                                    <option value="Ditolak" <?= old('status', $layanan->status) == 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
-                                </select>
-                                <?php if(session('errors.status')): ?>
-                                    <div class="invalid-feedback"><?= session('errors.status') ?></div>
-                                <?php endif; ?>
-                            </div>
-                            <div class="form-group">
-                                <label for="jumlah">Jumlah <span class="required">*</span></label>
-                                <input type="number" class="form-control <?= session('errors.jumlah') ? 'is-invalid' : '' ?>" 
-                                       id="jumlah" name="jumlah" value="<?= old('jumlah', $layanan->jumlah) ?>" 
-                                       placeholder="0" min="0" required>
-                                <?php if(session('errors.jumlah')): ?>
-                                    <div class="invalid-feedback"><?= session('errors.jumlah') ?></div>
-                                <?php endif; ?>
-                            </div>
+                        <div class="form-group create-number-field">
+                            <label for="jumlah">Jumlah <span class="required">*</span></label>
+                            <input type="number" class="form-control <?= session('errors.jumlah') ? 'is-invalid' : '' ?>"
+                                   id="jumlah" name="jumlah" value="<?= old('jumlah', esc($layanan->jumlah)) ?>" placeholder="0" min="0" required>
+                            <?php if(session('errors.jumlah')): ?>
+                                <div class="invalid-feedback"><?= esc(session('errors.jumlah')) ?></div>
+                            <?php endif; ?>
                         </div>
 
-                        <hr style="margin: 1.5rem 0;">
-
-                        <h6 style="margin-bottom: 1rem; color: var(--primary-color);"><i class="fas fa-car"></i> Kendaraan</h6>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="jenis_kendaraan">Jenis Kendaraan</label>
-                                <input type="text" class="form-control" id="jenis_kendaraan" name="jenis_kendaraan" 
-                                       value="<?= old('jenis_kendaraan', $layanan->jenis_kendaraan) ?>" 
-                                       placeholder="Contoh: Mobil, Motor">
-                            </div>
-                            <div class="form-group">
-                                <label for="merek_kendaraan">Merek Kendaraan</label>
-                                <input type="text" class="form-control" id="merek_kendaraan" name="merek_kendaraan" 
-                                       value="<?= old('merek_kendaraan', $layanan->merek_kendaraan) ?>" 
-                                       placeholder="Contoh: Toyota, Honda">
-                            </div>
+                        <div class="form-group create-number-field">
+                            <label for="selesai">Selesai</label>
+                            <input type="number" class="form-control" id="selesai" name="selesai"
+                                   value="<?= old('selesai', esc($layanan->selesai ?? 0)) ?>" placeholder="0" min="0">
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="warna_kendaraan">Warna Kendaraan</label>
-                                <input type="text" class="form-control" id="warna_kendaraan" name="warna_kendaraan" 
-                                       value="<?= old('warna_kendaraan', $layanan->warna_kendaraan) ?>" 
-                                       placeholder="Contoh: Merah, Hitam">
-                            </div>
-                            <div class="form-group">
-                                <label for="lokasi_kendaraan">Lokasi Kendaraan</label>
-                                <input type="text" class="form-control" id="lokasi_kendaraan" name="lokasi_kendaraan" 
-                                       value="<?= old('lokasi_kendaraan', $layanan->lokasi_kendaraan) ?>" 
-                                       placeholder="Alamat/lokasi kendaraan">
-                            </div>
+                        <div class="form-group create-number-field">
+                            <label for="proses">Dalam Proses</label>
+                            <input type="number" class="form-control" id="proses" name="proses"
+                                   value="<?= old('proses', esc($layanan->proses ?? 0)) ?>" placeholder="0" min="0">
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="kategori_kendaraan">Kategori Kendaraan</label>
-                                <input type="text" class="form-control" id="kategori_kendaraan" name="kategori_kendaraan" 
-                                       value="<?= old('kategori_kendaraan', $layanan->kategori_kendaraan) ?>" 
-                                       placeholder="Contoh: SUV, Sedan">
-                            </div>
+                        <div class="form-group create-service-field">
+                            <label for="layanan">Nama Layanan <span class="required">*</span></label>
+                            <?php $selectedLayanan = old('layanan', $layanan->layanan); ?>
+                            <select class="form-control <?= session('errors.layanan') ? 'is-invalid' : '' ?>"
+                                    id="layanan" name="layanan" required>
+                                <option value="">Pilih Nama Layanan</option>
+                                <?php foreach ($layananMaster as $item): ?>
+                                    <option value="<?= esc($item['nama_layanan']) ?>"
+                                        <?= $selectedLayanan === $item['nama_layanan'] ? 'selected' : '' ?>>
+                                        <?= esc($item['nama_layanan']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                            <?php if(session('errors.layanan')): ?>
+                                <div class="invalid-feedback"><?= esc(session('errors.layanan')) ?></div>
+                            <?php endif; ?>
                         </div>
 
-                        <hr style="margin: 1.5rem 0;">
-
-                        <div style="display: flex; gap: 1rem;">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save"></i> Update
-                            </button>
-                            <a href="<?= base_url('admin/datalayanan') ?>" class="btn btn-secondary">
-                                <i class="fas fa-times"></i> Batal
-                            </a>
+                        <div class="form-group create-district-field">
+                            <label for="kecamatan">Kecamatan <span class="required">*</span></label>
+                            <?php $selectedKecamatan = old('kecamatan', $layanan->kecamatan); ?>
+                            <select class="form-control <?= session('errors.kecamatan') ? 'is-invalid' : '' ?>"
+                                    id="kecamatan" name="kecamatan" required>
+                                <option value="">Pilih Kecamatan</option>
+                                <?php foreach ($kecamatan as $item): ?>
+                                    <option value="<?= esc($item['nama_kecamatan']) ?>"
+                                        <?= $selectedKecamatan === $item['nama_kecamatan'] ? 'selected' : '' ?>>
+                                        <?= esc($item['nama_kecamatan']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                            <?php if(session('errors.kecamatan')): ?>
+                                <div class="invalid-feedback"><?= esc(session('errors.kecamatan')) ?></div>
+                            <?php endif; ?>
                         </div>
-                    </form>
-                </div>
+
+                        <div class="form-group create-sector-field">
+                            <label for="bidang">Bidang <span class="required">*</span></label>
+                            <?php $selectedBidang = old('bidang', $layanan->bidang); ?>
+                            <select class="form-control <?= session('errors.bidang') ? 'is-invalid' : '' ?>"
+                                    id="bidang" name="bidang" required>
+                                <option value="">Pilih Bidang</option>
+                                <?php foreach ($bidang as $item): ?>
+                                    <option value="<?= esc($item['nama_bidang']) ?>"
+                                        <?= $selectedBidang === $item['nama_bidang'] ? 'selected' : '' ?>>
+                                        <?= esc($item['nama_bidang']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                            <?php if(session('errors.bidang')): ?>
+                                <div class="invalid-feedback"><?= esc(session('errors.bidang')) ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                    <div class="form-actions create-form-actions">
+                        <a href="<?= base_url('admin/datalayanan') ?>" class="btn btn-secondary">Batal</a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Simpan
+                        </button>
+                    </div>
+                </form>
             </div>
-        </main>
-    </div>
-</body>
-</html>
+        </div>
+    </main>
+</div>
+
+<?= $this->include('admin/layout/footer') ?>
