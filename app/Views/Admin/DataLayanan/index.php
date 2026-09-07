@@ -73,13 +73,10 @@
                     <a href="<?= base_url('admin/datalayanan/create') ?>" class="btn btn-primary btn-sm">
                         <i class="bi bi-plus-lg"></i> Tambah Layanan
                     </a>
-                    <a href="<?= base_url('admin/datalayanan/export') ?>" class="btn btn-success btn-sm">
-                        <i class="bi bi-download"></i> Export
-                    </a>
                     <a href="<?= base_url('admin/datalayanan/import') ?>" class="btn btn-info btn-sm">
                         <i class="bi bi-upload"></i> Import
                     </a>
-                </div>
+                    </div>
             </div>
 
             <div class="table-responsive">
