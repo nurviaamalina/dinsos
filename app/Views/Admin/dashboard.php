@@ -47,64 +47,60 @@ $currentUrl = uri_string();
 
                 <div class="stat-card">
 
-                    <div class="stat-icon">
+    <div class="stat-icon">
+        <i class="bi bi-pencil-square"></i>
+    </div>
 
-                        <i class="bi bi-pencil-square"></i>
+    <div class="stat-info">
 
-                    </div>
+        <h3>
+            Layanan
+        </h3>
 
-                    <div class="stat-info">
+        <p>
+            Kelola Data Layanan
+        </p>
 
-                        <h3>
-                            Nama Layanan
-                        </h3>
+        <a
+            href="<?= base_url('admin/layanan') ?>"
+            class="detail-button"
+        >
+            Detail →
+        </a>
 
-                        <p>
-                            Deskripsi layanan singkat
-                        </p>
+    </div>
 
-                        <a
-                            href="#"
-                            class="detail-button"
-                        >
-                            Detail →
-                        </a>
-
-                    </div>
-
-                </div>
+</div>
 
 
                 <!-- CARD 2 -->
 
                 <div class="stat-card">
 
-                    <div class="stat-icon">
+    <div class="stat-icon">
+        <i class="bi bi-people-fill"></i>
+    </div>
 
-                        <i class="bi bi-pencil-square"></i>
+    <div class="stat-info">
 
-                    </div>
+        <h3>
+            Bidang
+        </h3>
 
-                    <div class="stat-info">
+        <p>
+            Kelola Data Bidang
+        </p>
 
-                        <h3>
-                            Nama Layanan
-                        </h3>
+        <a
+            href="<?= base_url('admin/bidang') ?>"
+            class="detail-button"
+        >
+            Detail →
+        </a>
 
-                        <p>
-                            Deskripsi layanan singkat
-                        </p>
+    </div>
 
-                        <a
-                            href="#"
-                            class="detail-button"
-                        >
-                            Detail →
-                        </a>
-
-                    </div>
-
-                </div>
+</div>
 
 
                 <!-- CARD 3 -->
