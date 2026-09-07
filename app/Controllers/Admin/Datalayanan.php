@@ -3,15 +3,24 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\BidangModel;
 use App\Models\DatalayananModel;
+use App\Models\KecamatanModel;
+use App\Models\LayananModel;
 
 class Datalayanan extends BaseController
 {
     protected $datalayananModel;
+    protected $bidangModel;
+    protected $kecamatanModel;
+    protected $layananModel;
 
     public function __construct()
     {
         $this->datalayananModel = new DatalayananModel();
+        $this->bidangModel = new BidangModel();
+        $this->kecamatanModel = new KecamatanModel();
+        $this->layananModel = new LayananModel();
         helper(['form', 'url']);
     }
 
@@ -35,22 +44,26 @@ class Datalayanan extends BaseController
 
     public function create()
     {
-        $data['title'] = 'Tambah Data Pelayanan';
+        $data = [
+            'title' => 'Tambah Data Pelayanan',
+            'bidang' => $this->getActiveBidang(),
+            'kecamatan' => $this->getActiveKecamatan(),
+            'layananMaster' => $this->getActiveLayanan(),
+        ];
+
         return view('admin/datalayanan/create', $data);
     }
 
     public function store()
     {
         $rules = [
-            'pendaftar' => 'required|max_length[100]',
-            'tanggal' => 'required|valid_date',
-            'status' => 'required|max_length[50]',
-            'jumlah' => 'required|numeric|greater_than[0]',
-            'jenis_kendaraan' => 'permit_empty|max_length[50]',
-            'merek_kendaraan' => 'permit_empty|max_length[50]',
-            'warna_kendaraan' => 'permit_empty|max_length[30]',
-            'lokasi_kendaraan' => 'permit_empty|max_length[100]',
-            'kategori_kendaraan' => 'permit_empty|max_length[50]'
+            'periode' => 'required|max_length[50]',
+            'layanan' => 'required|max_length[200]',
+            'bidang' => 'required|max_length[100]',
+            'kecamatan' => 'required|max_length[100]',
+            'jumlah' => 'required|numeric|greater_than_equal_to[0]',
+            'selesai' => 'permit_empty|numeric|greater_than_equal_to[0]',
+            'proses' => 'permit_empty|numeric|greater_than_equal_to[0]'
         ];
 
         if (!$this->validate($rules)) {
@@ -60,23 +73,14 @@ class Datalayanan extends BaseController
         }
 
         $data = [
-            'pendaftar' => $this->request->getPost('pendaftar'),
-            'tanggal' => $this->request->getPost('tanggal'),
-            'status' => $this->request->getPost('status'),
+            'periode' => $this->request->getPost('periode'),
+            'layanan' => $this->request->getPost('layanan'),
+            'bidang' => $this->request->getPost('bidang'),
+            'kecamatan' => $this->request->getPost('kecamatan'),
             'jumlah' => (int) $this->request->getPost('jumlah'),
-            'jenis_kendaraan' => $this->request->getPost('jenis_kendaraan'),
-            'merek_kendaraan' => $this->request->getPost('merek_kendaraan'),
-            'warna_kendaraan' => $this->request->getPost('warna_kendaraan'),
-            'lokasi_kendaraan' => $this->request->getPost('lokasi_kendaraan'),
-            'kategori_kendaraan' => $this->request->getPost('kategori_kendaraan')
+            'selesai' => (int) $this->request->getPost('selesai'),
+            'proses' => (int) $this->request->getPost('proses')
         ];
-
-        // Hapus data kosong untuk field yang tidak diisi
-        foreach ($data as $key => $value) {
-            if ($value === '' || $value === null) {
-                unset($data[$key]);
-            }
-        }
 
         $this->datalayananModel->insert($data);
         session()->setFlashdata('success', 'Data pelayanan berhasil ditambahkan!');
@@ -93,21 +97,70 @@ class Datalayanan extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data tidak ditemukan');
         }
 
+        $data['bidang'] = $this->getActiveBidang($data['layanan']->bidang);
+        $data['kecamatan'] = $this->getActiveKecamatan($data['layanan']->kecamatan);
+        $data['layananMaster'] = $this->getActiveLayanan($data['layanan']->layanan);
+
         return view('admin/datalayanan/edit', $data);
+    }
+
+    private function getActiveBidang($current = null)
+    {
+        $builder = $this->bidangModel->where('status', 'aktif');
+        $items = $builder->orderBy('nama_bidang', 'ASC')->findAll();
+
+        if ($current && !array_filter($items, static fn ($item) => $item['nama_bidang'] === $current)) {
+            $selected = $this->bidangModel->where('nama_bidang', $current)->first();
+            if ($selected) {
+                array_unshift($items, $selected);
+            }
+        }
+
+        return $items;
+    }
+
+    private function getActiveKecamatan($current = null)
+    {
+        $builder = $this->kecamatanModel->where('status', 'aktif');
+        $items = $builder->orderBy('nama_kecamatan', 'ASC')->findAll();
+
+        if ($current && !array_filter($items, static fn ($item) => $item['nama_kecamatan'] === $current)) {
+            $selected = $this->kecamatanModel->where('nama_kecamatan', $current)->first();
+            if ($selected) {
+                array_unshift($items, $selected);
+            }
+        }
+
+        return $items;
+    }
+
+    private function getActiveLayanan($current = null)
+    {
+        $items = $this->layananModel
+            ->where('status_layanan', 'Aktif')
+            ->orderBy('nama_layanan', 'ASC')
+            ->findAll();
+
+        if ($current && !array_filter($items, static fn ($item) => $item['nama_layanan'] === $current)) {
+            $selected = $this->layananModel->where('nama_layanan', $current)->first();
+            if ($selected) {
+                array_unshift($items, $selected);
+            }
+        }
+
+        return $items;
     }
 
     public function update($id)
     {
         $rules = [
-            'pendaftar' => 'required|max_length[100]',
-            'tanggal' => 'required|valid_date',
-            'status' => 'required|max_length[50]',
-            'jumlah' => 'required|numeric|greater_than[0]',
-            'jenis_kendaraan' => 'permit_empty|max_length[50]',
-            'merek_kendaraan' => 'permit_empty|max_length[50]',
-            'warna_kendaraan' => 'permit_empty|max_length[30]',
-            'lokasi_kendaraan' => 'permit_empty|max_length[100]',
-            'kategori_kendaraan' => 'permit_empty|max_length[50]'
+            'periode' => 'required|max_length[50]',
+            'layanan' => 'required|max_length[200]',
+            'bidang' => 'required|max_length[100]',
+            'kecamatan' => 'required|max_length[100]',
+            'jumlah' => 'required|numeric|greater_than_equal_to[0]',
+            'selesai' => 'permit_empty|numeric|greater_than_equal_to[0]',
+            'proses' => 'permit_empty|numeric|greater_than_equal_to[0]'
         ];
 
         if (!$this->validate($rules)) {
@@ -117,23 +170,14 @@ class Datalayanan extends BaseController
         }
 
         $data = [
-            'pendaftar' => $this->request->getPost('pendaftar'),
-            'tanggal' => $this->request->getPost('tanggal'),
-            'status' => $this->request->getPost('status'),
+            'periode' => $this->request->getPost('periode'),
+            'layanan' => $this->request->getPost('layanan'),
+            'bidang' => $this->request->getPost('bidang'),
+            'kecamatan' => $this->request->getPost('kecamatan'),
             'jumlah' => (int) $this->request->getPost('jumlah'),
-            'jenis_kendaraan' => $this->request->getPost('jenis_kendaraan'),
-            'merek_kendaraan' => $this->request->getPost('merek_kendaraan'),
-            'warna_kendaraan' => $this->request->getPost('warna_kendaraan'),
-            'lokasi_kendaraan' => $this->request->getPost('lokasi_kendaraan'),
-            'kategori_kendaraan' => $this->request->getPost('kategori_kendaraan')
+            'selesai' => (int) $this->request->getPost('selesai'),
+            'proses' => (int) $this->request->getPost('proses')
         ];
-
-        // Hapus data kosong untuk field yang tidak diisi
-        foreach ($data as $key => $value) {
-            if ($value === '' || $value === null) {
-                unset($data[$key]);
-            }
-        }
 
         $this->datalayananModel->update($id, $data);
         session()->setFlashdata('success', 'Data pelayanan berhasil diperbarui!');
@@ -159,23 +203,20 @@ class Datalayanan extends BaseController
         header('Content-Disposition: attachment; filename=' . $filename);
         
         $output = fopen('php://output', 'w');
-        // Tambahkan BOM untuk UTF-8
         fprintf($output, chr(0xEF).chr(0xBB).chr(0xBF));
-        fputcsv($output, ['No', 'Pendaftar', 'Tanggal', 'Status', 'Jumlah', 'Jenis Kendaraan', 'Merek', 'Warna', 'Lokasi', 'Kategori']);
+        fputcsv($output, ['No', 'Periode', 'Layanan', 'Bidang', 'Kecamatan', 'Jumlah', 'Selesai', 'Proses']);
         
         $no = 1;
         foreach ($data as $row) {
             fputcsv($output, [
                 $no++,
-                $row->pendaftar,
-                $row->tanggal,
-                $row->status,
+                $row->periode,
+                $row->layanan,
+                $row->bidang,
+                $row->kecamatan,
                 $row->jumlah,
-                $row->jenis_kendaraan ?? '',
-                $row->merek_kendaraan ?? '',
-                $row->warna_kendaraan ?? '',
-                $row->lokasi_kendaraan ?? '',
-                $row->kategori_kendaraan ?? ''
+                $row->selesai ?? 0,
+                $row->proses ?? 0
             ]);
         }
         
@@ -198,7 +239,6 @@ class Datalayanan extends BaseController
             return redirect()->back();
         }
 
-        // Cek ekstensi file
         $ext = $file->getExtension();
         if (!in_array($ext, ['csv', 'CSV'])) {
             session()->setFlashdata('error', 'File harus berformat CSV!');
@@ -208,7 +248,6 @@ class Datalayanan extends BaseController
         $filePath = $file->getTempName();
         $handle = fopen($filePath, 'r');
         
-        // Lewati BOM jika ada
         $bom = fread($handle, 3);
         if ($bom !== chr(0xEF).chr(0xBB).chr(0xBF)) {
             rewind($handle);
@@ -218,18 +257,15 @@ class Datalayanan extends BaseController
         $row = 0;
         while (($dataRow = fgetcsv($handle, 1000, ',')) !== FALSE) {
             if ($row > 0) {
-                // Validasi data minimal
                 if (!empty($dataRow[1] ?? '')) {
                     $data[] = [
-                        'pendaftar' => trim($dataRow[1] ?? ''),
-                        'tanggal' => !empty($dataRow[2]) ? date('Y-m-d', strtotime($dataRow[2])) : date('Y-m-d'),
-                        'status' => trim($dataRow[3] ?? 'Pending'),
-                        'jumlah' => (int) ($dataRow[4] ?? 0),
-                        'jenis_kendaraan' => trim($dataRow[5] ?? ''),
-                        'merek_kendaraan' => trim($dataRow[6] ?? ''),
-                        'warna_kendaraan' => trim($dataRow[7] ?? ''),
-                        'lokasi_kendaraan' => trim($dataRow[8] ?? ''),
-                        'kategori_kendaraan' => trim($dataRow[9] ?? '')
+                        'periode' => trim($dataRow[1] ?? ''),
+                        'layanan' => trim($dataRow[2] ?? ''),
+                        'bidang' => trim($dataRow[3] ?? ''),
+                        'kecamatan' => trim($dataRow[4] ?? ''),
+                        'jumlah' => (int) ($dataRow[5] ?? 0),
+                        'selesai' => (int) ($dataRow[6] ?? 0),
+                        'proses' => (int) ($dataRow[7] ?? 0)
                     ];
                 }
             }
@@ -257,12 +293,9 @@ class Datalayanan extends BaseController
         $output = fopen('php://output', 'w');
         fprintf($output, chr(0xEF).chr(0xBB).chr(0xBF));
         
-        // Header template
-        fputcsv($output, ['No', 'Pendaftar', 'Tanggal', 'Status', 'Jumlah', 'Jenis Kendaraan', 'Merek', 'Warna', 'Lokasi', 'Kategori']);
-        
-        // Contoh data
-        fputcsv($output, ['1', 'Nama Pendaftar', '2026-01-01', 'Pending', '100', 'Mobil', 'Toyota', 'Merah', 'Jakarta', 'SUV']);
-        fputcsv($output, ['2', 'Contoh Lain', '2026-01-02', 'Proses', '200', 'Motor', 'Honda', 'Hitam', 'Bandung', '']);
+        fputcsv($output, ['No', 'Periode', 'Layanan', 'Bidang', 'Kecamatan', 'Jumlah', 'Selesai', 'Proses']);
+        fputcsv($output, ['1', 'Juli 2026', 'Surat Pernyataan Miskin', 'Perlindungan Sosial', 'Banyuwangi', '123', '100', '23']);
+        fputcsv($output, ['2', 'Juli 2026', 'Rekomendasi STP', 'Pemberdayaan Sosial', 'Srono', '123', '100', '23']);
         
         fclose($output);
         exit;
