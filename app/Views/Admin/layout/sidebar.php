@@ -334,7 +334,7 @@ $currentUrl = uri_string();
 
     <div class="sidebar-logout">
 
-        <a href="#">
+        <a href="<?= site_url('logout') ?>" class="sidebar-menu logout">
 
             <i class="bi bi-box-arrow-left"></i>
 

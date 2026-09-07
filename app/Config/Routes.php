@@ -1,8 +1,27 @@
 <?php
 
+namespace Config;
+
 use CodeIgniter\Router\RouteCollection;
 
-/** @var RouteCollection $routes */
+/**
+ * @var RouteCollection $routes
+ */
+$routes = Services::routes();
+
+
+// =====================================================
+// AUTH
+// =====================================================
+
+$routes->get('login', 'Auth::login');
+$routes->post('login', 'Auth::prosesLogin');
+
+$routes->get('register', 'Auth::register');
+$routes->post('register', 'Auth::prosesRegister');
+
+$routes->get('logout', 'Auth::logout');
+
 
 // =====================================================
 // FRONTEND
@@ -12,6 +31,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('home', 'Home::index');
 
+
 // =====================================================
 // BERITA
 // =====================================================
@@ -19,11 +39,13 @@ $routes->get('home', 'Home::index');
 $routes->get('berita', 'Berita::index');
 $routes->get('berita/(:segment)', 'Berita::detail/$1');
 
+
 // =====================================================
 // PROFIL FRONTEND
 // =====================================================
 
 $routes->get('profil', 'Profil::index');
+
 
 // =====================================================
 // LAYANAN FRONTEND
@@ -32,11 +54,13 @@ $routes->get('profil', 'Profil::index');
 $routes->get('layanan', 'Layanan::index');
 $routes->get('layanan/detail/(:num)', 'Layanan::detail/$1');
 
+
 // =====================================================
 // PENGADUAN FRONTEND
 // =====================================================
 
 $routes->get('pengaduan', 'Pengaduan::index');
+
 
 // =====================================================
 // KEGIATAN FRONTEND
@@ -46,17 +70,20 @@ $routes->get('kegiatan', 'Kegiatan::index');
 $routes->get('kegiatan/tahun/(:num)', 'Kegiatan::tahun/$1');
 $routes->get('kegiatan/(:segment)', 'Kegiatan::detail/$1');
 
+
 // =====================================================
 // BIDANG FRONTEND
 // =====================================================
-
+route_to('bidang', 'Bidang::index');
 $routes->get('bidang/(:segment)', 'Bidang::detail/$1');
+
 
 // =====================================================
 // INSTAGRAM
 // =====================================================
 
 $routes->get('instagram', 'Instagram::index');
+
 
 // =====================================================
 // DOKUMEN FRONTEND
@@ -65,20 +92,24 @@ $routes->get('instagram', 'Instagram::index');
 $routes->get('dokumen', 'Dokumen::index');
 $routes->get('dokumen/detail/(:num)', 'Dokumen::detail/$1');
 
+//dashboard statistik frontend
 
+$routes->get('statistik', 'Statistik::index');
 // =====================================================
 // ADMIN
+// SEMUA ROUTE ADMIN WAJIB LOGIN
 // =====================================================
 
-$routes->group('admin', function ($routes) {
+$routes->group('admin', ['filter' => 'auth'], function ($routes) {
 
     // =================================================
     // DASHBOARD
     // =================================================
 
+    $routes->get('/', 'Admin\Dashboard::index');
+
     $routes->get(
-        'dashboard',
-        'Admin\Dashboard::index'
+        'dashboard','Admin\Dashboard::index'
     );
 
 
@@ -116,7 +147,8 @@ $routes->group('admin', function ($routes) {
         'Admin\Bidang::delete/$1'
     );
 
-
+//dashboard statistik
+$routes->get('statistik', 'Admin\Statistik::index');
     // =================================================
     // DETAIL BIDANG
     // =================================================
@@ -310,6 +342,7 @@ $routes->group('admin', function ($routes) {
         'profil/store',
         'Admin\Profil::store'
     );
+     $routes->get('profil/delete/(:num)', 'Admin\Profil::delete/$1');
 
 
     // =================================================

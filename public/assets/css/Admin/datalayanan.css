@@ -611,8 +611,8 @@ table tbody tr:hover {
     background: var(--maroon);
 }
 
-.datalayanan-container .table-actions > a:not(:first-of-type) {
-    display: none;
+.datalayanan-container .table-actions > a:nth-of-type(2) {
+    background: var(--accent);
 }
 
 .datalayanan-container table {
@@ -1295,6 +1295,7 @@ table tbody tr:hover {
         grid-template-columns: 1fr;
     }
 
+
     .import-format-card {
         overflow-x: auto;
     }
@@ -1487,4 +1488,29 @@ table tbody tr:hover {
         font-size: 9px;
     }
 
+}
+
+.btn-group {
+    display: inline-flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.btn-group .btn {
+    border-radius: 4px;
+}
+
+.btn-group .btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.btn-group .btn:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+/* Atau jika ingin terpisah dengan jarak */
+.btn-group {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
 }
