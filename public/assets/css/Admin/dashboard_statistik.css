@@ -1,0 +1,967 @@
+/* =========================================================
+   DASHBOARD STATISTIK ADMIN
+   File:
+   assets/css/admin/dashboard-statistik.css
+
+   CSS KHUSUS HALAMAN DASHBOARD STATISTIK
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.statistik-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.statistik-header h2 {
+    margin: 0;
+    color: #650719;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.statistik-header p {
+    margin: 4px 0 0;
+    color: #650719;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   GRID UTAMA
+========================================================= */
+
+.statistik-grid {
+    display: grid;
+    gap: 26px;
+    margin-bottom: 26px;
+}
+
+
+/* BARIS 1 */
+
+.statistik-grid-top {
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr)
+        minmax(0, .78fr);
+}
+
+
+/* BARIS 2 */
+
+.statistik-grid-middle {
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.8fr);
+}
+
+
+/* BARIS 3 */
+
+.statistik-grid-bottom {
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(0, 1fr);
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CARD STATISTIK
+========================================================= */
+
+.statistik-card {
+    background: #ffffff;
+    border: 1px solid #8d2435;
+    border-radius: 7px;
+    padding: 16px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   JUDUL CARD
+========================================================= */
+
+.statistik-card-title {
+    margin-bottom: 12px;
+}
+
+.statistik-card-title h5 {
+    display: inline-block;
+    position: relative;
+
+    margin: 0;
+    padding-bottom: 7px;
+
+    color: #650719;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.statistik-card-title h5::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 58px;
+    height: 1px;
+
+    background: #650719;
+}
+
+
+/* =========================================================
+   CAPAIAN LAYANAN
+========================================================= */
+
+.layanan-stat-list {
+    margin-top: 3px;
+}
+
+.layanan-stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 2px;
+
+    border-bottom: 1px solid #eadde0;
+
+    color: #650719;
+    font-size: 9px;
+}
+
+.layanan-stat-item div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.layanan-stat-item i {
+    color: #650719;
+    font-size: 13px;
+}
+
+.layanan-stat-item strong {
+    color: #650719;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CAPAIAN KESELURUHAN
+========================================================= */
+
+.capaian-overall {
+    width: 168px;
+    height: 39px;
+
+    margin-top: 9px;
+    padding: 5px 9px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #faeef0;
+    border-radius: 6px;
+}
+
+.capaian-overall div {
+    display: flex;
+    flex-direction: column;
+}
+
+.capaian-overall small {
+    color: #650719;
+    font-size: 7px;
+    font-weight: 600;
+}
+
+.capaian-overall strong {
+    color: #650719;
+    font-size: 14px;
+}
+
+.capaian-overall i {
+    color: #650719;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   GRAFIK
+========================================================= */
+
+.statistik-chart {
+    position: relative;
+
+    width: 100%;
+    height: 176px;
+}
+
+.statistik-chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* =========================================================
+   SURVEY
+========================================================= */
+
+.survey-card {
+    min-width: 0;
+}
+
+.survey-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 22px;
+}
+
+.survey-score i {
+    color: #dc9219;
+    font-size: 46px;
+}
+
+.survey-score strong {
+    color: #650719;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.survey-label {
+    margin: 4px 0 25px;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   INFO SURVEY
+========================================================= */
+
+.survey-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 7px;
+}
+
+.survey-info > div {
+    min-height: 51px;
+
+    padding: 7px 3px;
+
+    border: 1px solid #8d3040;
+    border-radius: 4px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.survey-info span {
+    display: block;
+
+    color: #650719;
+
+    font-size: 7px;
+    font-weight: 600;
+}
+
+.survey-info strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #650719;
+
+    font-size: 13px;
+}
+
+.survey-info small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #777;
+
+    font-size: 6px;
+}
+
+.survey-good {
+    color: #448b70 !important;
+
+    font-size: 9px !important;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CAPAIAN PER BIDANG
+========================================================= */
+
+.bidang-stat-card {
+    min-width: 0;
+}
+
+.bidang-stat-list {
+    margin-top: 4px;
+}
+
+.bidang-stat-item {
+    display: grid;
+
+    grid-template-columns:
+        24px
+        100px
+        minmax(60px, 1fr)
+        32px;
+
+    gap: 7px;
+
+    align-items: center;
+
+    min-height: 43px;
+
+    border-bottom: 1px solid #eadde0;
+}
+
+.bidang-stat-item > i {
+    color: #650719;
+    font-size: 17px;
+}
+
+.bidang-name {
+    color: #650719;
+
+    font-size: 6.5px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+}
+
+.bidang-progress {
+    width: 100%;
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #f5d8dd;
+}
+
+.bidang-progress span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: 5px;
+
+    background: #650719;
+}
+
+.bidang-stat-item > strong {
+    color: #650719;
+
+    font-size: 8px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   LAYANAN UNGGULAN
+========================================================= */
+
+.layanan-unggulan-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 11px;
+}
+
+.layanan-unggulan-item {
+    min-height: 151px;
+
+    padding: 10px 8px 8px;
+
+    border: 1px solid #8d3040;
+
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.layanan-unggulan-item h6 {
+    min-height: 30px;
+
+    margin: 0;
+
+    color: #650719;
+
+    font-size: 8px;
+
+    line-height: 1.3;
+}
+
+
+/* ICON */
+
+.unggulan-icon {
+    width: 49px;
+    height: 49px;
+
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    background: #f8bac5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unggulan-icon i {
+    color: #650719;
+    font-size: 23px;
+}
+
+
+/* BOTTOM */
+
+.unggulan-bottom {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+}
+
+.unggulan-bottom > div:first-child {
+    border-right: 1px solid #ddd;
+}
+
+.unggulan-bottom strong {
+    display: block;
+
+    color: #650719;
+
+    font-size: 15px;
+}
+
+.unggulan-bottom small {
+    display: block;
+
+    color: #650719;
+
+    font-size: 5.5px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   PENERIMA MANFAAT
+========================================================= */
+
+.penerima-card {
+    min-width: 0;
+}
+
+.penerima-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 6px;
+}
+
+.penerima-item {
+    min-height: 62px;
+
+    padding: 5px 3px;
+
+    border: 1px solid #8d3040;
+
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.penerima-item i {
+    color: #650719;
+
+    font-size: 16px;
+}
+
+.penerima-item strong {
+    margin-top: 1px;
+
+    color: #650719;
+
+    font-size: 13px;
+}
+
+.penerima-item small {
+    margin-top: 2px;
+
+    color: #650719;
+
+    font-size: 5px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   KATEGORI PENERIMA
+========================================================= */
+
+.kategori-title {
+    width: max-content;
+
+    margin-top: 17px;
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid #8d3040;
+
+    color: #650719;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.kategori-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 4px;
+}
+
+.kategori-chart {
+    position: relative;
+
+    width: 125px;
+    height: 125px;
+
+    flex-shrink: 0;
+}
+
+.kategori-chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* =========================================================
+   LEGEND PIE
+========================================================= */
+
+.kategori-legend {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.kategori-legend > div {
+    display: grid;
+
+    grid-template-columns:
+        31px
+        24px
+        minmax(80px, auto);
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.kategori-legend .legend {
+    width: 31px;
+    height: 13px;
+
+    display: block;
+}
+
+.legend-1 {
+    background: #650719;
+}
+
+.legend-2 {
+    background: #a50e28;
+}
+
+.legend-3 {
+    background: #e83152;
+}
+
+.legend-4 {
+    background: #f08da0;
+}
+
+.legend-5 {
+    background: #f7cbd2;
+}
+
+.kategori-legend strong {
+    color: #650719;
+
+    font-size: 7px;
+}
+
+.kategori-legend small {
+    color: #650719;
+
+    font-size: 5.5px;
+}
+
+
+/* =========================================================
+   KECAMATAN
+========================================================= */
+
+.kecamatan-card {
+    min-width: 0;
+}
+
+.kecamatan-wrapper {
+    height: 235px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(130px, .75fr);
+
+    gap: 12px;
+}
+
+.kecamatan-map {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAP SEMENTARA
+========================================================= */
+
+.fake-map {
+    position: relative;
+
+    width: 210px;
+    height: 210px;
+
+    transform: rotate(-7deg);
+}
+
+.map-area {
+    position: absolute;
+
+    border: 1px solid #fff;
+
+    border-radius: 40%;
+
+    background: #e94d68;
+}
+
+.map-1 {
+    width: 60px;
+    height: 55px;
+
+    left: 76px;
+    top: 3px;
+}
+
+.map-2 {
+    width: 70px;
+    height: 58px;
+
+    left: 38px;
+    top: 42px;
+}
+
+.map-3 {
+    width: 60px;
+    height: 65px;
+
+    left: 98px;
+    top: 45px;
+
+    background: #850a20;
+}
+
+.map-4 {
+    width: 65px;
+    height: 59px;
+
+    left: 14px;
+    top: 87px;
+}
+
+.map-5 {
+    width: 73px;
+    height: 60px;
+
+    left: 70px;
+    top: 100px;
+}
+
+.map-6 {
+    width: 57px;
+    height: 55px;
+
+    left: 125px;
+    top: 96px;
+
+    background: #850a20;
+}
+
+.map-7 {
+    width: 61px;
+    height: 55px;
+
+    left: 39px;
+    top: 142px;
+
+    background: #f58fa0;
+}
+
+.map-8 {
+    width: 61px;
+    height: 50px;
+
+    left: 91px;
+    top: 154px;
+}
+
+
+/* =========================================================
+   TOP KECAMATAN
+========================================================= */
+
+.top-kecamatan {
+    padding-top: 7px;
+}
+
+.top-kecamatan h6 {
+    margin: 0 0 11px;
+
+    color: #650719;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.top-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 9px;
+}
+
+.top-item span {
+    width: 16px;
+    height: 16px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #650719;
+
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 7px;
+
+    font-weight: 700;
+}
+
+.top-item p {
+    margin: 0;
+
+    color: #650719;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   LEGEND MAP
+========================================================= */
+
+.map-legend {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 15px;
+}
+
+.map-legend div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #650719;
+
+    font-size: 6.5px;
+}
+
+.map-legend span {
+    width: 39px;
+    height: 13px;
+
+    display: inline-block;
+}
+
+.legend-high {
+    background: #650719;
+}
+
+.legend-medium {
+    background: #e94d68;
+}
+
+.legend-low {
+    background: #f58fa0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .statistik-grid-top {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .survey-card {
+        grid-column: span 2;
+    }
+
+    .statistik-grid-middle,
+    .statistik-grid-bottom {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .statistik-grid-top {
+        grid-template-columns: 1fr;
+    }
+
+    .survey-card {
+        grid-column: auto;
+    }
+
+    .layanan-unggulan-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .penerima-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .kecamatan-wrapper {
+        grid-template-columns: 1fr;
+
+        height: auto;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .layanan-unggulan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .penerima-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kategori-wrapper {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
