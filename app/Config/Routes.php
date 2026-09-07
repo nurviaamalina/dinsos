@@ -466,14 +466,91 @@ $routes->group('admin', function ($routes) {
         'Admin\Datalayanan::export'
     );
 
+    // IMPORT DATA
     $routes->get(
         'datalayanan/import',
         'Admin\Datalayanan::import'
     );
 
     $routes->post(
-        'datalayanan/import',
-        'Admin\Datalayanan::importProcess'
+    'datalayanan/import/process',
+    'Admin\Datalayanan::importProcess'
+);
+
+     // =====================================================
+    // PENERIMA MANFAAT
+    // =====================================================
+
+    $routes->get(
+        'penerima-manfaat',
+        'Admin\PenerimaManfaat::index'
     );
+
+    $routes->get(
+        'penerima-manfaat/create',
+        'Admin\PenerimaManfaat::create'
+    );
+
+    $routes->post(
+        'penerima-manfaat/store',
+        'Admin\PenerimaManfaat::store'
+    );
+
+    $routes->get(
+        'penerima-manfaat/edit/(:num)',
+        'Admin\PenerimaManfaat::edit/$1'
+    );
+
+    $routes->post(
+        'penerima-manfaat/update/(:num)',
+        'Admin\PenerimaManfaat::update/$1'
+    );
+
+    $routes->get(
+        'penerima-manfaat/delete/(:num)',
+        'Admin\PenerimaManfaat::delete/$1'
+    );
+
+    $routes->get(
+    'penerima-manfaat/import',
+    'Admin\PenerimaManfaat::import'
+);
+
+$routes->post(
+    'penerima-manfaat/importProcess',
+    'Admin\PenerimaManfaat::importProcess'
+);
+
+
+// DATA SKM
+    $routes->get(
+        'hasil-skm',
+        'Admin\HasilSKM::index'
+    );
+
+    // HALAMAN IMPORT
+    $routes->get(
+        'hasil-skm/import',
+        'Admin\HasilSKM::import'
+    );
+
+    // UPLOAD EXCEL
+    $routes->post(
+        'hasil-skm/import/process',
+        'Admin\HasilSKM::importProcess'
+    );
+
+    // SIMPAN MAPPING
+    $routes->post(
+        'hasil-skm/import/save',
+        'Admin\HasilSKM::importSave'
+    );
+
+    // DELETE
+    $routes->get(
+        'hasil-skm/delete/(:num)',
+        'Admin\HasilSKM::delete/$1'
+    );
+
 
 });

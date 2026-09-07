@@ -548,3 +548,169 @@ body {
 }
 
 
+/* =========================================================
+   GLOBAL ADMIN PAGINATION
+   Digunakan oleh seluruh halaman admin
+========================================================= */
+
+.content .pagination {
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin: 18px 0 0 !important;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   PAGINATION ITEM
+========================================================= */
+
+.content .pagination .page-item {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   PAGINATION LINK
+========================================================= */
+
+.content .pagination .page-link {
+    min-width: 28px;
+
+    height: 28px;
+
+    padding: 0 8px;
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    color: #333333 !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dddddd !important;
+
+    border-radius: 4px !important;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    box-shadow: none !important;
+
+    transition: all .2s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.content .pagination .page-link:hover {
+    color: #6d061b !important;
+
+    background: #fff7f8 !important;
+
+    border-color: #6d061b !important;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.content .pagination .page-item.active .page-link {
+    color: #ffffff !important;
+
+    background: #6d061b !important;
+
+    border-color: #6d061b !important;
+
+    font-weight: 600;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.content .pagination .page-item.disabled .page-link {
+    color: #aaaaaa !important;
+
+    background: #f8f8f8 !important;
+
+    border-color: #dddddd !important;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.content .pagination .page-link:focus {
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 2px rgba(109, 6, 27, .10) !important;
+}
+
+
+/* =========================================================
+   PAGINATION NAV
+========================================================= */
+
+.content nav[aria-label*="Pagination"],
+.content nav[aria-label*="pagination"] {
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .content .pagination {
+        justify-content: center;
+
+        gap: 4px;
+    }
+
+    .content .pagination .page-link {
+        min-width: 27px;
+
+        height: 27px;
+
+        font-size: 9px;
+    }
+
+}

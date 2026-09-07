@@ -1,104 +1,448 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets/css/admin/datalayanan.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/admin/admin.css') ?>">
-</head>
-<body>
-<?= $this->include('admin/layout/sidebar') ?>
-    <div class="datalayanan-container">
-        <main class="main-content">
-            <div class="page-header import-page-header">
-                <div>
-                    <h3>Import Data Pelayanan</h3>
-                    <p class="subtitle">Kelola seluruh Data</p>
+<?= $this->include('admin/layout/header') ?>
+
+<link rel="stylesheet" href="<?= base_url('assets/css/admin/datalayanan.css') ?>">
+
+<div class="d-flex">
+
+    <!-- SIDEBAR -->
+    <?= $this->include('admin/layout/sidebar') ?>
+
+    <!-- CONTENT -->
+    <div class="content flex-grow-1">
+
+       <div class="datalayanan-container import-page">
+
+            <!-- =========================
+                 FORMAT IMPORT
+            ========================== -->
+            <div class="import-format-card">
+
+                <div class="import-title">
+                    Keterangan Format Import
                 </div>
+
+                <p class="import-description">
+                    Pastikan file yang diunggah memiliki format kolom seperti berikut.
+                    Sistem mendukung file CSV dan Excel.
+                </p>
+
+                <div class="table-responsive">
+
+                    <table class="import-format-table">
+
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Kolom</th>
+                                <th>Tipe Data</th>
+                                <th>Isi Kolom</th>
+                                <th>Contoh Data</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>1.</td>
+                                <td>Periode</td>
+                                <td>Teks dan Angka</td>
+                                <td>Bulan dan Tahun</td>
+                                <td>Juli 2026</td>
+                            </tr>
+
+                            <tr>
+                                <td>2.</td>
+                                <td>Nama Layanan</td>
+                                <td>Teks</td>
+                                <td>Nama Layanan</td>
+                                <td>Layanan Permohonan SPM</td>
+                            </tr>
+
+                            <tr>
+                                <td>3.</td>
+                                <td>Bidang</td>
+                                <td>Teks</td>
+                                <td>Nama Bidang</td>
+                                <td>Perlindungan dan Jaminan Sosial</td>
+                            </tr>
+
+                            <tr>
+                                <td>4.</td>
+                                <td>Kecamatan</td>
+                                <td>Teks</td>
+                                <td>Nama Kecamatan</td>
+                                <td>Banyuwangi</td>
+                            </tr>
+
+                            <tr>
+                                <td>5.</td>
+                                <td>Jumlah</td>
+                                <td>Angka</td>
+                                <td>Jumlah keseluruhan permohonan</td>
+                                <td>80</td>
+                            </tr>
+
+                            <tr>
+                                <td>6.</td>
+                                <td>Selesai</td>
+                                <td>Angka</td>
+                                <td>Jumlah permohonan yang telah selesai</td>
+                                <td>70</td>
+                            </tr>
+
+                            <tr>
+                                <td>7.</td>
+                                <td>Proses</td>
+                                <td>Angka</td>
+                                <td>Jumlah permohonan yang dalam proses</td>
+                                <td>10</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
             </div>
 
-            <!-- Flash Messages -->
-            <?php if(session()->getFlashdata('success')): ?>
-                <div class="alert alert-success">
-                    <span><i class="fas fa-check-circle"></i> <?= session()->getFlashdata('success') ?></span>
-                    <button class="close-btn" onclick="this.parentElement.remove()">&times;</button>
-                </div>
-            <?php endif; ?>
 
-            <?php if(session()->getFlashdata('error')): ?>
-                <div class="alert alert-danger">
-                    <span><i class="fas fa-exclamation-circle"></i> <?= session()->getFlashdata('error') ?></span>
-                    <button class="close-btn" onclick="this.parentElement.remove()">&times;</button>
-                </div>
-            <?php endif; ?>
+            <!-- =========================
+                 IMPORT
+            ========================== -->
+            <div class="import-grid">
 
-            <div class="card">
-                <div class="card-body import-content">
-                    <section class="import-format-card">
-                        <h5>Keterangan Format CSV</h5>
-                        <p>Pastikan file CSV yang diunggah memiliki format kolom seperti berikut.</p>
-                        <div class="import-table-wrap">
-                            <table class="import-format-table">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Kolom</th>
-                                        <th>Tipe Data</th>
-                                        <th>Isi Kolom</th>
-                                        <th>Contoh Data</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>1.</td><td>Periode</td><td>Teks dan Angka</td><td>Bulan dan Tahun</td><td>Juli 2026</td></tr>
-                                    <tr><td>2.</td><td>Nama Layanan</td><td>Teks</td><td>Nama Layanan</td><td>Layanan Permohonan SPM</td></tr>
-                                    <tr><td>3.</td><td>Kecamatan</td><td>Teks</td><td>Nama Kecamatan</td><td>Banyuwangi</td></tr>
-                                    <tr><td>4.</td><td>Jumlah</td><td>Angka 1 - 100</td><td>Jumlah keseluruhan permohonan</td><td>80</td></tr>
-                                    <tr><td>5.</td><td>Selesai</td><td>Angka 1 - 100</td><td>Jumlah permohonan yang telah selesai</td><td>70</td></tr>
-                                    <tr><td>6.</td><td>Proses</td><td>Angka 1 - 100</td><td>Jumlah permohonan yang dalam proses</td><td>10</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
+                <!-- FORM UPLOAD -->
+                <div class="import-upload-card">
 
-                    <div class="import-lower-grid">
-                        <section class="import-upload-card">
-                            <h5>Import Data Pelayanan</h5>
-                            <form action="<?= base_url('admin/datalayanan/import') ?>" method="post" enctype="multipart/form-data">
-                                <?= csrf_field() ?>
-                                <label for="file_import">Upload Dokumen</label>
-                                <input type="file" id="file_import" name="file_import" accept=".csv" required>
-                                <div class="import-dropzone">
-                                    <i class="bi bi-cloud-upload"></i>
-                                    <span>Choose a file or drag &amp; drop it here</span>
-                                    <small>JPEG, PNG, PDF and MP4 files, up to 50MB</small>
-                                    <label for="file_import" class="import-browse-button">Browse File</label>
-                                </div>
-                                <div class="import-actions">
-                                    <a href="<?= base_url('admin/datalayanan') ?>" class="btn btn-secondary">Batal</a>
-                                    <button type="submit" class="btn btn-primary"><i class="bi bi-upload"></i> Import Data</button>
-                                </div>
-                            </form>
-                        </section>
-
-                        <aside class="import-guide-card">
-                            <h5>Petunjuk Import</h5>
-                            <ul>
-                                <li>Pastikan <strong>nama kolom</strong> dan <strong>format data</strong> pada Excel sesuai dengan format yang telah ditentukan.</li>
-                                <li>Pastikan data yang diinput sudah lengkap dan benar sebelum melakukan import.</li>
-                                <li>Kolom <strong>Jumlah, Selesai,</strong> dan <strong>Proses</strong> diisi dengan angka sesuai jumlah permohonan.</li>
-                                <li>Jika kolom Selesai atau Proses tidak diisi, sistem tidak akan bisa menghitung persentase.</li>
-                                <li>Pastikan file yang diunggah menggunakan format <strong>CSV (.csv)</strong>.</li>
-                            </ul>
-                            <a href="<?= base_url('admin/datalayanan/download-template') ?>" class="import-template-link">
-                                <i class="bi bi-download"></i> Download Template
-                            </a>
-                        </aside>
+                    <div class="import-title">
+                        Import Data Pelayanan
                     </div>
-                </div>
-            </div>
-        </main>
+
+                    <div class="import-line"></div>
+
+                    <label class="upload-label">
+                        Upload Dokumen
+                    </label>
+
+                    <form
+                        action="<?= base_url('admin/datalayanan/import/process') ?>"
+                        method="post"
+                        enctype="multipart/form-data"
+                    >
+
+                        <?= csrf_field() ?>
+
+                        <div
+                            class="upload-area"
+                            id="uploadArea"
+                        >
+
+                            <i class="bi bi-cloud-arrow-up upload-icon"></i>
+
+                            <div class="upload-text">
+                                Pilih file atau drag & drop di sini
+                            </div>
+
+                            <div class="upload-info">
+                                Format yang didukung: CSV, XLS, XLSX, XLSM
+                                <br>
+                                Maksimal ukuran file 10 MB
+                            </div>
+
+                            <label for="file_import" class="browse-button">
+                                Browse File
+                            </label>
+
+                            <input
+                                type="file"
+                                id="file_import"
+                                name="file_import"
+                                accept=".csv,.xls,.xlsx,.xlsm"
+                                hidden
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- FILE TERPILIH -->
+                        <div
+    class="selected-file"
+    id="selectedFile"
+    style="display:none;"
+>
+
+    <div class="selected-file-header">
+        <i class="bi bi-file-earmark-excel"></i>
+        <span>File Excel Data Layanan</span>
     </div>
-</body>
-</html>
+
+    <div class="selected-file-card">
+
+        <div class="selected-file-left">
+
+            <div class="selected-file-icon">
+                <i class="bi bi-file-earmark-excel"></i>
+            </div>
+
+            <div class="selected-file-info">
+
+                <div
+                    class="selected-file-name"
+                    id="fileName"
+                >
+                    DATA PELAYANAN.xlsx
+                </div>
+
+                <div
+                    class="selected-file-size"
+                    id="fileSize"
+                >
+                    0 KB
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="remove-file"
+            id="removeFile"
+            title="Hapus file"
+        >
+            <i class="bi bi-trash3"></i>
+        </button>
+
+    </div>
+
+</div>
+
+
+                        <!-- ACTION -->
+                        <div class="import-actions">
+
+                            <a
+                                href="<?= base_url('admin/datalayanan') ?>"
+                                class="btn-cancel"
+                            >
+                                Batal
+                            </a>
+
+                           <button type="submit" class="btn-import">
+                                <i class="bi bi-upload"></i>
+                                Import Data
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- PETUNJUK -->
+                <div class="import-guide-card">
+
+                    <div class="import-title">
+                        Petunjuk Import
+                    </div>
+
+                    <div class="import-line"></div>
+
+                    <ul>
+
+                        <li>
+                            Pastikan nama kolom dan format data pada
+                            Excel sesuai dengan format yang telah ditentukan.
+                        </li>
+
+                        <li>
+                            Pastikan data yang diinput sudah lengkap dan
+                            benar sebelum melakukan import.
+                        </li>
+
+                        <li>
+                            Kolom Jumlah, Selesai, dan Proses diisi dengan
+                            angka sesuai jumlah permohonan.
+                        </li>
+
+                        <li>
+                            Jika kolom Selesai atau Proses tidak diisi,
+                            sistem tidak akan bisa menghitung persentase.
+                        </li>
+
+                        <li>
+                            File yang dapat diunggah:
+                            <strong>CSV (.csv)</strong>,
+                            <strong>Excel 97-2003 (.xls)</strong>,
+                            <strong>Excel (.xlsx)</strong>,
+                            dan <strong>Excel Macro-Enabled (.xlsm)</strong>.
+                        </li>
+
+                    </ul>
+
+                    <a
+                        href="<?= base_url('admin/datalayanan/import/template') ?>"
+                        class="download-template"
+                    >
+                        <i class="bi bi-download"></i>
+                        Download Template
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const fileInput = document.getElementById('file_import');
+const uploadArea = document.getElementById('uploadArea');
+
+const selectedFile = document.getElementById('selectedFile');
+const fileName = document.getElementById('fileName');
+const fileSize = document.getElementById('fileSize');
+
+const removeFile = document.getElementById('removeFile');
+
+
+/*
+|--------------------------------------------------------------------------
+| Tampilkan File yang Dipilih
+|--------------------------------------------------------------------------
+*/
+
+fileInput.addEventListener('change', function () {
+
+    if (this.files.length === 0) {
+        selectedFile.style.display = 'none';
+        return;
+    }
+
+    const file = this.files[0];
+
+    fileName.textContent = file.name;
+    fileSize.textContent = formatFileSize(file.size);
+
+    selectedFile.style.display = 'flex';
+
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Format Ukuran File
+|--------------------------------------------------------------------------
+*/
+
+function formatFileSize(bytes)
+{
+    if (bytes === 0) {
+        return '0 KB';
+    }
+
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+
+    const i = Math.floor(
+        Math.log(bytes) / Math.log(1024)
+    );
+
+    return (
+        parseFloat(
+            (bytes / Math.pow(1024, i)).toFixed(2)
+        )
+        + ' '
+        + sizes[i]
+    );
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Hapus File
+|--------------------------------------------------------------------------
+*/
+
+removeFile.addEventListener('click', function () {
+
+    fileInput.value = '';
+
+    selectedFile.style.display = 'none';
+
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Drag & Drop
+|--------------------------------------------------------------------------
+*/
+
+uploadArea.addEventListener('dragover', function (e) {
+
+    e.preventDefault();
+
+    this.classList.add('drag-over');
+
+});
+
+
+uploadArea.addEventListener('dragleave', function () {
+
+    this.classList.remove('drag-over');
+
+});
+
+
+uploadArea.addEventListener('drop', function (e) {
+
+    e.preventDefault();
+
+    this.classList.remove('drag-over');
+
+    if (e.dataTransfer.files.length === 0) {
+        return;
+    }
+
+    const file = e.dataTransfer.files[0];
+
+    const allowedExtensions = [
+        '.csv',
+        '.xls',
+        '.xlsx',
+        '.xlsm'
+    ];
+
+    const extension =
+        file.name
+            .substring(file.name.lastIndexOf('.'))
+            .toLowerCase();
+
+    if (!allowedExtensions.includes(extension)) {
+
+        alert(
+            'Format file tidak didukung.\n\n' +
+            'Gunakan CSV, XLS, XLSX, atau XLSM.'
+        );
+
+        return;
+    }
+
+    fileInput.files = e.dataTransfer.files;
+
+    fileName.textContent = file.name;
+    fileSize.textContent = formatFileSize(file.size);
+
+    selectedFile.style.display = 'flex';
+
+});
+
+</script>

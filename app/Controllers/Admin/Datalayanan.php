@@ -8,6 +8,9 @@ use App\Models\DatalayananModel;
 use App\Models\KecamatanModel;
 use App\Models\LayananModel;
 
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
+
 class Datalayanan extends BaseController
 {
     protected $datalayananModel;
@@ -230,58 +233,483 @@ class Datalayanan extends BaseController
         return view('admin/datalayanan/import', $data);
     }
 
-    public function importProcess()
-    {
-        $file = $this->request->getFile('file_import');
-        
-        if (!$file->isValid()) {
-            session()->setFlashdata('error', 'File tidak valid!');
-            return redirect()->back();
-        }
+public function importProcess()
+{
+    // ==========================================
+    // AMBIL FILE
+    // ==========================================
 
-        $ext = $file->getExtension();
-        if (!in_array($ext, ['csv', 'CSV'])) {
-            session()->setFlashdata('error', 'File harus berformat CSV!');
-            return redirect()->back();
-        }
+    $file = $this->request->getFile('file_import');
 
-        $filePath = $file->getTempName();
-        $handle = fopen($filePath, 'r');
-        
-        $bom = fread($handle, 3);
-        if ($bom !== chr(0xEF).chr(0xBB).chr(0xBF)) {
-            rewind($handle);
-        }
-        
-        $data = [];
-        $row = 0;
-        while (($dataRow = fgetcsv($handle, 1000, ',')) !== FALSE) {
-            if ($row > 0) {
-                if (!empty($dataRow[1] ?? '')) {
-                    $data[] = [
-                        'periode' => trim($dataRow[1] ?? ''),
-                        'layanan' => trim($dataRow[2] ?? ''),
-                        'bidang' => trim($dataRow[3] ?? ''),
-                        'kecamatan' => trim($dataRow[4] ?? ''),
-                        'jumlah' => (int) ($dataRow[5] ?? 0),
-                        'selesai' => (int) ($dataRow[6] ?? 0),
-                        'proses' => (int) ($dataRow[7] ?? 0)
-                    ];
-                }
-            }
-            $row++;
-        }
-        fclose($handle);
 
-        if (!empty($data)) {
-            $this->datalayananModel->insertBatch($data);
-            session()->setFlashdata('success', 'Berhasil import ' . count($data) . ' data!');
-        } else {
-            session()->setFlashdata('error', 'Tidak ada data yang diimport!');
-        }
+    // ==========================================
+    // CEK FILE
+    // ==========================================
 
-        return redirect()->to('/admin/datalayanan');
+    if (!$file || !$file->isValid()) {
+
+        return redirect()
+            ->back()
+            ->with('error', 'Silakan pilih file terlebih dahulu.');
     }
+
+
+    // ==========================================
+    // CEK UKURAN
+    // Maksimal 10 MB
+    // ==========================================
+
+    if ($file->getSize() > 10 * 1024 * 1024) {
+
+        return redirect()
+            ->back()
+            ->with(
+                'error',
+                'Ukuran file maksimal 10 MB.'
+            );
+    }
+
+
+    // ==========================================
+    // CEK EXTENSION
+    // ==========================================
+
+    $extension = strtolower(
+        $file->getClientExtension()
+    );
+
+    $allowedExtensions = [
+        'csv',
+        'xls',
+        'xlsx',
+        'xlsm'
+    ];
+
+
+    if (!in_array(
+        $extension,
+        $allowedExtensions,
+        true
+    )) {
+
+        return redirect()
+            ->back()
+            ->with(
+                'error',
+                'Format file tidak didukung. Gunakan CSV, XLS, XLSX, atau XLSM.'
+            );
+    }
+
+
+    // ==========================================
+    // BACA FILE EXCEL / CSV
+    // ==========================================
+
+    try {
+
+        $spreadsheet = IOFactory::load(
+            $file->getTempName()
+        );
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $rows = $sheet->toArray(
+            null,
+            true,
+            true,
+            false
+        );
+
+    } catch (\Throwable $e) {
+
+        return redirect()
+            ->back()
+            ->with(
+                'error',
+                'File tidak dapat dibaca. Pastikan file Excel/CSV tidak rusak.'
+            );
+    }
+
+
+    // ==========================================
+    // CEK DATA
+    // ==========================================
+
+    if (count($rows) <= 1) {
+
+        return redirect()
+            ->back()
+            ->with(
+                'error',
+                'File tidak memiliki data.'
+            );
+    }
+
+
+    // ==========================================
+    // HEADER
+    // ==========================================
+
+    $header = array_map(
+        function ($value) {
+
+            return strtolower(
+                trim(
+                    preg_replace(
+                        '/\s+/',
+                        ' ',
+                        (string) $value
+                    )
+                )
+            );
+
+        },
+        $rows[0]
+    );
+
+
+    // ==========================================
+    // HEADER WAJIB
+    // ==========================================
+
+    $requiredHeaders = [
+        'periode',
+        'nama layanan',
+        'bidang',
+        'kecamatan',
+        'jumlah',
+        'selesai',
+        'proses'
+    ];
+
+
+    foreach ($requiredHeaders as $required) {
+
+        if (!in_array(
+            $required,
+            $header,
+            true
+        )) {
+
+            return redirect()
+                ->back()
+                ->with(
+                    'error',
+                    'Kolom "' . $required . '" tidak ditemukan dalam file.'
+                );
+        }
+    }
+
+
+    // ==========================================
+    // POSISI KOLOM
+    // ==========================================
+
+    $colPeriode = array_search(
+        'periode',
+        $header,
+        true
+    );
+
+    $colLayanan = array_search(
+        'nama layanan',
+        $header,
+        true
+    );
+
+    $colBidang = array_search(
+        'bidang',
+        $header,
+        true
+    );
+
+    $colKecamatan = array_search(
+        'kecamatan',
+        $header,
+        true
+    );
+
+    $colJumlah = array_search(
+        'jumlah',
+        $header,
+        true
+    );
+
+    $colSelesai = array_search(
+        'selesai',
+        $header,
+        true
+    );
+
+    $colProses = array_search(
+        'proses',
+        $header,
+        true
+    );
+
+
+    // ==========================================
+    // SIAPKAN DATA
+    // ==========================================
+
+    $dataImport = [];
+
+    $errors = [];
+
+
+    foreach (
+        array_slice($rows, 1)
+        as $index => $row
+    ) {
+
+        $baris = $index + 2;
+
+
+        // --------------------------------------
+        // AMBIL DATA
+        // --------------------------------------
+
+        $periode = trim(
+            (string) (
+                $row[$colPeriode] ?? ''
+            )
+        );
+
+        $layanan = trim(
+            (string) (
+                $row[$colLayanan] ?? ''
+            )
+        );
+
+        $bidang = trim(
+            (string) (
+                $row[$colBidang] ?? ''
+            )
+        );
+
+        $kecamatan = trim(
+            (string) (
+                $row[$colKecamatan] ?? ''
+            )
+        );
+
+        $jumlah = trim(
+            (string) (
+                $row[$colJumlah] ?? ''
+            )
+        );
+
+        $selesai = trim(
+            (string) (
+                $row[$colSelesai] ?? ''
+            )
+        );
+
+        $proses = trim(
+            (string) (
+                $row[$colProses] ?? ''
+            )
+        );
+
+
+        // --------------------------------------
+        // BARIS KOSONG
+        // --------------------------------------
+
+        if (
+            $periode === '' &&
+            $layanan === '' &&
+            $bidang === '' &&
+            $kecamatan === '' &&
+            $jumlah === '' &&
+            $selesai === '' &&
+            $proses === ''
+        ) {
+            continue;
+        }
+
+
+        // --------------------------------------
+        // VALIDASI
+        // --------------------------------------
+
+        if ($periode === '') {
+            $errors[] = "Baris {$baris}: Periode belum diisi.";
+            continue;
+        }
+
+        if ($layanan === '') {
+            $errors[] = "Baris {$baris}: Nama Layanan belum diisi.";
+            continue;
+        }
+
+        if ($bidang === '') {
+            $errors[] = "Baris {$baris}: Bidang belum diisi.";
+            continue;
+        }
+
+        if ($kecamatan === '') {
+            $errors[] = "Baris {$baris}: Kecamatan belum diisi.";
+            continue;
+        }
+
+
+        // --------------------------------------
+        // VALIDASI JUMLAH
+        // --------------------------------------
+
+        if (
+            $jumlah === '' ||
+            !is_numeric($jumlah)
+        ) {
+
+            $errors[] =
+                "Baris {$baris}: Jumlah harus berupa angka.";
+
+            continue;
+        }
+
+
+        // --------------------------------------
+        // SELESAI
+        // --------------------------------------
+
+        if (
+            $selesai === '' ||
+            !is_numeric($selesai)
+        ) {
+            $selesai = 0;
+        }
+
+
+        // --------------------------------------
+        // PROSES
+        // --------------------------------------
+
+        if (
+            $proses === '' ||
+            !is_numeric($proses)
+        ) {
+            $proses = 0;
+        }
+
+
+        // --------------------------------------
+        // NORMALISASI ANGKA
+        // --------------------------------------
+
+        $jumlah = (int) str_replace(
+            [',', '.'],
+            '',
+            $jumlah
+        );
+
+        $selesai = (int) str_replace(
+            [',', '.'],
+            '',
+            $selesai
+        );
+
+        $proses = (int) str_replace(
+            [',', '.'],
+            '',
+            $proses
+        );
+
+
+        // --------------------------------------
+        // DATA UNTUK DATABASE
+        // --------------------------------------
+
+        $dataImport[] = [
+
+            'periode'   => $periode,
+            'layanan'   => $layanan,
+            'bidang'    => $bidang,
+            'kecamatan' => $kecamatan,
+            'jumlah'    => $jumlah,
+            'selesai'   => $selesai,
+            'proses'    => $proses,
+
+        ];
+    }
+
+
+    // ==========================================
+    // CEK DATA VALID
+    // ==========================================
+
+    if (empty($dataImport)) {
+
+        return redirect()
+            ->back()
+            ->with(
+                'error',
+                'Tidak ada data valid yang ditemukan.'
+            );
+    }
+
+
+    // ==========================================
+    // SIMPAN KE DATABASE
+    // ==========================================
+
+    $db = \Config\Database::connect();
+
+
+    try {
+
+        $db->transStart();
+
+        $this->datalayananModel->insertBatch(
+            $dataImport
+        );
+
+        $db->transComplete();
+
+
+        if ($db->transStatus() === false) {
+
+            return redirect()
+                ->back()
+                ->with(
+                    'error',
+                    'Data gagal disimpan ke database.'
+                );
+        }
+
+    } catch (\Throwable $e) {
+
+        return redirect()
+            ->back()
+            ->with(
+                'error',
+                'Import gagal: ' . $e->getMessage()
+            );
+    }
+
+
+    // ==========================================
+    // PESAN HASIL
+    // ==========================================
+
+    $jumlahData = count($dataImport);
+
+    $pesan = "Berhasil import {$jumlahData} data pelayanan!";
+
+
+    if (!empty($errors)) {
+
+        $pesan .= ' Ada ' .
+            count($errors) .
+            ' baris yang dilewati karena tidak valid.';
+    }
+
+
+    return redirect()
+        ->to('/admin/datalayanan')
+        ->with('success', $pesan);
+}
 
     public function downloadTemplate()
     {

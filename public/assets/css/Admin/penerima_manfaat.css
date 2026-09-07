@@ -1,0 +1,1655 @@
+/* =========================================================
+   PENERIMA MANFAAT
+========================================================= */
+
+.penerima-page {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+
+    padding: 42px 58px;
+
+    background: #f5f6f8;
+
+    box-sizing: border-box;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.penerima-header {
+    width: 100%;
+
+    margin-bottom: 28px;
+}
+
+.penerima-header-text h1 {
+    margin: 0;
+
+    color: #6d061b;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.penerima-header-text p {
+    margin: 8px 0 0;
+
+    color: #6d061b;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   STATISTIK
+========================================================= */
+
+.penerima-statistik {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.penerima-stat-card {
+    min-height: 100px;
+
+    padding: 20px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #6d061b;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.penerima-stat-card .stat-icon {
+    margin-bottom: 10px;
+
+    color: #6d061b;
+
+    font-size: 39px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.penerima-stat-card .stat-number {
+    margin-bottom: 8px;
+
+    color: #6d061b;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.penerima-stat-card .stat-label {
+    max-width: 180px;
+
+    color: #5d0b1b;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.penerima-toolbar {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 14px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.penerima-search {
+    width: 310px;
+
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #6d061b;
+
+    border-radius: 18px;
+
+    box-sizing: border-box;
+}
+
+.penerima-search i {
+    color: #6d061b;
+
+    font-size: 14px;
+}
+
+.penerima-search input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #333;
+
+    font-size: 13px;
+}
+
+.penerima-search input::placeholder {
+    color: #777;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.penerima-toolbar-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   BUTTON IMPORT
+========================================================= */
+
+.btn-import-kategori,
+.btn-tambah-kategori {
+    height: 36px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    box-sizing: border-box;
+
+    white-space: nowrap;
+}
+
+
+/* IMPORT */
+
+.btn-import-kategori {
+    color: #6d061b;
+
+    background: #ffffff;
+
+    border: 1px solid #6d061b;
+}
+
+
+/* TAMBAH */
+
+.btn-tambah-kategori {
+    color: #ffffff;
+
+    background: #6d061b;
+
+    border: 1px solid #6d061b;
+}
+
+
+/* HOVER */
+
+.btn-import-kategori:hover {
+    color: #ffffff;
+
+    background: #6d061b;
+}
+
+.btn-tambah-kategori:hover {
+    color: #ffffff;
+
+    background: #6d061b;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.penerima-alert {
+    margin: 15px 0;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.penerima-table-wrapper {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #bebdbe;
+
+    overflow: hidden;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.penerima-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   COLUMN
+========================================================= */
+
+.penerima-table .col-no {
+    width: 7%;
+}
+
+.penerima-table .col-periode {
+    width: 18%;
+}
+
+.penerima-table .col-kategori {
+    width: 40%;
+}
+
+.penerima-table .col-jumlah {
+    width: 15%;
+}
+
+.penerima-table .col-aksi {
+    width: 20%;
+}
+
+
+/* =========================================================
+   THEAD
+========================================================= */
+
+.penerima-table thead th {
+    height: 40px;
+
+    padding: 0 12px;
+
+    background: #dedede;
+
+    color: #6d061b;
+
+    border-bottom: 1px solid #c6c6c6;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   TBODY
+========================================================= */
+
+.penerima-table tbody td {
+    height: 63px;
+
+    padding: 10px 12px;
+
+    color: #6d061b;
+
+    border-bottom: 1px solid #e1cbd0;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+
+    box-sizing: border-box;
+}
+
+.penerima-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ALIGNMENT
+========================================================= */
+
+.penerima-table .text-center {
+    text-align: center;
+}
+
+.kategori-cell {
+    text-align: left;
+
+    padding-left: 12px !important;
+}
+
+.jumlah-cell {
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.periode-text {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.penerima-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.penerima-actions .btn-edit,
+.penerima-actions .btn-delete {
+    width: 32px;
+
+    height: 32px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+
+/* EDIT */
+
+.penerima-actions .btn-edit {
+    color: #111111;
+
+    background: #ffb511;
+}
+
+
+/* DELETE */
+
+.penerima-actions .btn-delete {
+    color: #ffffff;
+
+    background: #e52b4a;
+}
+
+
+/* HOVER */
+
+.penerima-actions .btn-edit:hover {
+    background: #e5a000;
+}
+
+.penerima-actions .btn-delete:hover {
+    background: #c91f3b;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.penerima-empty {
+    height: 180px !important;
+
+    text-align: center !important;
+
+    color: #777 !important;
+}
+
+.penerima-empty i {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #6d061b;
+
+    font-size: 30px;
+}
+
+.penerima-empty p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.penerima-pagination {
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   BOOTSTRAP PAGINATION
+========================================================= */
+
+.penerima-pagination .pagination {
+    margin: 0;
+
+    display: flex;
+
+    gap: 5px;
+}
+
+.penerima-pagination .page-link {
+    min-width: 30px;
+
+    height: 30px;
+
+    padding: 0 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #ddd;
+
+    border-radius: 4px !important;
+
+    color: #6d061b;
+
+    background: #ffffff;
+
+    font-size: 12px;
+}
+
+.penerima-pagination .page-link:hover {
+    color: #ffffff;
+
+    background: #6d061b;
+
+    border-color: #6d061b;
+}
+
+.penerima-pagination .active .page-link {
+    color: #ffffff;
+
+    background: #6d061b;
+
+    border-color: #6d061b;
+}
+
+
+/* =========================================================
+   CONTENT SAFETY
+========================================================= */
+
+.content {
+    position: relative;
+
+    z-index: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .penerima-page {
+        padding: 30px;
+    }
+
+    .penerima-statistik {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .penerima-page {
+        padding: 20px;
+    }
+
+    .penerima-statistik {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .penerima-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .penerima-search {
+        width: 100%;
+    }
+
+    .penerima-toolbar-actions {
+        justify-content: flex-end;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .penerima-statistik {
+        grid-template-columns: 1fr;
+    }
+
+    .penerima-toolbar-actions {
+        width: 100%;
+    }
+
+    .btn-import-kategori,
+    .btn-tambah-kategori {
+        flex: 1;
+    }
+
+    .penerima-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .penerima-table {
+        min-width: 700px;
+    }
+
+}
+
+
+/* =========================================================
+   FORM CREATE & EDIT
+   HANYA UNTUK HALAMAN CREATE & EDIT
+========================================================= */
+
+.penerima-form-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cfa7b0;
+    padding: 18px 18px 24px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.penerima-form-header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 38px;
+    box-sizing: border-box;
+}
+
+.form-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-title-wrapper h2 {
+    margin: 0;
+    color: #6d061b;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.form-title-wrapper span {
+    display: block;
+    width: 192px;
+    height: 2px;
+    margin-top: 7px;
+    background: #780019;
+}
+
+
+/* =========================================================
+   IMPORT BUTTON
+========================================================= */
+
+.btn-import-outline {
+    min-width: 120px;
+    height: 29px;
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #780019;
+    background: #ffffff;
+    border: 1px solid #780019;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.btn-import-outline i {
+    font-size: 14px;
+}
+
+.btn-import-outline:hover {
+    color: #ffffff;
+    background: #780019;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.penerima-form-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    column-gap: 75px;
+    row-gap: 40px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.penerima-form-group {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.penerima-form-group > label {
+    display: block;
+    margin-bottom: 10px;
+    color: #6d061b;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   PERIODE
+========================================================= */
+
+.periode-group {
+    grid-column: 1;
+}
+
+.periode-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.periode-field {
+    width: 100%;
+}
+
+.periode-field > label {
+    display: block;
+    margin-bottom: 8px;
+    color: #6d061b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   INPUT & SELECT
+========================================================= */
+
+.penerima-form-group input,
+.penerima-form-group select,
+.periode-field input,
+.periode-field select {
+    width: 100%;
+    height: 36px;
+    padding: 0 12px;
+    color: #333333;
+    background: #ffffff;
+    border: 1px solid #d9aeb8;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.penerima-form-group input:focus,
+.penerima-form-group select:focus,
+.periode-field input:focus,
+.periode-field select:focus {
+    border-color: #780019;
+    box-shadow: 0 0 0 2px rgba(120, 0, 25, 0.08);
+}
+
+.penerima-form-group select,
+.periode-field select {
+    cursor: pointer;
+    appearance: auto;
+}
+
+.penerima-form-group input::placeholder,
+.periode-field input::placeholder {
+    color: #777777;
+}
+
+
+/* =========================================================
+   KATEGORI
+========================================================= */
+
+.kategori-group {
+    grid-column: 2;
+    align-self: start;
+}
+
+
+/* =========================================================
+   JUMLAH
+========================================================= */
+
+.jumlah-group {
+    grid-column: 1;
+}
+
+.penerima-form-group input[type="number"] {
+    appearance: textfield;
+}
+
+.penerima-form-group input[type="number"]::-webkit-inner-spin-button,
+.penerima-form-group input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+}
+
+
+/* =========================================================
+   FORM ACTION
+========================================================= */
+
+.penerima-form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: -2px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BUTTON BATAL
+========================================================= */
+
+.btn-penerima-cancel {
+    min-width: 65px;
+    height: 27px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #780019;
+    background: #ffffff;
+    border: 1px solid #780019;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.btn-penerima-cancel:hover {
+    color: #ffffff;
+    background: #780019;
+}
+
+
+/* =========================================================
+   BUTTON SIMPAN
+========================================================= */
+
+.btn-penerima-save {
+    min-width: 92px;
+    height: 27px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #ffffff;
+    background: #780019;
+    border: 1px solid #780019;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.btn-penerima-save:hover {
+    background: #5d0015;
+    border-color: #5d0015;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.penerima-alert-error {
+    padding: 10px 13px;
+    color: #842029;
+    background: #f8d7da;
+    border: 1px solid #f1aeb5;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE FORM
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .penerima-form-grid {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+    }
+
+    .periode-group,
+    .kategori-group,
+    .jumlah-group {
+        grid-column: 1;
+    }
+
+    .periode-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .penerima-form-card {
+        padding: 18px 15px 22px;
+    }
+
+    .penerima-form-header {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 28px;
+    }
+
+    .btn-import-outline {
+        width: 120px;
+    }
+
+    .periode-wrapper {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .penerima-form-actions {
+        justify-content: flex-end;
+    }
+}
+
+
+/* =========================================================
+   IMPORT PAGE
+========================================================= */
+
+.import-format-card,
+.import-upload-card,
+.import-instruction-card {
+
+    background: #ffffff;
+
+    border: 1px solid #d2aab3;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORMAT CARD
+========================================================= */
+
+.import-format-card {
+
+    width: 100%;
+
+    padding: 24px 28px;
+
+    margin-bottom: 52px;
+}
+
+
+.import-format-card h2,
+.import-upload-card h2,
+.import-instruction-card h2 {
+
+    margin: 0;
+
+    color: #6d061b;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.import-format-card > p {
+
+    margin: 5px 0 20px;
+
+    color: #6d061b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   IMPORT TABLE
+========================================================= */
+
+.import-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.import-format-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    color: #5d0b1b;
+
+    font-size: 12px;
+}
+
+
+.import-format-table th {
+
+    height: 34px;
+
+    padding: 7px 10px;
+
+    color: #ffffff;
+
+    background: #780019;
+
+    border: 1px solid #780019;
+
+    text-align: left;
+
+    font-weight: 600;
+}
+
+
+.import-format-table td {
+
+    padding: 7px 10px;
+
+    border: 1px solid #780019;
+
+    vertical-align: middle;
+}
+
+
+.import-format-table th:nth-child(1),
+.import-format-table td:nth-child(1) {
+    width: 5%;
+}
+
+
+.import-format-table th:nth-child(2),
+.import-format-table td:nth-child(2) {
+    width: 20%;
+}
+
+
+.import-format-table th:nth-child(3),
+.import-format-table td:nth-child(3) {
+    width: 20%;
+}
+
+
+.import-format-table th:nth-child(4),
+.import-format-table td:nth-child(4) {
+    width: 30%;
+}
+
+
+.import-format-table th:nth-child(5),
+.import-format-table td:nth-child(5) {
+    width: 25%;
+}
+
+
+/* =========================================================
+   IMPORT BOTTOM
+========================================================= */
+
+.import-bottom-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(300px, 1fr);
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   UPLOAD CARD
+========================================================= */
+
+.import-upload-card {
+
+    padding: 24px 28px 26px;
+}
+
+
+.import-card-title {
+
+    margin-bottom: 30px;
+}
+
+
+.import-card-title h2 {
+
+    display: inline-block;
+
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #780019;
+}
+
+
+/* =========================================================
+   UPLOAD GROUP
+========================================================= */
+
+.import-upload-group > label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #5d0b1b;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DROPZONE
+========================================================= */
+
+.import-dropzone {
+
+    min-height: 165px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #d9aeb8;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+
+.import-dropzone.drag-over {
+
+    background: #fff7f8;
+
+    border-color: #780019;
+
+}
+
+
+.import-dropzone > i {
+
+    margin-bottom: 12px;
+
+    color: #555555;
+
+    font-size: 27px;
+}
+
+
+.import-drop-title {
+
+    color: #333333;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+
+.import-drop-info {
+
+    margin-bottom: 16px;
+
+    color: #a1a6b2;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   BROWSE BUTTON
+========================================================= */
+
+.import-browse-button {
+
+    padding: 7px 16px;
+
+    color: #555555;
+
+    background: #ffffff;
+
+    border: 1px solid #cfd3da;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.import-browse-button:hover {
+
+    color: #780019;
+
+    border-color: #780019;
+}
+
+
+/* =========================================================
+   SELECTED FILE
+========================================================= */
+
+.import-selected-file {
+    display: none;
+    margin-top: 16px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.selected-file-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    color: #780019;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.selected-file-title i {
+    color: #c9002b;
+    font-size: 12px;
+}
+
+
+/* =========================
+   FILE CARD
+========================= */
+
+.selected-file-card {
+    width: 100%;
+    min-height: 60px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #e3b6c0;
+    border-radius: 6px;
+
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================
+   FILE INFO
+========================= */
+
+.selected-file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* =========================
+   EXCEL ICON
+========================= */
+
+.selected-file-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 6px;
+
+    background: #f8e8ec;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-file-icon i {
+    color: #780019;
+    font-size: 21px;
+}
+
+
+/* =========================
+   NAME + SIZE
+========================= */
+
+.selected-file-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.selected-file-name strong {
+    display: block;
+
+    max-width: 500px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #333;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.selected-file-name small {
+    color: #999;
+
+    font-size: 8px;
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.selected-file-delete {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #dc263f;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.selected-file-delete:hover {
+    background: #b91c32;
+}
+
+.selected-file-delete i {
+    font-size: 15px;
+}
+
+/* =========================================================
+   IMPORT ACTION
+========================================================= */
+
+.import-actions {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   PETUNJUK
+========================================================= */
+
+.import-instruction-card {
+
+    padding: 24px 25px;
+}
+
+
+.import-instruction-card h2 {
+
+    margin-bottom: 22px;
+}
+
+
+.import-instruction-card ul {
+
+    margin: 0;
+
+    padding-left: 19px;
+
+    color: #6d061b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.import-instruction-card li {
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE FORM
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .penerima-form-grid {
+
+        grid-template-columns: 1fr;
+
+        row-gap: 30px;
+    }
+
+
+    .periode-group,
+    .kategori-group,
+    .jumlah-group {
+
+        grid-column: 1;
+    }
+
+
+    .import-bottom-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .penerima-page {
+
+        padding: 25px 18px;
+    }
+
+
+    .penerima-form-card {
+
+        padding: 20px;
+    }
+
+
+    .penerima-form-header {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .btn-import-outline {
+
+        width: 100%;
+    }
+
+
+    .periode-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .penerima-form-actions {
+
+        justify-content: stretch;
+    }
+
+
+    .btn-penerima-cancel,
+    .btn-penerima-save {
+
+        flex: 1;
+    }
+
+}

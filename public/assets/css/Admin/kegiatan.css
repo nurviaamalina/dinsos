@@ -1786,3 +1786,210 @@ background: #550B18;
     }
 
 }
+
+/* =========================================================
+   PAGINATION KEGIATAN
+========================================================= */
+
+.kegiatan-pagination {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    margin-top: 18px;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.kegiatan-pagination .pagination {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   PAGE ITEM
+========================================================= */
+
+.kegiatan-pagination .page-item {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   PAGE LINK
+========================================================= */
+
+.kegiatan-pagination .page-link {
+    width: 28px;
+
+    height: 28px;
+
+    min-width: 28px;
+
+    padding: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    color: #333333;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    box-shadow: none;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.kegiatan-pagination .page-link:hover {
+    color: #6d061b;
+
+    background: #fff7f8;
+
+    border-color: #6d061b;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.kegiatan-pagination .page-item.active .page-link {
+    color: #ffffff;
+
+    background: #6d061b;
+
+    border-color: #6d061b;
+
+    font-weight: 600;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.kegiatan-pagination .page-item.disabled .page-link {
+    color: #aaaaaa;
+
+    background: #ffffff;
+
+    border-color: #dddddd;
+
+    cursor: default;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.kegiatan-pagination .page-link:focus {
+    outline: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT
+========================================================= */
+
+.kegiatan-pagination .page-item:first-child .page-link,
+.kegiatan-pagination .page-item:last-child .page-link {
+    width: auto;
+
+    min-width: 28px;
+
+    padding: 0 8px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .kegiatan-pagination {
+        justify-content: center;
+
+        margin-top: 15px;
+    }
+
+    .kegiatan-pagination .pagination {
+        justify-content: center;
+
+        gap: 4px;
+    }
+
+    .kegiatan-pagination .page-link {
+        width: 27px;
+
+        height: 27px;
+
+        min-width: 27px;
+
+        font-size: 9px;
+    }
+
+}

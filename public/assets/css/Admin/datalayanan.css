@@ -43,6 +43,9 @@ body {
     background: #f0f2f5;
 }
 
+.datalayanan-container.import-page {
+    margin-left: 0;
+}
 body > .sidebar {
     position: fixed;
     top: 0;
@@ -855,175 +858,633 @@ table tbody tr:hover {
     }
 }
 
-/* Import page */
+/* =========================================================
+   IMPORT DATA PELAYANAN
+========================================================= */
+
 .datalayanan-container .import-page-header {
     margin-bottom: 20px;
 }
 
-.datalayanan-container .import-content {
-    padding: 0;
-}
+/* =========================
+   FORMAT CARD
+========================= */
 
-.datalayanan-container .import-content h5 {
-    color: var(--maroon);
-    font-size: 12px;
-    margin-bottom: 3px;
-}
-
-.import-format-card,
-.import-upload-card,
-.import-guide-card {
+.import-format-card {
     background: #fff;
     border: 1px solid #d9b8bf;
     border-radius: 6px;
     padding: 14px;
+    margin-bottom: 26px;
 }
 
-.import-format-card {
-    margin-bottom: 24px;
-}
-
-.import-format-card > p {
-    color: #9a7078;
-    font-size: 8px;
-    margin-bottom: 10px;
-}
-
-.import-table-wrap {
-    overflow-x: auto;
-}
-
-.import-format-table {
-    min-width: 600px !important;
-    border: 1px solid var(--maroon);
-}
-
-.datalayanan-container .import-format-table th {
-    padding: 6px 7px;
-    background: var(--maroon);
-    color: #fff;
-    border-color: var(--maroon);
-    font-size: 8px;
-}
-
-.datalayanan-container .import-format-table td {
-    padding: 5px 7px;
-    color: #5f303a;
-    border: 1px solid #b77b87;
-    font-size: 8px;
-}
-
-.import-lower-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(190px, .75fr);
-    gap: 14px;
-}
-
-.import-upload-card h5,
-.import-guide-card h5 {
+.import-title {
     width: max-content;
     padding-bottom: 7px;
     border-bottom: 2px solid var(--maroon);
+
+    color: var(--maroon);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.import-description {
+    margin: 8px 0 12px;
+
+    color: #9a7078;
+    font-size: 8px;
+}
+
+.import-format-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    border: 1px solid var(--maroon);
+}
+
+.import-format-table th {
+    padding: 7px 8px;
+
+    background: var(--maroon);
+    color: #fff;
+
+    border: 1px solid var(--maroon);
+
+    font-size: 8px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.import-format-table td {
+    padding: 6px 8px;
+
+    color: #5f303a;
+
+    border: 1px solid #b77b87;
+
+    font-size: 8px;
+    background: #fff;
+}
+
+
+/* =========================
+   LOWER GRID
+========================= */
+
+.import-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(190px, .75fr);
+    gap: 16px;
+}
+
+
+/* =========================
+   UPLOAD CARD
+========================= */
+
+.import-upload-card,
+.import-guide-card {
+    background: #fff;
+
+    border: 1px solid #d9b8bf;
+    border-radius: 6px;
+
+    padding: 16px;
 }
 
 .import-upload-card form {
-    margin-top: 16px;
+    margin-top: 18px;
 }
 
-.import-upload-card form > label {
+.upload-label {
     display: block;
-    margin-bottom: 7px;
+
+    margin-bottom: 8px;
+
     color: var(--maroon);
+
     font-size: 9px;
+    font-weight: 500;
 }
 
-.import-upload-card input[type="file"] {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
 
-.import-dropzone {
-    min-height: 92px;
-    padding: 13px;
+/* =========================
+   DROP AREA
+========================= */
+
+.upload-area {
+    width: 100%;
+    min-height: 126px;
+
+    padding: 16px;
+
     border: 1px solid #d9b8bf;
-    border-radius: 4px;
+    border-radius: 5px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+
+    gap: 4px;
+
+    background: #fff;
+
     color: #777;
+
+    transition: .2s ease;
+}
+
+.upload-area.drag-over {
+    border-color: var(--maroon);
+    background: #fff8f9;
+}
+
+.upload-icon {
+    margin-bottom: 3px;
+
+    color: var(--maroon);
+
+    font-size: 17px;
+}
+
+.upload-text {
+    color: #777;
+
     font-size: 9px;
 }
 
-.import-dropzone > i {
+.upload-info {
+    color: #aaa;
+
+    font-size: 7px;
+
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BROWSE BUTTON
+========================= */
+
+.browse-button {
+    margin-top: 6px;
+
+    padding: 4px 10px;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    background: #fff;
+
+    color: #777;
+
+    font-size: 8px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.browse-button:hover {
+    border-color: var(--maroon);
+
     color: var(--maroon);
+}
+
+
+/* =========================
+   SELECTED FILE
+========================= */
+
+.selected-file {
+    margin-top: 16px;
+}
+
+.selected-file-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    color: var(--maroon);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.selected-file-header i {
+    color: #c9002b;
+    font-size: 12px;
+}
+
+.selected-file-card {
+    width: 100%;
+    min-height: 72px;
+
+    padding: 12px;
+
+    border: 1px solid #d9b8bf;
+    border-radius: 7px;
+
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selected-file-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.selected-file-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 6px;
+
+    background: #f8e8ec;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.selected-file-icon i {
+    color: var(--maroon);
+    font-size: 22px;
+}
+
+.selected-file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.selected-file-name {
+    color: #333;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.selected-file-size {
+    color: #999;
+
+    font-size: 8px;
+}
+
+.remove-file {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #dc263f;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.remove-file:hover {
+    background: #b91c32;
+}
+
+.remove-file i {
     font-size: 15px;
 }
 
-.import-dropzone small {
-    color: #aaa;
-    font-size: 7px;
-}
 
-.import-browse-button {
-    margin-top: 5px;
-    padding: 3px 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    color: #777;
-    cursor: pointer;
-    font-size: 8px;
-}
+/* =========================
+   ACTION BUTTONS
+========================= */
 
 .import-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 6px;
+    align-items: center;
+
+    gap: 7px;
+
     margin-top: 18px;
 }
 
-.import-actions .btn {
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 49px;
+
     padding: 5px 11px;
-    border-radius: 4px;
-    font-size: 8px;
-}
 
-.import-actions .btn-secondary {
-    background: #fff;
     border: 1px solid var(--maroon);
+    border-radius: 4px;
+
+    background: #fff;
+
     color: var(--maroon);
+
+    font-size: 8px;
+    text-decoration: none;
+
+    cursor: pointer;
 }
 
-.import-actions .btn-primary {
+.btn-cancel:hover {
     background: var(--maroon);
+    color: #fff;
+}
+
+.btn-import {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    min-width: 90px;
+
+    padding: 6px 11px;
+
+    border: 1px solid var(--maroon);
+    border-radius: 4px;
+
+    background: var(--maroon);
+    color: #fff;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.btn-import:hover {
+    background: #4d0716;
+    border-color: #4d0716;
+}
+
+.btn-import i {
+    font-size: 10px;
+}
+
+
+/* =========================
+   PETUNJUK IMPORT
+========================= */
+
+.import-guide-card .import-title {
+    margin-bottom: 4px;
 }
 
 .import-guide-card ul {
     margin: 15px 0 0;
+
     padding-left: 15px;
+
     color: #6a3a43;
+
     font-size: 8px;
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 .import-guide-card li {
     margin-bottom: 7px;
 }
 
-.import-template-link {
-    display: inline-block;
-    margin-top: 6px;
+.download-template {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    margin-top: 5px;
+
     color: var(--maroon);
+
     font-size: 8px;
     font-weight: 600;
+
     text-decoration: none;
 }
 
+.download-template:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
-    .import-lower-grid {
+
+    .import-grid {
         grid-template-columns: 1fr;
     }
+
+    .import-format-card {
+        overflow-x: auto;
+    }
+
+    .selected-file-card {
+        padding: 10px;
+    }
+
+}
+
+/* =========================================================
+   DRAG DROP
+========================================================= */
+
+.import-dropzone.dragover {
+    border-color: #720018;
+    background: #fff8f9;
+}
+
+
+/* =========================================================
+   PAGINATION DATA LAYANAN
+========================================================= */
+
+.datalayanan-pagination {
+    width: 100%;
+    
+    display: flex;
+    
+    align-items: center;
+    
+    justify-content: flex-end;
+    
+    margin-top: 18px;
+    
+    padding: 0;
+}
+
+
+/* PAGINATION */
+
+.datalayanan-pagination .pagination {
+    display: flex;
+    
+    align-items: center;
+    
+    justify-content: flex-end;
+    
+    gap: 5px;
+    
+    margin: 0;
+    
+    padding: 0;
+    
+    list-style: none;
+}
+
+
+/* PAGE ITEM */
+
+.datalayanan-pagination .page-item {
+    margin: 0;
+    
+    padding: 0;
+}
+
+
+/* PAGE LINK */
+
+.datalayanan-pagination .page-link {
+    width: 28px;
+    
+    height: 28px;
+    
+    min-width: 28px;
+    
+    padding: 0;
+    
+    display: inline-flex;
+    
+    align-items: center;
+    
+    justify-content: center;
+    
+    color: #333;
+    
+    background: #fff;
+    
+    border: 1px solid #ddd;
+    
+    border-radius: 4px;
+    
+    font-size: 10px;
+    
+    font-weight: 400;
+    
+    line-height: 1;
+    
+    text-decoration: none;
+    
+    box-shadow: none;
+    
+    transition: all .2s ease;
+}
+
+
+/* HOVER */
+
+.datalayanan-pagination .page-link:hover {
+    color: #6d061b;
+    
+    background: #fff7f8;
+    
+    border-color: #6d061b;
+}
+
+
+/* ACTIVE */
+
+.datalayanan-pagination .page-item.active .page-link {
+    color: #fff;
+    
+    background: #6d061b;
+    
+    border-color: #6d061b;
+    
+    font-weight: 600;
+}
+
+
+/* DISABLED */
+
+.datalayanan-pagination .page-item.disabled .page-link {
+    color: #aaa;
+    
+    background: #fff;
+    
+    border-color: #ddd;
+    
+    cursor: default;
+    
+    pointer-events: none;
+}
+
+
+/* FOCUS */
+
+.datalayanan-pagination .page-link:focus {
+    outline: none;
+    
+    box-shadow: none;
+}
+
+
+/* PREVIOUS / NEXT */
+
+.datalayanan-pagination .page-item:first-child .page-link,
+.datalayanan-pagination .page-item:last-child .page-link {
+    width: auto;
+    
+    min-width: 28px;
+    
+    padding: 0 8px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .datalayanan-pagination {
+        justify-content: center;
+        
+        margin-top: 15px;
+    }
+
+    .datalayanan-pagination .pagination {
+        justify-content: center;
+        
+        gap: 4px;
+    }
+
+    .datalayanan-pagination .page-link {
+        width: 27px;
+        
+        height: 27px;
+        
+        min-width: 27px;
+        
+        font-size: 9px;
+    }
+
 }

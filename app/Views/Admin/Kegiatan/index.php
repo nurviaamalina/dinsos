@@ -299,7 +299,16 @@
 
                 </div>
 
+                <?php if (isset($pager) && $pager->getPageCount() > 1): ?>
+
+    <div class="kegiatan-pagination">
+        <?= $pager->links() ?>
+    </div>
+
+<?php endif; ?>
+
             </div>
+                                                
 
 
         </div>
