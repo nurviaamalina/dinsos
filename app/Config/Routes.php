@@ -49,7 +49,7 @@ $routes->get('kegiatan/(:segment)', 'Kegiatan::detail/$1');
 // =====================================================
 // BIDANG FRONTEND
 // =====================================================
-
+route_to('bidang', 'Bidang::index');
 $routes->get('bidang/(:segment)', 'Bidang::detail/$1');
 
 // =====================================================
