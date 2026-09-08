@@ -522,22 +522,46 @@ public function anggotaUpdate($id)
         );
 }
 
- public function delete($id)
-    {
-        $profil = $this->profilModel->find($id);
+public function anggotaDelete($id)
+{
+    // Cari data anggota
+    $anggota = $this->anggotaModel->find($id);
 
-        if (!$profil) {
-            return redirect()->back()->with(
+    if (!$anggota) {
+        return redirect()
+            ->to(base_url('admin/profil'))
+            ->with(
                 'error',
-                'Data profil tidak ditemukan.'
+                'Data anggota tidak ditemukan.'
             );
-        }
-
-        $this->profilModel->delete($id);
-
-        return redirect()->back()->with(
-            'success',
-            'Data profil berhasil dihapus.'
-        );
     }
+
+    // =========================================
+    // HAPUS FOTO
+    // =========================================
+
+    if (!empty($anggota['foto'])) {
+
+        $fotoPath = FCPATH . 'uploads/profil/' . $anggota['foto'];
+
+        if (is_file($fotoPath)) {
+            unlink($fotoPath);
+        }
+    }
+
+    // =========================================
+    // HAPUS DATA DARI DATABASE
+    // =========================================
+
+    $this->anggotaModel->delete($id);
+
+    return redirect()
+        ->to(base_url('admin/profil'))
+        ->with(
+            'success',
+            'Data anggota berhasil dihapus.'
+        );
+}
+
+
 }
