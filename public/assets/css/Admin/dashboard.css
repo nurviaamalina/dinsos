@@ -27,7 +27,7 @@
 
     font-weight: 700;
 
-    color: #111;
+    color: #65091c;
 }
 
 .dashboard-header p {
@@ -35,7 +35,7 @@
 
     font-size: 14px;
 
-    color: #222;
+    color: #65091c;
 }
 
 
@@ -256,6 +256,7 @@
         #ead3d8;
 
     font-size: 11px;
+    font-weight: 600;
 
     color: #65091c;
 }
@@ -593,4 +594,577 @@
         grid-template-columns: 1fr;
     }
 
+}
+/* =========================================================
+   DASHBOARD UTAMA ADMIN - UPDATED STATISTICS
+   Selaraskan dengan struktur dashboard.php terbaru
+========================================================= */
+
+/* PAGE / CONTENT */
+.dashboard-page {
+    min-height: 100vh;
+}
+
+.dashboard-content {
+    padding: 28px 30px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+    margin-bottom: 22px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #111;
+}
+
+.dashboard-header p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #222;
+}
+
+/* =========================================================
+   TOP CARDS
+========================================================= */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    min-width: 0;
+    min-height: 70px;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    box-sizing: border-box;
+}
+
+.stat-card.stat-number {
+    display: block;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #f7d8df;
+    color: #65091c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.stat-info {
+    min-width: 0;
+}
+
+.stat-info h3 {
+    margin: 0;
+    font-size: 9px;
+    line-height: 1.2;
+    color: #65091c;
+    font-weight: 700;
+}
+
+.stat-info p {
+    margin: 3px 0 0;
+    font-size: 7px;
+    line-height: 1.25;
+    color: #777;
+}
+
+.stat-info strong {
+    display: block;
+    margin-top: 2px;
+    font-size: 24px;
+    line-height: 1;
+    color: #65091c;
+}
+
+/* =========================================================
+   DETAIL BUTTON
+========================================================= */
+
+.detail-button {
+    display: inline-block;
+    margin-top: 3px;
+    padding: 2px 8px;
+    background: #65091c;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 7px;
+    line-height: 1.3;
+    font-weight: 600;
+    transition: .15s ease;
+}
+
+.detail-button:hover {
+    color: #fff;
+    background: #4d0615;
+}
+
+/* =========================================================
+   MIDDLE STATISTICS
+========================================================= */
+
+.dashboard-middle {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18px;
+    margin-bottom: 20px;
+    align-items: stretch;
+}
+
+.dashboard-panel {
+    min-width: 0;
+    min-height: 245px;
+    padding: 15px 18px;
+    background: #fff;
+    border: 1px solid #65091c;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.capaian-panel,
+.chart-panel {
+    overflow: hidden;
+}
+
+/* =========================================================
+   PANEL HEADING
+========================================================= */
+
+.panel-heading-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.panel-title {
+    margin: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #65091c;
+    display: inline-block;
+    color: #65091c;
+    font-size: 11px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.panel-year {
+    display: block;
+    margin-top: 5px;
+    color: #65091c;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+/* =========================================================
+   CAPAIAN LAYANAN
+========================================================= */
+
+.layanan-stat-list {
+    margin-top: 8px;
+}
+
+.layanan-stat-item {
+    min-height: 31px;
+    padding: 0;
+    border-bottom: 1px solid #ead3d8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #65091c;
+    box-sizing: border-box;
+}
+
+.layanan-stat-label {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.layanan-stat-label i {
+    width: 14px;
+    flex-shrink: 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.layanan-stat-label span {
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.layanan-stat-item > strong {
+    flex-shrink: 0;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 700;
+    color: #65091c;
+}
+
+.capaian-total {
+    width: 145px;
+    min-height: 39px;
+    margin-top: 10px;
+    padding: 6px 9px;
+    background: #f9eef0;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.capaian-total small {
+    display: block;
+    font-size: 7px;
+    line-height: 1.25;
+    color: #65091c;
+}
+
+.capaian-total strong {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1;
+    color: #65091c;
+    font-weight: 700;
+}
+
+.capaian-total i {
+    flex-shrink: 0;
+    color: #65091c;
+    font-size: 17px;
+}
+
+/* =========================================================
+   MONTHLY BAR CHART
+========================================================= */
+
+.chart-panel .panel-title {
+    margin-bottom: 8px;
+}
+
+.chart-area {
+    height: 176px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 6px 4px 0;
+    box-sizing: border-box;
+}
+
+.chart-group {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 22px;
+    box-sizing: border-box;
+}
+
+.chart-bars {
+    width: 100%;
+    height: calc(100% - 22px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+}
+
+.chart-bar {
+    width: 8px;
+    min-height: 2px;
+    max-height: 100%;
+    border-radius: 4px 4px 0 0;
+    transition: opacity .15s ease, transform .15s ease;
+}
+
+.chart-bar:hover {
+    opacity: .82;
+    transform: translateY(-1px);
+}
+
+.chart-bar-dark {
+    background: #65091c;
+}
+
+.chart-bar-light {
+    background: #f3a3b1;
+}
+
+.chart-label {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #888;
+    font-size: 6px;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================================================
+   CHART LEGEND
+========================================================= */
+
+.chart-legend {
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.chart-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #777;
+    font-size: 7px;
+    line-height: 1;
+}
+
+.legend-box {
+    width: 24px;
+    height: 7px;
+    display: inline-block;
+    border-radius: 1px;
+}
+
+.legend-dark {
+    background: #65091c;
+}
+
+.legend-light {
+    background: #f3a3b1;
+}
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.chart-empty,
+.latest-empty {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a6870;
+    font-size: 8px;
+    text-align: center;
+}
+
+/* =========================================================
+   BOTTOM / LATEST
+========================================================= */
+
+.dashboard-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.latest-panel {
+    min-width: 0;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.latest-header {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.latest-header h3 {
+    min-width: 0;
+    margin: 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #65091c;
+    color: #65091c;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.latest-header .detail-button {
+    flex-shrink: 0;
+}
+
+.latest-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 53px;
+    border-bottom: 1px solid #eee;
+}
+
+.latest-item:last-child {
+    border-bottom: 0;
+}
+
+.latest-number {
+    width: 14px;
+    flex-shrink: 0;
+    color: #65091c;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.latest-image {
+    width: 60px;
+    height: 34px;
+    flex-shrink: 0;
+    background: #65091c;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1px;
+}
+
+.latest-image.has-image {
+    background-color: #f1f1f1;
+}
+
+.latest-info {
+    min-width: 0;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.latest-info strong,
+.latest-info span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.latest-info strong {
+    color: #65091c;
+    font-size: 8px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.latest-info span {
+    color: #aaa;
+    font-size: 6px;
+    line-height: 1.2;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+    .dashboard-content {
+        padding: 24px 22px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .dashboard-middle {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .dashboard-middle {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .dashboard-content {
+        padding: 18px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-header h1 {
+        font-size: 19px;
+    }
+
+    .chart-area {
+        height: 155px;
+    }
+
+    .chart-label {
+        font-size: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-panel {
+        padding: 13px;
+    }
+
+    .layanan-stat-label span {
+        font-size: 8px;
+    }
+
+    .chart-legend {
+        gap: 10px;
+    }
 }

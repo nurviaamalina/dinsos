@@ -507,7 +507,7 @@
                                     <div>
                                         <strong>
                                             <?= number_format(
-                                                $item['jumlah'] ?? 0,
+                                                $item['selesai'] ?? 0,
                                                 0,
                                                 ',',
                                                 '.'
@@ -515,9 +515,9 @@
                                         </strong>
 
                                         <small>
-                                            Jumlah
-                                            <br>
                                             Permohonan
+                                            <br>
+                                            Selesai
                                         </small>
                                     </div>
 

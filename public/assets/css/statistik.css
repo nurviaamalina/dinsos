@@ -1,894 +1,996 @@
 /* =========================================================
    DASHBOARD STATISTIK USER
-========================================================= */
+   ========================================================= */
 
+* {
+    box-sizing: border-box;
+}
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
 
-:root {
-
-    --stat-maroon: #650719;
-
-    --stat-maroon-dark: #560515;
-
-    --stat-pink: #f3a0ae;
-
-    --stat-pink-light: #f9dfe4;
-
-    --stat-red: #e83152;
-
-    --stat-border: #8d3040;
-
-    --stat-text: #650719;
-
-    --stat-bg: #ffffff;
-
+body {
+    background: #f5f6fa;
+    color: #333;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 
 /* =========================================================
-   HERO
-========================================================= */
+   HERO STATISTIK
+   ========================================================= */
 
 .statistik-hero {
-
     position: relative;
-
-    min-height: 215px;
-
-    background-image:
-        url('../img/statistik-hero.jpg');
-
-    background-size: cover;
-
-    background-position: center;
-
+    width: 100%;
+    min-height: 176px;
+    background: #650719;
     overflow: hidden;
 }
 
-
 .statistik-hero-overlay {
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(101, 7, 25, .94),
-            rgba(101, 7, 25, .55),
-            rgba(0, 80, 100, .30)
-        );
+    background: #650719;
 }
-
 
 .statistik-hero-container {
-
     position: relative;
-
     z-index: 2;
 
-    max-width: 1020px;
+    width: 100%;
+    max-width: none;
 
-    margin: 0 auto;
+    margin: 0;
 
-    padding: 31px 30px 35px;
-
-    box-sizing: border-box;
-
-    color: #fff;
+    padding: 32px 18px 26px;
 }
-
 
 .statistik-hero h1 {
-
     margin: 0;
 
-    font-size: 30px;
+    color: #fff;
 
+    font-size: 24px;
+    line-height: 1.25;
     font-weight: 700;
-
-    line-height: 1.2;
 }
-
 
 .statistik-hero-line {
-
-    width: 128px;
-
+    width: 44px;
     height: 2px;
 
-    margin-top: 17px;
+    margin: 10px 0 14px;
 
-    background: #fff;
+    background: #f3a0ae;
+    border-radius: 10px;
 }
-
 
 .statistik-hero-bottom {
-
     display: flex;
-
-    align-items: center;
-
-    gap: 35px;
-
-    margin-top: 16px;
-}
-
-
-.statistik-hero-bottom h2 {
-
-    margin: 0;
-
-    font-size: 16px;
-
-    line-height: 1.45;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   YEAR SELECT
-========================================================= */
-
-.statistik-year {
-
-    min-width: 120px;
-
-    height: 35px;
-
-    padding: 0 11px;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    align-items: center;
-
+    align-items: flex-end;
     justify-content: space-between;
 
-    gap: 7px;
+    gap: 20px;
+}
+
+.statistik-hero-bottom h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 11px;
+    line-height: 1.45;
+    font-weight: 500;
+}
+
+.statistik-year {
+    flex-shrink: 0;
+
+    min-width: 100px;
+
+    padding: 8px 11px;
+
+    background: #fff;
 
     border-radius: 7px;
 
-    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    color: var(--stat-maroon);
+    gap: 6px;
 
+    color: #650719;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+.statistik-year i {
     font-size: 10px;
-
-    font-weight: 700;
 }
 
-
-.statistik-year i:first-child {
-
-    font-size: 13px;
+.statistik-year .bi-chevron-down {
+    font-size: 8px;
 }
 
+/* =========================================================
+   FILTER TAHUN DASHBOARD STATISTIK USER
+   ========================================================= */
 
-.statistik-year i:last-child {
+.statistik-year {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 
-    font-size: 12px;
+    min-width: 150px;
+    height: 38px;
+
+    padding: 0 12px;
+
+    background: #ffffff;
+    border: 1px solid #8d3040;
+    border-radius: 6px;
+}
+
+.statistik-year i {
+    color: #650719;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.statistik-year select {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #650719;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+.statistik-year select:focus {
+    outline: none;
+}
+
+.statistik-year select option {
+    color: #650719;
+    background: #ffffff;
 }
 
 
 /* =========================================================
-   MAIN
-========================================================= */
+   MAIN STATISTIK
+   ========================================================= */
 
 .statistik-main {
+    width: 100%;
+    max-width: none;
 
-    max-width: 1020px;
+    margin: 0;
 
-    margin: 0 auto;
-
-    padding: 30px 30px 42px;
-
-    box-sizing: border-box;
-
-    background: #fff;
+    padding: 22px 12px 40px;
 }
 
 
 /* =========================================================
    GRID
-========================================================= */
+   ========================================================= */
 
 .statistik-grid {
+    width: 100%;
 
     display: grid;
 
-    gap: 24px;
+    gap: 14px;
 
-    margin-bottom: 24px;
+    margin-bottom: 14px;
+
+    align-items: start;
 }
 
 
-.statistik-grid-top {
+/* =========================================================
+   ROW 1
+   ========================================================= */
 
+.statistik-grid-top {
     grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 1.12fr)
-        minmax(0, .76fr);
-}
-
-
-.statistik-grid-middle {
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1.9fr);
-}
-
-
-.statistik-grid-bottom {
-
-    grid-template-columns:
-        minmax(0, 1.15fr)
         minmax(0, 1fr);
 
-    margin-bottom: 0;
+    align-items: start;
+}
+
+
+/*
+   CARD ROW 1 TETAP SEUKURAN
+   Supaya tinggi card tidak mengikuti
+   card lain dan menyebabkan white space.
+*/
+
+.statistik-grid-top > .statistik-card {
+    height: 260px;
+
+    min-height: 260px;
+    max-height: 260px;
 }
 
 
 /* =========================================================
-   CARD
-========================================================= */
+   ROW 2
+   ========================================================= */
 
-.statistik-box {
+.statistik-grid-middle {
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-    padding: 16px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   ROW 3
+   ========================================================= */
+
+.statistik-grid-bottom {
+    grid-template-columns:
+        minmax(0, 1.28fr)
+        minmax(0, 0.92fr);
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   CARD UMUM
+   ========================================================= */
+
+.statistik-card {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
 
     background: #fff;
 
-    border: 1px solid var(--stat-border);
+    border-radius: 10px;
 
-    border-radius: 7px;
+    padding: 14px;
 
-    box-sizing: border-box;
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
 }
 
 
 /* =========================================================
-   CARD TITLE
-========================================================= */
+   JUDUL CARD
+   ========================================================= */
 
-.statistik-box-title {
+.statistik-card-title {
+    width: 100%;
 
-    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 11px;
+
+    min-width: 0;
+}
+
+.statistik-card-title h5 {
+    margin: 0;
+
+    color: #650719;
+
+    font-size: 11px;
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
-.statistik-box-title h3 {
+/* =========================================================
+   CAPAIAN LAYANAN
+   ========================================================= */
 
-    position: relative;
+.layanan-stat-list {
+    width: 100%;
 
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 
-    margin: 0;
+    gap: 0;
+}
 
-    padding-bottom: 7px;
+.layanan-stat-item {
+    width: 100%;
 
-    color: var(--stat-text);
+    min-height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 0;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.layanan-stat-item:last-child {
+    border-bottom: none;
+}
+
+.layanan-stat-item > div {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.layanan-stat-item i {
+    flex-shrink: 0;
+
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fbecef;
+
+    color: #650719;
+
+    border-radius: 6px;
 
     font-size: 10px;
+}
 
+.layanan-stat-item span {
+    color: #666;
+
+    font-size: 9px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+.layanan-stat-item strong {
+    flex-shrink: 0;
+
+    color: #650719;
+
+    font-size: 11px;
     font-weight: 700;
 }
 
 
-.statistik-box-title h3::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    bottom: 0;
-
-    width: 55px;
-
-    height: 1px;
-
-    background: var(--stat-maroon);
-}
-
-
 /* =========================================================
-   LAYANAN
-========================================================= */
+   CAPAIAN KESELURUHAN
+   ========================================================= */
 
-.layanan-row {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 9px 2px;
-
-    border-bottom: 1px solid #eadde0;
-
-    color: var(--stat-maroon);
-
-    font-size: 9px;
-}
-
-
-.layanan-row > div {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-}
-
-
-.layanan-row i {
-
-    font-size: 13px;
-}
-
-
-.layanan-row strong {
-
-    font-size: 10px;
-}
-
-
-.capaian-box {
-
-    width: 166px;
-
-    height: 39px;
+.capaian-overall {
+    width: 100%;
 
     margin-top: 9px;
 
-    padding: 5px 9px;
+    padding: 8px 10px;
 
-    box-sizing: border-box;
+    background: #fdf2f4;
+
+    border-radius: 7px;
 
     display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
-
-    background: #faeef0;
-
-    border-radius: 6px;
+    justify-content: space-between;
 }
 
+.capaian-overall small {
+    display: block;
 
-.capaian-box div {
+    margin-bottom: 2px;
 
-    display: flex;
+    color: #888;
 
-    flex-direction: column;
+    font-size: 8px;
 }
 
+.capaian-overall strong {
+    display: block;
 
-.capaian-box small {
-
-    font-size: 7px;
-
-    font-weight: 600;
-}
-
-
-.capaian-box strong {
-
-    font-size: 14px;
-}
-
-
-.capaian-box i {
+    color: #650719;
 
     font-size: 17px;
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+.capaian-overall > i {
+    color: #650719;
+
+    font-size: 18px;
 }
 
 
 /* =========================================================
-   CHART
-========================================================= */
+   GRAFIK
+   ========================================================= */
+
+.statistik-grid-top > .statistik-card:nth-child(2) {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.statistik-grid-top > .statistik-card:nth-child(2)
+.statistik-card-title {
+    flex-shrink: 0;
+}
 
 .statistik-chart {
-
     position: relative;
 
     width: 100%;
 
-    height: 176px;
+    height: 210px;
+
+    min-height: 210px;
+
+    margin-top: 0;
+
+    overflow: hidden;
 }
 
-
 .statistik-chart canvas {
+    display: block;
 
     width: 100% !important;
-
     height: 100% !important;
 }
 
 
 /* =========================================================
-   SURVEY
-========================================================= */
+   SURVEY / SKM
+   ========================================================= */
+
+.survey-card {
+    height: 260px;
+
+    min-height: 260px;
+    max-height: 260px;
+}
 
 .survey-score {
-
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
 
-    gap: 13px;
+    gap: 9px;
 
-    margin-top: 22px;
+    margin-top: 4px;
 }
-
 
 .survey-score i {
+    flex-shrink: 0;
 
-    color: #dc9219;
+    width: 40px;
+    height: 40px;
 
-    font-size: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff4c7;
+
+    color: #e1a900;
+
+    border-radius: 50%;
+
+    font-size: 16px;
 }
 
-
 .survey-score strong {
+    color: #650719;
 
-    color: var(--stat-maroon);
-
-    font-size: 28px;
+    font-size: 25px;
+    line-height: 1;
 
     font-weight: 700;
 }
 
+.survey-label {
+    margin: 6px 0 11px;
 
-.statistik-survey > p {
-
-    margin: 4px 0 25px;
-
-    color: #777;
-
-    text-align: center;
+    color: #c29ca3;
 
     font-size: 8px;
+    line-height: 1.3;
 }
 
 
-.survey-info {
+/* =========================================================
+   INFO SKM
+   ========================================================= */
 
+.survey-info {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        minmax(0, 4fr)
+        minmax(0, 4fr)
+        minmax(0, 4fr);
 
-    gap: 7px;
+    gap: 6px;
 }
-
 
 .survey-info > div {
+    min-width: 0;
 
-    min-height: 51px;
+    min-height: 100px;
 
-    padding: 7px 3px;
+    padding: 8px;
 
-    border: 1px solid #8d3040;
+    background: #f8f8f8;
 
-    border-radius: 4px;
+    border-radius: 7px;
 
-    text-align: center;
+    overflow: hidden;
 }
-
 
 .survey-info span {
-
     display: block;
 
-    font-size: 7px;
+    margin-bottom: 3px;
 
-    font-weight: 600;
+    color: #888;
+
+    font-size: 10px;
+
+    white-space: nowrap;
 }
-
 
 .survey-info strong {
-
     display: block;
 
-    margin-top: 3px;
+    color: #650719;
 
-    color: var(--stat-maroon);
+    font-size: 20px;
+    line-height: 1.25;
 
-    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-
 .survey-info small {
-
     display: block;
 
     margin-top: 2px;
 
-    color: #777;
+    color: #999;
 
-    font-size: 6px;
+    font-size: 10px;
+    line-height: 1.25;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-
 .survey-good {
-
-    color: #438c70 !important;
-
-    font-size: 9px !important;
-
-    line-height: 1.2;
+    color: #238636 !important;
 }
 
 
 /* =========================================================
-   BIDANG
-========================================================= */
+   ROW 2 - BIDANG
+   ========================================================= */
 
-.bidang-row {
+.bidang-stat-card {
+    min-height: 198px;
+}
+
+.bidang-stat-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.bidang-stat-item {
+    width: 100%;
+    min-width: 0;
 
     display: grid;
 
     grid-template-columns:
-        24px
-        95px
-        minmax(60px, 1fr)
-        30px;
-
-    gap: 7px;
+        30px
+        minmax(80px, 0.8fr)
+        minmax(100px, 1.6fr)
+        45px;
 
     align-items: center;
 
-    min-height: 43px;
-
-    border-bottom: 1px solid #eadde0;
+    gap: 7px;
 }
 
+.bidang-stat-item > i {
+    width: 30px;
+    height: 30px;
 
-.bidang-row > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    color: var(--stat-maroon);
+    background: #fbecef;
 
-    font-size: 17px;
+    color: #650719;
+
+    border-radius: 6px;
+
+    font-size: 10px;
 }
-
 
 .bidang-name {
+    min-width: 0;
 
-    color: var(--stat-maroon);
+    color: #650719;
 
-    font-size: 6.5px;
+    font-size: 8px;
+    line-height: 1.2;
 
-    line-height: 1.25;
-
-    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-
 .bidang-progress {
+    width: 100%;
+    min-width: 0;
 
     height: 5px;
 
+    background: #f0e4e7;
+
+    border-radius: 20px;
+
     overflow: hidden;
-
-    border-radius: 5px;
-
-    background: #f5d8dd;
 }
 
-
 .bidang-progress span {
-
     display: block;
 
     height: 100%;
 
-    border-radius: 5px;
+    background: #650719;
 
-    background: var(--stat-maroon);
+    border-radius: 20px;
 }
 
+.bidang-stat-item > strong {
+    color: #650719;
 
-.bidang-row > strong {
+    font-size: 10px;
 
-    color: var(--stat-maroon);
-
-    font-size: 8px;
+    font-weight: 700;
 
     text-align: right;
+
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   UNGGULAN
-========================================================= */
+   LAYANAN UNGGULAN
+   ========================================================= */
 
-.unggulan-grid {
+.layanan-unggulan-grid {
+    width: 100%;
+    min-width: 0;
 
     display: grid;
 
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
 
-    gap: 11px;
+    gap: 6px;
+
+    overflow: hidden;
 }
 
+.layanan-unggulan-item {
+    position: relative;
 
-.unggulan-card {
+    width: 100%;
+    min-width: 0;
 
-    min-height: 151px;
+    height: 145px;
 
-    padding: 10px 8px 8px;
+    padding: 9px 7px;
 
-    border: 1px solid #8d3040;
+    background: #fafafa;
 
-    border-radius: 4px;
+    border: 1px solid #ededed;
+
+    border-radius: 10px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
 
-    text-align: center;
-
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
+.layanan-unggulan-item h6 {
+    width: 100%;
+    min-width: 0;
 
-.unggulan-card h4 {
-
-    min-height: 30px;
+    min-height: 20px;
 
     margin: 0;
 
-    color: var(--stat-maroon);
+    color: #650719;
 
-    font-size: 8px;
+    font-size: 7px;
+    line-height: 1.35;
+    text-align: center;
 
-    line-height: 1.3;
+    font-weight: 700;
+
+    word-break: break-word;
+
+    overflow: hidden;
 }
 
-
 .unggulan-icon {
+    flex-shrink: 0;
 
-    width: 49px;
+    width: 50px;
+    height: 50px;
 
-    height: 49px;
+    margin: 5px auto;
 
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fbecef;
+
+    color: #650719;
 
     border-radius: 50%;
 
-    background: #f8bac5;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+    font-size: 12px;
 }
 
-
-.unggulan-icon i {
-
-    color: var(--stat-maroon);
-
-    font-size: 23px;
-}
-
-
-.unggulan-data {
+.unggulan-bottom {
+    width: 100%;
+    min-width: 0;
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 5px;
 }
 
+.unggulan-bottom > div {
+    min-width: 0;
 
-.unggulan-data > div:first-child {
-
-    border-right: 1px solid #ddd;
+    text-align: center;
 }
 
-
-.unggulan-data strong {
-
+.unggulan-bottom strong {
     display: block;
 
-    color: var(--stat-maroon);
+    color: #650719;
 
-    font-size: 15px;
+    font-size: 10px;
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    white-space: nowrap;
 }
 
-
-.unggulan-data small {
-
+.unggulan-bottom small {
     display: block;
 
-    color: var(--stat-maroon);
+    color: #bca4a8;
 
-    font-size: 5.5px;
+    font-size: 6px;
+    line-height: 1.25;
 
-    line-height: 1.2;
+    word-break: break-word;
 }
 
 
 /* =========================================================
    PENERIMA MANFAAT
-========================================================= */
+   ========================================================= */
+
+.penerima-card {
+    min-height: 290px;
+}
 
 .penerima-grid {
+    width: 100%;
+    min-width: 0;
 
     display: grid;
 
     grid-template-columns:
         repeat(5, minmax(0, 1fr));
 
-    gap: 6px;
+    gap: 7px;
 }
 
+.penerima-item {
+    min-width: 0;
 
-.penerima-card {
+    padding: 10px 5px;
 
-    min-height: 62px;
+    background: #fafafa;
 
-    padding: 5px 3px;
+    border: 1px solid #ededed;
 
-    border: 1px solid #8d3040;
-
-    border-radius: 4px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
+    border-radius: 7px;
 
     text-align: center;
 
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
+.penerima-item i {
+    display: block;
 
-.penerima-card i {
+    margin-bottom: 4px;
 
-    color: var(--stat-maroon);
+    color: #650719;
 
-    font-size: 16px;
+    font-size: 14px;
 }
 
+.penerima-item strong {
+    display: block;
 
-.penerima-card strong {
+    color: #650719;
 
-    margin-top: 1px;
-
-    color: var(--stat-maroon);
-
-    font-size: 13px;
-}
-
-
-.penerima-card small {
-
-    margin-top: 2px;
-
-    color: var(--stat-maroon);
-
-    font-size: 5px;
-
+    font-size: 12px;
     line-height: 1.2;
-}
-
-
-/* =========================================================
-   KATEGORI
-========================================================= */
-
-.kategori-heading {
-
-    width: max-content;
-
-    margin-top: 17px;
-
-    padding-bottom: 6px;
-
-    border-bottom: 1px solid #8d3040;
-
-    color: var(--stat-maroon);
-
-    font-size: 9px;
 
     font-weight: 700;
+
+    white-space: nowrap;
 }
 
+.penerima-item small {
+    display: block;
 
-.kategori-content {
+    margin-top: 3px;
 
-    display: flex;
+    color: #777;
 
-    align-items: center;
-
-    gap: 18px;
-
-    margin-top: 4px;
-}
-
-
-.kategori-chart {
-
-    position: relative;
-
-    width: 125px;
-
-    height: 125px;
-
-    flex-shrink: 0;
-}
-
-
-.kategori-chart canvas {
-
-    width: 100% !important;
-
-    height: 100% !important;
+    font-size: 6px;
+    line-height: 1.25;
 }
 
 
 /* =========================================================
-   LEGEND
-========================================================= */
+   KATEGORI PENERIMA
+   ========================================================= */
 
-.kategori-legend {
+.kategori-title {
+    margin: 16px 0 9px;
 
-    display: flex;
+    color: #555;
 
-    flex-direction: column;
+    font-size: 9px;
+    line-height: 1.3;
 
-    gap: 5px;
+    font-weight: 600;
 }
 
-
-.kategori-legend > div {
+.kategori-wrapper {
+    width: 100%;
+    min-width: 0;
 
     display: grid;
 
     grid-template-columns:
-        31px
-        24px
-        auto;
+        135px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.kategori-chart {
+    position: relative;
+
+    width: 135px;
+    height: 135px;
+
+    flex-shrink: 0;
+}
+
+.kategori-chart canvas {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.kategori-legend {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.kategori-legend > div {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        8px
+        37px
+        minmax(0, 1fr);
 
     align-items: center;
 
     gap: 5px;
 }
 
+.legend {
+    width: 7px;
+    height: 7px;
 
-.legend-color {
+    display: inline-block;
 
-    width: 31px;
-
-    height: 13px;
-
-    display: block;
+    border-radius: 50%;
 }
-
 
 .legend-1 {
     background: #650719;
@@ -910,328 +1012,377 @@
     background: #f7cbd2;
 }
 
-
 .kategori-legend strong {
+    color: #650719;
 
-    color: var(--stat-maroon);
+    font-size: 8px;
 
-    font-size: 7px;
+    font-weight: 700;
+
+    white-space: nowrap;
 }
 
-
 .kategori-legend small {
+    min-width: 0;
 
-    color: var(--stat-maroon);
+    color: #666;
 
-    font-size: 5.5px;
+    font-size: 7px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
 /* =========================================================
-   KECAMATAN
-========================================================= */
+   TOP 5 KECAMATAN
+   ========================================================= */
 
-.kecamatan-content {
+.kecamatan-card {
+    min-height: 290px;
+}
 
-    height: 235px;
+.kecamatan-wrapper {
+    width: 100%;
+    min-width: 0;
+}
+
+.kecamatan-list-only {
+    width: 100%;
+}
+
+.top-kecamatan {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.top-item {
+    width: 100%;
+    min-width: 0;
 
     display: grid;
 
     grid-template-columns:
-        1.3fr
-        .7fr;
-
-    gap: 10px;
-}
-
-
-.kecamatan-map {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow: hidden;
-}
-
-
-.kecamatan-map img {
-
-    width: 245px;
-
-    max-width: 100%;
-
-    height: auto;
-
-    object-fit: contain;
-}
-
-
-/* =========================================================
-   TOP KECAMATAN
-========================================================= */
-
-.top-kecamatan {
-
-    padding-top: 7px;
-}
-
-
-.top-kecamatan h4 {
-
-    margin: 0 0 11px;
-
-    color: var(--stat-maroon);
-
-    font-size: 9px;
-
-    font-weight: 700;
-}
-
-
-.top-row {
-
-    display: flex;
+        24px
+        minmax(0, 1fr)
+        45px;
 
     align-items: center;
 
     gap: 8px;
 
-    margin-bottom: 9px;
+    padding: 9px 0;
+
+    border-bottom: 1px solid #eee;
 }
 
+.top-item:last-child {
+    border-bottom: none;
+}
 
-.top-row span {
+.top-item > span {
+    width: 22px;
+    height: 22px;
 
-    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    height: 16px;
+    background: #fbecef;
 
-    flex-shrink: 0;
+    color: #650719;
 
     border-radius: 50%;
 
-    background: var(--stat-maroon);
-
-    color: #fff;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    font-size: 7px;
+    font-size: 8px;
 
     font-weight: 700;
 }
 
+.top-item > div {
+    min-width: 0;
+}
 
-.top-row p {
+.top-item p {
+    margin: 0 0 2px;
 
-    margin: 0;
+    color: #444;
 
-    color: var(--stat-maroon);
+    font-size: 9px;
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top-item small {
+    display: block;
+
+    color: #999;
+
+    font-size: 6px;
+    line-height: 1.25;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top-item > strong {
+    color: #650719;
 
     font-size: 8px;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+.kecamatan-empty {
+    padding: 25px 10px;
+
+    color: #999;
+
+    font-size: 9px;
+
+    text-align: center;
 }
 
 
 /* =========================================================
-   LEGEND MAP
-========================================================= */
+   TABLET
+   ========================================================= */
 
-.kecamatan-legend {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
-
-    margin-top: 15px;
-}
-
-
-.kecamatan-legend div {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: var(--stat-maroon);
-
-    font-size: 6.5px;
-}
-
-
-.kecamatan-legend span {
-
-    width: 39px;
-
-    height: 13px;
-
-    display: inline-block;
-}
-
-
-.legend-high {
-
-    background: #650719;
-}
-
-
-.legend-medium {
-
-    background: #e94d68;
-}
-
-
-.legend-low {
-
-    background: #f58fa0;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 
     .statistik-main {
-
-        padding-left: 20px;
-
-        padding-right: 20px;
-    }
-
-
-    .statistik-grid-top {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-
-    .statistik-survey {
-
-        grid-column: span 2;
-    }
-
-
-    .statistik-grid-middle,
-    .statistik-grid-bottom {
-
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .statistik-hero-container {
-
-        padding: 28px 20px;
-    }
-
-
-    .statistik-hero h1 {
-
-        font-size: 25px;
-    }
-
-
-    .statistik-hero-bottom {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 15px;
-    }
-
-
-    .statistik-hero-bottom h2 {
-
-        font-size: 14px;
-    }
-
-
-    .statistik-grid-top {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .statistik-survey {
-
-        grid-column: auto;
-    }
-
-
-    .unggulan-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-
-    .penerima-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-
-    .kecamatan-content {
-
-        grid-template-columns: 1fr;
-
-        height: auto;
-    }
-
-
-    .top-kecamatan {
-
-        padding-bottom: 15px;
-    }
-
-}
-
-
-@media (max-width: 450px) {
-
-    .statistik-main {
-
         padding-left: 12px;
-
         padding-right: 12px;
     }
 
-
-    .unggulan-grid {
-
-        grid-template-columns: 1fr;
+    .statistik-grid-top {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
     }
 
+    .statistik-grid-top > .statistik-card:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    .statistik-grid-middle {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+    }
+
+    .statistik-grid-bottom {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+    }
 
     .penerima-grid {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+    }
+}
 
+
+/* =========================================================
+   TABLET KECIL
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .statistik-grid-top,
+    .statistik-grid-middle,
+    .statistik-grid-bottom {
         grid-template-columns: 1fr;
     }
 
-
-    .kategori-content {
-
-        flex-direction: column;
-
-        align-items: flex-start;
+    .statistik-grid-top > .statistik-card:nth-child(3) {
+        grid-column: auto;
     }
 
+    .statistik-grid-top > .statistik-card {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .survey-card {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .statistik-chart {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .penerima-card,
+    .kecamatan-card {
+        min-height: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .statistik-hero {
+        min-height: 160px;
+    }
+
+    .statistik-hero-container {
+        padding: 28px 15px 22px;
+    }
+
+    .statistik-hero h1 {
+        font-size: 21px;
+    }
+
+    .statistik-hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .statistik-hero-bottom h2 {
+        font-size: 10px;
+    }
+
+    .statistik-year {
+        width: auto;
+    }
+
+    .statistik-main {
+        padding: 15px 10px 30px;
+    }
+
+    .statistik-card {
+        padding: 13px;
+    }
+
+    .statistik-card-title h5 {
+        font-size: 10px;
+    }
+
+    .statistik-grid-top > .statistik-card {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .statistik-chart {
+        height: 220px;
+        min-height: 220px;
+    }
+
+    .survey-card {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .survey-info {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .survey-score strong {
+        font-size: 22px;
+    }
+
+    .bidang-stat-item {
+        grid-template-columns:
+            24px
+            minmax(70px, 0.8fr)
+            minmax(80px, 1.5fr)
+            42px;
+    }
+
+    .layanan-unggulan-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+    .layanan-unggulan-item {
+        height: 140px;
+    }
+
+    .penerima-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .kategori-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .kategori-chart {
+        margin: 0 auto;
+    }
+
+    .top-item {
+        grid-template-columns:
+            24px
+            minmax(0, 1fr)
+            42px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE SANGAT KECIL
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .statistik-main {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .statistik-card {
+        padding: 11px;
+    }
+
+    .survey-info {
+        gap: 4px;
+    }
+
+    .survey-info > div {
+        padding: 7px 5px;
+    }
+
+    .penerima-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .layanan-unggulan-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .kategori-chart {
+        width: 125px;
+        height: 125px;
+    }
 }
