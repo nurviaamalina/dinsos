@@ -6,10 +6,27 @@
    CSS KHUSUS HALAMAN DASHBOARD STATISTIK
 ========================================================= */
 
+/* =========================================================
+   FONT GLOBAL — POPPINS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 /* =========================================================
    HEADER
 ========================================================= */
+
 
 .statistik-header {
     display: flex;
@@ -20,14 +37,14 @@
 
 .statistik-header h2 {
     margin: 0;
-    color: #650719;
+    color: #65091c;
     font-size: 25px;
     font-weight: 700;
 }
 
 .statistik-header p {
     margin: 4px 0 0;
-    color: #650719;
+    color: #65091c;
     font-size: 15px;
 }
 
@@ -79,7 +96,7 @@
 
 .statistik-card {
     background: #ffffff;
-    border: 1px solid #8d2435;
+    border: 1px solid #65091c;
     border-radius: 7px;
     padding: 16px;
     min-width: 0;
@@ -102,7 +119,7 @@
     margin: 0;
     padding-bottom: 7px;
 
-    color: #650719;
+    color: #65091c;
     font-size: 10px;
     font-weight: 700;
 }
@@ -117,7 +134,7 @@
     width: 58px;
     height: 1px;
 
-    background: #650719;
+    background: #65091c;
 }
 
 
@@ -138,7 +155,7 @@
 
     border-bottom: 1px solid #eadde0;
 
-    color: #650719;
+    color: #65091c;
     font-size: 9px;
 }
 
@@ -149,12 +166,12 @@
 }
 
 .layanan-stat-item i {
-    color: #650719;
+    color: #65091c;
     font-size: 13px;
 }
 
 .layanan-stat-item strong {
-    color: #650719;
+    color: #65091c;
     font-size: 10px;
 }
 
@@ -186,18 +203,18 @@
 }
 
 .capaian-overall small {
-    color: #650719;
+    color: #65091c;
     font-size: 7px;
     font-weight: 600;
 }
 
 .capaian-overall strong {
-    color: #650719;
+    color: #65091c;
     font-size: 14px;
 }
 
 .capaian-overall i {
-    color: #650719;
+    color: #65091c;
     font-size: 17px;
 }
 
@@ -243,7 +260,7 @@
 }
 
 .survey-score strong {
-    color: #650719;
+    color: #65091c;
     font-size: 29px;
     font-weight: 700;
 }
@@ -251,7 +268,7 @@
 .survey-label {
     margin: 4px 0 25px;
 
-    color: #777;
+    color: #65091c;
 
     text-align: center;
 
@@ -288,7 +305,7 @@
 .survey-info span {
     display: block;
 
-    color: #650719;
+    color: #65091c;
 
     font-size: 7px;
     font-weight: 600;
@@ -299,7 +316,7 @@
 
     margin-top: 3px;
 
-    color: #650719;
+    color: #65091c;
 
     font-size: 13px;
 }
@@ -354,12 +371,12 @@
 }
 
 .bidang-stat-item > i {
-    color: #650719;
+    color: #65091c;
     font-size: 17px;
 }
 
 .bidang-name {
-    color: #650719;
+    color: #65091c;
 
     font-size: 6.5px;
 
@@ -386,11 +403,11 @@
 
     border-radius: 5px;
 
-    background: #650719;
+    background: #65091c;
 }
 
 .bidang-stat-item > strong {
-    color: #650719;
+    color: #65091c;
 
     font-size: 8px;
 
@@ -434,7 +451,7 @@
 
     margin: 0;
 
-    color: #650719;
+    color: #65091c;
 
     font-size: 8px;
 
@@ -460,7 +477,7 @@
 }
 
 .unggulan-icon i {
-    color: #650719;
+    color: #65091c;
     font-size: 23px;
 }
 
@@ -482,7 +499,7 @@
 .unggulan-bottom strong {
     display: block;
 
-    color: #650719;
+    color: #65091c;
 
     font-size: 15px;
 }
@@ -490,7 +507,7 @@
 .unggulan-bottom small {
     display: block;
 
-    color: #650719;
+    color: #65091c;
 
     font-size: 5.5px;
 
@@ -964,4 +981,48 @@
         align-items: flex-start;
     }
 
+}
+
+/* =====================================================
+   FILTER TAHUN STATISTIK
+===================================================== */
+
+.statistik-year {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.statistik-year form {
+    margin: 0;
+}
+
+.statistik-year select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-size: inherit;
+    font-weight: inherit;
+
+    cursor: pointer;
+
+    padding: 2px 4px;
+
+    min-width: 90px;
+}
+
+.statistik-year select:focus {
+    outline: none;
+}
+
+.statistik-year select option {
+    background: #fff;
+    color: #333;
 }

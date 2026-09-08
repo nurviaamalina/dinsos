@@ -37,19 +37,49 @@
                 <i class="bi bi-calendar3"></i>
 
                 <span>
-                    Tahun 2026
+                    Tahun <?= esc($tahun) ?>
                 </span>
 
                 <i class="bi bi-chevron-down"></i>
 
-            </div>
+            </div><div class="statistik-year">
+
+    <i class="bi bi-calendar3"></i>
+
+    <form method="get" action="<?= current_url() ?>">
+
+        <select
+            name="tahun"
+            onchange="this.form.submit()"
+            aria-label="Pilih Tahun"
+        >
+
+            <?php foreach ($tahunTersedia as $tahunItem): ?>
+
+                <option
+                    value="<?= esc($tahunItem) ?>"
+                    <?= (int) $tahunItem === (int) $tahun
+                        ? 'selected'
+                        : '' ?>
+                >
+                    Tahun <?= esc($tahunItem) ?>
+                </option>
+
+            <?php endforeach; ?>
+
+        </select>
+
+    </form>
+
+    <i class="bi bi-chevron-down"></i>
+
+</div>
 
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -93,13 +123,13 @@
                         <i class="bi bi-file-earmark"></i>
 
                         <span>
-                            Total Layanan
-                        </span>
+    Total Permohonan
+</span>
 
                     </div>
 
                     <strong>
-                        42
+                        <?= number_format($totalLayanan, 0, ',', '.') ?>
                     </strong>
 
                 </div>
@@ -112,13 +142,13 @@
                         <i class="bi bi-check-circle"></i>
 
                         <span>
-                            Layanan Terealisasi
-                        </span>
+    Jumlah Selesai
+</span>
 
                     </div>
 
                     <strong>
-                        42
+                        <?= number_format($layananSelesai, 0, ',', '.') ?>
                     </strong>
 
                 </div>
@@ -131,13 +161,13 @@
                         <i class="bi bi-clock-history"></i>
 
                         <span>
-                            Layanan Berjalan
-                        </span>
+    Jumlah Proses
+</span>
 
                     </div>
 
                     <strong>
-                        42
+                        <?= number_format($layananProses, 0, ',', '.') ?>
                     </strong>
 
                 </div>
@@ -150,13 +180,13 @@
                         <i class="bi bi-play"></i>
 
                         <span>
-                            Layanan Belum Terealisasi
-                        </span>
+    Belum Selesai
+</span>
 
                     </div>
 
                     <strong>
-                        42
+                        <?= number_format($layananBelum, 0, ',', '.') ?>
                     </strong>
 
                 </div>
@@ -174,7 +204,7 @@
                     </small>
 
                     <strong>
-                        98%
+                        <?= number_format($capaianLayanan, 1, ',', '.') ?>%
                     </strong>
 
                 </div>
@@ -186,7 +216,6 @@
         </div>
 
 
-
         <!-- =============================================
              GRAFIK
         ============================================== -->
@@ -196,8 +225,8 @@
             <div class="statistik-box-title">
 
                 <h3>
-                    Grafik Target vs Realiasi Layanan
-                </h3>
+    Jumlah Permohonan vs Jumlah Selesai
+</h3>
 
                 <span></span>
 
@@ -211,7 +240,6 @@
             </div>
 
         </div>
-
 
 
         <!-- =============================================
@@ -236,7 +264,14 @@
                 <i class="bi bi-star"></i>
 
                 <strong>
-                    88,42 %
+
+                    <?= number_format(
+                        $rataIKM,
+                        2,
+                        ',',
+                        '.'
+                    ) ?> %
+
                 </strong>
 
             </div>
@@ -257,7 +292,12 @@
                     </span>
 
                     <strong>
-                        1.342
+                        <?= number_format(
+                            $totalRespondenSKM,
+                            0,
+                            ',',
+                            '.'
+                        ) ?>
                     </strong>
 
                     <small>
@@ -274,11 +314,11 @@
                     </span>
 
                     <strong>
-                        2026
+                        <?= esc($tahun) ?>
                     </strong>
 
                     <small>
-                        Tahun 2026
+                        <?= esc($periodeSKM) ?>
                     </small>
 
                 </div>
@@ -291,9 +331,17 @@
                     </span>
 
                     <strong class="survey-good">
-                        Sangat
-                        <br>
-                        Baik
+
+                        <?php
+                        $mutuParts = explode(
+                            ' - ',
+                            $mutuSKM,
+                            2
+                        );
+                        ?>
+
+                        <?= esc($mutuParts[1] ?? $mutuSKM) ?>
+
                     </strong>
 
                 </div>
@@ -334,101 +382,74 @@
             <div class="bidang-list">
 
 
-                <div class="bidang-row">
+                <?php if (!empty($bidang)): ?>
 
-                    <i class="bi bi-shield-check"></i>
+                    <?php
 
-                    <div class="bidang-name">
-                        Perlindungan dan
-                        <br>
-                        Jaminan Sosial
-                    </div>
+                    $bidangIcons = [
+                        'bi-shield-check',
+                        'bi-people',
+                        'bi-person-heart',
+                        'bi-people-fill'
+                    ];
 
-                    <div class="bidang-progress">
+                    ?>
 
-                        <span style="width:90%"></span>
+                    <?php foreach ($bidang as $index => $item): ?>
 
-                    </div>
+                        <div class="bidang-row">
 
-                    <strong>
-                        90%
-                    </strong>
-
-                </div>
+                            <i class="bi <?= $bidangIcons[$index % count($bidangIcons)] ?>"></i>
 
 
+                            <div class="bidang-name">
 
-                <div class="bidang-row">
+                                <?= esc($item['nama']) ?>
 
-                    <i class="bi bi-people"></i>
-
-                    <div class="bidang-name">
-                        Pemberdayaan dan
-                        <br>
-                        Rehabilitasi Sosial
-                    </div>
-
-                    <div class="bidang-progress">
-
-                        <span style="width:90%"></span>
-
-                    </div>
-
-                    <strong>
-                        90%
-                    </strong>
-
-                </div>
+                            </div>
 
 
+                            <div class="bidang-progress">
 
-                <div class="bidang-row">
+                                <span
+                                    style="width:<?= min(
+                                        100,
+                                        max(
+                                            0,
+                                            (float) $item['capaian']
+                                        )
+                                    ) ?>%"
+                                ></span>
 
-                    <i class="bi bi-person-heart"></i>
-
-                    <div class="bidang-name">
-                        Pemberdayaan
-                        <br>
-                        Perempuan dan
-                        <br>
-                        Perlindungan Anak
-                    </div>
-
-                    <div class="bidang-progress">
-
-                        <span style="width:90%"></span>
-
-                    </div>
-
-                    <strong>
-                        90%
-                    </strong>
-
-                </div>
+                            </div>
 
 
+                            <strong>
 
-                <div class="bidang-row">
+                                <?= number_format(
+                                    $item['capaian'],
+                                    1,
+                                    ',',
+                                    '.'
+                                ) ?>%
 
-                    <i class="bi bi-people-fill"></i>
+                            </strong>
 
-                    <div class="bidang-name">
-                        Penanganan Penduduk dan
-                        <br>
-                        Keluarga Berencana
-                    </div>
+                        </div>
 
-                    <div class="bidang-progress">
+                    <?php endforeach; ?>
 
-                        <span style="width:90%"></span>
+                <?php else: ?>
+
+                    <div class="bidang-row">
+
+                        <div class="bidang-name">
+                            Belum ada data bidang
+                        </div>
 
                     </div>
 
-                    <strong>
-                        90%
-                    </strong>
-
-                </div>
+                <?php endif; ?>
 
 
             </div>
@@ -457,62 +478,144 @@
             <div class="unggulan-grid">
 
 
-                <?php for ($i = 1; $i <= 4; $i++): ?>
+                <?php if (!empty($layananUnggulan)): ?>
 
-                    <div class="unggulan-card">
+                    <?php
 
+                    $unggulanIcons = [
+                        'bi-hand-heart',
+                        'bi-people',
+                        'bi-heart',
+                        'bi-person-check'
+                    ];
 
-                        <h4>
-                            Nama Program /
-                            <br>
-                            Layanan
-                        </h4>
+                    ?>
 
+                    <?php foreach ($layananUnggulan as $index => $item): ?>
 
-                        <div class="unggulan-icon">
-
-                            <i class="bi bi-hand-heart"></i>
-
-                        </div>
-
-
-                        <div class="unggulan-data">
+                        <div class="unggulan-card">
 
 
-                            <div>
+                            <h4>
 
-                                <strong>
-                                    92%
-                                </strong>
+                                <?= esc($item['nama']) ?>
 
-                                <small>
-                                    Capaian
-                                </small>
+                            </h4>
+
+
+                            <div class="unggulan-icon">
+
+                                <i class="bi <?= $unggulanIcons[$index % count($unggulanIcons)] ?>"></i>
 
                             </div>
 
 
-                            <div>
+                            <div class="unggulan-data">
 
-                                <strong>
-                                    1222
-                                </strong>
 
-                                <small>
-                                    Penerima
+                                <div>
+
+                                    <strong>
+
+                                        <?= number_format(
+                                            $item['capaian'],
+                                            1,
+                                            ',',
+                                            '.'
+                                        ) ?>%
+
+                                    </strong>
+
+                                    <small>
+                                        Capaian
+                                    </small>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+
+                                        <?= number_format(
+                                            $item['jumlah'],
+                                            0,
+                                            ',',
+                                            '.'
+                                        ) ?>
+
+                                    </strong>
+
+                                    <small>
+                                        Jumlah
+                                        <br>
+                                        Permohonan
+                                    </small>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                    <?php endforeach; ?>
+
+
+                <?php else: ?>
+
+
+                    <?php for ($i = 1; $i <= 4; $i++): ?>
+
+                        <div class="unggulan-card">
+
+                            <h4>
+                                Belum ada data
+                            </h4>
+
+                            <div class="unggulan-icon">
+
+                                <i class="bi bi-hand-heart"></i>
+
+                            </div>
+
+                            <div class="unggulan-data">
+
+                                <div>
+
+                                    <strong>
+                                        0%
+                                    </strong>
+
+                                    <small>
+                                        Capaian
+                                    </small>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        0
+                                    </strong>
+
+                                  <small>
+                                    Jumlah
                                     <br>
-                                    Program
+                                    Permohonan
                                 </small>
+
+                                </div>
 
                             </div>
 
-
                         </div>
 
+                    <?php endfor; ?>
 
-                    </div>
 
-                <?php endfor; ?>
+                <?php endif; ?>
 
 
             </div>
@@ -550,12 +653,21 @@
             <div class="penerima-grid">
 
 
+                <!-- TOTAL -->
+
                 <div class="penerima-card">
 
                     <i class="bi bi-people"></i>
 
                     <strong>
-                        1.342
+
+                        <?= number_format(
+                            $totalPenerima,
+                            0,
+                            ',',
+                            '.'
+                        ) ?>
+
                     </strong>
 
                     <small>
@@ -565,12 +677,21 @@
                 </div>
 
 
+                <!-- DISABILITAS -->
+
                 <div class="penerima-card">
 
                     <i class="bi bi-people"></i>
 
                     <strong>
-                        1.342
+
+                        <?= number_format(
+                            $kategoriPenerima['Penyandang Disabilitas'] ?? 0,
+                            0,
+                            ',',
+                            '.'
+                        ) ?>
+
                     </strong>
 
                     <small>
@@ -580,12 +701,21 @@
                 </div>
 
 
+                <!-- LANSIA -->
+
                 <div class="penerima-card">
 
                     <i class="bi bi-people"></i>
 
                     <strong>
-                        1.342
+
+                        <?= number_format(
+                            $kategoriPenerima['Lansia'] ?? 0,
+                            0,
+                            ',',
+                            '.'
+                        ) ?>
+
                     </strong>
 
                     <small>
@@ -595,12 +725,21 @@
                 </div>
 
 
+                <!-- ANAK -->
+
                 <div class="penerima-card">
 
                     <i class="bi bi-people"></i>
 
                     <strong>
-                        1.342
+
+                        <?= number_format(
+                            $kategoriPenerima['Anak'] ?? 0,
+                            0,
+                            ',',
+                            '.'
+                        ) ?>
+
                     </strong>
 
                     <small>
@@ -610,12 +749,21 @@
                 </div>
 
 
+                <!-- KELUARGA -->
+
                 <div class="penerima-card">
 
                     <i class="bi bi-people"></i>
 
                     <strong>
-                        1.342
+
+                        <?= number_format(
+                            $kategoriPenerima['Keluarga Penerima Manfaat'] ?? 0,
+                            0,
+                            ',',
+                            '.'
+                        ) ?>
+
                     </strong>
 
                     <small>
@@ -626,6 +774,7 @@
 
 
             </div>
+
 
 
             <!-- KATEGORI -->
@@ -650,12 +799,35 @@
                 <div class="kategori-legend">
 
 
+                    <?php
+
+                    $totalKategori =
+                        array_sum($kategoriPenerima);
+
+                    ?>
+
+
+                    <!-- KELUARGA -->
+
                     <div>
 
                         <span class="legend-color legend-1"></span>
 
                         <strong>
-                            65%
+
+                            <?= $totalKategori > 0
+                                ? number_format(
+                                    (
+                                        ($kategoriPenerima['Keluarga Penerima Manfaat'] ?? 0)
+                                        / $totalKategori
+                                    ) * 100,
+                                    1,
+                                    ',',
+                                    '.'
+                                )
+                                : '0'
+                            ?>%
+
                         </strong>
 
                         <small>
@@ -665,12 +837,27 @@
                     </div>
 
 
+                    <!-- DISABILITAS -->
+
                     <div>
 
                         <span class="legend-color legend-2"></span>
 
                         <strong>
-                            35%
+
+                            <?= $totalKategori > 0
+                                ? number_format(
+                                    (
+                                        ($kategoriPenerima['Penyandang Disabilitas'] ?? 0)
+                                        / $totalKategori
+                                    ) * 100,
+                                    1,
+                                    ',',
+                                    '.'
+                                )
+                                : '0'
+                            ?>%
+
                         </strong>
 
                         <small>
@@ -680,12 +867,27 @@
                     </div>
 
 
+                    <!-- LANSIA -->
+
                     <div>
 
                         <span class="legend-color legend-3"></span>
 
                         <strong>
-                            15%
+
+                            <?= $totalKategori > 0
+                                ? number_format(
+                                    (
+                                        ($kategoriPenerima['Lansia'] ?? 0)
+                                        / $totalKategori
+                                    ) * 100,
+                                    1,
+                                    ',',
+                                    '.'
+                                )
+                                : '0'
+                            ?>%
+
                         </strong>
 
                         <small>
@@ -695,12 +897,27 @@
                     </div>
 
 
+                    <!-- ANAK -->
+
                     <div>
 
                         <span class="legend-color legend-4"></span>
 
                         <strong>
-                            10%
+
+                            <?= $totalKategori > 0
+                                ? number_format(
+                                    (
+                                        ($kategoriPenerima['Anak'] ?? 0)
+                                        / $totalKategori
+                                    ) * 100,
+                                    1,
+                                    ',',
+                                    '.'
+                                )
+                                : '0'
+                            ?>%
+
                         </strong>
 
                         <small>
@@ -710,12 +927,27 @@
                     </div>
 
 
+                    <!-- LAINNYA -->
+
                     <div>
 
                         <span class="legend-color legend-5"></span>
 
                         <strong>
-                            5%
+
+                            <?= $totalKategori > 0
+                                ? number_format(
+                                    (
+                                        ($kategoriPenerima['Lainnya'] ?? 0)
+                                        / $totalKategori
+                                    ) * 100,
+                                    1,
+                                    ',',
+                                    '.'
+                                )
+                                : '0'
+                            ?>%
+
                         </strong>
 
                         <small>
@@ -765,6 +997,7 @@
                 </div>
 
 
+
                 <!-- TOP 5 -->
 
                 <div class="top-kecamatan">
@@ -774,59 +1007,45 @@
                     </h4>
 
 
-                    <div class="top-row">
+                    <?php if (!empty($topKecamatan)): ?>
 
-                        <span>1</span>
+                        <?php foreach ($topKecamatan as $index => $item): ?>
 
-                        <p>
-                            Banyuwangi
-                        </p>
+                            <div class="top-row">
 
-                    </div>
+                                <span>
+                                    <?= $index + 1 ?>
+                                </span>
 
+                                <p>
+                                    <?= esc($item['nama']) ?>
+                                </p>
 
-                    <div class="top-row">
+                            </div>
 
-                        <span>2</span>
-
-                        <p>
-                            Rogojampi
-                        </p>
-
-                    </div>
+                        <?php endforeach; ?>
 
 
-                    <div class="top-row">
+                    <?php else: ?>
 
-                        <span>3</span>
+                        <?php for ($i = 1; $i <= 5; $i++): ?>
 
-                        <p>
-                            Kalipuro
-                        </p>
+                            <div class="top-row">
 
-                    </div>
+                                <span>
+                                    <?= $i ?>
+                                </span>
 
+                                <p>
+                                    Belum ada data
+                                </p>
 
-                    <div class="top-row">
+                            </div>
 
-                        <span>4</span>
+                        <?php endfor; ?>
 
-                        <p>
-                            Giri
-                        </p>
+                    <?php endif; ?>
 
-                    </div>
-
-
-                    <div class="top-row">
-
-                        <span>5</span>
-
-                        <p>
-                            Glagah
-                        </p>
-
-                    </div>
 
 
                     <div class="kecamatan-legend">
@@ -864,10 +1083,10 @@
 
                 </div>
 
-
             </div>
 
         </div>
+
 
     </section>
 
@@ -893,112 +1112,119 @@
 
 <script>
 
+
 /* =====================================================
-   GRAFIK TARGET VS REALISASI
+   DATA DARI PHP
+===================================================== */
+
+const grafikTahun =
+    <?= json_encode(
+        $grafikTahun ?? [],
+        JSON_UNESCAPED_UNICODE
+    ) ?>;
+
+
+const kategoriPenerima =
+    <?= json_encode(
+        $kategoriPenerima ?? [],
+        JSON_UNESCAPED_UNICODE
+    ) ?>;
+
+
+
+/* =====================================================
+   GRAFIK JUMLAH PERMOHONAN VS JUMLAH SELESAI
 ===================================================== */
 
 const layananCanvas =
     document.getElementById('layananChart');
 
-new Chart(layananCanvas, {
+if (layananCanvas) {
 
-    type: 'bar',
+    new Chart(layananCanvas, {
 
-    data: {
+        type: 'bar',
 
-        labels: [
-            '2019',
-            '2020',
-            '2021',
-            '2022'
-        ],
+        data: {
 
-        datasets: [
+            labels: grafikTahun.map(
+                item => item.tahun
+            ),
 
-            {
-                label: 'Target',
+            datasets: [
 
-                data: [
-                    70,
-                    75,
-                    100,
-                    45
-                ],
+                {
+                    label: 'Jumlah Permohonan',
 
-                backgroundColor: '#650719',
+                    data: grafikTahun.map(
+                        item => item.permohonan
+                    ),
 
-                borderRadius: 5,
+                    backgroundColor: '#650719',
 
-                barThickness: 16
-            },
+                    borderRadius: 5,
 
-
-            {
-                label: 'Realisasi',
-
-                data: [
-                    56,
-                    56,
-                    87,
-                    18
-                ],
-
-                backgroundColor: '#f3a0ae',
-
-                borderRadius: 5,
-
-                barThickness: 16
-            }
-
-        ]
-
-    },
-
-    options: {
-
-        responsive: true,
-
-        maintainAspectRatio: false,
-
-        plugins: {
-
-            legend: {
-                display: false
-            }
-
-        },
-
-        scales: {
-
-            y: {
-
-                beginAtZero: true,
-
-                max: 100,
-
-                ticks: {
-                    stepSize: 25
+                    barThickness: 16
                 },
 
-                grid: {
-                    display: false
+                {
+                    label: 'Jumlah Selesai',
+
+                    data: grafikTahun.map(
+                        item => item.selesai
+                    ),
+
+                    backgroundColor: '#f3a0ae',
+
+                    borderRadius: 5,
+
+                    barThickness: 16
+                }
+
+            ]
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+                    display: true
                 }
 
             },
 
-            x: {
+            scales: {
 
-                grid: {
-                    display: false
+                y: {
+
+                    beginAtZero: true,
+
+                    grid: {
+                        display: false
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+                        display: false
+                    }
+
                 }
 
             }
 
         }
 
-    }
+    });
 
-});
+}
 
 
 
@@ -1009,62 +1235,120 @@ new Chart(layananCanvas, {
 const kategoriCanvas =
     document.getElementById('kategoriChart');
 
-new Chart(kategoriCanvas, {
 
-    type: 'pie',
+if (kategoriCanvas) {
 
-    data: {
 
-        labels: [
-            'Keluarga Penerima Manfaat',
-            'Penyandang Disabilitas',
-            'Lansia',
-            'Anak',
-            'Lainnya'
-        ],
+    const kategoriLabels = [
 
-        datasets: [{
+        'Keluarga Penerima Manfaat',
 
-            data: [
-                65,
-                35,
-                15,
-                10,
-                5
-            ],
+        'Penyandang Disabilitas',
 
-            backgroundColor: [
+        'Lansia',
 
-                '#650719',
-                '#a50e28',
-                '#e83152',
-                '#f08da0',
-                '#f7cbd2'
+        'Anak',
 
-            ],
+        'Lainnya'
 
-            borderWidth: 0
+    ];
 
-        }]
 
-    },
+    const kategoriValues = [
 
-    options: {
+        Number(
+            kategoriPenerima[
+                'Keluarga Penerima Manfaat'
+            ] ?? 0
+        ),
 
-        responsive: true,
+        Number(
+            kategoriPenerima[
+                'Penyandang Disabilitas'
+            ] ?? 0
+        ),
 
-        maintainAspectRatio: false,
+        Number(
+            kategoriPenerima[
+                'Lansia'
+            ] ?? 0
+        ),
 
-        plugins: {
+        Number(
+            kategoriPenerima[
+                'Anak'
+            ] ?? 0
+        ),
 
-            legend: {
-                display: false
+        Number(
+            kategoriPenerima[
+                'Lainnya'
+            ] ?? 0
+        )
+
+    ];
+
+
+    new Chart(kategoriCanvas, {
+
+        type: 'pie',
+
+
+        data: {
+
+            labels: kategoriLabels,
+
+
+            datasets: [
+
+                {
+
+                    data: kategoriValues,
+
+                    backgroundColor: [
+
+                        '#650719',
+
+                        '#a50e28',
+
+                        '#e83152',
+
+                        '#f08da0',
+
+                        '#f7cbd2'
+
+                    ],
+
+                    borderWidth: 0
+
+                }
+
+            ]
+
+        },
+
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+
+            plugins: {
+
+                legend: {
+
+                    display: false
+
+                }
+
             }
 
         }
 
-    }
+    });
 
-});
+}
 
 </script>
