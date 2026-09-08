@@ -342,7 +342,7 @@ $routes->get('statistik', 'Admin\Statistik::index');
         'profil/store',
         'Admin\Profil::store'
     );
-     $routes->get('profil/delete/(:num)', 'Admin\Profil::delete/$1');
+     $routes->get('profil/anggota/delete/(:num)', 'Admin\Profil::anggotaDelete/$1');
 
 
     // =================================================

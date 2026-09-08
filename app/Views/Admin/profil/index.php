@@ -149,13 +149,13 @@
 </a>
 
 
-                    <a 
-    href="<?= base_url('admin/profil/delete/' . $item['id']) ?>"
-    class="btn-delete-profil"
-    title="Hapus"
-    onclick="return confirm('Apakah Anda yakin ingin menghapus data profil ini?');"
->
-    <i class="bi bi-trash3"></i>
+                    <a  
+    href="<?= base_url('admin/profil/anggota/delete/' . $item['id']) ?>" 
+    class="btn-delete-profil" 
+    title="Hapus" 
+    onclick="return confirm('Apakah Anda yakin ingin menghapus data anggota ini?');" 
+> 
+    <i class="bi bi-trash3"></i> 
 </a>
 
                 </div>
