@@ -76,7 +76,10 @@
                     <a href="<?= base_url('admin/datalayanan/import') ?>" class="btn btn-info btn-sm">
                         <i class="bi bi-upload"></i> Import
                     </a>
-                    </div>
+                    <a href="<?= base_url('admin/datalayanan/export') ?>" class="btn btn-success btn-sm">
+                        <i class="bi bi-download"></i> Export
+                    </a>
+                </div>
             </div>
 
             <div class="table-responsive">
@@ -109,7 +112,7 @@
                                 </td>
                             </tr>
                         <?php else: ?>
-                            <?php $no = 1; foreach($layanan as $row): ?>
+                            <?php $no = 1 + (($pager->getCurrentPage() - 1) * 10); foreach($layanan as $row): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><strong><?= esc($row->periode) ?></strong></td>
@@ -137,17 +140,72 @@
                 </table>
             </div>
 
-            <div class="table-footer">
-                <small>
-                    <i class="bi bi-database"></i>
-                    Total Data: <?= isset($total_data) ? $total_data : 0 ?>
-                </small>
-                <small>
-                    <i class="bi bi-clock"></i>
-                    Diperbarui: <?= date('d-m-Y H:i:s') ?>
-                </small>
-            </div>
+            <!-- PAGINATION -->
+            <?php if (!empty($layanan)): ?>
+                <div class="pagination-wrapper">
+                    <div class="pagination-info">
+                        <small>
+                            <i class="bi bi-database"></i>
+                            Total Data: <?= isset($total_data) ? $total_data : 0 ?>
+                        </small>
+                        <small>
+                            <i class="bi bi-clock"></i>
+                            Diperbarui: <?= date('d-m-Y H:i:s') ?>
+                        </small>
+                    </div>
+
+                    <div class="datalayanan-pagination">
+                        <?php
+                        $currentPage = $pager->getCurrentPage();
+                        $lastPage = $pager->getLastPage();
+                        $searchQuery = $search ? '&' . http_build_query(['search' => $search]) : '';
+
+                        // Tentukan rentang halaman yang ditampilkan (misal: 1 2 3 4 5)
+                        $start = max(1, $currentPage - 2);
+                        $end = min($lastPage, $currentPage + 2);
+                        ?>
+
+                        <ul class="pagination">
+                            <!-- Panah Kiri -->
+                            <li class="page-item <?= $currentPage <= 1 ? 'disabled' : '' ?>">
+                                <a class="page-link" href="<?= $currentPage > 1 ? base_url('admin/datalayanan?page=' . ($currentPage - 1) . $searchQuery) : '#' ?>">
+                                    <i class="bi bi-chevron-left"></i>
+                                </a>
+                            </li>
+
+                            <!-- Nomor Halaman -->
+                            <?php for ($i = $start; $i <= $end; $i++): ?>
+                                <li class="page-item <?= $i == $currentPage ? 'active' : '' ?>">
+                                    <a class="page-link" href="<?= base_url('admin/datalayanan?page=' . $i . $searchQuery) ?>">
+                                        <?= $i ?>
+                                    </a>
+                                </li>
+                            <?php endfor; ?>
+
+                            <!-- Panah Kanan -->
+                            <li class="page-item <?= $currentPage >= $lastPage ? 'disabled' : '' ?>">
+                                <a class="page-link" href="<?= $currentPage < $lastPage ? base_url('admin/datalayanan?page=' . ($currentPage + 1) . $searchQuery) : '#' ?>">
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <?php else: ?>
+                <div class="table-footer">
+                    <small>
+                        <i class="bi bi-database"></i>
+                        Total Data: <?= isset($total_data) ? $total_data : 0 ?>
+                    </small>
+                    <small>
+                        <i class="bi bi-clock"></i>
+                        Diperbarui: <?= date('d-m-Y H:i:s') ?>
+                    </small>
+                </div>
+            <?php endif; ?>
+
         </div>
+
     </main>
 </div>
 

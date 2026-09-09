@@ -692,6 +692,38 @@ background: #550B18;
 
 }
 
+.berita-pagination ul.pagination {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.berita-pagination .page-item {
+
+    display: flex;
+
+}
+
+.berita-pagination .page-item.disabled .pagination-item {
+
+    color: #aaaaaa;
+
+    pointer-events: none;
+
+    cursor: default;
+
+}
+
 
 /* =========================================================
    FORM TAMBAH / EDIT BERITA

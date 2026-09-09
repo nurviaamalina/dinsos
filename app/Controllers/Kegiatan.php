@@ -30,9 +30,7 @@ class Kegiatan extends BaseController
 
             'kegiatan' => $this->kegiatanModel
                 ->orderBy('tanggal', 'DESC')
-                ->paginate(6),
-
-            'pager' => $this->kegiatanModel->pager,
+                ->findAll(),
 
         ];
 
