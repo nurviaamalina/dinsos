@@ -122,7 +122,7 @@
                         <div class="title-icon"><i class="bi bi-check2-square"></i></div>
                         <h2><?= esc($label) ?></h2>
                     </div>
-                    <div class="card-content"><?= nl2br(esc($layanan[$field])) ?></div>
+                    <div class="card-content"><?= $layanan[$field] ?></div>
                 </div>
             <?php endforeach; ?>
 
