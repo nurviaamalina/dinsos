@@ -60,8 +60,14 @@
                                     <td><?= esc($item['bidang']) ?></td>
                                     <td class="text-muted"><?= esc(substr(strip_tags($item['deskripsi_layanan']), 0, 80)) ?>...</td>
                                     <td>
-                                        <!-- Sesuaikan dengan nama file di database jika ada -->
-                                        <span class="badge-dokumen"><i class="bi bi-file-earmark-pdf"></i> PDF</span>
+                                        <?php if (!empty($item['dokumen'])): ?>
+                                            <a href="<?= base_url('uploads/dokumen/' . $item['dokumen']) ?>" target="_blank" class="badge-dokumen">
+                                                <i class="bi bi-file-earmark-text"></i>
+                                                <?= esc(pathinfo($item['dokumen'], PATHINFO_EXTENSION)) ?>
+                                            </a>
+                                        <?php else: ?>
+                                                <span class="dokumen-empty" aria-label="Tidak ada dokumen">-</span>
+                                        <?php endif; ?>
                                     </td>
                                     <!-- Form Toggle Status -->
                                     <td>

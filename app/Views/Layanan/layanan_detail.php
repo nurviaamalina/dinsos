@@ -95,83 +95,36 @@
 
             </div>
 
-
-
-            <!-- =================================================
-                 STANDAR LAYANAN
-            ================================================== -->
-
-            <div class="detail-card">
-
-                <div class="card-title">
-
-                    <div class="title-icon">
-                        <i class="bi bi-clipboard-text"></i>
+            <?php
+            $standarFields = [
+                'dasar_hukum' => 'Dasar Hukum',
+                'persyaratan' => 'Persyaratan',
+                'sistem_mekanisme_prosedur' => 'Sistem, Mekanisme, dan Prosedur',
+                'jangka_waktu_pelayanan' => 'Jangka Waktu Pelayanan',
+                'biaya_tarif' => 'Biaya/Tarif',
+                'produk_pelayanan' => 'Produk Pelayanan',
+                'penanganan_pengaduan' => 'Penanganan Pengaduan, Saran, Masukan, dan Apresiasi',
+                'sarana_prasarana_fasilitas' => 'Sarana dan Prasarana dan/atau Fasilitas',
+                'kompetensi_pelaksana' => 'Kompetensi Pelaksana',
+                'pengawasan_internal' => 'Pengawasan Internal',
+                'jumlah_pelaksana' => 'Jumlah Pelaksana',
+                'jaminan_pelayanan' => 'Jaminan Pelayanan',
+                'jaminan_keamanan_keselamatan' => 'Jaminan Keamanan dan Keselamatan Pelayanan',
+                'evaluasi_kinerja_pelaksana' => 'Evaluasi Kinerja Pelaksana',
+            ];
+            foreach ($standarFields as $field => $label):
+                if (empty($layanan[$field])) {
+                    continue;
+                }
+            ?>
+                <div class="detail-card">
+                    <div class="card-title">
+                        <div class="title-icon"><i class="bi bi-check2-square"></i></div>
+                        <h2><?= esc($label) ?></h2>
                     </div>
-
-                    <h2>
-                        Standar Layanan
-                    </h2>
-
+                    <div class="card-content"><?= nl2br(esc($layanan[$field])) ?></div>
                 </div>
-
-
-                <div class="card-content">
-
-                    <?php if (!empty($layanan['standar_layanan'])): ?>
-
-                        <?= $layanan['standar_layanan'] ?>
-
-                    <?php else: ?>
-
-                        <p>
-                            Standar layanan belum tersedia.
-                        </p>
-
-                    <?php endif ?>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 PROSEDUR PELAYANAN
-            ================================================== -->
-
-            <div class="detail-card">
-
-                <div class="card-title">
-
-                    <div class="title-icon">
-                        <i class="bi bi-arrow-repeat"></i>
-                    </div>
-
-                    <h2>
-                        Prosedur Pelayanan
-                    </h2>
-
-                </div>
-
-
-                <div class="card-content">
-
-                    <?php if (!empty($layanan['prosedur_layanan'])): ?>
-
-                        <?= $layanan['prosedur_layanan'] ?>
-
-                    <?php else: ?>
-
-                        <p>
-                            Prosedur pelayanan belum tersedia.
-                        </p>
-
-                    <?php endif ?>
-
-                </div>
-
-            </div>
+            <?php endforeach; ?>
 
 
 
@@ -340,9 +293,12 @@
                     </p>
 
 
-                    <a
-                        href="<?= base_url('kontak') ?>"
+                    <button
+                        type="button"
+                        id="btnHubungi"
                         class="btn-hubungi"
+                        aria-haspopup="dialog"
+                        aria-controls="modalHubungi"
                     >
 
                         <i class="bi bi-telephone"></i>
@@ -351,7 +307,7 @@
                             Hubungi Kami
                         </span>
 
-                    </a>
+                    </button>
 
                 </div>
 
@@ -362,6 +318,53 @@
     </div>
 
 </main>
+
+<div
+    id="modalHubungi"
+    class="hubungi-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalHubungiTitle"
+    hidden
+>
+    <div class="hubungi-modal-content">
+        <button type="button" class="hubungi-modal-close" aria-label="Tutup" data-close-hubungi>
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <h2 id="modalHubungiTitle">Hubungi Kami</h2>
+        <img
+            src="<?= base_url('assets/images/hubungi-kami.jpg') ?>"
+            alt="Informasi kontak layanan Banyuwangi"
+        >
+    </div>
+</div>
+
+<script>
+    const modalHubungi = document.getElementById('modalHubungi');
+    const btnHubungi = document.getElementById('btnHubungi');
+
+    function closeHubungiModal() {
+        modalHubungi.hidden = true;
+        document.body.classList.remove('modal-open');
+    }
+
+    btnHubungi.addEventListener('click', function() {
+        modalHubungi.hidden = false;
+        document.body.classList.add('modal-open');
+    });
+
+    modalHubungi.addEventListener('click', function(event) {
+        if (event.target === modalHubungi || event.target.closest('[data-close-hubungi]')) {
+            closeHubungiModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && !modalHubungi.hidden) {
+            closeHubungiModal();
+        }
+    });
+</script>
 
 
 <?= $this->include('layout/footer') ?>
