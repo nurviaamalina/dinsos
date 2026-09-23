@@ -21,7 +21,7 @@
 
     color: #777;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -92,7 +92,7 @@
 
     padding: 0 12px;
 
-    font-size: 10px;
+    font-size: 14px;
 
     color: #555;
 }
@@ -127,9 +127,9 @@
 
     background: #dedede;
 
-    color: #333;
+    color: #374151;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: 700;
 
@@ -143,7 +143,7 @@
 
     color: #444;
 
-    font-size: 10px;
+    font-size: 14px;
 
     vertical-align: middle;
 }
@@ -164,7 +164,7 @@
 .nama-kecamatan {
     font-weight: 500;
 
-    color: #333;
+    color: #374151;
 }
 
 
@@ -184,7 +184,7 @@
 
     text-align: center;
 
-    font-size: 8px;
+    font-size: 14px;
 }
 
 .status-aktif {
@@ -226,13 +226,13 @@
 
     justify-content: center;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     color: #fff;
 
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .btn-edit-kecamatan {
@@ -270,7 +270,7 @@
 .kecamatan-empty p {
     margin: 6px 0 0;
 
-    font-size: 10px;
+    font-size: 14px;
 }
 
 
@@ -293,7 +293,7 @@
 .kecamatan-pagination .page-link {
     color: #650019;
 
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .kecamatan-pagination .active .page-link {
@@ -324,7 +324,7 @@
 
     color: #650019;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 700;
 }
@@ -345,7 +345,7 @@
 
     color: #650019;
 
-    font-size: 9px;
+    font-size: 14px;
 
     font-weight: 700;
 }
@@ -363,7 +363,7 @@
 
     outline: none;
 
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .kecamatan-form-group input[type="text"]:focus {
@@ -392,7 +392,7 @@
 
     color: #777;
 
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .kecamatan-radio input {
@@ -430,7 +430,7 @@
 
     border-radius: 4px;
 
-    font-size: 9px;
+    font-size: 14px;
 
     text-decoration: none;
 
@@ -489,7 +489,7 @@
 
     color: #43894d;
 
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .kecamatan-alert-error {
@@ -501,11 +501,11 @@
 
     border: 1px solid #e0b9b9;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     color: #963b3b;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .kecamatan-alert-error ul {

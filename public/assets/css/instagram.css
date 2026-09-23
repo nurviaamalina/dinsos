@@ -34,13 +34,13 @@
 .instagram-title h1 {
     margin: 0;
 
-    color: #111111;
+    color: #1f2937;
 
     font-size: 28px;
 
     font-weight: 700;
 
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 
@@ -168,7 +168,7 @@
 
     background: #ffffff;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     overflow: hidden;
 
@@ -176,8 +176,7 @@
 
     border: 1px solid #eeeeee;
 
-    box-shadow:
-        0 2px 7px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
     transition: 0.3s ease;
 }
@@ -186,8 +185,7 @@
 .instagram-card:hover {
     transform: translateY(-3px);
 
-    box-shadow:
-        0 6px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -198,7 +196,7 @@
 .instagram-card-image {
     width: 100%;
 
-    height: 105px;
+    min-height: 105px; height: auto;
 
     background: #65091c;
 
@@ -262,7 +260,7 @@
 
     color: #222222;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -285,7 +283,7 @@
 
     color: #777777;
 
-    font-size: 8px;
+    font-size: 14px;
 
     font-style: italic;
 }
@@ -322,7 +320,7 @@
 .instagram-empty p {
     margin: 0;
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -369,7 +367,7 @@
 .instagram-pagination span {
     min-width: 26px;
 
-    height: 26px;
+    min-height: 26px; height: auto;
 
     padding: 0 7px;
 
@@ -385,11 +383,11 @@
 
     background: #ffffff;
 
-    color: #333333;
+    color: #374151;
 
     text-decoration: none;
 
-    font-size: 9px;
+    font-size: 14px;
 }
 
 
@@ -450,7 +448,7 @@
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -523,7 +521,7 @@
 
 
     .instagram-card-image {
-        height: 100px;
+        min-height: 100px; height: auto;
     }
 
 
@@ -542,7 +540,7 @@
 
 
     .instagram-card-image {
-        height: 150px;
+        min-height: 150px; height: auto;
     }
 
 

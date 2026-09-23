@@ -12,14 +12,20 @@
 
             <div class="footer-logo-wrapper">
 
+                <!-- LOGO FOTO / GAMBAR -->
                 <div class="footer-logo">
-                    S
+                    <a href="<?= base_url('/') ?>">
+                        <img 
+                            src="<?= base_url('assets/images/pemkab.png') ?>" 
+                            alt="Dinas Sosial Banyuwangi"
+                        >
+                    </a>
                 </div>
 
                 <div class="footer-brand-text">
 
                     <span class="footer-label">
-                        DINAS SOSIAL
+                        DINAS SOSIAL 
                     </span>
 
                     <h3>

@@ -14,10 +14,7 @@ body {
     width: 100%;
     min-height: 100%;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     background: #f5f6f7;
 
@@ -134,7 +131,7 @@ body {
         18px
         8px;
 
-    font-size: 9px;
+    font-size: 14px;
 
     color:
         rgba(255, 255, 255, .65);
@@ -166,7 +163,7 @@ body {
 
     text-decoration: none !important;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     font-size: 14px;
 
@@ -285,7 +282,7 @@ body {
 
     margin-left: auto;
 
-    font-size: 12px;
+    font-size: 14px;
 
     transition: transform .2s ease;
 
@@ -335,7 +332,7 @@ body {
 
     border-radius: 4px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 500;
 
@@ -354,7 +351,7 @@ body {
 
     text-align: center;
 
-    font-size: 13px;
+    font-size: 14px;
 
 }
 
@@ -509,7 +506,7 @@ body {
 
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 14px;
 
 }
 
@@ -543,7 +540,7 @@ body {
     color:
         rgba(255, 255, 255, .75);
 
-    font-size: 9px;
+    font-size: 14px;
 
 }
 
@@ -612,9 +609,9 @@ body {
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 14px;
 
-    line-height: 1;
+    line-height: 1.5;
 
     box-shadow: none !important;
 
@@ -710,7 +707,7 @@ body {
 
         height: 27px;
 
-        font-size: 9px;
+        font-size: 14px;
     }
 
 }

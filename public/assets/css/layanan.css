@@ -36,7 +36,7 @@
 }
 
 .breadcrumb i {
-    font-size: 13px;
+    font-size: 14px;
     color: #222;
 }
 
@@ -72,7 +72,7 @@
 .page-heading h1 {
     font-size: 38px;
 
-    line-height: 1.1;
+    line-height: 1.5;
 
     font-weight: 800;
 
@@ -145,7 +145,7 @@
 
     color: #65091c;
 
-    font-size: 13px;
+    font-size: 14px;
 
     pointer-events: none;
 }
@@ -205,8 +205,7 @@
 .layanan-card:hover {
     transform: translateY(-3px);
 
-    box-shadow:
-        0 8px 20px rgba(101, 9, 28, .10);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -315,7 +314,7 @@
 
     border-radius: 20px;
 
-    font-size: 8px;
+    font-size: 14px;
 
     font-weight: 500;
 
@@ -329,7 +328,7 @@
 }
 
 .btn-detail i {
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .btn-detail:hover {
@@ -374,7 +373,7 @@
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 700;
 
@@ -565,7 +564,7 @@
     }
 
     .breadcrumb {
-        font-size: 13px;
+        font-size: 14px;
 
         gap: 7px;
     }
@@ -575,7 +574,7 @@
     }
 
     .page-heading p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .search-wrapper {
@@ -611,7 +610,7 @@
     }
 
     .layanan-card p {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .btn-back {

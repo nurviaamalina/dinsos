@@ -31,7 +31,7 @@
 .dokumen-label {
     display: block;
 
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
 
     letter-spacing: 1.5px;
@@ -55,7 +55,7 @@
 .dokumen-hero p {
     margin-top: 5px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.7;
 
@@ -104,7 +104,7 @@
 .search-dokumen i {
     margin-right: 9px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     color: #6d777d;
 }
@@ -119,7 +119,7 @@
 
     background: transparent;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -146,7 +146,7 @@
 
     color: white;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -166,7 +166,7 @@
 
     background: white;
 
-    font-size: 10px;
+    font-size: 14px;
 
     cursor: pointer;
 
@@ -223,8 +223,7 @@
 .dokumen-card:hover {
     transform: translateY(-5px);
 
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -275,11 +274,11 @@
 
     background: #f8f4ed;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     color: #a87842;
 
-    font-size: 9px;
+    font-size: 14px;
 
     font-weight: 700;
 }
@@ -292,7 +291,7 @@
 .dokumen-title {
     margin: 0 0 6px;
 
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -309,7 +308,7 @@
 
     gap: 8px;
 
-    font-size: 10px;
+    font-size: 14px;
 
     color: #7b858b;
 }
@@ -343,14 +342,13 @@
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: 600;
 
     cursor: pointer;
 
-    box-shadow:
-        0 6px 12px rgba(100, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 

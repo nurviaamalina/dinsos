@@ -28,7 +28,7 @@
     font-size: 24px;
     font-weight: 700;
 
-    line-height: 1.3;
+    line-height: 1.5;
 }
 
 .page-header p {
@@ -36,7 +36,7 @@
 
     color: #6d061b;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -74,8 +74,7 @@
 .stat-card:hover {
     transform: translateY(-1px);
 
-    box-shadow:
-        0 4px 12px rgba(109, 6, 27, .08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -153,9 +152,9 @@
 
     color: #555;
 
-    font-size: 10px;
+    font-size: 14px;
 
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 .stat-info strong {
@@ -167,7 +166,7 @@
 
     font-weight: 700;
 
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 
@@ -247,7 +246,7 @@
 
     color: #6d061b;
 
-    font-size: 12px;
+    font-size: 14px;
 
     flex-shrink: 0;
 }
@@ -258,7 +257,7 @@
 
     padding: 0 8px;
 
-    color: #333;
+    color: #374151;
 
     background: transparent;
 
@@ -266,7 +265,7 @@
 
     outline: none;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .search-box input::placeholder {
@@ -301,7 +300,7 @@
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -321,7 +320,7 @@
 }
 
 .table-toolbar > .btn-primary i {
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -359,17 +358,17 @@
 ========================================================= */
 
 .table-card table thead th {
-    height: 35px;
+    min-height: 35px; height: auto;
 
     padding: 0 9px;
 
-    color: #111111;
+    color: #1f2937;
 
     background: #eeeeee;
 
     border-bottom: 1px solid #cfa7b0;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -384,7 +383,7 @@
 ========================================================= */
 
 .table-card table tbody td {
-    height: 59px;
+    min-height: 59px; height: auto;
 
     padding: 8px 9px;
 
@@ -394,7 +393,7 @@
 
     border-bottom: 1px solid #e2c8ce;
 
-    font-size: 10px;
+    font-size: 14px;
 
     vertical-align: middle;
 }
@@ -470,9 +469,9 @@
 ========================================================= */
 
 .table-card table td strong {
-    color: #111111;
+    color: #1f2937;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -482,7 +481,7 @@
 
 .table-card table td .badge {
     min-width: 19px;
-    height: 19px;
+    min-height: 19px; height: auto;
 
     padding: 0 5px;
 
@@ -493,9 +492,9 @@
 
     margin-right: 4px;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
-    font-size: 9px;
+    font-size: 14px;
 
     font-weight: 700;
 
@@ -522,7 +521,7 @@
 
 .table-card table td:nth-child(7) .btn-danger {
     width: 27px;
-    height: 27px;
+    min-height: 27px; height: auto;
 
     padding: 0;
 
@@ -537,9 +536,9 @@
 
     border: none !important;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
-    font-size: 12px;
+    font-size: 14px;
 
     box-shadow: none;
 
@@ -553,7 +552,7 @@
 }
 
 .table-card table td:nth-child(7) .btn-danger i {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -572,9 +571,9 @@
 
     border: 1px solid #c3e6cb;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -593,9 +592,9 @@
 
     border: 1px solid #f1aeb5;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -770,7 +769,7 @@
 
     color: #6d061b;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 600;
 }
@@ -778,13 +777,13 @@
 .skm-page .form-control {
     min-height: 39px;
 
-    color: #333;
+    color: #374151;
 
     border: 1px solid #d9aeb8;
 
     border-radius: 6px;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .skm-page .form-control:focus {
@@ -799,7 +798,7 @@
 
     color: #999;
 
-    font-size: 10px;
+    font-size: 14px;
 }
 
 
@@ -818,7 +817,7 @@
 
     border-radius: 6px;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .skm-page .alert-info i {
@@ -852,7 +851,7 @@
 
     border-radius: 6px;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .skm-page .btn-secondary:hover {
@@ -883,7 +882,7 @@
 
     border-radius: 6px;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .skm-page form .btn-primary:hover {
@@ -931,7 +930,7 @@
     }
 
     .page-header p {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .table-toolbar {
@@ -962,7 +961,7 @@
     }
 
     .page-header p {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .stat-card {
@@ -977,7 +976,7 @@
     }
 
     .stat-info span {
-        font-size: 9px;
+        font-size: 14px;
     }
 
     .stat-info strong {
@@ -1014,7 +1013,7 @@
 
     background: #6d061b;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: 600;
 }
@@ -1038,9 +1037,9 @@
 }
 
 .excel-column {
-    color: #333333;
+    color: #374151;
 
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: 600;
 }
@@ -1048,19 +1047,19 @@
 .mapping-row small {
     color: #999999;
 
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .mapping-row .form-select {
     height: 35px;
 
-    color: #333333;
+    color: #374151;
 
     border: 1px solid #d9aeb8;
 
     border-radius: 6px;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .mapping-row .form-select:focus {
@@ -1116,13 +1115,13 @@
 
     padding: 8px 10px;
 
-    color: #111111;
+    color: #1f2937;
 
     background: #eeeeee;
 
     border-bottom: 1px solid #cfa7b0;
 
-    font-size: 10px;
+    font-size: 14px;
 
     white-space: nowrap;
 }
@@ -1134,7 +1133,7 @@
 
     border-bottom: 1px solid #eeeeee;
 
-    font-size: 10px;
+    font-size: 14px;
 
     white-space: nowrap;
 }
@@ -1169,7 +1168,7 @@
 
     border-radius: 6px;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 

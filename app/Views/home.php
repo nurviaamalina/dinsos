@@ -19,8 +19,8 @@
     <div class="hero-content">
 
         <h1>
-            DINAS SOSIAL DAN PEMBERDAYAAN<br>
-            PEREMPUAN DAN KB
+            DINAS SOSIAL PEMBERDAYAAN PEREMPUAN<br>
+            DAN KELUARGA BERENCANA
         </h1>
 
         <p>
@@ -217,7 +217,7 @@
                 <p class="profil-jabatan">
 
                     <span>
-                        KEPALA DINAS SOSIAL DAN PEMBERDAYAAN PEREMPUAN
+                        KEPALA DINAS SOSIAL PEMBERDAYAAN PEREMPUAN DAN KELUARGA BERENCANA
                     </span>
 
                     <span>

@@ -36,13 +36,10 @@
     <div class="tentang-container">
 
         <div class="tentang-title">
-
             <h2>
                 Tentang Kami
             </h2>
-
             <span></span>
-
         </div>
 
 <?php if (!empty($profil['sejarah'])): ?>
@@ -51,8 +48,10 @@
 
     <div class="profil-sejarah-card">
 
+        <!-- KONSISTENSI JUDUL: SEJARAH -->
         <div class="profil-section-title">
             <h2 id="sejarah">Sejarah</h2>
+            <span></span>
         </div>
 
         <div class="sejarah-content">
@@ -69,9 +68,15 @@
 
     <!-- =========================================
          VISI & MISI
-    ========================================== -->
+    ========================================= -->
 
-    <div id="visi-misi" class="visi-misi">
+    <!-- KONSISTENSI JUDUL: VISI & MISI -->
+    <div class="profil-section-title" style="margin-top: 40px;">
+        <h2 id="visi-misi">Visi & Misi</h2>
+        <span></span>
+    </div>
+
+    <div class="visi-misi">
 
         <!-- =====================================
              VISI
@@ -140,19 +145,23 @@
 
     <div class="struktur-container">
 
-        <h2 id="struktur-organisasi">Struktur Organisasi</h2>
+        <!-- KONSISTENSI JUDUL: STRUKTUR ORGANISASI -->
+        <div class="profil-section-title">
+            <h2 id="struktur-organisasi">Struktur Organisasi</h2>
+            <span></span>
+        </div>
 
         <div class="struktur-image-wrapper">
 
            <?php if (!empty($profil['struktur'])): ?>
 
-    <img
-        src="<?= base_url('uploads/struktur/' . $profil['struktur']) ?>"
-        alt="Struktur Organisasi"
-        class="struktur-image"
-    >
+                <img
+                    src="<?= base_url('uploads/struktur/' . $profil['struktur']) ?>"
+                    alt="Struktur Organisasi"
+                    class="struktur-image"
+                >
 
-<?php endif; ?>
+            <?php endif; ?>
 
         </div>
 
@@ -170,17 +179,14 @@
 
     <div class="profil-sasaran-container">
 
-        <h2 id="sasaran-strategis">
-            Sasaran Strategis
-        </h2>
-
+        <!-- KONSISTENSI JUDUL: SASARAN STRATEGIS -->
+        <div class="profil-section-title">
+            <h2 id="sasaran-strategis">Sasaran Strategis</h2>
+            <span></span>
+        </div>
 
         <div class="sasaran-content">
-
-            <?= nl2br(
-                esc($profil['sasaran_strategis'])
-            ) ?>
-
+            <?= nl2br(esc($profil['sasaran_strategis'])) ?>
         </div>
 
     </div>
@@ -199,17 +205,14 @@
 
     <div class="profil-maklumat-pelayanan-container">
 
-        <h2 id="maklumat-pelayanan">
-            Maklumat Pelayanan
-        </h2>
-
+        <!-- KONSISTENSI JUDUL: MAKLUMAT PELAYANAN -->
+        <div class="profil-section-title">
+            <h2 id="maklumat-pelayanan">Maklumat Pelayanan</h2>
+            <span></span>
+        </div>
 
         <div class="maklumat-pelayanan-content">
-
-            <?= nl2br(
-                esc($profil['maklumat_pelayanan'])
-            ) ?>
-
+            <?= nl2br(esc($profil['maklumat_pelayanan'])) ?>
         </div>
 
     </div>
@@ -217,6 +220,9 @@
 </section>
 
 <?php endif; ?>
+
+    </div> <!-- Tutup .tentang-container -->
+</section> <!-- Tutup .tentang-kami -->
 
 
 <?= $this->include('layout/footer') ?>

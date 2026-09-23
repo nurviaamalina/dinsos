@@ -36,7 +36,7 @@
 
     font-weight: 700;
 
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 .penerima-header-text p {
@@ -85,7 +85,7 @@
 
     border: 1px solid #6d061b;
 
-    border-radius: 7px;
+    border-radius: 8px;
 
     display: flex;
 
@@ -112,7 +112,7 @@
 
     font-size: 39px;
 
-    line-height: 1;
+    line-height: 1.5;
 }
 
 
@@ -129,7 +129,7 @@
 
     font-weight: 700;
 
-    line-height: 1;
+    line-height: 1.5;
 }
 
 
@@ -142,7 +142,7 @@
 
     color: #5d0b1b;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.4;
 }
@@ -212,9 +212,9 @@
 
     background: transparent;
 
-    color: #333;
+    color: #374151;
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .penerima-search input::placeholder {
@@ -257,7 +257,7 @@
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 500;
 
@@ -311,9 +311,9 @@
 .penerima-alert {
     margin: 15px 0;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -391,7 +391,7 @@
 
     border-bottom: 1px solid #c6c6c6;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -414,7 +414,7 @@
 
     border-bottom: 1px solid #e1cbd0;
 
-    font-size: 13px;
+    font-size: 14px;
 
     vertical-align: middle;
 
@@ -493,7 +493,7 @@
 /* EDIT */
 
 .penerima-actions .btn-edit {
-    color: #111111;
+    color: #1f2937;
 
     background: #ffb511;
 }
@@ -544,7 +544,7 @@
 .penerima-empty p {
     margin: 0;
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -596,7 +596,7 @@
 
     background: #ffffff;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .penerima-pagination .page-link:hover {
@@ -740,13 +740,13 @@
     color: #6d061b;
     font-size: 18px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 .form-title-wrapper span {
     display: block;
     width: 192px;
-    height: 2px;
+    min-height: 2px; height: auto;
     margin-top: 7px;
     background: #780019;
 }
@@ -769,7 +769,7 @@
     border: 1px solid #780019;
     border-radius: 10px;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     box-sizing: border-box;
     white-space: nowrap;
@@ -816,7 +816,7 @@
     color: #6d061b;
     font-size: 15px;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.5;
 }
 
 
@@ -848,7 +848,7 @@
     color: #6d061b;
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 
@@ -863,7 +863,7 @@
     width: 100%;
     height: 36px;
     padding: 0 12px;
-    color: #333333;
+    color: #374151;
     background: #ffffff;
     border: 1px solid #d9aeb8;
     border-radius: 6px;
@@ -950,9 +950,9 @@
     color: #780019;
     background: #ffffff;
     border: 1px solid #780019;
-    border-radius: 7px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     box-sizing: border-box;
     cursor: pointer;
@@ -979,8 +979,8 @@
     color: #ffffff;
     background: #780019;
     border: 1px solid #780019;
-    border-radius: 7px;
-    font-size: 12px;
+    border-radius: 8px;
+    font-size: 14px;
     font-weight: 500;
     box-sizing: border-box;
     cursor: pointer;
@@ -1002,7 +1002,7 @@
     background: #f8d7da;
     border: 1px solid #f1aeb5;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -1108,7 +1108,7 @@
 
     color: #6d061b;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -1134,7 +1134,7 @@
 
     color: #5d0b1b;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -1254,7 +1254,7 @@
 
     color: #5d0b1b;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 500;
 }
@@ -1288,7 +1288,7 @@
 
     box-sizing: border-box;
 
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 
@@ -1313,9 +1313,9 @@
 
 .import-drop-title {
 
-    color: #333333;
+    color: #374151;
 
-    font-size: 13px;
+    font-size: 14px;
 
     margin-bottom: 7px;
 }
@@ -1327,7 +1327,7 @@
 
     color: #a1a6b2;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
@@ -1347,7 +1347,7 @@
 
     border-radius: 6px;
 
-    font-size: 12px;
+    font-size: 14px;
 
     cursor: pointer;
 }
@@ -1384,13 +1384,13 @@
 
     color: #780019;
 
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .selected-file-title i {
     color: #c9002b;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -1474,16 +1474,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    color: #333;
+    color: #374151;
 
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .selected-file-name small {
     color: #999;
 
-    font-size: 8px;
+    font-size: 14px;
 }
 
 
@@ -1562,7 +1562,7 @@
 
     color: #6d061b;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.6;
 }

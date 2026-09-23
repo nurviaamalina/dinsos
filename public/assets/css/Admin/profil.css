@@ -9,7 +9,7 @@
 body {
     margin: 0;
     background: #f6f7f8;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -48,7 +48,7 @@ body {
 
     font-weight: 700;
 
-    color: #111;
+    color: #1f2937;
 
 }
 
@@ -108,7 +108,7 @@ body {
 
     background: #fff;
 
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -159,7 +159,7 @@ body {
 
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -293,7 +293,7 @@ body {
 
     font-size: 14px;
 
-    color: #111;
+    color: #1f2937;
 
     text-align: center;
 
@@ -316,7 +316,7 @@ body {
 
     line-height: 1.45;
 
-    color: #111;
+    color: #1f2937;
 
 }
 
@@ -349,7 +349,7 @@ body {
 
     justify-content: center;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     text-decoration: none;
 
@@ -470,7 +470,7 @@ body {
 
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -524,7 +524,7 @@ body {
 
     color: #777;
 
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     font-size: 14px;
 
@@ -754,11 +754,11 @@ body {
 .profil-create-header h1 {
     margin: 0;
 
-    color: #111;
+    color: #1f2937;
 
     font-size: 26px;
 
-    line-height: 1.2;
+    line-height: 1.5;
 
     font-weight: 700;
 }
@@ -802,11 +802,11 @@ body {
 
     margin-bottom: 14px;
 
-    color: #111;
+    color: #1f2937;
 
     font-size: 20px;
 
-    line-height: 1;
+    line-height: 1.5;
 
     font-weight: 400;
 }
@@ -825,7 +825,7 @@ body {
 
     border: 1px solid #bcbcbc;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     background: #fff;
 
@@ -901,7 +901,7 @@ body {
 
     background: transparent;
 
-    color: #111;
+    color: #1f2937;
 
     display: flex;
 
@@ -909,9 +909,9 @@ body {
 
     justify-content: center;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
-    font-size: 13px;
+    font-size: 14px;
 
     cursor: pointer;
 
@@ -1008,7 +1008,7 @@ body {
 
     border: 1px solid #bcbcbc;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     background: #fff;
 
@@ -1034,7 +1034,7 @@ body {
 .upload-icon {
     margin-bottom: 22px;
 
-    color: #333;
+    color: #374151;
 
     font-size: 25px;
 }
@@ -1124,7 +1124,7 @@ body {
 
     border: none;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     background: #65091b;
 
@@ -1199,7 +1199,7 @@ body {
     }
 
     .upload-info {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .button-wrapper {
@@ -1234,11 +1234,11 @@ body {
 
     font-size: 26px;
 
-    line-height: 1.2;
+    line-height: 1.5;
 
     font-weight: 700;
 
-    color: #111;
+    color: #1f2937;
 }
 
 .anggota-create-header p {
@@ -1281,7 +1281,7 @@ body {
 
     margin-bottom: 10px;
 
-    color: #111;
+    color: #1f2937;
 
     font-size: 20px;
 
@@ -1304,7 +1304,7 @@ body {
 
     border: 1px solid #bcbcbc;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     outline: none;
 
@@ -1338,7 +1338,7 @@ body {
 
     border: 1px solid #bcbcbc;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     overflow: hidden;
 }
@@ -1373,7 +1373,7 @@ body {
 
     background: transparent;
 
-    color: #111;
+    color: #1f2937;
 
     display: flex;
 
@@ -1381,9 +1381,9 @@ body {
 
     justify-content: center;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
-    font-size: 13px;
+    font-size: 14px;
 
     cursor: pointer;
 
@@ -1464,7 +1464,7 @@ body {
 
     border: 1px solid #bcbcbc;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     display: flex;
 
@@ -1489,7 +1489,7 @@ body {
 
     font-size: 24px;
 
-    color: #333;
+    color: #374151;
 }
 
 
@@ -1507,7 +1507,7 @@ body {
 
     color: #a5a7b0;
 
-    font-size: 12px;
+    font-size: 14px;
 
     text-align: center;
 }
@@ -1530,13 +1530,13 @@ body {
 
     border: 1px solid #c7ccd8;
 
-    border-radius: 7px;
+    border-radius: 8px;
 
     background: #fff;
 
     color: #555b66;
 
-    font-size: 13px;
+    font-size: 14px;
 
     cursor: pointer;
 }
@@ -1593,7 +1593,7 @@ body {
 
     border: none;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     background: #65091b;
 
@@ -1660,7 +1660,7 @@ body {
     width: 100px;
     height: 120px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid #ccc;
 }
 
@@ -1672,5 +1672,5 @@ body {
 .foto-lama-text {
     margin-top: 5px;
     color: #999;
-    font-size: 12px;
+    font-size: 14px;
 }

@@ -24,7 +24,7 @@
 
     color: #777;
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -46,7 +46,7 @@
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 
     transition: .2s;
@@ -109,7 +109,7 @@
 
     color: #777;
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .bidang-search input {
@@ -125,7 +125,7 @@
 
     color: #444;
 
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .bidang-search:focus-within {
@@ -148,11 +148,11 @@
 
     background: #eeeeee;
 
-    color: #333;
+    color: #374151;
 
     text-align: left;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: 700;
 }
@@ -164,7 +164,7 @@
 
     color: #555;
 
-    font-size: 11px;
+    font-size: 14px;
 
     vertical-align: middle;
 }
@@ -204,7 +204,7 @@
 
     text-align: center;
 
-    font-size: 9px;
+    font-size: 14px;
 
     font-weight: 600;
 }
@@ -245,13 +245,13 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     color: #fff;
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 14px;
 
     transition: .2s;
 }
@@ -291,7 +291,7 @@
 .bidang-empty p {
     margin: 8px 0 0;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -321,7 +321,7 @@
 
     border-radius: 6px;
 
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .bidang-alert-success {
@@ -388,7 +388,7 @@
 
     color: #650019;
 
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: 700;
 }
@@ -406,13 +406,13 @@
 
     border: 1px solid #c8c8c8;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     outline: none;
 
     color: #444;
 
-    font-size: 12px;
+    font-size: 14px;
 
     transition: .2s;
 }
@@ -431,7 +431,7 @@
 
     color: #999;
 
-    font-size: 10px;
+    font-size: 14px;
 }
 
 
@@ -457,7 +457,7 @@
 
     color: #555;
 
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: 400;
 }
@@ -493,9 +493,9 @@
 
     padding: 9px 15px;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
-    font-size: 11px;
+    font-size: 14px;
 
     text-decoration: none;
 
@@ -571,13 +571,13 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     color: #fff;
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 14px;
 
     transition: .2s;
 }

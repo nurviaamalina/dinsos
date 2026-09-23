@@ -41,7 +41,7 @@
 }
 
 .breadcrumb-custom i {
-    font-size: 13px;
+    font-size: 14px;
     color: #30363a;
 }
 
@@ -76,8 +76,7 @@
 
     padding: 40px 14%;
 
-    box-shadow:
-        0 8px 14px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -171,11 +170,11 @@
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: 500;
 
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 
@@ -204,8 +203,7 @@
 
     border: 1px solid #68101a;
 
-    box-shadow:
-        0 4px 8px rgba(104, 16, 26, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .btn-download:hover {
@@ -247,7 +245,7 @@
 
     font-weight: 600;
 
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-kembali:hover {

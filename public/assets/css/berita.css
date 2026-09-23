@@ -57,7 +57,7 @@ body {
     margin:0 0 45px;
 
     font-size:40px;
-    line-height:1.2;
+    line-height: 1.5;
 
     font-weight:700;
 
@@ -146,7 +146,7 @@ body {
 
     width:100%;
 
-    height:400px;
+    min-height: 400px; height: auto;
 
 }
 
@@ -168,7 +168,7 @@ body {
 
 .kecil-card{
 
-    height:192px;
+    min-height: 192px; height: auto;
 
 }
 
@@ -236,7 +236,7 @@ body {
 
     font-size:17px;
 
-    line-height:1.3;
+    line-height: 1.5;
 
     font-weight:600;
 
@@ -253,7 +253,7 @@ body {
 
     display:block;
 
-    font-size:13px;
+    font-size: 14px;
 
     color:#fff;
 
@@ -312,7 +312,7 @@ body {
 
     border-radius:8px;
 
-    color:#333;
+    color: #374151;
 
     background:#fff;
 
@@ -382,13 +382,13 @@ body {
 
     .utama-card{
 
-        height:380px;
+        min-height: 380px; height: auto;
 
     }
 
     .kecil-card{
 
-        height:200px;
+        min-height: 200px; height: auto;
 
     }
 
@@ -431,7 +431,7 @@ body {
 
     .utama-card{
 
-        height:300px;
+        min-height: 300px; height: auto;
 
     }
 
@@ -447,7 +447,7 @@ body {
 
     .kecil-card{
 
-        height:160px;
+        min-height: 160px; height: auto;
 
     }
 
@@ -479,7 +479,7 @@ body {
 
     .kecil-card{
 
-        height:200px;
+        min-height: 200px; height: auto;
 
     }
 
@@ -578,11 +578,11 @@ body {
 
     margin:0;
 
-    color:#000;
+    color: #1f2937;
 
     font-size:36px;
 
-    line-height:1.3;
+    line-height: 1.5;
 
     font-weight:700;
 
@@ -642,7 +642,7 @@ body {
 
     line-height:1.9;
 
-    color:#111;
+    color: #1f2937;
 
     text-align:justify;
 
@@ -974,7 +974,7 @@ body {
 
     width: 25px;
 
-    height: 25px;
+    min-height: 25px; height: auto;
 
     padding: 0;
 
@@ -992,13 +992,13 @@ body {
 
     background: #ffffff;
 
-    color: #111111;
+    color: #1f2937;
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: 14px;
 
-    line-height: 1;
+    line-height: 1.5;
 
 }
 
@@ -1061,7 +1061,7 @@ body {
 .berita-pagination li:first-child a,
 .berita-pagination li:last-child a {
 
-    font-size: 11px;
+    font-size: 14px;
 
 }
 

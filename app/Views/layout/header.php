@@ -41,7 +41,7 @@
         <a href="<?= base_url('/') ?>" class="brand">
 
             <img
-                src="<?= base_url('assets/images/logo-dinsos.png') ?>"
+                src="<?= base_url('assets/images/logo.png') ?>"
                 alt="Dinas Sosial Banyuwangi"
             >
 

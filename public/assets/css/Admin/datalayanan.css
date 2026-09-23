@@ -27,9 +27,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #f0f2f5;
-    color: #333;
+    color: #374151;
     line-height: 1.6;
 }
 
@@ -324,7 +324,7 @@ table tbody tr:hover {
     gap: 0.5rem;
     padding: 0.5rem 1.2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
@@ -374,12 +374,12 @@ table tbody tr:hover {
 
 .btn-warning {
     background: var(--warning-color);
-    color: #333;
+    color: #374151;
 }
 
 .btn-warning:hover {
     background: #e0a800;
-    color: #333;
+    color: #374151;
 }
 
 .btn-info {
@@ -504,7 +504,7 @@ table tbody tr:hover {
 
 .datalayanan-container .page-header .subtitle {
     color: #65091c;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .datalayanan-container .stats-grid {
@@ -549,14 +549,14 @@ table tbody tr:hover {
 }
 
 .datalayanan-container .stat-label {
-    font-size: 8px;
+    font-size: 14px;
     text-transform: none;
     letter-spacing: 0;
 }
 
 .datalayanan-container .stat-value {
     font-size: 21px;
-    line-height: 1.1;
+    line-height: 1.5;
 }
 
 .datalayanan-container .table-wrapper {
@@ -591,7 +591,7 @@ table tbody tr:hover {
     width: 100%;
     border: 0;
     padding: 5px 0;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .datalayanan-container .search-box button {
@@ -603,7 +603,7 @@ table tbody tr:hover {
 .datalayanan-container .table-actions > a {
     padding: 4px 9px;
     border-radius: 14px;
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .datalayanan-container .table-actions > a:first-of-type {
@@ -626,7 +626,7 @@ table tbody tr:hover {
 .datalayanan-container table th {
     padding: 8px 9px;
     color: #222;
-    font-size: 9px;
+    font-size: 14px;
     border-bottom: 1px solid #c7aab0;
     text-transform: none;
     letter-spacing: 0;
@@ -634,7 +634,7 @@ table tbody tr:hover {
 
 .datalayanan-container table td {
     padding: 9px;
-    font-size: 10px;
+    font-size: 14px;
     border-bottom: 1px solid #d9b8bf;
 }
 
@@ -649,7 +649,7 @@ table tbody tr:hover {
     padding: 0;
     justify-content: center;
     border-radius: 4px;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .datalayanan-container .btn-warning {
@@ -666,7 +666,7 @@ table tbody tr:hover {
     background: #fff;
     border-top: 0;
     color: #777;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .datalayanan-container .empty-state .btn-primary {
@@ -721,7 +721,7 @@ table tbody tr:hover {
     padding-bottom: 8px;
     border-bottom: 2px solid var(--maroon);
     color: var(--maroon);
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .create-import-link {
@@ -729,7 +729,7 @@ table tbody tr:hover {
     border: 1px solid var(--maroon);
     border-radius: 6px;
     color: var(--maroon);
-    font-size: 9px;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -757,7 +757,7 @@ table tbody tr:hover {
     display: block;
     margin-bottom: 7px;
     color: var(--maroon);
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -767,9 +767,9 @@ table tbody tr:hover {
     padding: 5px 8px;
     border: 1px solid #d9b8bf;
     border-radius: 4px;
-    color: #333;
+    color: #374151;
     background: #fff;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .create-form-grid .form-control:focus {
@@ -780,7 +780,7 @@ table tbody tr:hover {
 
 .create-form-grid .invalid-feedback {
     color: #b42318;
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .create-period-field {
@@ -823,7 +823,7 @@ table tbody tr:hover {
     justify-content: center;
     padding: 5px 12px;
     border-radius: 4px;
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .create-form-actions .btn-secondary {
@@ -884,7 +884,7 @@ table tbody tr:hover {
     border-bottom: 2px solid var(--maroon);
 
     color: var(--maroon);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -892,7 +892,7 @@ table tbody tr:hover {
     margin: 8px 0 12px;
 
     color: #9a7078;
-    font-size: 8px;
+    font-size: 14px;
 }
 
 .import-format-table {
@@ -910,7 +910,7 @@ table tbody tr:hover {
 
     border: 1px solid var(--maroon);
 
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 600;
     text-align: left;
 }
@@ -922,7 +922,7 @@ table tbody tr:hover {
 
     border: 1px solid #b77b87;
 
-    font-size: 8px;
+    font-size: 14px;
     background: #fff;
 }
 
@@ -963,7 +963,7 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 9px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -979,7 +979,7 @@ table tbody tr:hover {
     padding: 16px;
 
     border: 1px solid #d9b8bf;
-    border-radius: 5px;
+    border-radius: 8px;
 
     display: flex;
     flex-direction: column;
@@ -1011,13 +1011,13 @@ table tbody tr:hover {
 .upload-text {
     color: #777;
 
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .upload-info {
     color: #aaa;
 
-    font-size: 7px;
+    font-size: 14px;
 
     text-align: center;
     line-height: 1.5;
@@ -1040,7 +1040,7 @@ table tbody tr:hover {
 
     color: #777;
 
-    font-size: 8px;
+    font-size: 14px;
 
     cursor: pointer;
 
@@ -1071,13 +1071,13 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .selected-file-header i {
     color: #c9002b;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .selected-file-card {
@@ -1087,7 +1087,7 @@ table tbody tr:hover {
     padding: 12px;
 
     border: 1px solid #d9b8bf;
-    border-radius: 7px;
+    border-radius: 8px;
 
     background: #fff;
 
@@ -1129,16 +1129,16 @@ table tbody tr:hover {
 }
 
 .selected-file-name {
-    color: #333;
+    color: #374151;
 
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .selected-file-size {
     color: #999;
 
-    font-size: 8px;
+    font-size: 14px;
 }
 
 .remove-file {
@@ -1199,7 +1199,7 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 8px;
+    font-size: 14px;
     text-decoration: none;
 
     cursor: pointer;
@@ -1226,7 +1226,7 @@ table tbody tr:hover {
     background: var(--maroon);
     color: #fff;
 
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 500;
 
     cursor: pointer;
@@ -1238,7 +1238,7 @@ table tbody tr:hover {
 }
 
 .btn-import i {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 
@@ -1257,7 +1257,7 @@ table tbody tr:hover {
 
     color: #6a3a43;
 
-    font-size: 8px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
@@ -1274,7 +1274,7 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 600;
 
     text-decoration: none;
@@ -1380,7 +1380,7 @@ table tbody tr:hover {
     
     justify-content: center;
     
-    color: #333;
+    color: #374151;
     
     background: #fff;
     
@@ -1388,11 +1388,11 @@ table tbody tr:hover {
     
     border-radius: 4px;
     
-    font-size: 10px;
+    font-size: 14px;
     
     font-weight: 400;
     
-    line-height: 1;
+    line-height: 1.5;
     
     text-decoration: none;
     
@@ -1485,7 +1485,7 @@ table tbody tr:hover {
         
         min-width: 27px;
         
-        font-size: 9px;
+        font-size: 14px;
     }
 
 }
