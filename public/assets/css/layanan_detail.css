@@ -120,14 +120,12 @@
 ========================================================= */
 
 .detail-left {
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    /* Jarak antar card */
     gap: 25px;
 
-    /* Tinggi mengikuti jumlah card */
     height: auto;
     min-height: 0;
 }
@@ -349,6 +347,8 @@
     font-weight: 700;
 
     box-sizing: border-box;
+
+    grid-column: 1 / -1;
 
     transition:
         background 0.2s ease,
@@ -584,6 +584,9 @@
     transition:
         background 0.2s ease,
         transform 0.2s ease;
+
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .btn-hubungi:hover {
@@ -596,6 +599,69 @@
 
 .btn-hubungi i {
     font-size: 16px;
+}
+
+
+.modal-open {
+    overflow: hidden;
+}
+
+
+.hubungi-modal[hidden] {
+    display: none;
+}
+
+
+.hubungi-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(20, 7, 11, 0.78);
+}
+
+
+.hubungi-modal-content {
+    position: relative;
+    width: min(100%, 620px);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+
+.hubungi-modal-content h2 {
+    margin: 0 40px 16px 0;
+    color: #65091c;
+    font-size: 20px;
+}
+
+
+.hubungi-modal-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+.hubungi-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #f3e9eb;
+    color: #65091c;
+    cursor: pointer;
 }
 
 
@@ -665,6 +731,8 @@
 
     .detail-left {
         gap: 20px;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .detail-card {
@@ -759,6 +827,8 @@
         width: 100%;
 
         gap: 18px;
+
+        grid-template-columns: 1fr;
     }
 
     .detail-card {

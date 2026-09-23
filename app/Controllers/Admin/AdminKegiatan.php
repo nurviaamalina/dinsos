@@ -30,7 +30,9 @@ class AdminKegiatan extends BaseController
 
             'kegiatan' => $this->kegiatanModel
                 ->orderBy('tanggal', 'DESC')
-                ->findAll(),
+                ->paginate(10),
+
+            'pager' => $this->kegiatanModel->pager,
 
         ];
 

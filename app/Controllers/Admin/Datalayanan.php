@@ -32,10 +32,19 @@ class Datalayanan extends BaseController
         $keyword = $this->request->getGet('search');
         
         if ($keyword) {
-            $data['layanan'] = $this->datalayananModel->searchData($keyword);
-        } else {
-            $data['layanan'] = $this->datalayananModel->getAllData();
+            $this->datalayananModel
+                ->groupStart()
+                ->like('periode', $keyword)
+                ->orLike('layanan', $keyword)
+                ->orLike('bidang', $keyword)
+                ->orLike('kecamatan', $keyword)
+                ->groupEnd();
         }
+
+        $data['layanan'] = $this->datalayananModel
+            ->orderBy('id', 'DESC')
+            ->paginate(10);
+        $data['pager'] = $this->datalayananModel->pager;
         
         $data['title'] = 'Data Pelayanan';
         $data['statistik'] = $this->datalayananModel->getStatistik();

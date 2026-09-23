@@ -262,6 +262,14 @@
     color: #fff;
 }
 
+.kegiatan-pagination .disabled .page-link {
+    color: #aaa;
+    background: #fff;
+    border-color: #e2e2e2;
+    cursor: default;
+    pointer-events: none;
+}
+
 
 /* =========================================================
    DETAIL

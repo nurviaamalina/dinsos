@@ -615,6 +615,18 @@
     border-color: #6d061b;
 }
 
+.penerima-pagination .disabled .page-link {
+    color: #aaa;
+
+    background: #ffffff;
+
+    border-color: #ddd;
+
+    cursor: default;
+
+    pointer-events: none;
+}
+
 
 /* =========================================================
    CONTENT SAFETY

@@ -527,7 +527,50 @@
 
                 <div class="penerima-pagination">
 
-                    <?= $pager->only(['default'])->links() ?>
+                    <?php
+                    $currentPage = $pager->getCurrentPage();
+                    $lastPage = $pager->getLastPage();
+                    $keywordQuery = $keyword !== ''
+                        ? '&' . http_build_query(['keyword' => $keyword])
+                        : '';
+                    $start = max(1, $currentPage - 2);
+                    $end = min($lastPage, $currentPage + 2);
+                    ?>
+
+                    <ul class="pagination">
+                        <li class="page-item <?= $currentPage <= 1 ? 'disabled' : '' ?>">
+                            <a
+                                class="page-link"
+                                href="<?= $currentPage > 1
+                                    ? base_url('admin/penerima-manfaat?page=' . ($currentPage - 1) . $keywordQuery)
+                                    : '#' ?>"
+                            >
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+
+                        <?php for ($page = $start; $page <= $end; $page++): ?>
+                            <li class="page-item <?= $page === $currentPage ? 'active' : '' ?>">
+                                <a
+                                    class="page-link"
+                                    href="<?= base_url('admin/penerima-manfaat?page=' . $page . $keywordQuery) ?>"
+                                >
+                                    <?= $page ?>
+                                </a>
+                            </li>
+                        <?php endfor; ?>
+
+                        <li class="page-item <?= $currentPage >= $lastPage ? 'disabled' : '' ?>">
+                            <a
+                                class="page-link"
+                                href="<?= $currentPage < $lastPage
+                                    ? base_url('admin/penerima-manfaat?page=' . ($currentPage + 1) . $keywordQuery)
+                                    : '#' ?>"
+                            >
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
 
                 </div>
 

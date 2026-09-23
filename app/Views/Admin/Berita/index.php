@@ -285,7 +285,9 @@
 
                             <?php else : ?>
 
-                                <?php $no = 1; ?>
+                                <?php
+                                $no = 1 + (($pager->getCurrentPage() - 1) * $pager->getPerPage());
+                                ?>
 
                                 <?php foreach ($berita as $row) : ?>
 
@@ -442,11 +444,58 @@
 
             <!-- pagenation -->
 
-            <div class="berita-pagination">
+            <?php if (isset($pager) && $pager->getPageCount() > 1): ?>
 
-                <?= $pager->links() ?>
+                <div class="berita-pagination">
 
-            </div>
+                    <?php
+                    $currentPage = $pager->getCurrentPage();
+                    $lastPage = $pager->getLastPage();
+                    $statusQuery = !empty($status)
+                        ? '&' . http_build_query(['status' => $status])
+                        : '';
+                    $start = max(1, $currentPage - 2);
+                    $end = min($lastPage, $currentPage + 2);
+                    ?>
+
+                    <ul class="pagination">
+                        <li class="page-item <?= $currentPage <= 1 ? 'disabled' : '' ?>">
+                            <a
+                                class="pagination-item"
+                                href="<?= $currentPage > 1
+                                    ? base_url('admin/berita?page=' . ($currentPage - 1) . $statusQuery)
+                                    : '#' ?>"
+                            >
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+
+                        <?php for ($page = $start; $page <= $end; $page++): ?>
+                            <li class="page-item <?= $page === $currentPage ? 'active' : '' ?>">
+                                <a
+                                    class="pagination-item <?= $page === $currentPage ? 'active' : '' ?>"
+                                    href="<?= base_url('admin/berita?page=' . $page . $statusQuery) ?>"
+                                >
+                                    <?= $page ?>
+                                </a>
+                            </li>
+                        <?php endfor; ?>
+
+                        <li class="page-item <?= $currentPage >= $lastPage ? 'disabled' : '' ?>">
+                            <a
+                                class="pagination-item"
+                                href="<?= $currentPage < $lastPage
+                                    ? base_url('admin/berita?page=' . ($currentPage + 1) . $statusQuery)
+                                    : '#' ?>"
+                            >
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            <?php endif; ?>
 
 
         </div>

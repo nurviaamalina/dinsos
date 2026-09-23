@@ -1286,7 +1286,7 @@ table tbody tr:hover {
 
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE IMPORT
 ========================= */
 
 @media (max-width: 768px) {
@@ -1294,7 +1294,6 @@ table tbody tr:hover {
     .import-grid {
         grid-template-columns: 1fr;
     }
-
 
     .import-format-card {
         overflow-x: auto;
@@ -1315,7 +1314,6 @@ table tbody tr:hover {
     background: #fff8f9;
 }
 
-
 /* =========================================================
    PAGINATION DATA LAYANAN
 ========================================================= */
@@ -1334,9 +1332,7 @@ table tbody tr:hover {
     padding: 0;
 }
 
-
 /* PAGINATION */
-
 .datalayanan-pagination .pagination {
     display: flex;
     
@@ -1353,18 +1349,14 @@ table tbody tr:hover {
     list-style: none;
 }
 
-
 /* PAGE ITEM */
-
 .datalayanan-pagination .page-item {
     margin: 0;
     
     padding: 0;
 }
 
-
 /* PAGE LINK */
-
 .datalayanan-pagination .page-link {
     width: 28px;
     
@@ -1401,9 +1393,7 @@ table tbody tr:hover {
     transition: all .2s ease;
 }
 
-
 /* HOVER */
-
 .datalayanan-pagination .page-link:hover {
     color: #6d061b;
     
@@ -1412,9 +1402,7 @@ table tbody tr:hover {
     border-color: #6d061b;
 }
 
-
 /* ACTIVE */
-
 .datalayanan-pagination .page-item.active .page-link {
     color: #fff;
     
@@ -1425,9 +1413,7 @@ table tbody tr:hover {
     font-weight: 600;
 }
 
-
 /* DISABLED */
-
 .datalayanan-pagination .page-item.disabled .page-link {
     color: #aaa;
     
@@ -1440,18 +1426,14 @@ table tbody tr:hover {
     pointer-events: none;
 }
 
-
 /* FOCUS */
-
 .datalayanan-pagination .page-link:focus {
     outline: none;
     
     box-shadow: none;
 }
 
-
 /* PREVIOUS / NEXT */
-
 .datalayanan-pagination .page-item:first-child .page-link,
 .datalayanan-pagination .page-item:last-child .page-link {
     width: auto;
@@ -1461,11 +1443,8 @@ table tbody tr:hover {
     padding: 0 8px;
 }
 
-
-/* MOBILE */
-
+/* MOBILE PAGINATION */
 @media (max-width: 768px) {
-
     .datalayanan-pagination {
         justify-content: center;
         
@@ -1487,8 +1466,11 @@ table tbody tr:hover {
         
         font-size: 9px;
     }
-
 }
+
+/* =========================================================
+   BTN GROUP
+========================================================= */
 
 .btn-group {
     display: inline-flex;
