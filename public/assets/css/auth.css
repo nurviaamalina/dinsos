@@ -1,507 +1,540 @@
 /* =====================================================
-   AUTH LOGIN & REGISTER
-   DINAS SOSIAL KABUPATEN BANYUWANGI
+   LOGIN PAGE STYLES - DINAS SOSIAL
+   Pixel-Matched to Mockup & Fully Responsive
 ===================================================== */
 
-
-/* =====================================================
-   RESET
-===================================================== */
+:root {
+    --primary-maroon: #650918;
+    --primary-maroon-hover: #4f0613;
+    --surface-white: #ffffff;
+    --bg-gray: #f5f6f8;
+    --text-dark: #24252b;
+    --text-muted: #6b7280;
+    --border-light: #dedede;
+}
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-}
-
-
-/* =====================================================
-   BODY
-===================================================== */
-
-body {
-    font-family: 'Poppins', sans-serif;
-
-    /* BACKGROUND FULL SCREEN */
-    background: #650518;
-
-    min-height: 100vh;
-}
-
-
-/* =====================================================
-   AUTH WRAPPER
-===================================================== */
-
-.auth-wrapper {
     width: 100%;
     min-height: 100vh;
+    font-family: "Poppins", Arial, sans-serif;
+    background: var(--bg-gray);
+    color: var(--text-dark);
+}
 
-    /* MAROON FULL SCREEN */
-    background: #650518;
+/* =====================================================
+   HALAMAN LOGIN (SPLIT SCREEN)
+===================================================== */
 
+.login-page {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
+    overflow: hidden;
+    position: relative;
+}
 
+/* =====================================================
+   BAGIAN KIRI (FOTO GEDUNG & BRANDING)
+===================================================== */
+.login-left {
+    position: relative;
+    width: 54%;
+    min-height: 100vh;
+    background-image: url("public/assets/images/foto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Overlay Gradasi Maroon */
+.left-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(80, 5, 15, 0.88) 0%,
+        rgba(101, 9, 24, 0.72) 36%,
+        rgba(101, 9, 24, 0.35) 70%,
+        rgba(101, 9, 24, 0.15) 100%
+    );
+    z-index: 1;
+}
+
+/* Dekorasi Sudut Kiri Bawah */
+.left-decoration {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    left: -190px;
+    bottom: -190px;
+    background: var(--primary-maroon);
+    transform: rotate(45deg);
+    z-index: 4;
+}
+
+.left-decoration::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    left: 35px;
+    top: 35px;
+    border: 6px solid rgba(255, 255, 255, 0.85);
+    z-index: 5;
+}
+
+/* Konten Brand Kiri */
+.left-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 80px 40px 40px 65px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand-logo-wrapper {
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 30px;
-
-    /* Pastikan tidak dibatasi */
-    margin: 0;
+    flex-shrink: 0;
 }
 
-
-/* =====================================================
-   AUTH CARD
-===================================================== */
-
-.auth-card {
-    width: 310px;
-
-    background: #ffffff;
-
-    border-radius: 13px;
-
-    padding: 20px 20px 17px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-
-/* =====================================================
-   REGISTER CARD
-===================================================== */
-
-.register-card {
-    padding-top: 20px;
-    padding-bottom: 13px;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.auth-logo {
+.brand-logo {
     display: block;
-
-    width: 43px;
-    height: 43px;
-
+    width: 82px;
+    height: 82px;
     object-fit: contain;
-
-    margin: 0 auto 7px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 
+.brand-text {
+    padding-left: 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+}
 
-/* =====================================================
-   TITLE
-===================================================== */
+.brand-text h1 {
+    margin: 0 0 4px;
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+}
 
-.auth-title {
+.brand-text p {
     margin: 0;
-
-    text-align: center;
-
-    font-size: 16px;
-
-    line-height: 1.5;
-
-    font-weight: bold;
-
-    color: #17333a;
-
-    text-decoration: underline;
-}
-
-
-/* =====================================================
-   SUBTITLE
-===================================================== */
-
-.auth-subtitle {
-    margin: 2px 0 15px;
-
-    text-align: center;
-
-    font-size: 14px;
-
-    color: #777777;
-
-    text-decoration: underline;
-}
-
-
-/* =====================================================
-   ALERT
-===================================================== */
-
-.auth-alert {
-    padding: 8px;
-
-    margin-bottom: 10px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
+    font-size: 13.5px;
     line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.95);
 }
-
-
-/* ERROR */
-
-.auth-alert-error {
-    background: #fde8e8;
-
-    color: #9c1d1d;
-
-    border: 1px solid #efbcbc;
-}
-
-
-/* SUCCESS */
-
-.auth-alert-success {
-    background: #e9f7ed;
-
-    color: #28743d;
-
-    border: 1px solid #b9dfc2;
-}
-
 
 /* =====================================================
-   FORM GROUP
+   BAGIAN KANAN (FORMULIR LOGIN)
 ===================================================== */
-
-.auth-form-group {
-    margin-bottom: 9px;
+.login-right {
+    position: relative;
+    width: 46%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background: #f8f9fa;
+    overflow: hidden;
 }
 
-
-/* REGISTER FORM LEBIH RAPAT */
-
-.register-card .auth-form-group {
-    margin-bottom: 8px;
+/* Dekorasi Sudut Kanan Atas */
+.login-right::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -125px;
+    top: -125px;
+    background: var(--primary-maroon);
+    transform: rotate(45deg);
+    z-index: 1;
 }
 
+/* Dekorasi Sudut Kanan Bawah */
+.login-right::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -125px;
+    bottom: -125px;
+    background: var(--primary-maroon);
+    transform: rotate(45deg);
+    z-index: 1;
+}
 
 /* =====================================================
-   LABEL
+   KARTU LOGIN
 ===================================================== */
-
-.auth-form-group label {
-    display: block;
-
-    margin-bottom: 4px;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    color: #263b40;
-}
-
-
-/* =====================================================
-   INPUT
-===================================================== */
-
-.auth-form-group input {
+.login-card {
+    position: relative;
+    z-index: 10;
     width: 100%;
+    max-width: 440px;
+    background: var(--surface-white);
+    border-radius: 14px;
+    padding: 38px 40px 32px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f1f4;
+    box-sizing: border-box;
+}
 
-    height: 25px;
+/* Logo Garuda Pancasila */
+.card-logo-garuda {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
 
-    padding: 5px 8px;
+.card-logo-garuda img {
+    display: block;
+    width: 72px;
+    height: auto;
+    max-height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+}
 
-    border: 1px solid #dddddd;
+/* Header Kartu */
+.login-card-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
 
+.login-card-header h2 {
+    margin: 0 0 8px;
+    color: var(--primary-maroon);
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.login-card-header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 12.5px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* =====================================================
+   ALERT NOTIFIKASI
+===================================================== */
+.login-alert {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 14px;
+    margin-bottom: 18px;
     border-radius: 8px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    animation: fadeIn 0.25s ease;
+}
 
-    background: #f7f4ee;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    color: #374151;
+.alert-error {
+    color: #842029;
+    background: #f8d7da;
+    border: 1px solid #f5c2c7;
+}
 
-    font-family: 'Poppins', sans-serif;
+.alert-success {
+    color: #0f5132;
+    background: #d1e7dd;
+    border: 1px solid #badbcc;
+}
 
-    font-size: 14px;
+.login-alert i {
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 15px;
+}
 
+/* =====================================================
+   INPUT FORM
+===================================================== */
+.login-form {
+    width: 100%;
+}
+
+.login-input-group {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 16px;
+}
+
+.login-input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-maroon);
+    font-size: 17px;
+    pointer-events: none;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-input-group input {
+    width: 100%;
+    height: 100%;
+    padding: 0 48px 0 50px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
     outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-/* INPUT FOCUS */
-
-.auth-form-group input:focus {
-    border-color: #8a1425;
-
     background: #ffffff;
-
-    box-shadow:
-        0 0 0 2px rgba(101, 5, 24, 0.08);
+    color: #24252b;
+    font-family: inherit;
+    font-size: 13.5px;
+    font-weight: 400;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-/* PLACEHOLDER */
-
-.auth-form-group input::placeholder {
-    color: #999999;
-
+.login-input-group input::placeholder {
+    color: #9ca3af;
     opacity: 1;
 }
 
+.login-input-group input:hover {
+    border-color: #c9c9c9;
+}
 
-/* =====================================================
-   LOGIN OPTIONS
-===================================================== */
+.login-input-group input:focus {
+    border-color: var(--primary-maroon);
+    box-shadow: 0 0 0 3px rgba(101, 9, 24, 0.08);
+}
 
-.login-options {
+/* Password Toggle Button */
+.password-toggle-btn {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
     display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
-
-    margin: 4px 2px 10px;
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
-   REMEMBER ME
-===================================================== */
-
-.remember {
-    display: flex;
-
-    align-items: center;
-
-    gap: 4px;
-
-    color: #555555;
-
-    cursor: pointer;
-}
-
-
-.remember input {
-    width: 9px;
-
-    height: 9px;
-
-    margin: 0;
-
-    accent-color: #1677d2;
-}
-
-
-/* =====================================================
-   FORGOT PASSWORD
-===================================================== */
-
-.forgot-password {
-    color: #df8617;
-
-    font-weight: bold;
-
-    text-decoration: none;
-}
-
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.auth-button {
-    width: 100%;
-
-    height: 25px;
-
+    justify-content: center;
+    padding: 0;
     border: none;
-
-    border-radius: 6px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #c2762b,
-            #670519
-        );
-
-    color: #ffffff;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
+    background: transparent;
+    color: #9ca3af;
+    font-size: 17px;
     cursor: pointer;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-    transition:
-        opacity 0.2s ease,
-        transform 0.1s ease;
+    z-index: 3;
+    transition: color 0.15s ease;
 }
 
-
-.auth-button:hover {
-    opacity: 0.9;
+.password-toggle-btn:hover {
+    color: var(--primary-maroon);
 }
-
-
-.auth-button:active {
-    transform: scale(0.99);
-}
-
 
 /* =====================================================
-   INFO BOX LOGIN
+   TOMBOL LOGIN SUBMIT
 ===================================================== */
-
-.auth-info {
-    margin-top: 10px;
-
-    padding: 7px 8px;
-
+.btn-login-submit {
+    width: 100%;
+    height: 50px;
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
     border-radius: 8px;
-
-    background: #f3eee6;
-
-    color: #687078;
-
-    font-size: 14px;
-
-    line-height: 1.45;
+    background: var(--primary-maroon);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(101, 9, 24, 0.2);
 }
 
-
-.auth-info strong {
-    color: #263b40;
+.btn-login-submit:hover {
+    background: var(--primary-maroon-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(101, 9, 24, 0.28);
 }
 
+.btn-login-submit:active {
+    transform: translateY(0);
+}
+
+.btn-login-submit i {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.btn-login-submit:hover i {
+    transform: translateX(4px);
+}
 
 /* =====================================================
-   ACCESS INFO
+   FOOTER KARTU
 ===================================================== */
-
-.auth-access {
-    margin-top: 9px;
-
+.login-card-footer {
+    width: 100%;
+    margin-top: 28px;
     text-align: center;
-
-    font-size: 14px;
-
-    color: #777777;
-
-    line-height: 1.5;
 }
 
-
-.auth-access a {
-    color: #777777;
-
-    text-decoration: underline;
+.footer-divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
 }
 
-
-.auth-access a:hover {
-    color: #650518;
+.divider-line {
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: #e5e7eb;
 }
 
+.divider-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-maroon);
+    font-size: 20px;
+}
+
+.footer-copyright {
+    margin: 0 0 3px;
+    color: var(--text-muted);
+    font-size: 11.5px;
+    font-weight: 500;
+}
+
+.footer-motto {
+    display: block;
+    color: #9ca3af;
+    font-size: 10px;
+    font-style: italic;
+}
 
 /* =====================================================
-   REGISTER ACCESS
+   RESPONSIVE DESIGN (TABLET & MOBILE)
 ===================================================== */
-
-.register-card .auth-access {
-    margin-top: 7px;
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .auth-wrapper {
-        min-height: 100vh;
-
-        padding: 20px;
+@media (max-width: 1080px) {
+    .login-left {
+        width: 50%;
     }
 
-    .auth-card {
+    .login-right {
+        width: 50%;
+    }
+
+    .left-content {
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .login-page {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .login-left {
         width: 100%;
+        min-height: 250px;
+    }
 
-        max-width: 310px;
+    .left-content {
+        padding: 50px 30px;
+    }
+
+    .login-right {
+        width: 100%;
+        min-height: auto;
+        padding: 35px 20px 50px;
+    }
+
+    .login-card {
+        max-width: 440px;
+        padding: 32px 28px 26px;
     }
 }
 
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 360px) {
-
-    .auth-wrapper {
-        padding: 15px;
+@media (max-width: 540px) {
+    .login-left {
+        min-height: 200px;
     }
 
-    .auth-card {
-        max-width: 300px;
-
-        padding-left: 17px;
-        padding-right: 17px;
+    .left-content {
+        padding: 35px 20px;
     }
 
-}
+    .brand {
+        gap: 14px;
+    }
 
-/* =====================================================
-   REGISTER LINK
-===================================================== */
+    .brand-logo {
+        width: 60px;
+        height: 60px;
+    }
 
-.auth-register {
-    margin-top: 10px;
+    .brand-text {
+        padding-left: 14px;
+    }
 
-    text-align: center;
+    .brand-text h1 {
+        font-size: 20px;
+    }
 
-    font-size: 14px;
+    .brand-text p {
+        font-size: 11px;
+    }
 
-    color: #777777;
+    .login-card {
+        padding: 26px 20px;
+        border-radius: 12px;
+    }
 
-    line-height: 1.5;
-}
-
-.auth-register a {
-    color: #650518;
-
-    font-weight: bold;
-
-    text-decoration: none;
-}
-
-.auth-register a:hover {
-    text-decoration: underline;
+    .login-card-header h2 {
+        font-size: 21px;
+    }
 }

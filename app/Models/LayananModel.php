@@ -13,13 +13,24 @@ class LayananModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     
-    // Tambahkan standar_layanan, gambar, dan dokumen di sini
     protected $allowedFields    = [
         'nama_layanan', 
         'bidang', 
         'deskripsi_layanan', 
-        'standar_layanan', 
-        'prosedur_layanan', 
+        'dasar_hukum',
+        'persyaratan',
+        'sistem_mekanisme_prosedur',
+        'jangka_waktu_pelayanan',
+        'biaya_tarif',
+        'produk_pelayanan',
+        'penanganan_pengaduan',
+        'sarana_prasarana_fasilitas',
+        'kompetensi_pelaksana',
+        'pengawasan_internal',
+        'jumlah_pelaksana',
+        'jaminan_pelayanan',
+        'jaminan_keamanan_keselamatan',
+        'evaluasi_kinerja_pelaksana',
         'status_layanan', 
         'gambar', 
         'dokumen'

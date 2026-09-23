@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
 use App\Models\UserModel;
 
 class Auth extends BaseController
@@ -13,235 +14,90 @@ class Auth extends BaseController
         $this->userModel = new UserModel();
     }
 
-    // =====================================================
-    // LOGIN
-    // =====================================================
-
+    /**
+     * Halaman Login
+     */
     public function login()
     {
-        // Jika sudah login, langsung ke admin
-        if (session()->get('login') === true) {
-            return redirect()->to('/admin/dokumen');
+        // Jika sudah login, langsung ke dashboard
+        if (session()->get('login')) {
+            return redirect()->to('/admin/dashboard');
         }
 
         return view('auth/login');
     }
 
-
-    // =====================================================
-    // PROSES LOGIN
-    // =====================================================
-
+    /**
+     * Proses Login
+     */
     public function prosesLogin()
     {
         $username = trim($this->request->getPost('username'));
         $password = $this->request->getPost('password');
 
+        // Validasi input
         if ($username === '' || $password === '') {
-
             return redirect()->back()
                 ->withInput()
-                ->with(
-                    'error',
-                    'Username dan kata sandi wajib diisi.'
-                );
+                ->with('error', 'Username dan password wajib diisi.');
         }
 
-        // Cari username
+        // Cari user berdasarkan username
         $user = $this->userModel
             ->where('username', $username)
             ->first();
 
         // Username tidak ditemukan
         if (!$user) {
-
             return redirect()->back()
                 ->withInput()
-                ->with(
-                    'error',
-                    'Username atau kata sandi salah.'
-                );
+                ->with('error', 'Username atau password salah.');
+        }
+
+        // Cek status akun
+        if ((int) $user['active'] !== 1) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Akun Anda tidak aktif.');
         }
 
         // Cek password
         if (!password_verify($password, $user['password'])) {
-
             return redirect()->back()
                 ->withInput()
-                ->with(
-                    'error',
-                    'Username atau kata sandi salah.'
-                );
+                ->with('error', 'Username atau password salah.');
         }
 
-        // Regenerate session
-        session()->regenerate(true);
+        // Hanya superadmin dan admin yang boleh masuk
+        if (!in_array($user['role'], ['superadmin', 'admin'])) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Anda tidak memiliki akses ke halaman admin.');
+        }
 
-        // Simpan session
+        // Regenerasi session untuk keamanan
+        session()->regenerate();
+
+        // Simpan data login ke session
         session()->set([
-            'id'       => $user['id'],
+            'login'    => true,
+            'user_id'  => $user['id'],
             'username' => $user['username'],
-            'email'    => $user['email'] ?? null,
-            'login'    => true
+            'role'     => $user['role'],
         ]);
 
-        // Ambil URL yang sebelumnya ingin dibuka
-        $redirect = session()->get('redirect_after_login');
-
-        if ($redirect) {
-
-            session()->remove('redirect_after_login');
-
-            return redirect()->to($redirect);
-        }
-
-        // Default
-        return redirect()->to('/admin/dokumen')
-            ->with(
-                'success',
-                'Selamat datang, ' . $user['username'] . '!'
-            );
+        // Masuk ke dashboard
+        return redirect()->to('/admin/dashboard');
     }
 
-
-    // =====================================================
-    // REGISTER
-    // =====================================================
-
-    public function register()
-    {
-        // Jika sudah login
-        if (session()->get('login') === true) {
-            return redirect()->to('/admin/dokumen');
-        }
-
-        return view('auth/register');
-    }
-
-
-    // =====================================================
-    // PROSES REGISTER
-    // =====================================================
-
-    public function prosesRegister()
-    {
-        $username = trim($this->request->getPost('username'));
-        $email = trim($this->request->getPost('email'));
-        $password = $this->request->getPost('password');
-        $confirmPassword = $this->request->getPost('confirm_password');
-
-
-        // Username
-        if ($username === '') {
-
-            return redirect()->back()
-                ->withInput()
-                ->with(
-                    'error',
-                    'Username wajib diisi.'
-                );
-        }
-
-
-        // Email
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-            return redirect()->back()
-                ->withInput()
-                ->with(
-                    'error',
-                    'Format email tidak valid.'
-                );
-        }
-
-
-        // Password
-        if (strlen($password) < 6) {
-
-            return redirect()->back()
-                ->withInput()
-                ->with(
-                    'error',
-                    'Kata sandi minimal 6 karakter.'
-                );
-        }
-
-
-        // Konfirmasi password
-        if ($password !== $confirmPassword) {
-
-            return redirect()->back()
-                ->withInput()
-                ->with(
-                    'error',
-                    'Konfirmasi kata sandi tidak cocok.'
-                );
-        }
-
-
-        // Cek username
-        $cekUsername = $this->userModel
-            ->where('username', $username)
-            ->first();
-
-        if ($cekUsername) {
-
-            return redirect()->back()
-                ->withInput()
-                ->with(
-                    'error',
-                    'Username sudah digunakan.'
-                );
-        }
-
-
-        // Cek email
-        $cekEmail = $this->userModel
-            ->where('email', $email)
-            ->first();
-
-        if ($cekEmail) {
-
-            return redirect()->back()
-                ->withInput()
-                ->with(
-                    'error',
-                    'Email sudah digunakan.'
-                );
-        }
-
-
-        // Simpan user
-        $this->userModel->insert([
-            'username' => $username,
-            'email'    => $email,
-            'password' => password_hash(
-                $password,
-                PASSWORD_DEFAULT
-            )
-        ]);
-
-
-        return redirect()->to('/login')
-            ->with(
-                'success',
-                'Registrasi berhasil. Silakan login.'
-            );
-    }
-
-
-    // =====================================================
-    // LOGOUT
-    // =====================================================
-
+    /**
+     * Logout
+     */
     public function logout()
     {
         session()->destroy();
 
         return redirect()->to('/login')
-            ->with(
-                'success',
-                'Anda telah berhasil logout.'
-            );
+            ->with('success', 'Anda berhasil logout.');
     }
 }

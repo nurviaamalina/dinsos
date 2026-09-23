@@ -2,11 +2,13 @@
 
 $currentUrl = uri_string();
 
+$role = session()->get('role');
+
+$isSuperadmin = ($role === 'superadmin');
+
 ?>
 
-
 <aside class="sidebar">
-
 
     <!-- =====================================================
          LOGO
@@ -42,7 +44,7 @@ $currentUrl = uri_string();
 
 
         <!-- =================================================
-             DASHBOARD UTAMA
+             DASHBOARD
         ================================================== -->
 
         <a
@@ -100,7 +102,6 @@ $currentUrl = uri_string();
             <span>
                 Layanan
             </span>
-
 
         </a>
 
@@ -182,7 +183,7 @@ $currentUrl = uri_string();
         ================================================== -->
 
         <div class="sidebar-title">
-            Statistik
+            STATISTIK
         </div>
 
 
@@ -195,7 +196,7 @@ $currentUrl = uri_string();
             class="sidebar-item <?= strpos($currentUrl, 'admin/statistik') === 0 ? 'active' : '' ?>"
         >
 
-            <i class="bi bi-grid"></i>
+            <i class="bi bi-bar-chart-line"></i>
 
             <span>
                 Dashboard
@@ -205,74 +206,74 @@ $currentUrl = uri_string();
 
 
         <!-- =================================================
-     DATA UTAMA DROPDOWN
-================================================== -->
+             DATA UTAMA
+        ================================================== -->
 
-<div class="sidebar-dropdown">
+        <div class="sidebar-dropdown">
 
-    <div
-        class="sidebar-item sidebar-dropdown-toggle
-        <?= (
-            strpos($currentUrl, 'admin/bidang') === 0 ||
-            strpos($currentUrl, 'admin/kecamatan') === 0
-        ) ? 'active' : '' ?>"
-    >
+            <div
+                class="sidebar-item sidebar-dropdown-toggle
+                <?= (
+                    strpos($currentUrl, 'admin/bidang') === 0 ||
+                    strpos($currentUrl, 'admin/kecamatan') === 0
+                ) ? 'active' : '' ?>"
+            >
 
-        <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
 
-        <span>
-            Data Utama
-        </span>
+                <span>
+                    Data Utama
+                </span>
 
-        <i class="bi bi-chevron-down sidebar-dropdown-icon"></i>
+                <i class="bi bi-chevron-down sidebar-dropdown-icon"></i>
 
-    </div>
-
-
-    <!-- SUB MENU -->
-
-    <div class="sidebar-dropdown-menu">
-
-        <!-- BIDANG -->
-
-        <a
-            href="<?= base_url('admin/bidang') ?>"
-            class="sidebar-dropdown-item
-            <?= strpos($currentUrl, 'admin/bidang') === 0 ? 'active' : '' ?>"
-        >
-
-            <i class="bi bi-briefcase"></i>
-
-            <span>
-                Bidang
-            </span>
-
-        </a>
+            </div>
 
 
-        <!-- KECAMATAN -->
+            <!-- SUB MENU -->
 
-        <a
-            href="<?= base_url('admin/kecamatan') ?>"
-            class="sidebar-dropdown-item
-            <?= strpos($currentUrl, 'admin/kecamatan') === 0 ? 'active' : '' ?>"
-        >
+            <div class="sidebar-dropdown-menu">
 
-            <i class="bi bi-geo-alt"></i>
+                <!-- BIDANG -->
 
-            <span>
-                Kecamatan
-            </span>
+                <a
+                    href="<?= base_url('admin/bidang') ?>"
+                    class="sidebar-dropdown-item
+                    <?= strpos($currentUrl, 'admin/bidang') === 0 ? 'active' : '' ?>"
+                >
 
-        </a>
+                    <i class="bi bi-briefcase"></i>
 
-    </div>
+                    <span>
+                        Bidang
+                    </span>
 
-</div>
+                </a>
+
+
+                <!-- KECAMATAN -->
+
+                <a
+                    href="<?= base_url('admin/kecamatan') ?>"
+                    class="sidebar-dropdown-item
+                    <?= strpos($currentUrl, 'admin/kecamatan') === 0 ? 'active' : '' ?>"
+                >
+
+                    <i class="bi bi-geo-alt"></i>
+
+                    <span>
+                        Kecamatan
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
 
 
         <!-- =================================================
-            DATA PELAYANAN
+             DATA PELAYANAN
         ================================================== -->
 
         <a
@@ -316,13 +317,41 @@ $currentUrl = uri_string();
             class="sidebar-item <?= strpos($currentUrl, 'admin/hasil-skm') === 0 ? 'active' : '' ?>"
         >
 
-            <i class="bi bi-bar-chart"></i>
+            <i class="bi bi-clipboard-data"></i>
 
             <span>
                 Hasil SKM
             </span>
 
         </a>
+
+
+        <!-- =================================================
+             MANAJEMEN USER
+             KHUSUS SUPERADMIN
+        ================================================== -->
+
+        <?php if ($isSuperadmin) : ?>
+
+            <div class="sidebar-title">
+                PENGATURAN
+            </div>
+
+
+            <a
+                href="<?= base_url('admin/manajemen-user') ?>"
+                class="sidebar-item <?= strpos($currentUrl, 'admin/manajemen-user') === 0 ? 'active' : '' ?>"
+            >
+
+                <i class="bi bi-person-gear"></i>
+
+                <span>
+                    Manajemen User
+                </span>
+
+            </a>
+
+        <?php endif; ?>
 
 
     </nav>
@@ -334,11 +363,16 @@ $currentUrl = uri_string();
 
     <div class="sidebar-logout">
 
-        <a href="<?= site_url('logout') ?>" class="sidebar-menu logout">
+        <a
+            href="<?= site_url('logout') ?>"
+            class="sidebar-menu logout"
+        >
 
             <i class="bi bi-box-arrow-left"></i>
 
-            Keluar
+            <span>
+                Keluar
+            </span>
 
         </a>
 

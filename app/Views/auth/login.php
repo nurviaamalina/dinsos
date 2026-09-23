@@ -2,187 +2,193 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Dinas Sosial</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <!-- Google Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>Login Admin - Dinas Sosial</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link
-        rel="stylesheet"
-        href="<?= base_url('assets/css/auth.css') ?>"
-    >
-
+    <!-- CSS Login -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/auth.css') ?>">
 </head>
 
 <body>
 
-<div class="auth-wrapper">
+    <div class="login-page">
 
-    <div class="auth-card">
+        <!-- ==================================================
+             BAGIAN KIRI (FOTO GEDUNG, OVERLAY, & BRANDING)
+        =================================================== -->
+        <div class="login-left">
+            <!-- Overlay Gradasi Maroon -->
+            <div class="left-overlay"></div>
 
-        <!-- LOGO -->
+            <!-- Dekorasi Sudut Kiri Bawah -->
+            <div class="left-decoration"></div>
 
-        <img
-            src="<?= base_url('assets/img/logo.png') ?>"
-            alt="Logo Dinas Sosial"
-            class="auth-logo"
-        >
-
-
-        <!-- TITLE -->
-
-        <h1 class="auth-title">
-            Portal Admin Dinsos
-        </h1>
-
-        <div class="auth-subtitle">
-            Kabupaten Banyuwangi
+            <!-- Konten Brand Kiri -->
+            <div class="left-content">
+                <div class="brand">
+                    <div class="brand-logo-wrapper">
+                        <img src="<?= base_url('assets/images/images.jfif') ?>" alt="Logo Dinas Sosial" class="brand-logo">
+                    </div>
+                    <div class="brand-text">
+                        <h1>DINAS SOSIAL</h1>
+                        <p>KABUPATEN BANYUWANGI</p>
+                        <p>REPUBLIK INDONESIA</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <!-- ==================================================
+             BAGIAN KANAN (KARTU LOGIN)
+        =================================================== -->
+        <div class="login-right">
+            <div class="login-card">
 
-        <!-- ERROR -->
+                <!-- LOGO GARUDA PANCASILA -->
+                <div class="card-logo-garuda">
+                    <img src="<?= base_url('assets/images/garuda.png') ?>" alt="Garuda Pancasila">
+                </div>
 
-        <?php if (session()->getFlashdata('error')) : ?>
+                <!-- HEADER KARTU -->
+                <div class="login-card-header">
+                    <h2>Login Dinas Sosial</h2>
+                    <p>Masuk ke akun Anda untuk mengakses<br>sistem informasi Dinas Sosial</p>
+                </div>
 
-            <div class="auth-alert auth-alert-error">
+                <!-- FLASH MESSAGE: ERROR -->
+                <?php if (session()->getFlashdata('error')) : ?>
+                    <div class="login-alert alert-error">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <span><?= esc(session()->getFlashdata('error')) ?></span>
+                    </div>
+                <?php endif; ?>
 
-                <?= esc(session()->getFlashdata('error')) ?>
+                <!-- FLASH MESSAGE: SUCCESS -->
+                <?php if (session()->getFlashdata('success')) : ?>
+                    <div class="login-alert alert-success">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span><?= esc(session()->getFlashdata('success')) ?></span>
+                    </div>
+                <?php endif; ?>
+
+                <!-- VALIDATION ERRORS -->
+                <?php if (isset($validation) && $validation->getErrors()) : ?>
+                    <div class="login-alert alert-error">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <div>
+                            <?= $validation->listErrors() ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <!-- FORM LOGIN -->
+                <form action="<?= base_url('login') ?>" method="post" class="login-form" autocomplete="on">
+                    <?= csrf_field() ?>
+
+                    <!-- USERNAME -->
+                    <div class="login-input-group">
+                        <span class="login-input-icon">
+                            <i class="bi bi-person-fill"></i>
+                        </span>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="Username"
+                            value="<?= esc(old('username')) ?>"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="login-input-group">
+                        <span class="login-input-icon">
+                            <i class="bi bi-lock-fill"></i>
+                        </span>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="password-toggle-btn"
+                            id="passwordToggleBtn"
+                            aria-label="Tampilkan password"
+                            title="Tampilkan password"
+                        >
+                            <i class="bi bi-eye-slash" id="passwordToggleIcon"></i>
+                        </button>
+                    </div>
+
+                    <!-- TOMBOL LOGIN -->
+                    <button type="submit" class="btn-login-submit">
+                        <span>Login</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </form>
+
+                <!-- FOOTER KARTU -->
+                <div class="login-card-footer">
+                    <div class="footer-divider">
+                        <span class="divider-line"></span>
+                        <span class="divider-icon">
+                            <i class="bi bi-bank2"></i>
+                        </span>
+                        <span class="divider-line"></span>
+                    </div>
+
+                    <p class="footer-copyright">
+                        Dinas Sosial &copy; <?= date('Y') ?>
+                    </p>
+
+                    <small class="footer-motto">
+                        Melayani dengan Hati, Membangun Negeri
+                    </small>
+                </div>
 
             </div>
+        </div>
 
-        <?php endif; ?>
+    </div>
 
+    <!-- SCRIPT TOGGLE PASSWORD -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const password = document.getElementById('password');
+        const toggleBtn = document.getElementById('passwordToggleBtn');
+        const toggleIcon = document.getElementById('passwordToggleIcon');
 
-        <!-- SUCCESS -->
-
-        <?php if (session()->getFlashdata('success')) : ?>
-
-            <div class="auth-alert auth-alert-success">
-
-                <?= esc(session()->getFlashdata('success')) ?>
-
-            </div>
-
-        <?php endif; ?>
-
-
-        <!-- LOGIN FORM -->
-
-        <form
-            action="<?= base_url('login') ?>"
-            method="post"
-        >
-
-            <?= csrf_field() ?>
-
-
-            <!-- USERNAME -->
-
-            <div class="auth-form-group">
-
-                <label for="username">
-                    Username
-                </label>
-
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="admin.dinsos"
-                    value="<?= old('username') ?>"
-                    autocomplete="username"
-                    required
-                >
-
-            </div>
-
-
-            <!-- PASSWORD -->
-
-            <div class="auth-form-group">
-
-                <label for="password">
-                    Kata Sandi
-                </label>
-
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Kata sandi"
-                    autocomplete="current-password"
-                    required
-                >
-
-            </div>
-
-
-            <!-- OPTIONS -->
-
-            <div class="login-options">
-
-                <label class="remember">
-
-                    <input
-                        type="checkbox"
-                        name="remember"
-                    >
-
-                    <span>
-                        Ingat saya
-                    </span>
-
-                </label>
-
-
-                <a
-                    href="#"
-                    class="forgot-password"
-                >
-                    Lupa kata sandi?
-                </a>
-
-            </div>
-
-
-            <!-- BUTTON -->
-
-            <button
-                type="submit"
-                class="auth-button"
-            >
-                Masuk ke Dashboard
-            </button>
-
-        </form>
-
-<!-- REGISTER -->
-
-<div class="auth-register">
-
-    Belum punya akun?
-
-    <a href="<?= base_url('register') ?>">
-        Daftar sekarang
-    </a>
-
-</div>
-
-
-<!-- ACCESS -->
-
-<div class="auth-access">
-
-    Akses khusus pegawai Dinas Sosial Kab. Banyuwangi
-
-</div>
-
-</div>
+        if (password && toggleBtn && toggleIcon) {
+            toggleBtn.addEventListener('click', function () {
+                if (password.type === 'password') {
+                    password.type = 'text';
+                    toggleIcon.classList.remove('bi-eye-slash');
+                    toggleIcon.classList.add('bi-eye');
+                    toggleBtn.setAttribute('title', 'Sembunyikan password');
+                } else {
+                    password.type = 'password';
+                    toggleIcon.classList.remove('bi-eye');
+                    toggleIcon.classList.add('bi-eye-slash');
+                    toggleBtn.setAttribute('title', 'Tampilkan password');
+                }
+            });
+        }
+    });
+    </script>
 
 </body>
 

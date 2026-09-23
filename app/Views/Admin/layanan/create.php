@@ -63,20 +63,31 @@
                         <div id="editor-deskripsi" style="min-height: 150px;"><?= old('deskripsi_layanan') ?></div>
                     </div>
 
-                    <!-- Standar Layanan (Editor) -->
-                    <div class="form-group">
-                        <label>Standar Layanan</label>
-                        <input type="hidden" name="standar_layanan" id="standar_layanan">
-                        <div id="editor-standar" style="min-height: 150px;"><?= old('standar_layanan') ?></div>
-                    </div>
-
-                    <!-- Prosedur Pelayanan (Editor) -->
-                     <div class="form-group" style="margin-top: 50px;">
-                        <label>Prosedur Pelayanan</label>
-                        <!-- Input hidden untuk menyimpan HTML dari Quill -->
-                        <input type="hidden" name="prosedur_layanan" id="prosedur_layanan">
-                        <div id="editor-prosedur" style="min-height: 200px;"><?= old('prosedur_layanan') ?></div>
-                    </div>
+                    <?php
+                    $standarFields = [
+                        'dasar_hukum' => 'Dasar Hukum',
+                        'persyaratan' => 'Persyaratan',
+                        'sistem_mekanisme_prosedur' => 'Sistem, Mekanisme, dan Prosedur',
+                        'jangka_waktu_pelayanan' => 'Jangka Waktu Pelayanan',
+                        'biaya_tarif' => 'Biaya/Tarif',
+                        'produk_pelayanan' => 'Produk Pelayanan',
+                        'penanganan_pengaduan' => 'Penanganan Pengaduan, Saran, Masukan, dan Apresiasi',
+                        'sarana_prasarana_fasilitas' => 'Sarana dan Prasarana dan/atau Fasilitas',
+                        'kompetensi_pelaksana' => 'Kompetensi Pelaksana',
+                        'pengawasan_internal' => 'Pengawasan Internal',
+                        'jumlah_pelaksana' => 'Jumlah Pelaksana',
+                        'jaminan_pelayanan' => 'Jaminan Pelayanan',
+                        'jaminan_keamanan_keselamatan' => 'Jaminan Keamanan dan Keselamatan Pelayanan',
+                        'evaluasi_kinerja_pelaksana' => 'Evaluasi Kinerja Pelaksana',
+                    ];
+                    foreach ($standarFields as $field => $label):
+                    ?>
+                        <div class="form-group">
+                            <label for="<?= esc($field) ?>"><?= esc($label) ?></label>
+                            <input type="hidden" name="<?= esc($field) ?>" id="<?= esc($field) ?>">
+                            <div id="editor-<?= esc($field) ?>" class="layanan-editor"><?= old($field) ?></div>
+                        </div>
+                    <?php endforeach; ?>
                    
 
                     <!-- Unggah Dokumen SOP (Dropzone) -->
@@ -110,14 +121,20 @@
 <script>
     // Inisialisasi Quill Editor
     var quillDeskripsi = new Quill('#editor-deskripsi', { theme: 'snow' });
-    var quillStandar = new Quill('#editor-standar', { theme: 'snow' });
-    var quillProsedur = new Quill('#editor-prosedur', { theme: 'snow' });
+    var standarFields = <?= json_encode(array_keys($standarFields)) ?>;
+    var standardEditors = {};
+
+    standarFields.forEach(function(field) {
+        standardEditors[field] = new Quill('#editor-' + field, { theme: 'snow' });
+    });
 
     // Saat form disubmit, pindahkan isi editor ke input hidden
     document.getElementById('formLayanan').addEventListener('submit', function() {
         document.getElementById('deskripsi_layanan').value = quillDeskripsi.root.innerHTML;
-        document.getElementById('standar_layanan').value = quillStandar.root.innerHTML;
-        document.getElementById('prosedur_layanan').value = quillProsedur.root.innerHTML;
+
+        standarFields.forEach(function(field) {
+            document.getElementById(field).value = standardEditors[field].root.innerHTML;
+        });
     });
 
     // Dropzone Custom

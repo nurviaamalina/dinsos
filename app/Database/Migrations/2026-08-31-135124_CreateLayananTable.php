@@ -28,12 +28,60 @@ class CreateLayananTable extends Migration
                 'type' => 'LONGTEXT', // Diubah ke LONGTEXT agar muat HTML panjang
                 'null' => true,
             ],
-            'standar_layanan' => [
+            'dasar_hukum' => [
                 'type' => 'LONGTEXT',
                 'null' => true,
             ],
-            'prosedur_layanan' => [
-                'type' => 'LONGTEXT', // Diubah ke LONGTEXT agar muat HTML panjang
+            'persyaratan' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'sistem_mekanisme_prosedur' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'jangka_waktu_pelayanan' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'biaya_tarif' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'produk_pelayanan' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'penanganan_pengaduan' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'sarana_prasarana_fasilitas' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'kompetensi_pelaksana' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'pengawasan_internal' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'jumlah_pelaksana' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'jaminan_pelayanan' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'jaminan_keamanan_keselamatan' => [
+                'type' => 'LONGTEXT',
+                'null' => true,
+            ],
+            'evaluasi_kinerja_pelaksana' => [
+                'type' => 'LONGTEXT',
                 'null' => true,
             ],
             'status_layanan' => [

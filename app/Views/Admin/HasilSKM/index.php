@@ -471,7 +471,47 @@
 
                     <div class="mt-3">
 
-                        <?= $pager->links() ?>
+                        <?php
+                        $currentPage = $pager->getCurrentPage();
+                        $lastPage = $pager->getLastPage();
+                        $keywordQuery = $keyword !== ''
+                            ? '&' . http_build_query(['keyword' => $keyword])
+                            : '';
+                        $start = max(1, $currentPage - 2);
+                        $end = min($lastPage, $currentPage + 2);
+                        ?>
+
+                        <ul class="pagination">
+                            <li class="page-item <?= $currentPage <= 1 ? 'disabled' : '' ?>">
+                                <a
+                                    href="<?= $currentPage > 1
+                                        ? base_url('admin/hasil-skm?page=' . ($currentPage - 1) . $keywordQuery)
+                                        : '#' ?>"
+                                >
+                                    <i class="bi bi-chevron-left"></i>
+                                </a>
+                            </li>
+
+                            <?php for ($page = $start; $page <= $end; $page++) : ?>
+                                <li class="page-item <?= $page === $currentPage ? 'active' : '' ?>">
+                                    <a
+                                        href="<?= base_url('admin/hasil-skm?page=' . $page . $keywordQuery) ?>"
+                                    >
+                                        <?= $page ?>
+                                    </a>
+                                </li>
+                            <?php endfor; ?>
+
+                            <li class="page-item <?= $currentPage >= $lastPage ? 'disabled' : '' ?>">
+                                <a
+                                    href="<?= $currentPage < $lastPage
+                                        ? base_url('admin/hasil-skm?page=' . ($currentPage + 1) . $keywordQuery)
+                                        : '#' ?>"
+                                >
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
 
                     </div>
 
