@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
 $routes = Services::routes();
 
 
@@ -14,12 +15,13 @@ $routes = Services::routes();
 // AUTH
 // =====================================================
 
+// Halaman Login
 $routes->get('login', 'Auth::login');
+
+// Proses Login
 $routes->post('login', 'Auth::prosesLogin');
 
-$routes->get('register', 'Auth::register');
-$routes->post('register', 'Auth::prosesRegister');
-
+// Logout
 $routes->get('logout', 'Auth::logout');
 
 
@@ -33,7 +35,7 @@ $routes->get('home', 'Home::index');
 
 
 // =====================================================
-// BERITA
+// BERITA FRONTEND
 // =====================================================
 
 $routes->get('berita', 'Berita::index');
@@ -74,7 +76,8 @@ $routes->get('kegiatan/(:segment)', 'Kegiatan::detail/$1');
 // =====================================================
 // BIDANG FRONTEND
 // =====================================================
-route_to('bidang', 'Bidang::index');
+
+$routes->get('bidang', 'Bidang::index');
 $routes->get('bidang/(:segment)', 'Bidang::detail/$1');
 
 
@@ -92,15 +95,21 @@ $routes->get('instagram', 'Instagram::index');
 $routes->get('dokumen', 'Dokumen::index');
 $routes->get('dokumen/detail/(:num)', 'Dokumen::detail/$1');
 
-//dashboard statistik frontend
+
+// =====================================================
+// STATISTIK FRONTEND
+// =====================================================
 
 $routes->get('statistik', 'Statistik::index');
+
+
 // =====================================================
 // ADMIN
 // SEMUA ROUTE ADMIN WAJIB LOGIN
 // =====================================================
 
-$routes->group('admin', ['filter' => 'auth'], function ($routes) {
+$routes->group('admin', ['filter' => 'admin'], function ($routes) {
+
 
     // =================================================
     // DASHBOARD
@@ -108,8 +117,52 @@ $routes->group('admin', ['filter' => 'auth'], function ($routes) {
 
     $routes->get('/', 'Admin\Dashboard::index');
 
-    $routes->get(
-        'dashboard','Admin\Dashboard::index'
+    $routes->get('dashboard', 'Admin\Dashboard::index');
+
+
+    // =================================================
+    // MANAJEMEN USER
+    // KHUSUS SUPERADMIN
+    // =================================================
+
+    $routes->group(
+        'manajemen-user',
+        ['filter' => 'superadmin'],
+        function ($routes) {
+
+            // Daftar user
+            $routes->get('/', 'Admin\ManajemenUser::index');
+
+            // Form tambah user
+            $routes->get('create', 'Admin\ManajemenUser::create');
+
+            // Proses tambah user
+            $routes->post('store', 'Admin\ManajemenUser::store');
+
+            // Form edit user
+            $routes->get(
+                'edit/(:num)',
+                'Admin\ManajemenUser::edit/$1'
+            );
+
+            // Proses update user
+            $routes->post(
+                'update/(:num)',
+                'Admin\ManajemenUser::update/$1'
+            );
+
+            // Hapus user
+            $routes->get(
+                'delete/(:num)',
+                'Admin\ManajemenUser::delete/$1'
+            );
+
+            // Aktif / nonaktif user
+            $routes->get(
+                'toggle/(:num)',
+                'Admin\ManajemenUser::toggle/$1'
+            );
+        }
     );
 
 
@@ -117,10 +170,7 @@ $routes->group('admin', ['filter' => 'auth'], function ($routes) {
     // DATA MASTER BIDANG
     // =================================================
 
-    $routes->get(
-        'bidang',
-        'Admin\Bidang::index'
-    );
+    $routes->get('bidang', 'Admin\Bidang::index');
 
     $routes->get(
         'bidang/create',
@@ -147,8 +197,17 @@ $routes->group('admin', ['filter' => 'auth'], function ($routes) {
         'Admin\Bidang::delete/$1'
     );
 
-//dashboard statistik
-$routes->get('statistik', 'Admin\Statistik::index');
+
+    // =================================================
+    // DASHBOARD STATISTIK ADMIN
+    // =================================================
+
+    $routes->get(
+        'statistik',
+        'Admin\Statistik::index'
+    );
+
+
     // =================================================
     // DETAIL BIDANG
     // =================================================
@@ -342,7 +401,6 @@ $routes->get('statistik', 'Admin\Statistik::index');
         'profil/store',
         'Admin\Profil::store'
     );
-     $routes->get('profil/anggota/delete/(:num)', 'Admin\Profil::anggotaDelete/$1');
 
 
     // =================================================
@@ -367,6 +425,11 @@ $routes->get('statistik', 'Admin\Statistik::index');
     $routes->post(
         'profil/anggota/update/(:num)',
         'Admin\Profil::anggotaUpdate/$1'
+    );
+
+    $routes->get(
+        'profil/anggota/delete/(:num)',
+        'Admin\Profil::anggotaDelete/$1'
     );
 
 
@@ -499,20 +562,20 @@ $routes->get('statistik', 'Admin\Statistik::index');
         'Admin\Datalayanan::export'
     );
 
-    // IMPORT DATA
     $routes->get(
         'datalayanan/import',
         'Admin\Datalayanan::import'
     );
 
     $routes->post(
-    'datalayanan/import/process',
-    'Admin\Datalayanan::importProcess'
-);
+        'datalayanan/import/process',
+        'Admin\Datalayanan::importProcess'
+    );
 
-     // =====================================================
+
+    // =================================================
     // PENERIMA MANFAAT
-    // =====================================================
+    // =================================================
 
     $routes->get(
         'penerima-manfaat',
@@ -545,45 +608,47 @@ $routes->get('statistik', 'Admin\Statistik::index');
     );
 
     $routes->get(
-    'penerima-manfaat/import',
-    'Admin\PenerimaManfaat::import'
-);
+        'penerima-manfaat/import',
+        'Admin\PenerimaManfaat::import'
+    );
 
-$routes->post(
-    'penerima-manfaat/importProcess',
-    'Admin\PenerimaManfaat::importProcess'
-);
+    $routes->post(
+        'penerima-manfaat/importProcess',
+        'Admin\PenerimaManfaat::importProcess'
+    );
 
 
-// DATA SKM
+    // =================================================
+    // HASIL SKM
+    // =================================================
+
     $routes->get(
         'hasil-skm',
         'Admin\HasilSKM::index'
     );
 
-    // HALAMAN IMPORT
+    // Halaman import
     $routes->get(
         'hasil-skm/import',
         'Admin\HasilSKM::import'
     );
 
-    // UPLOAD EXCEL
+    // Upload Excel
     $routes->post(
         'hasil-skm/import/process',
         'Admin\HasilSKM::importProcess'
     );
 
-    // SIMPAN MAPPING
+    // Simpan mapping
     $routes->post(
         'hasil-skm/import/save',
         'Admin\HasilSKM::importSave'
     );
 
-    // DELETE
+    // Delete
     $routes->get(
         'hasil-skm/delete/(:num)',
         'Admin\HasilSKM::delete/$1'
     );
-
 
 });
