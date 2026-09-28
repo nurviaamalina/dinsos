@@ -297,25 +297,144 @@
                     <?php endif; ?>
                 </div>
 
-                <!-- INSTAGRAM -->
-                <div class="latest-panel">
-                    <div class="latest-header">
-                        <h3>Postingan Terbaru</h3>
-                        <a href="<?= base_url('admin/instagram') ?>" class="detail-button">Detail →</a>
-                    </div>
+              <!-- INSTAGRAM -->
+<div class="latest-panel">
 
-                    <?php foreach (($instagramTerbaru ?? []) as $index => $item): ?>
-                        <div class="latest-item">
-                            <div class="latest-number"><?= $index + 1 ?>.</div>
-                            <div class="latest-image"></div>
+    <div class="latest-header">
 
-                            <div class="latest-info">
-                                <strong><?= esc($item['judul'] ?? 'Caption Instagram') ?></strong>
-                                <span><?= esc($item['deskripsi'] ?? 'Postingan terbaru ...') ?></span>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+        <h3>Postingan Terbaru</h3>
+
+        <a
+            href="<?= base_url('admin/instagram') ?>"
+            class="detail-button"
+        >
+            Detail →
+        </a>
+
+    </div>
+
+
+    <?php if (!empty($instagramTerbaru)): ?>
+
+        <?php foreach ($instagramTerbaru as $index => $item): ?>
+
+            <?php
+
+            /*
+            |--------------------------------------------------------------------------
+            | THUMBNAIL INSTAGRAM
+            |--------------------------------------------------------------------------
+            */
+
+            $thumbnail = trim(
+                (string) ($item['thumbnail'] ?? '')
+            );
+
+            $thumbnailUrl = '';
+
+            if ($thumbnail !== '') {
+
+                $thumbnailUrl = base_url(
+                    'uploads/instagram/' . $thumbnail
+                );
+
+            } elseif (!empty($item['thumbnail_url'])) {
+
+                $thumbnailUrl = $item['thumbnail_url'];
+
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | CAPTION
+            |--------------------------------------------------------------------------
+            */
+
+            $caption = trim(
+                strip_tags(
+                    (string) ($item['caption'] ?? '')
+                )
+            );
+
+            if ($caption === '') {
+                $caption = 'Postingan Instagram';
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | DESKRIPSI SINGKAT
+            |--------------------------------------------------------------------------
+            */
+
+            $deskripsi = mb_strimwidth(
+                $caption,
+                0,
+                45,
+                '...'
+            );
+
+            ?>
+
+
+            <div class="latest-item">
+
+                <!-- NOMOR -->
+
+                <div class="latest-number">
+                    <?= $index + 1 ?>.
                 </div>
+
+
+                <!-- THUMBNAIL -->
+
+                <?php if ($thumbnailUrl !== ''): ?>
+
+                    <div
+                        class="latest-image has-image"
+                        style="
+                            background-image:
+                            url('<?= esc($thumbnailUrl, 'attr') ?>');
+                        "
+                    ></div>
+
+                <?php else: ?>
+
+                    <div class="latest-image"></div>
+
+                <?php endif; ?>
+
+
+                <!-- INFORMASI -->
+
+                <div class="latest-info">
+
+                    <strong>
+                        <?= esc($deskripsi) ?>
+                    </strong>
+
+                    <span>
+                        Postingan Instagram terbaru
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        <?php endforeach; ?>
+
+
+    <?php else: ?>
+
+        <div class="latest-empty">
+            Belum ada postingan Instagram.
+        </div>
+
+    <?php endif; ?>
+
+</div>
 
             </div>
 

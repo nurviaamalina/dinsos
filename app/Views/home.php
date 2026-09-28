@@ -755,132 +755,171 @@
 
 
             <!-- =================================
-                 POSTINGAN TERBARU
-            ================================== -->
+     POSTINGAN TERBARU
+================================== -->
 
-            <div class="informasi-box postingan-box">
-
-
-                <!-- JUDUL -->
-
-                <div class="informasi-title">
-
-                    <h2>
-                        Postingan Terbaru
-                    </h2>
-
-                    <span></span>
-
-                </div>
+<div class="informasi-box postingan-box">
 
 
-                <!-- GRID -->
+    <!-- JUDUL -->
 
-                <div class="postingan-grid">
+    <div class="informasi-title">
 
+        <h2>
+            Postingan Terbaru
+        </h2>
 
-                    <?php if (!empty($instagram)): ?>
+        <span></span>
 
-
-                        <?php foreach (
-                            array_slice(
-                                $instagram,
-                                0,
-                                2
-                            ) as $post
-                        ): ?>
+    </div>
 
 
-                            <a
-                                href="<?= esc(
-                                    $post['permalink']
-                                ) ?>"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="postingan-item"
-                            >
+    <!-- GRID -->
+
+    <div class="postingan-grid">
 
 
-                                <img
-                                    src="<?= esc(
-                                        !empty(
-                                            $post[
-                                                'thumbnail_url'
-                                            ]
-                                        )
-                                            ? $post[
-                                                'thumbnail_url'
-                                            ]
-                                            : $post[
-                                                'media_url'
-                                            ]
-                                    ) ?>"
-                                    alt="Postingan Instagram"
-                                >
+        <?php if (!empty($instagram)): ?>
 
 
-                            </a>
+            <?php foreach ($instagram as $post): ?>
 
 
-                        <?php endforeach; ?>
+                <?php
 
+                /*
+                |--------------------------------------------------------------------------
+                | THUMBNAIL
+                |--------------------------------------------------------------------------
+                */
+
+                $thumbnailUrl = null;
+
+
+                // PRIORITAS 1:
+                // thumbnail lokal hasil sinkronisasi
+
+                if (!empty($post['thumbnail'])) {
+
+                    $thumbnailUrl = base_url(
+                        'uploads/instagram/' .
+                        $post['thumbnail']
+                    );
+
+                }
+
+
+                // PRIORITAS 2:
+                // thumbnail URL dari Instagram
+
+                elseif (!empty($post['thumbnail_url'])) {
+
+                    $thumbnailUrl = $post['thumbnail_url'];
+
+                }
+
+
+                // PRIORITAS 3:
+                // media URL
+
+                elseif (!empty($post['media_url'])) {
+
+                    $thumbnailUrl = $post['media_url'];
+
+                }
+
+                ?>
+
+
+                <a
+                    href="<?= !empty($post['permalink'])
+                        ? esc($post['permalink'])
+                        : base_url('instagram') ?>"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="postingan-item"
+                >
+
+
+                    <?php if (!empty($thumbnailUrl)): ?>
+
+                        <img
+                            src="<?= esc($thumbnailUrl) ?>"
+                            alt="Postingan Instagram"
+                            loading="lazy"
+                        >
 
                     <?php else: ?>
 
+                        <div class="postingan-no-image">
 
-                        <!-- DEFAULT POST 1 -->
-
-                        <div class="postingan-item">
-
-                            <img
-                                src="<?= base_url(
-                                    'assets/images/postingan.jpg'
-                                ) ?>"
-                                alt="Postingan Instagram"
-                            >
+                            <i class="bi bi-instagram"></i>
 
                         </div>
-
-
-                        <!-- DEFAULT POST 2 -->
-
-                        <div class="postingan-item">
-
-                            <img
-                                src="<?= base_url(
-                                    'assets/images/postingan.jpg'
-                                ) ?>"
-                                alt="Postingan Instagram"
-                            >
-
-                        </div>
-
 
                     <?php endif; ?>
 
 
+                </a>
+
+
+            <?php endforeach; ?>
+
+
+        <?php else: ?>
+
+
+            <!-- DEFAULT POST 1 -->
+
+            <div class="postingan-item">
+
+                <div class="postingan-no-image">
+
+                    <i class="bi bi-instagram"></i>
+
                 </div>
-
-
-                <!-- TOMBOL -->
-
-                <div class="informasi-button">
-
-                    <a
-                        href="<?= base_url('instagram') ?>"
-                        class="btn-informasi"
-                    >
-
-                        Lihat Semua
-
-                        <i class="bi bi-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
 
             </div>
+
+
+            <!-- DEFAULT POST 2 -->
+
+            <div class="postingan-item">
+
+                <div class="postingan-no-image">
+
+                    <i class="bi bi-instagram"></i>
+
+                </div>
+
+            </div>
+
+
+        <?php endif; ?>
+
+
+    </div>
+
+
+    <!-- TOMBOL -->
+
+    <div class="informasi-button">
+
+        <a
+            href="<?= base_url('instagram') ?>"
+            class="btn-informasi"
+        >
+
+            Lihat Semua
+
+            <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+</div>
 
 
         </div>

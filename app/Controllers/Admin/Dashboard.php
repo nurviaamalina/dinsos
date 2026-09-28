@@ -6,18 +6,21 @@ use App\Controllers\BaseController;
 use App\Models\BeritaModel;
 use App\Models\DatalayananModel;
 use App\Models\KegiatanModel;
+use App\Models\InstagramModel;
 
 class Dashboard extends BaseController
 {
     protected BeritaModel $beritaModel;
     protected KegiatanModel $kegiatanModel;
     protected DatalayananModel $datalayananModel;
+    protected InstagramModel $instagramModel;
 
     public function __construct()
     {
         $this->beritaModel      = new BeritaModel();
         $this->kegiatanModel    = new KegiatanModel();
         $this->datalayananModel = new DatalayananModel();
+        $this->instagramModel   = new InstagramModel();
     }
 
     public function index()
@@ -52,25 +55,17 @@ class Dashboard extends BaseController
         $totalKegiatan   = count($kegiatan);
         $kegiatanTerbaru = array_slice($kegiatan, 0, 3);
 
-        // =========================================================
-        // 3. INSTAGRAM - MASIH HARDCODE
-        // =========================================================
-        $totalInstagram = 32;
+       // =========================================================
+// 3. INSTAGRAM
+// =========================================================
 
-        $instagramTerbaru = [
-            [
-                'judul'     => 'Caption Instagram',
-                'deskripsi' => 'Postingan terbaru ...',
-            ],
-            [
-                'judul'     => 'Caption Instagram',
-                'deskripsi' => 'Postingan terbaru ...',
-            ],
-            [
-                'judul'     => 'Caption Instagram',
-                'deskripsi' => 'Postingan terbaru ...',
-            ],
-        ];
+$totalInstagram = $this->instagramModel->countAll();
+
+$instagramTerbaru = $this->instagramModel
+    ->orderBy('posted_at', 'DESC')
+    ->findAll(3);
+
+    
 
         // =========================================================
         // 4. DATA PELAYANAN

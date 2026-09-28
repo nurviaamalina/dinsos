@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Controllers\Admin;
+
+use App\Controllers\BaseController;
+use App\Models\InstagramModel;
+
+class Instagram extends BaseController
+{
+    protected $instagramModel;
+
+    public function __construct()
+    {
+        $this->instagramModel = new InstagramModel();
+
+        helper(['form', 'text']);
+    }
+
+    public function index()
+{
+    $keyword = $this->request->getGet('keyword');
+
+    if ($keyword) {
+        $instagram = $this->instagramModel
+            ->groupStart()
+                ->like('judul', $keyword)
+                ->orLike('caption', $keyword)
+                ->orLike('instagram_id', $keyword)
+            ->groupEnd()
+            ->orderBy('posted_at', 'DESC')
+            ->paginate(10);
+    } else {
+        $instagram = $this->instagramModel
+            ->orderBy('posted_at', 'DESC')
+            ->paginate(10);
+    }
+
+    $data = [
+        'title'     => 'Feed Instagram',
+        'instagram' => $instagram,
+        'pager'     => $this->instagramModel->pager,
+        'keyword'   => $keyword
+    ];
+
+    return view('Admin/Instagram/index', $data);
+}
+
+    public function sync()
+    {
+        $syncUrl = base_url('instagram-sync');
+
+        $client = \Config\Services::curlrequest([
+            'timeout' => 60,
+        ]);
+
+        try {
+            $response = $client->get($syncUrl);
+            $result = json_decode($response->getBody(), true);
+
+            if (!empty($result['status'])) {
+                return redirect()
+                    ->back()
+                    ->with(
+                        'success',
+                        'Sinkronisasi berhasil. ' .
+                        'Data baru: ' . ($result['posting_baru'] ?? 0) .
+                        ', diperbarui: ' . ($result['posting_update'] ?? 0)
+                    );
+            }
+
+            return redirect()
+                ->back()
+                ->with(
+                    'error',
+                    $result['message'] ?? 'Sinkronisasi gagal.'
+                );
+
+        } catch (\Throwable $e) {
+            return redirect()
+                ->back()
+                ->with(
+                    'error',
+                    'Gagal melakukan sinkronisasi Instagram: '
+                    . $e->getMessage()
+                );
+        }
+    }
+}

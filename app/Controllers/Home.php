@@ -7,6 +7,7 @@ use App\Models\ProfilAnggotaModel;
 use App\Models\LayananModel;
 use App\Models\BidangModel;
 use App\Models\KegiatanModel;
+use App\Models\InstagramModel;
 
 class Home extends BaseController
 {
@@ -14,6 +15,7 @@ class Home extends BaseController
     protected $anggotaModel;
     protected $kegiatanModel;
     protected $layananModel;
+    protected $instagramModel;
 
     public function __construct()
     {
@@ -21,6 +23,7 @@ class Home extends BaseController
         $this->anggotaModel  = new ProfilAnggotaModel();
         $this->kegiatanModel = new KegiatanModel();
         $this->layananModel  = new LayananModel();
+        $this->instagramModel = new InstagramModel();
     }
 
     public function index()
@@ -57,15 +60,14 @@ class Home extends BaseController
 
         // =====================================================
         // LAYANAN
-        // HANYA YANG AKTIF, MAKSIMAL 4
         // =====================================================
 
         $layanan = $this->layananModel
-    ->where('status_layanan', 'Aktif')
-    ->orderBy('id', 'DESC')
-    ->findAll(4);
+            ->where('status_layanan', 'Aktif')
+            ->orderBy('id', 'DESC')
+            ->findAll(4);
 
-    $layanan = array_reverse($layanan);
+        $layanan = array_reverse($layanan);
 
 
         // =====================================================
@@ -98,6 +100,16 @@ class Home extends BaseController
 
 
         // =====================================================
+        // INSTAGRAM
+        // AMBIL 2 POSTING TERBARU
+        // =====================================================
+
+        $instagram = $this->instagramModel
+            ->orderBy('posted_at', 'DESC')
+            ->findAll(2);
+
+
+        // =====================================================
         // DATA UNTUK VIEW HOME
         // =====================================================
 
@@ -112,6 +124,8 @@ class Home extends BaseController
             'layanan' => $layanan,
 
             'tahunKegiatan' => $tahunKegiatan,
+
+            'instagram' => $instagram,
 
         ];
 
