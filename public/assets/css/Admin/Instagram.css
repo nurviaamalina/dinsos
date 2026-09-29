@@ -1,0 +1,569 @@
+/* =========================================================
+   INSTAGRAM PAGE
+========================================================= */
+
+.instagram-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.instagram-header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   JUDUL
+========================================================= */
+
+.instagram-header-text h1 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    color: #550B18;
+}
+
+.instagram-header-text h1 i {
+    margin-right: 5px;
+    font-size: 25px;
+}
+
+.instagram-header-text p {
+    margin: 8px 0 0;
+
+    font-size: 16px;
+
+    color: #550B18;
+}
+
+
+/* =========================================================
+   BUTTON HEADER
+========================================================= */
+
+.instagram-header-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: -3px;
+}
+
+
+/* =========================================================
+   BUTTON SINKRONISASI
+========================================================= */
+
+.btn-sync-instagram {
+    height: 40px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: 2px solid #550B18;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #550B18;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+.btn-sync-instagram:hover {
+    background: #550B18;
+
+    color: #ffffff;
+}
+
+.btn-sync-instagram i {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   JARAK HEADER KE TABEL
+========================================================= */
+
+.instagram-table-card {
+    width: 100%;
+
+    margin-top: 48px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   FLASH MESSAGE
+========================================================= */
+
+.instagram-alert {
+    margin-top: 20px;
+
+    margin-bottom: -20px;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.instagram-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+.instagram-table thead {
+    background: #dedede;
+}
+
+.instagram-table th {
+    height: 42px;
+
+    padding: 10px 18px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #111111;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.instagram-table td {
+    height: 91px;
+
+    padding: 10px 18px;
+
+    border-bottom: 1px solid #dedede;
+
+    font-size: 13px;
+
+    color: #111111;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   COLUMN WIDTH
+========================================================= */
+
+.thumbnail-column {
+    width: 140px;
+}
+
+.caption-column {
+    width: 43%;
+}
+
+.jenis-column {
+    width: 130px;
+}
+
+.tanggal-column {
+    width: 125px;
+}
+
+.instagram-column {
+    width: 110px;
+}
+
+
+/* =========================================================
+   THUMBNAIL
+========================================================= */
+
+.instagram-thumbnail {
+    width: 90px !important;
+
+    height: 58px !important;
+
+    min-width: 90px;
+
+    max-width: 90px;
+
+    min-height: 58px;
+
+    max-height: 58px;
+
+    display: block;
+
+    object-fit: cover !important;
+
+    object-position: center;
+
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   THUMBNAIL KOSONG
+========================================================= */
+
+.instagram-thumbnail-empty {
+    width: 90px;
+
+    height: 58px;
+
+    min-width: 90px;
+
+    max-width: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #d9d9d9;
+
+    border-radius: 4px;
+
+    color: #777777;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   THUMBNAIL CELL
+========================================================= */
+
+.instagram-table td:first-child {
+    padding-left: 18px;
+
+    padding-right: 24px;
+}
+
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.instagram-caption {
+    display: block;
+
+    max-width: 520px;
+
+    padding-right: 15px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color: #111111;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   JENIS MEDIA
+========================================================= */
+
+.instagram-type {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 12px;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 14px;
+
+    background: #f5f5f5;
+
+    color: #555555;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TANGGAL
+========================================================= */
+
+.instagram-date {
+    padding: 2px 0;
+
+    line-height: 1.6;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BUTTON LIHAT INSTAGRAM
+========================================================= */
+
+.btn-lihat-instagram {
+    height: 32px;
+
+    padding: 0 12px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    border: 1px solid #65091c;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #65091c;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all .2s ease;
+}
+
+.btn-lihat-instagram:hover {
+    background: #65091c;
+
+    color: #ffffff;
+}
+
+.btn-lihat-instagram i {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   EMPTY DATA
+========================================================= */
+
+.instagram-empty {
+    height: 120px !important;
+
+    text-align: center;
+
+    color: #777777 !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.instagram-pagination {
+    min-height: 76px;
+
+    padding: 19px 58px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* =========================================================
+   PAGINATION UL
+========================================================= */
+
+.instagram-pagination ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   PAGINATION LI
+========================================================= */
+
+.instagram-pagination li {
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   PAGINATION LINK
+========================================================= */
+
+.instagram-pagination a,
+.instagram-pagination span {
+    width: 25px;
+
+    height: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PAGINATION HOVER
+========================================================= */
+
+.instagram-pagination a:hover {
+    background: #f5f5f5;
+
+    color: #65091c;
+
+    border-color: #65091c;
+}
+
+
+/* =========================================================
+   PAGINATION ACTIVE
+========================================================= */
+
+.instagram-pagination .active a,
+.instagram-pagination .active span {
+    background: #65091c;
+
+    border-color: #65091c;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PAGINATION DISABLED
+========================================================= */
+
+.instagram-pagination .disabled span {
+    color: #aaaaaa;
+
+    background: #f5f5f5;
+
+    border-color: #dddddd;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .instagram-header-buttons {
+        margin-top: 0;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .instagram-header {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .instagram-header-buttons {
+        justify-content: flex-start;
+
+        margin-top: 0;
+
+        margin-bottom: 30px;
+    }
+
+    .instagram-table-card {
+        overflow-x: auto;
+    }
+
+    .instagram-table {
+        min-width: 850px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .instagram-pagination {
+        padding: 19px 20px;
+
+        justify-content: flex-start;
+    }
+
+}
