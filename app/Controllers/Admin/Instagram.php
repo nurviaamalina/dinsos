@@ -59,7 +59,7 @@ class Instagram extends BaseController
 
             if (!empty($result['status'])) {
                 return redirect()
-                    ->back()
+                    ->to(base_url('admin/instagram'))
                     ->with(
                         'success',
                         'Sinkronisasi berhasil. ' .
@@ -69,7 +69,7 @@ class Instagram extends BaseController
             }
 
             return redirect()
-                ->back()
+                ->to(base_url('admin/instagram'))
                 ->with(
                     'error',
                     $result['message'] ?? 'Sinkronisasi gagal.'
@@ -77,7 +77,7 @@ class Instagram extends BaseController
 
         } catch (\Throwable $e) {
             return redirect()
-                ->back()
+                ->to(base_url('admin/instagram'))
                 ->with(
                     'error',
                     'Gagal melakukan sinkronisasi Instagram: '

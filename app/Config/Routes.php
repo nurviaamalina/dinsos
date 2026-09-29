@@ -659,5 +659,5 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     // =====================================================
 
     $routes->get('instagram', 'Admin\Instagram::index');
-    $routes->get('instagram/sync', 'InstagramSync::index');
+    $routes->get('instagram/sync', 'Admin\Instagram::sync');
 });
