@@ -8,8 +8,8 @@
 
 body {
     margin: 0;
-    background: #f6f7f8;
-    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    font-family: var(--font-primary);
 }
 
 
@@ -25,7 +25,7 @@ body {
 
     padding: 30px 55px;
 
-    background: #f6f7f8;
+    background: var(--bg-light);
 
 }
 
@@ -44,11 +44,11 @@ body {
 
     margin: 0;
 
-    font-size: 25px;
+    font-size: var(--fs-2xl);
 
     font-weight: 700;
 
-    color: #1f2937;
+    color: var(--text-main);
 
 }
 
@@ -56,9 +56,9 @@ body {
 
     margin: 4px 0 0;
 
-    font-size: 16px;
+    font-size: var(--fs-base);
 
-    color: #222;
+    color: var(--text-main);
 
 }
 
@@ -100,15 +100,15 @@ body {
 
     padding: 0 40px 0 15px;
 
-    border: 1px solid #6b091c;
+    border: 1px solid var(--primary-color);
 
-    border-radius: 15px;
+    border-radius: var(--card-radius);
 
     outline: none;
 
     background: #fff;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
 
 }
 
@@ -126,9 +126,9 @@ body {
 
     background: transparent;
 
-    color: #65091b;
+    color: var(--primary-color);
 
-    font-size: 18px;
+    font-size: var(--fs-lg);
 
     cursor: pointer;
 
@@ -151,15 +151,15 @@ body {
 
     gap: 9px;
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
-    background: #65091b;
+    background: var(--primary-color);
 
     color: white;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 600;
 
@@ -169,7 +169,7 @@ body {
 
 .btn-tambah:hover {
 
-    background: #4d0614;
+    background: var(--primary-color-hover);
 
     color: white;
 
@@ -177,7 +177,7 @@ body {
 
 .btn-tambah i {
 
-    font-size: 17px;
+    font-size: var(--fs-lg);
 
 }
 
@@ -210,9 +210,9 @@ body {
 
     background: #fff;
 
-    border: 1px solid #720b20;
+    border: 1px solid var(--primary-color);
 
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 
     display: flex;
 
@@ -257,7 +257,7 @@ body {
 
     height: 100%;
 
-    background: #c6c6c6;
+    background: var(--border-color);
 
 }
 
@@ -272,9 +272,9 @@ body {
 
     text-align: center;
 
-    color: #090909;
+    color: var(--text-main);
 
-    font-size: 21px;
+    font-size: var(--fs-xl);
 
     line-height: 1.35;
 
@@ -291,9 +291,9 @@ body {
 
     margin: 18px 0 0;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
-    color: #1f2937;
+    color: var(--text-main);
 
     text-align: center;
 
@@ -312,11 +312,11 @@ body {
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.45;
 
-    color: #1f2937;
+    color: var(--text-main);
 
 }
 
@@ -349,13 +349,13 @@ body {
 
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     text-decoration: none;
 
     color: white;
 
-    font-size: 20px;
+    font-size: var(--fs-xl);
 
 }
 
@@ -366,7 +366,7 @@ body {
 
     background: #ffb633;
 
-    color: #101010;
+    color: var(--text-main);
 
 }
 
@@ -374,7 +374,7 @@ body {
 
     background: #e8a022;
 
-    color: #101010;
+    color: var(--text-main);
 
 }
 
@@ -383,13 +383,13 @@ body {
 
 .btn-delete {
 
-    background: #e93648;
+    background: var(--danger-color);
 
 }
 
 .btn-delete:hover {
 
-    background: #c92537;
+    background: var(--danger-color);
 
     color: white;
 
@@ -406,7 +406,7 @@ body {
 
     border: 1px solid #c9c9c9;
 
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 
     overflow: hidden;
 
@@ -431,7 +431,7 @@ body {
 
     gap: 35px;
 
-    border-bottom: 1px solid #d4d4d4;
+    border-bottom: 1px solid var(--border-color);
 
 }
 
@@ -439,9 +439,9 @@ body {
 
     margin: 0;
 
-    color: #68091c;
+    color: var(--primary-color);
 
-    font-size: 24px;
+    font-size: var(--fs-2xl);
 
     font-weight: 700;
 
@@ -462,15 +462,15 @@ body {
 
     gap: 8px;
 
-    background: #65091b;
+    background: var(--primary-color);
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
     color: white;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 600;
 
@@ -478,7 +478,7 @@ body {
 
 .btn-edit-sejarah:hover {
 
-    background: #4d0614;
+    background: var(--primary-color-hover);
 
     color: white;
 
@@ -486,7 +486,7 @@ body {
 
 .btn-edit-sejarah i {
 
-    font-size: 16px;
+    font-size: var(--fs-base);
 
 }
 
@@ -522,11 +522,11 @@ body {
 
     background: transparent;
 
-    color: #777;
+    color: var(--text-muted);
 
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     cursor: pointer;
 
@@ -537,18 +537,18 @@ body {
 
 .sejarah-tab:hover {
 
-    color: #68091c;
+    color: var(--primary-color);
 
 }
 
 
 .sejarah-tab.active {
 
-    color: #68091c;
+    color: var(--primary-color);
 
     font-weight: 600;
 
-    border-bottom-color: #68091c;
+    border-bottom-color: var(--primary-color);
 
 }
 
@@ -581,9 +581,9 @@ body {
 
     margin: 0;
 
-    color: #65091b;
+    color: var(--primary-color);
 
-    font-size: 19px;
+    font-size: var(--fs-xl);
 
     font-weight: 600;
 
@@ -596,9 +596,9 @@ body {
 
 .tab-content h3 {
 
-    color: #65091b;
+    color: var(--primary-color);
 
-    font-size: 19px;
+    font-size: var(--fs-xl);
 
     margin: 0 0 8px;
 
@@ -754,9 +754,9 @@ body {
 .profil-create-header h1 {
     margin: 0;
 
-    color: #1f2937;
+    color: var(--text-main);
 
-    font-size: 26px;
+    font-size: var(--fs-2xl);
 
     line-height: 1.5;
 
@@ -766,9 +766,9 @@ body {
 .profil-create-header p {
     margin: 5px 0 0;
 
-    color: #222;
+    color: var(--text-main);
 
-    font-size: 16px;
+    font-size: var(--fs-base);
 }
 
 
@@ -802,9 +802,9 @@ body {
 
     margin-bottom: 14px;
 
-    color: #1f2937;
+    color: var(--text-main);
 
-    font-size: 20px;
+    font-size: var(--fs-xl);
 
     line-height: 1.5;
 
@@ -823,9 +823,9 @@ body {
 
     padding: 8px 13px;
 
-    border: 1px solid #bcbcbc;
+    border: 1px solid var(--border-color);
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     background: #fff;
 
@@ -833,13 +833,13 @@ body {
 
     font-family: inherit;
 
-    font-size: 15px;
+    font-size: var(--fs-base);
 
-    color: #222;
+    color: var(--text-main);
 }
 
 .form-control-profil:focus {
-    border-color: #68091c;
+    border-color: var(--primary-color);
 
     box-shadow: 0 0 0 2px rgba(104, 9, 28, .08);
 }
@@ -861,9 +861,9 @@ body {
 
     background: #fff;
 
-    border: 1px solid #bcbcbc;
+    border: 1px solid var(--border-color);
 
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 
     overflow: hidden;
 }
@@ -884,7 +884,7 @@ body {
 
     gap: 4px;
 
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid var(--border-color);
 
     background: #fff;
 }
@@ -901,7 +901,7 @@ body {
 
     background: transparent;
 
-    color: #1f2937;
+    color: var(--text-main);
 
     display: flex;
 
@@ -909,30 +909,30 @@ body {
 
     justify-content: center;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     cursor: pointer;
 
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
 }
 
 
 .editor-toolbar button:hover {
-    background: #f1f1f1;
+    background: var(--bg-light);
 }
 
 
 .editor-toolbar button:disabled {
-    color: #c5c5c5;
+    color: var(--border-color);
 
     cursor: default;
 }
 
 
 .editor-toolbar button i {
-    font-size: 15px;
+    font-size: var(--fs-base);
 }
 
 
@@ -941,7 +941,7 @@ body {
 
     height: 20px;
 
-    background: #eee;
+    background: var(--bg-light);
 
     margin: 0 3px;
 }
@@ -975,7 +975,7 @@ body {
 
     font-family: inherit;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.6;
 }
@@ -1006,9 +1006,9 @@ body {
 
     height: 297px;
 
-    border: 1px solid #bcbcbc;
+    border: 1px solid var(--border-color);
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     background: #fff;
 
@@ -1025,7 +1025,7 @@ body {
 
 
 .upload-box.drag-active {
-    border: 2px dashed #68091c;
+    border: 2px dashed var(--primary-color);
 
     background: #fff8fa;
 }
@@ -1034,16 +1034,16 @@ body {
 .upload-icon {
     margin-bottom: 22px;
 
-    color: #374151;
+    color: var(--text-main);
 
-    font-size: 25px;
+    font-size: var(--fs-2xl);
 }
 
 
 .upload-title {
-    color: #30323a;
+    color: var(--text-main);
 
-    font-size: 18px;
+    font-size: var(--fs-lg);
 
     font-weight: 500;
 
@@ -1054,9 +1054,9 @@ body {
 .upload-info {
     margin-top: 7px;
 
-    color: #a5a7b0;
+    color: var(--text-muted);
 
-    font-size: 15px;
+    font-size: var(--fs-base);
 
     text-align: center;
 }
@@ -1079,13 +1079,13 @@ body {
 
     border: 1px solid #c7ccd8;
 
-    border-radius: 9px;
+    border-radius: var(--radius-md);
 
     background: #fff;
 
-    color: #555b66;
+    color: var(--text-muted);
 
-    font-size: 17px;
+    font-size: var(--fs-lg);
 
     cursor: pointer;
 
@@ -1094,11 +1094,11 @@ body {
 
 
 .btn-browse:hover {
-    background: #f7f7f7;
+    background: var(--bg-light);
 
-    border-color: #68091c;
+    border-color: var(--primary-color);
 
-    color: #68091c;
+    color: var(--primary-color);
 }
 
 
@@ -1124,15 +1124,15 @@ body {
 
     border: none;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
-    background: #65091b;
+    background: var(--primary-color);
 
     color: #fff;
 
     font-family: inherit;
 
-    font-size: 19px;
+    font-size: var(--fs-xl);
 
     font-weight: 400;
 
@@ -1143,7 +1143,7 @@ body {
 
 
 .btn-simpan-profil:hover {
-    background: #4e0715;
+    background: var(--primary-color-hover);
 }
 
 
@@ -1175,11 +1175,11 @@ body {
     }
 
     .profil-create-header h1 {
-        font-size: 22px;
+        font-size: var(--fs-2xl);
     }
 
     .form-group label {
-        font-size: 18px;
+        font-size: var(--fs-lg);
     }
 
     .editor-wrapper {
@@ -1195,11 +1195,11 @@ body {
     }
 
     .upload-title {
-        font-size: 15px;
+        font-size: var(--fs-base);
     }
 
     .upload-info {
-        font-size: 14px;
+        font-size: var(--fs-sm);
     }
 
     .button-wrapper {
@@ -1232,21 +1232,21 @@ body {
 .anggota-create-header h1 {
     margin: 0;
 
-    font-size: 26px;
+    font-size: var(--fs-2xl);
 
     line-height: 1.5;
 
     font-weight: 700;
 
-    color: #1f2937;
+    color: var(--text-main);
 }
 
 .anggota-create-header p {
     margin: 5px 0 0;
 
-    font-size: 16px;
+    font-size: var(--fs-base);
 
-    color: #222;
+    color: var(--text-main);
 }
 
 
@@ -1281,9 +1281,9 @@ body {
 
     margin-bottom: 10px;
 
-    color: #1f2937;
+    color: var(--text-main);
 
-    font-size: 20px;
+    font-size: var(--fs-xl);
 
     font-weight: 400;
 }
@@ -1302,19 +1302,19 @@ body {
 
     background: #fff;
 
-    border: 1px solid #bcbcbc;
+    border: 1px solid var(--border-color);
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     outline: none;
 
     font-family: inherit;
 
-    font-size: 15px;
+    font-size: var(--fs-base);
 }
 
 .anggota-input:focus {
-    border-color: #68091c;
+    border-color: var(--primary-color);
 
     box-shadow:
         0 0 0 2px rgba(104, 9, 28, .08);
@@ -1336,9 +1336,9 @@ body {
 
     background: #fff;
 
-    border: 1px solid #bcbcbc;
+    border: 1px solid var(--border-color);
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     overflow: hidden;
 }
@@ -1359,7 +1359,7 @@ body {
 
     gap: 4px;
 
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .caption-toolbar button {
@@ -1373,7 +1373,7 @@ body {
 
     background: transparent;
 
-    color: #1f2937;
+    color: var(--text-main);
 
     display: flex;
 
@@ -1381,27 +1381,27 @@ body {
 
     justify-content: center;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     cursor: pointer;
 
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
 }
 
 .caption-toolbar button:hover {
-    background: #f1f1f1;
+    background: var(--bg-light);
 }
 
 .caption-toolbar button:disabled {
-    color: #c5c5c5;
+    color: var(--border-color);
 
     cursor: default;
 }
 
 .caption-toolbar button i {
-    font-size: 15px;
+    font-size: var(--fs-base);
 }
 
 .toolbar-divider {
@@ -1409,7 +1409,7 @@ body {
 
     height: 20px;
 
-    background: #eee;
+    background: var(--bg-light);
 
     margin: 0 3px;
 }
@@ -1440,7 +1440,7 @@ body {
 
     font-family: inherit;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.6;
 }
@@ -1462,9 +1462,9 @@ body {
 
     background: #fff;
 
-    border: 1px solid #bcbcbc;
+    border: 1px solid var(--border-color);
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     display: flex;
 
@@ -1478,7 +1478,7 @@ body {
 }
 
 .foto-upload-box.drag-active {
-    border: 2px dashed #68091c;
+    border: 2px dashed var(--primary-color);
 
     background: #fff8fa;
 }
@@ -1487,16 +1487,16 @@ body {
 .foto-upload-icon {
     margin-bottom: 21px;
 
-    font-size: 24px;
+    font-size: var(--fs-2xl);
 
-    color: #374151;
+    color: var(--text-main);
 }
 
 
 .foto-upload-title {
-    color: #30323a;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     text-align: center;
 }
@@ -1505,9 +1505,9 @@ body {
 .foto-upload-info {
     margin-top: 7px;
 
-    color: #a5a7b0;
+    color: var(--text-muted);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     text-align: center;
 }
@@ -1530,21 +1530,21 @@ body {
 
     border: 1px solid #c7ccd8;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     background: #fff;
 
-    color: #555b66;
+    color: var(--text-muted);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     cursor: pointer;
 }
 
 .btn-browse-foto:hover {
-    border-color: #68091c;
+    border-color: var(--primary-color);
 
-    color: #68091c;
+    color: var(--primary-color);
 }
 
 
@@ -1567,9 +1567,9 @@ body {
 
     object-fit: cover;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
 }
 
 
@@ -1593,15 +1593,15 @@ body {
 
     border: none;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
-    background: #65091b;
+    background: var(--primary-color);
 
     color: #fff;
 
     font-family: inherit;
 
-    font-size: 19px;
+    font-size: var(--fs-xl);
 
     cursor: pointer;
 
@@ -1609,7 +1609,7 @@ body {
 }
 
 .btn-simpan-anggota:hover {
-    background: #4e0715;
+    background: var(--primary-color-hover);
 }
 
 
@@ -1639,12 +1639,12 @@ body {
     }
 
     .anggota-create-header h1 {
-        font-size: 22px;
+        font-size: var(--fs-2xl);
     }
 
     .anggota-form-group label,
     .foto-form-group > label {
-        font-size: 18px;
+        font-size: var(--fs-lg);
     }
 
     .btn-simpan-anggota {
@@ -1660,8 +1660,8 @@ body {
     width: 100px;
     height: 120px;
     object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
 }
 
 .foto-lama-wrapper {
@@ -1671,6 +1671,6 @@ body {
 
 .foto-lama-text {
     margin-top: 5px;
-    color: #999;
-    font-size: 14px;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
 }

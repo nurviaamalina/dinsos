@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     color: #4b0f1b;
     background: #ffffff;
 }
@@ -53,7 +53,7 @@ body {
 .profil-hero-content h1 {
     margin: 0;
     color: #ffffff;
-    font-size: 36px;
+    font-size: var(--fs-4xl);
     line-height: 1.45;
     font-weight: 800;
     letter-spacing: -0.5px;
@@ -63,7 +63,7 @@ body {
     margin-top: 12px;
     margin-bottom: 0;
     color: #ffffff;
-    font-size: 15px;
+    font-size: var(--fs-base);
     font-weight: 700;
     letter-spacing: 0.5px;
 }
@@ -83,7 +83,7 @@ body {
 .profil-section-title h2 {
     margin: 0;
     color: #700019;
-    font-size: 24px;
+    font-size: var(--fs-2xl);
     font-weight: 800;
     letter-spacing: -0.3px;
 }
@@ -95,7 +95,7 @@ body {
     height: 3px;
     margin: 10px auto 0;
     background: #700019;
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 }
 
 
@@ -132,12 +132,12 @@ body {
     margin: 0 auto;
     padding: 35px 45px;
     background: #f4eef0;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 }
 
 .sejarah-content {
-    color: #374151;
-    font-size: 16px;
+    color: var(--text-main);
+    font-size: var(--fs-base);
     line-height: 1.8;
     text-align: justify;
     word-wrap: break-word;
@@ -160,14 +160,14 @@ body {
     min-height: 150px;
     padding: 24px;
     background: #f1ebed;
-    border-radius: 12px;
+    border-radius: var(--card-radius);
 }
 
 .visi-card h3,
 .misi-card h3 {
     margin: 0 0 14px;
     color: #700019;
-    font-size: 18px;
+    font-size: var(--fs-lg);
     font-weight: 700;
     border-bottom: 2px solid rgba(112, 0, 25, 0.2);
     padding-bottom: 6px;
@@ -176,7 +176,7 @@ body {
 .visi-content,
 .misi-content {
     color: #4b0f1b;
-    font-size: 15px;
+    font-size: var(--fs-base);
     line-height: 1.6;
     font-weight: 500;
 }
@@ -198,7 +198,7 @@ body {
     margin: 0 auto;
     padding: 35px 45px;
     background: #f1ebed;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
     text-align: center;
 }
 
@@ -210,7 +210,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: var(--card-radius);
 }
 
 .struktur-image {
@@ -236,12 +236,12 @@ body {
     margin: 0 auto;
     padding: 35px 45px;
     background: #f1ecee;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 }
 
 .sasaran-content {
-    color: #374151;
-    font-size: 15px;
+    color: var(--text-main);
+    font-size: var(--fs-base);
     line-height: 1.7;
 }
 
@@ -261,12 +261,12 @@ body {
     margin: 0 auto;
     padding: 35px 45px;
     background: #f1ecee;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 }
 
 .maklumat-pelayanan-content {
-    color: #374151;
-    font-size: 15px;
+    color: var(--text-main);
+    font-size: var(--fs-base);
     line-height: 1.7;
 }
 
@@ -278,8 +278,8 @@ body {
 .profil-empty {
     text-align: center;
     padding: 30px;
-    background: #fdf2f4;
-    border-radius: 10px;
+    background: var(--primary-light);
+    border-radius: var(--radius-md);
     color: #700019;
     font-weight: 600;
 }
@@ -291,16 +291,16 @@ body {
 
 @media (max-width: 768px) {
     .profil-hero-content h1 {
-        font-size: 26px;
+        font-size: var(--fs-2xl);
     }
     
     .profil-hero-content p {
-        font-size: 13px;
+        font-size: var(--fs-sm);
     }
 
     .tentang-title h2,
     .profil-section-title h2 {
-        font-size: 20px;
+        font-size: var(--fs-xl);
     }
 
     .profil-sejarah-card,
@@ -308,7 +308,7 @@ body {
     .profil-sasaran-container,
     .profil-maklumat-pelayanan-container {
         padding: 25px 20px;
-        border-radius: 14px;
+        border-radius: var(--card-radius);
     }
 
     .visi-misi {

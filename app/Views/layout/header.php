@@ -22,6 +22,9 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/global.css') ?>">
+
     <!-- Header CSS -->
     <link
         rel="stylesheet"
