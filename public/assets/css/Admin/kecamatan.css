@@ -9,9 +9,9 @@
 .kecamatan-header h2 {
     margin: 0 0 7px;
 
-    color: #650019;
+    color: var(--primary-color);
 
-    font-size: 23px;
+    font-size: var(--fs-2xl);
 
     font-weight: 700;
 }
@@ -19,9 +19,9 @@
 .kecamatan-header p {
     margin: 0;
 
-    color: #777;
+    color: var(--text-muted);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -47,7 +47,7 @@
 .kecamatan-table-card {
     background: #fff;
 
-    border: 1px solid #dedede;
+    border: 1px solid var(--border-color);
 
     border-radius: 0;
 
@@ -62,7 +62,7 @@
 .kecamatan-search-wrapper {
     padding: 14px 12px;
 
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .kecamatan-search {
@@ -76,7 +76,7 @@
 
     border: 1px solid #9d5263;
 
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 
     overflow: hidden;
 }
@@ -92,9 +92,9 @@
 
     padding: 0 12px;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
-    color: #555;
+    color: var(--text-muted);
 }
 
 .kecamatan-search button {
@@ -106,7 +106,7 @@
 
     background: transparent;
 
-    color: #650019;
+    color: var(--primary-color);
 
     cursor: pointer;
 }
@@ -125,11 +125,11 @@
 .kecamatan-table thead th {
     padding: 10px 10px;
 
-    background: #dedede;
+    background: var(--border-color);
 
-    color: #374151;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 
@@ -139,11 +139,11 @@
 .kecamatan-table tbody td {
     padding: 16px 10px;
 
-    border-bottom: 1px solid #ead1d6;
+    border-bottom: 1px solid var(--primary-light);
 
-    color: #444;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     vertical-align: middle;
 }
@@ -153,7 +153,7 @@
 }
 
 .kecamatan-table tbody tr:hover {
-    background: #fffafb;
+    background: var(--primary-light);
 }
 
 
@@ -164,7 +164,7 @@
 .nama-kecamatan {
     font-weight: 500;
 
-    color: #374151;
+    color: var(--text-main);
 }
 
 
@@ -180,23 +180,23 @@
 
     padding: 3px 8px;
 
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .status-aktif {
-    background: #e8f7eb;
+    background: var(--success-light);
 
     border: 1px solid #b6dfbd;
 
-    color: #43894d;
+    color: var(--success-color);
 }
 
 .status-nonaktif {
-    background: #f8e7e7;
+    background: var(--primary-light);
 
     border: 1px solid #dfbaba;
 
@@ -226,13 +226,13 @@
 
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     color: #fff;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .btn-edit-kecamatan {
@@ -260,17 +260,17 @@
 
     text-align: center;
 
-    color: #aaa !important;
+    color: var(--border-color) !important;
 }
 
 .kecamatan-empty i {
-    font-size: 25px;
+    font-size: var(--fs-2xl);
 }
 
 .kecamatan-empty p {
     margin: 6px 0 0;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -291,15 +291,15 @@
 }
 
 .kecamatan-pagination .page-link {
-    color: #650019;
+    color: var(--primary-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .kecamatan-pagination .active .page-link {
-    background: #650019;
+    background: var(--primary-color);
 
-    border-color: #650019;
+    border-color: var(--primary-color);
 
     color: #fff;
 }
@@ -314,7 +314,7 @@
 
     background: #fff;
 
-    border: 1px solid #dedede;
+    border: 1px solid var(--border-color);
 
     min-height: 230px;
 }
@@ -322,9 +322,9 @@
 .kecamatan-form-card h3 {
     margin: 0 0 25px;
 
-    color: #650019;
+    color: var(--primary-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 }
@@ -343,9 +343,9 @@
 
     margin-bottom: 7px;
 
-    color: #650019;
+    color: var(--primary-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 }
@@ -359,15 +359,15 @@
 
     border: 1px solid #9b5968;
 
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 
     outline: none;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .kecamatan-form-group input[type="text"]:focus {
-    border-color: #650019;
+    border-color: var(--primary-color);
 }
 
 
@@ -390,13 +390,13 @@
 
     margin: 0;
 
-    color: #777;
+    color: var(--text-muted);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .kecamatan-radio input {
-    accent-color: #650019;
+    accent-color: var(--primary-color);
 }
 
 
@@ -428,9 +428,9 @@
 
     padding: 0 12px;
 
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     text-decoration: none;
 
@@ -440,23 +440,23 @@
 .btn-batal-kecamatan {
     background: #fff;
 
-    border: 1px solid #aaa;
+    border: 1px solid var(--border-color);
 
-    color: #555;
+    color: var(--text-muted);
 }
 
 .btn-simpan-kecamatan {
     border: none;
 
-    background: #650019;
+    background: var(--primary-color);
 
     color: #fff;
 }
 
 .btn-batal-kecamatan:hover {
-    background: #f5f5f5;
+    background: var(--bg-light);
 
-    color: #444;
+    color: var(--text-main);
 }
 
 .btn-simpan-kecamatan:hover {
@@ -481,15 +481,15 @@
 
     gap: 6px;
 
-    background: #e8f7eb;
+    background: var(--success-light);
 
     border: 1px solid #b6dfbd;
 
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 
-    color: #43894d;
+    color: var(--success-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .kecamatan-alert-error {
@@ -497,15 +497,15 @@
 
     padding: 12px;
 
-    background: #fbe9e9;
+    background: var(--primary-light);
 
     border: 1px solid #e0b9b9;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     color: #963b3b;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .kecamatan-alert-error ul {
@@ -528,7 +528,7 @@
 
     background: #fff;
 
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
 }
 
 

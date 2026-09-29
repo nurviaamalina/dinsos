@@ -27,8 +27,8 @@
 
     padding: 25px 0 16px;
 
-    font-size: 16px;
-    color: #555;
+    font-size: var(--fs-base);
+    color: var(--text-muted);
 }
 
 .breadcrumb-bidang a {
@@ -36,7 +36,7 @@
     align-items: center;
     gap: 6px;
 
-    color: #555;
+    color: var(--text-muted);
     text-decoration: none;
 }
 
@@ -45,11 +45,11 @@
 }
 
 .breadcrumb-bidang span {
-    color: #999;
+    color: var(--text-muted);
 }
 
 .breadcrumb-bidang span i {
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .breadcrumb-bidang strong {
@@ -69,7 +69,7 @@
 
     overflow: hidden;
 
-    border-radius: 14px;
+    border-radius: var(--card-radius);
 
     background:
         url("../images/gedung-dinsos.jpg")
@@ -127,7 +127,7 @@
 
     color: #700019;
 
-    font-size: 38px;
+    font-size: var(--fs-4xl);
 }
 
 .bidang-hero-content h1 {
@@ -135,7 +135,7 @@
 
     color: #ffffff;
 
-    font-size: 35px;
+    font-size: var(--fs-4xl);
 
     font-weight: 700;
 
@@ -147,7 +147,7 @@
 
     color: #ffffff;
 
-    font-size: 17px;
+    font-size: var(--fs-lg);
 
     line-height: 1.5;
 }
@@ -192,13 +192,13 @@
 
     background: #ffffff;
 
-    border: 1px solid #eeeeee;
+    border: 1px solid var(--bg-light);
 
-    border-radius: 14px;
+    border-radius: var(--card-radius);
 
     padding: 22px;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--card-shadow);
 }
 
 
@@ -215,7 +215,7 @@
 
     color: #650017;
 
-    font-size: 20px;
+    font-size: var(--fs-xl);
 
     font-weight: 700;
 
@@ -230,7 +230,7 @@
 
     margin-top: 9px;
 
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 
     background: #710019;
 }
@@ -255,9 +255,9 @@
 .tentang-text p {
     margin: 0 0 14px;
 
-    color: #444;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.8;
 
@@ -308,9 +308,9 @@
 
     box-sizing: border-box;
 
-    border: 1px solid #eeeeee;
+    border: 1px solid var(--bg-light);
 
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 
     text-align: center;
 
@@ -320,7 +320,7 @@
 .ruang-item:hover {
     transform: translateY(-3px);
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--card-shadow);
 }
 
 .ruang-icon {
@@ -336,11 +336,11 @@
 
     border-radius: 50%;
 
-    background: #fbe8ec;
+    background: var(--danger-light);
 
     color: #72001b;
 
-    font-size: 21px;
+    font-size: var(--fs-xl);
 }
 
 .ruang-item h3 {
@@ -348,7 +348,7 @@
 
     color: #650017;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 }
@@ -356,9 +356,9 @@
 .ruang-item p {
     margin: 0;
 
-    color: #555;
+    color: var(--text-muted);
 
-    font-size: 10.5px;
+    font-size: var(--fs-xs);
 
     line-height: 1.6;
 }
@@ -383,9 +383,9 @@
 
     margin-bottom: 17px;
 
-    color: #444;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.7;
 }
@@ -401,7 +401,7 @@
 
     color: #78001a;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -426,11 +426,11 @@
 
     padding: 10px 0;
 
-    color: #222;
+    color: var(--text-main);
 
     text-decoration: none;
 
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid var(--bg-light);
 
     transition: .2s ease;
 }
@@ -454,13 +454,13 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     background: #f9e4e8;
 
     color: #710019;
 
-    font-size: 20px;
+    font-size: var(--fs-xl);
 }
 
 .program-info {
@@ -472,9 +472,9 @@
 .program-info h3 {
     margin: 0 0 5px;
 
-    color: #222;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 }
@@ -482,17 +482,17 @@
 .program-info p {
     margin: 0;
 
-    color: #666;
+    color: var(--text-muted);
 
-    font-size: 10.5px;
+    font-size: var(--fs-xs);
 
     line-height: 1.5;
 }
 
 .program-arrow {
-    color: #374151;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -520,9 +520,9 @@
 
     gap: 12px;
 
-    color: #444;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.6;
 }
@@ -532,7 +532,7 @@
 
     color: #700019;
 
-    font-size: 18px;
+    font-size: var(--fs-lg);
 }
 
 
@@ -587,7 +587,7 @@
 
         white-space: nowrap;
 
-        font-size: 14px;
+        font-size: var(--fs-sm);
     }
 
 
@@ -596,7 +596,7 @@
     .bidang-hero {
         min-height: 125px;
 
-        border-radius: 11px;
+        border-radius: var(--card-radius);
     }
 
     .bidang-hero-content {
@@ -611,15 +611,15 @@
         width: 58px;
         height: 58px;
 
-        font-size: 27px;
+        font-size: var(--fs-3xl);
     }
 
     .bidang-hero-content h1 {
-        font-size: 24px;
+        font-size: var(--fs-2xl);
     }
 
     .bidang-hero-content p {
-        font-size: 14px;
+        font-size: var(--fs-sm);
     }
 
 
@@ -630,7 +630,7 @@
     }
 
     .section-heading h2 {
-        font-size: 17px;
+        font-size: var(--fs-lg);
     }
 
 

@@ -8,7 +8,7 @@
 
     padding: 42px 58px;
 
-    background: #f5f6f8;
+    background: var(--bg-light);
 
     box-sizing: border-box;
 
@@ -30,9 +30,9 @@
 .penerima-header-text h1 {
     margin: 0;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 30px;
+    font-size: var(--fs-3xl);
 
     font-weight: 700;
 
@@ -42,9 +42,9 @@
 .penerima-header-text p {
     margin: 8px 0 0;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 15px;
+    font-size: var(--fs-base);
 
     line-height: 1.5;
 }
@@ -83,9 +83,9 @@
 
     background: #ffffff;
 
-    border: 1px solid #6d061b;
+    border: 1px solid var(--primary-color);
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
     display: flex;
 
@@ -108,9 +108,9 @@
 .penerima-stat-card .stat-icon {
     margin-bottom: 10px;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 39px;
+    font-size: var(--fs-4xl);
 
     line-height: 1.5;
 }
@@ -123,9 +123,9 @@
 .penerima-stat-card .stat-number {
     margin-bottom: 8px;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 28px;
+    font-size: var(--fs-3xl);
 
     font-weight: 700;
 
@@ -140,9 +140,9 @@
 .penerima-stat-card .stat-label {
     max-width: 180px;
 
-    color: #5d0b1b;
+    color: var(--primary-color-hover);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.4;
 }
@@ -190,17 +190,17 @@
 
     background: #ffffff;
 
-    border: 1px solid #6d061b;
+    border: 1px solid var(--primary-color);
 
-    border-radius: 18px;
+    border-radius: var(--radius-pill);
 
     box-sizing: border-box;
 }
 
 .penerima-search i {
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .penerima-search input {
@@ -212,13 +212,13 @@
 
     background: transparent;
 
-    color: #374151;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .penerima-search input::placeholder {
-    color: #777;
+    color: var(--text-muted);
 }
 
 
@@ -253,11 +253,11 @@
 
     gap: 7px;
 
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 500;
 
@@ -270,11 +270,11 @@
 /* IMPORT */
 
 .btn-import-kategori {
-    color: #6d061b;
+    color: var(--primary-color);
 
     background: #ffffff;
 
-    border: 1px solid #6d061b;
+    border: 1px solid var(--primary-color);
 }
 
 
@@ -283,9 +283,9 @@
 .btn-tambah-kategori {
     color: #ffffff;
 
-    background: #6d061b;
+    background: var(--primary-color);
 
-    border: 1px solid #6d061b;
+    border: 1px solid var(--primary-color);
 }
 
 
@@ -294,13 +294,13 @@
 .btn-import-kategori:hover {
     color: #ffffff;
 
-    background: #6d061b;
+    background: var(--primary-color);
 }
 
 .btn-tambah-kategori:hover {
     color: #ffffff;
 
-    background: #6d061b;
+    background: var(--primary-color);
 }
 
 
@@ -311,9 +311,9 @@
 .penerima-alert {
     margin: 15px 0;
 
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -385,13 +385,13 @@
 
     padding: 0 12px;
 
-    background: #dedede;
+    background: var(--border-color);
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    border-bottom: 1px solid #c6c6c6;
+    border-bottom: 1px solid var(--border-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 600;
 
@@ -410,11 +410,11 @@
 
     padding: 10px 12px;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
     border-bottom: 1px solid #e1cbd0;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     vertical-align: middle;
 
@@ -480,11 +480,11 @@
 
     justify-content: center;
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
     text-decoration: none;
 
-    font-size: 15px;
+    font-size: var(--fs-base);
 
     box-sizing: border-box;
 }
@@ -493,7 +493,7 @@
 /* EDIT */
 
 .penerima-actions .btn-edit {
-    color: #1f2937;
+    color: var(--text-main);
 
     background: #ffb511;
 }
@@ -504,14 +504,14 @@
 .penerima-actions .btn-delete {
     color: #ffffff;
 
-    background: #e52b4a;
+    background: var(--danger-color);
 }
 
 
 /* HOVER */
 
 .penerima-actions .btn-edit:hover {
-    background: #e5a000;
+    background: var(--warning-color);
 }
 
 .penerima-actions .btn-delete:hover {
@@ -528,7 +528,7 @@
 
     text-align: center !important;
 
-    color: #777 !important;
+    color: var(--text-muted) !important;
 }
 
 .penerima-empty i {
@@ -536,15 +536,15 @@
 
     margin-bottom: 8px;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 30px;
+    font-size: var(--fs-3xl);
 }
 
 .penerima-empty p {
     margin: 0;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -588,39 +588,39 @@
 
     justify-content: center;
 
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
 
-    border-radius: 4px !important;
+    border-radius: var(--radius-sm) !important;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
     background: #ffffff;
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .penerima-pagination .page-link:hover {
     color: #ffffff;
 
-    background: #6d061b;
+    background: var(--primary-color);
 
-    border-color: #6d061b;
+    border-color: var(--primary-color);
 }
 
 .penerima-pagination .active .page-link {
     color: #ffffff;
 
-    background: #6d061b;
+    background: var(--primary-color);
 
-    border-color: #6d061b;
+    border-color: var(--primary-color);
 }
 
 .penerima-pagination .disabled .page-link {
-    color: #aaa;
+    color: var(--border-color);
 
     background: #ffffff;
 
-    border-color: #ddd;
+    border-color: var(--border-color);
 
     cursor: default;
 
@@ -749,8 +749,8 @@
 
 .form-title-wrapper h2 {
     margin: 0;
-    color: #6d061b;
-    font-size: 18px;
+    color: var(--primary-color);
+    font-size: var(--fs-lg);
     font-weight: 700;
     line-height: 1.5;
 }
@@ -760,7 +760,7 @@
     width: 192px;
     min-height: 2px; height: auto;
     margin-top: 7px;
-    background: #780019;
+    background: var(--primary-color);
 }
 
 
@@ -776,24 +776,24 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    color: #780019;
+    color: var(--primary-color);
     background: #ffffff;
-    border: 1px solid #780019;
-    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-md);
     text-decoration: none;
-    font-size: 14px;
+    font-size: var(--fs-sm);
     font-weight: 600;
     box-sizing: border-box;
     white-space: nowrap;
 }
 
 .btn-import-outline i {
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 .btn-import-outline:hover {
     color: #ffffff;
-    background: #780019;
+    background: var(--primary-color);
 }
 
 
@@ -825,8 +825,8 @@
 .penerima-form-group > label {
     display: block;
     margin-bottom: 10px;
-    color: #6d061b;
-    font-size: 15px;
+    color: var(--primary-color);
+    font-size: var(--fs-base);
     font-weight: 600;
     line-height: 1.5;
 }
@@ -857,8 +857,8 @@
 .periode-field > label {
     display: block;
     margin-bottom: 8px;
-    color: #6d061b;
-    font-size: 14px;
+    color: var(--primary-color);
+    font-size: var(--fs-sm);
     font-weight: 400;
     line-height: 1.5;
 }
@@ -875,13 +875,13 @@
     width: 100%;
     height: 36px;
     padding: 0 12px;
-    color: #374151;
+    color: var(--text-main);
     background: #ffffff;
     border: 1px solid #d9aeb8;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     outline: none;
     font-family: inherit;
-    font-size: 14px;
+    font-size: var(--fs-sm);
     box-sizing: border-box;
 }
 
@@ -889,7 +889,7 @@
 .penerima-form-group select:focus,
 .periode-field input:focus,
 .periode-field select:focus {
-    border-color: #780019;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(120, 0, 25, 0.08);
 }
 
@@ -901,7 +901,7 @@
 
 .penerima-form-group input::placeholder,
 .periode-field input::placeholder {
-    color: #777777;
+    color: var(--text-muted);
 }
 
 
@@ -959,12 +959,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #780019;
+    color: var(--primary-color);
     background: #ffffff;
-    border: 1px solid #780019;
-    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-md);
     text-decoration: none;
-    font-size: 14px;
+    font-size: var(--fs-sm);
     font-weight: 500;
     box-sizing: border-box;
     cursor: pointer;
@@ -972,7 +972,7 @@
 
 .btn-penerima-cancel:hover {
     color: #ffffff;
-    background: #780019;
+    background: var(--primary-color);
 }
 
 
@@ -989,18 +989,18 @@
     justify-content: center;
     gap: 5px;
     color: #ffffff;
-    background: #780019;
-    border: 1px solid #780019;
-    border-radius: 8px;
-    font-size: 14px;
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-sm);
     font-weight: 500;
     box-sizing: border-box;
     cursor: pointer;
 }
 
 .btn-penerima-save:hover {
-    background: #5d0015;
-    border-color: #5d0015;
+    background: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
 }
 
 
@@ -1010,11 +1010,11 @@
 
 .penerima-alert-error {
     padding: 10px 13px;
-    color: #842029;
-    background: #f8d7da;
-    border: 1px solid #f1aeb5;
-    border-radius: 6px;
-    font-size: 14px;
+    color: var(--danger-color);
+    background: var(--danger-light);
+    border: 1px solid var(--primary-light);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
 }
 
 
@@ -1080,7 +1080,7 @@
 
     border: 1px solid #d2aab3;
 
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 
     box-sizing: border-box;
 }
@@ -1106,9 +1106,9 @@
 
     margin: 0;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 17px;
+    font-size: var(--fs-lg);
 
     font-weight: 700;
 }
@@ -1118,9 +1118,9 @@
 
     margin: 5px 0 20px;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -1144,9 +1144,9 @@
 
     table-layout: fixed;
 
-    color: #5d0b1b;
+    color: var(--primary-color-hover);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -1158,9 +1158,9 @@
 
     color: #ffffff;
 
-    background: #780019;
+    background: var(--primary-color);
 
-    border: 1px solid #780019;
+    border: 1px solid var(--primary-color);
 
     text-align: left;
 
@@ -1172,7 +1172,7 @@
 
     padding: 7px 10px;
 
-    border: 1px solid #780019;
+    border: 1px solid var(--primary-color);
 
     vertical-align: middle;
 }
@@ -1250,7 +1250,7 @@
 
     padding-bottom: 8px;
 
-    border-bottom: 2px solid #780019;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 
@@ -1264,9 +1264,9 @@
 
     margin-bottom: 10px;
 
-    color: #5d0b1b;
+    color: var(--primary-color-hover);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     font-weight: 500;
 }
@@ -1296,7 +1296,7 @@
 
     border: 1px solid #d9aeb8;
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
     box-sizing: border-box;
 
@@ -1306,9 +1306,9 @@
 
 .import-dropzone.drag-over {
 
-    background: #fff7f8;
+    background: var(--primary-light);
 
-    border-color: #780019;
+    border-color: var(--primary-color);
 
 }
 
@@ -1317,17 +1317,17 @@
 
     margin-bottom: 12px;
 
-    color: #555555;
+    color: var(--text-muted);
 
-    font-size: 27px;
+    font-size: var(--fs-3xl);
 }
 
 
 .import-drop-title {
 
-    color: #374151;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     margin-bottom: 7px;
 }
@@ -1337,9 +1337,9 @@
 
     margin-bottom: 16px;
 
-    color: #a1a6b2;
+    color: var(--text-muted);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -1351,15 +1351,15 @@
 
     padding: 7px 16px;
 
-    color: #555555;
+    color: var(--text-muted);
 
     background: #ffffff;
 
-    border: 1px solid #cfd3da;
+    border: 1px solid var(--border-color);
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     cursor: pointer;
 }
@@ -1367,9 +1367,9 @@
 
 .import-browse-button:hover {
 
-    color: #780019;
+    color: var(--primary-color);
 
-    border-color: #780019;
+    border-color: var(--primary-color);
 }
 
 
@@ -1394,15 +1394,15 @@
 
     margin-bottom: 8px;
 
-    color: #780019;
+    color: var(--primary-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
 
 .selected-file-title i {
-    color: #c9002b;
-    font-size: 14px;
+    color: var(--danger-color);
+    font-size: var(--fs-sm);
 }
 
 
@@ -1416,8 +1416,8 @@
 
     padding: 10px 12px;
 
-    border: 1px solid #e3b6c0;
-    border-radius: 6px;
+    border: 1px solid var(--primary-light);
+    border-radius: var(--radius-sm);
 
     background: #fff;
 
@@ -1450,9 +1450,9 @@
 
     flex-shrink: 0;
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
-    background: #f8e8ec;
+    background: var(--primary-light);
 
     display: flex;
     align-items: center;
@@ -1460,8 +1460,8 @@
 }
 
 .selected-file-icon i {
-    color: #780019;
-    font-size: 21px;
+    color: var(--primary-color);
+    font-size: var(--fs-xl);
 }
 
 
@@ -1486,16 +1486,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    color: #374151;
+    color: var(--text-main);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
 
 .selected-file-name small {
-    color: #999;
+    color: var(--text-muted);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -1510,9 +1510,9 @@
     flex-shrink: 0;
 
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
-    background: #dc263f;
+    background: var(--danger-color);
     color: #fff;
 
     display: flex;
@@ -1525,11 +1525,11 @@
 }
 
 .selected-file-delete:hover {
-    background: #b91c32;
+    background: var(--danger-color);
 }
 
 .selected-file-delete i {
-    font-size: 15px;
+    font-size: var(--fs-base);
 }
 
 /* =========================================================
@@ -1572,9 +1572,9 @@
 
     padding-left: 19px;
 
-    color: #6d061b;
+    color: var(--primary-color);
 
-    font-size: 14px;
+    font-size: var(--fs-sm);
 
     line-height: 1.6;
 }

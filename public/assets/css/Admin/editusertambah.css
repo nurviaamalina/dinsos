@@ -4,13 +4,13 @@
 ===================================================== */
 
 :root {
-    --form-primary: #650918;
-    --form-primary-hover: #4f0613;
+    --form-primary: var(--primary-color);
+    --form-primary-hover: var(--primary-color-hover);
     --form-border: #dedfe3;
-    --form-border-focus: #650918;
-    --form-text-dark: #24252b;
-    --form-text-muted: #8b8d94;
-    --form-bg: #f5f6f8;
+    --form-border-focus: var(--primary-color);
+    --form-text-dark: var(--text-main);
+    --form-text-muted: var(--text-muted);
+    --form-bg: var(--bg-light);
 }
 
 /* Base Form Card */
@@ -18,10 +18,10 @@
     width: 100%;
     background: #ffffff;
     border: 1px solid var(--form-border);
-    border-radius: 12px;
+    border-radius: var(--card-radius);
     padding: 32px;
     box-sizing: border-box;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    box-shadow: var(--card-shadow);
 }
 
 /* Header in Create/Edit */
@@ -31,11 +31,11 @@
     gap: 8px;
     height: 40px;
     padding: 0 18px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
     background: #ffffff;
     color: #4b5563 !important;
-    font-size: 13px;
+    font-size: var(--fs-sm);
     font-weight: 600;
     text-decoration: none !important;
     transition: all 0.2s ease;
@@ -43,9 +43,9 @@
 }
 
 .form-header-back:hover {
-    background: #f3f4f6;
-    border-color: #9ca3af;
-    color: #111827 !important;
+    background: var(--bg-light);
+    border-color: var(--text-muted);
+    color: var(--text-main) !important;
 }
 
 /* Form Grid */
@@ -62,13 +62,13 @@
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #374151;
-    font-size: 13px;
+    color: var(--text-main);
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
 
 .form-group label .required {
-    color: #dc2626;
+    color: var(--danger-color);
     margin-left: 2px;
 }
 
@@ -79,12 +79,12 @@
     width: 100%;
     height: 44px;
     padding: 0 14px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     outline: none;
     background: #ffffff;
-    color: #1f2937;
-    font-size: 13px;
+    color: var(--text-main);
+    font-size: var(--fs-sm);
     box-sizing: border-box;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -96,23 +96,23 @@
 }
 
 .form-group input::placeholder {
-    color: #9ca3af;
+    color: var(--text-muted);
 }
 
 .form-group select:disabled,
 .form-group input:disabled,
 .form-group input:read-only {
-    background: #f9fafb;
-    color: #6b7280;
+    background: var(--bg-light);
+    color: var(--text-muted);
     cursor: not-allowed;
-    border-color: #e5e7eb;
+    border-color: var(--border-color);
 }
 
 .form-group small {
     display: block;
     margin-top: 6px;
     color: var(--form-text-muted);
-    font-size: 12px;
+    font-size: var(--fs-xs);
     line-height: 1.4;
 }
 
@@ -138,10 +138,10 @@
     transform: translateY(-50%);
     border: none;
     background: transparent;
-    color: #6b7280;
-    font-size: 16px;
+    color: var(--text-muted);
+    font-size: var(--fs-base);
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     transition: color 0.15s ease;
     padding: 0;
 }
@@ -177,11 +177,11 @@
     justify-content: center;
     gap: 8px;
     padding: 0 18px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     background: #ffffff;
     color: #4b5563;
-    font-size: 12.5px;
+    font-size: var(--fs-sm);
     font-weight: 600;
     cursor: pointer;
     box-sizing: border-box;
@@ -190,29 +190,29 @@
 }
 
 .status-option-pill i {
-    font-size: 14px;
+    font-size: var(--fs-sm);
 }
 
 /* When Aktif is checked */
 .status-option-item input[value="1"]:checked + .status-option-pill {
-    border-color: #10b981;
+    border-color: var(--success-color);
     background: #ecfdf5;
-    color: #047857;
+    color: var(--success-color);
 }
 
 .status-option-item input[value="1"]:checked + .status-option-pill i {
-    color: #10b981;
+    color: var(--success-color);
 }
 
 /* When Tidak Aktif is checked */
 .status-option-item input[value="0"]:checked + .status-option-pill {
-    border-color: #ef4444;
-    background: #fef2f2;
-    color: #b91c1c;
+    border-color: var(--danger-color);
+    background: var(--danger-light);
+    color: var(--danger-color);
 }
 
 .status-option-item input[value="0"]:checked + .status-option-pill i {
-    color: #ef4444;
+    color: var(--danger-color);
 }
 
 /* Form Actions (Buttons) */
@@ -223,7 +223,7 @@
     gap: 12px;
     margin-top: 30px;
     padding-top: 24px;
-    border-top: 1px solid #f0f1f4;
+    border-top: 1px solid var(--bg-light);
 }
 
 .btn-form-cancel {
@@ -233,11 +233,11 @@
     justify-content: center;
     gap: 8px;
     padding: 0 22px;
-    border-radius: 8px;
-    border: 1px solid #d1d5db;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
     background: #ffffff;
     color: #4b5563 !important;
-    font-size: 13px;
+    font-size: var(--fs-sm);
     font-weight: 600;
     text-decoration: none !important;
     transition: all 0.2s ease;
@@ -245,9 +245,9 @@
 }
 
 .btn-form-cancel:hover {
-    background: #f9fafb;
-    border-color: #9ca3af;
-    color: #111827 !important;
+    background: var(--bg-light);
+    border-color: var(--text-muted);
+    color: var(--text-main) !important;
 }
 
 .btn-form-save {
@@ -257,11 +257,11 @@
     justify-content: center;
     gap: 8px;
     padding: 0 26px;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     border: 1px solid var(--form-primary);
     background: var(--form-primary);
     color: #ffffff !important;
-    font-size: 13px;
+    font-size: var(--fs-sm);
     font-weight: 600;
     text-decoration: none !important;
     transition: all 0.2s ease;
