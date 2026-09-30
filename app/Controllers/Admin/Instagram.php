@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Libraries\InstagramSyncService;
 use App\Models\InstagramModel;
 
 class Instagram extends BaseController
@@ -28,11 +29,11 @@ class Instagram extends BaseController
                 ->orLike('instagram_id', $keyword)
             ->groupEnd()
             ->orderBy('posted_at', 'DESC')
-            ->paginate(10);
+            ->paginate(20);
     } else {
         $instagram = $this->instagramModel
             ->orderBy('posted_at', 'DESC')
-            ->paginate(10);
+            ->paginate(20);
     }
 
     $data = [
@@ -47,15 +48,8 @@ class Instagram extends BaseController
 
     public function sync()
     {
-        $syncUrl = base_url('instagram-sync');
-
-        $client = \Config\Services::curlrequest([
-            'timeout' => 60,
-        ]);
-
         try {
-            $response = $client->get($syncUrl);
-            $result = json_decode($response->getBody(), true);
+            $result = (new InstagramSyncService())->sync();
 
             if (!empty($result['status'])) {
                 return redirect()
@@ -64,7 +58,8 @@ class Instagram extends BaseController
                         'success',
                         'Sinkronisasi berhasil. ' .
                         'Data baru: ' . ($result['posting_baru'] ?? 0) .
-                        ', diperbarui: ' . ($result['posting_update'] ?? 0)
+                        ', diperbarui: ' . ($result['posting_update'] ?? 0) .
+                        ', dihapus: ' . ($result['posting_dihapus'] ?? 0)
                     );
             }
 
