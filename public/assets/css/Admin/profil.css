@@ -48,7 +48,7 @@ body {
 
     font-weight: 700;
 
-    color: var(--text-main);
+    color: var(--primary-color);
 
 }
 
@@ -58,7 +58,7 @@ body {
 
     font-size: var(--fs-base);
 
-    color: var(--text-main);
+    color: var(--primary-color);
 
 }
 
@@ -754,7 +754,7 @@ body {
 .profil-create-header h1 {
     margin: 0;
 
-    color: var(--text-main);
+    color: var(--primary-color);
 
     font-size: var(--fs-2xl);
 
@@ -1238,7 +1238,7 @@ body {
 
     font-weight: 700;
 
-    color: var(--text-main);
+    color: var(--primary-color);
 }
 
 .anggota-create-header p {

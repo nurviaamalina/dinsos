@@ -113,28 +113,11 @@ textarea,
 }
 
 .statistik-card-title h5 {
-    display: inline-block;
-    position: relative;
-
     margin: 0;
-    padding-bottom: 7px;
 
     color: var(--primary-color);
     font-size: var(--fs-sm);
     font-weight: 700;
-}
-
-.statistik-card-title h5::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: 58px;
-    min-height: 1px; height: auto;
-
-    background: var(--primary-color);
 }
 
 

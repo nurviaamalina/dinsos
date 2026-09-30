@@ -81,14 +81,14 @@
 .layanan-page-header h2 {
   font-size: var(--fs-2xl);
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--primary-color);
   margin: 0;
   letter-spacing: -0.02em;
 }
 
 .layanan-page-header p {
   font-size: var(--fs-sm);
-  color: var(--text-muted);
+  color: var(--primary-color);
   margin: 5px 0 0;
 }
 
@@ -299,12 +299,36 @@
    --------------------------------------------------------- */
 .layanan-table {
   width: 100%;
+  min-width: 900px;
+  table-layout: fixed;
   border-collapse: collapse;
+  border: 1px solid #cbd2dc !important;
 }
 
 .layanan-table thead {
-  background-color: var(--bg-light);
+  background-color: var(--bg-light) !important;
 }
+
+.layanan-table th:nth-child(1),
+.layanan-table td:nth-child(1) { width: 5%; }
+
+.layanan-table th:nth-child(2),
+.layanan-table td:nth-child(2) { width: 23%; }
+
+.layanan-table th:nth-child(3),
+.layanan-table td:nth-child(3) { width: 14%; }
+
+.layanan-table th:nth-child(4),
+.layanan-table td:nth-child(4) { width: 31%; }
+
+.layanan-table th:nth-child(5),
+.layanan-table td:nth-child(5) { width: 8%; }
+
+.layanan-table th:nth-child(6),
+.layanan-table td:nth-child(6) { width: 10%; }
+
+.layanan-table th:nth-child(7),
+.layanan-table td:nth-child(7) { width: 9%; }
 
 .layanan-table th {
   padding: 14px 16px;
@@ -319,7 +343,7 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 
-  border-bottom: 1px solid var(--border-color);
+  border: 1px solid #cbd2dc !important;
 
   white-space: nowrap;
 }
@@ -330,7 +354,7 @@
   font-size: var(--fs-sm);
   color: var(--text-main);
 
-  border-bottom: 1px solid var(--border-light);
+  border: 1px solid #cbd2dc !important;
 
   vertical-align: middle;
 
@@ -1112,12 +1136,8 @@
 
 
   /* Table horizontal scroll */
-  .layanan-card {
-    overflow-x: auto;
-  }
-
   .layanan-table {
-    min-width: 640px;
+    min-width: 900px;
   }
 }
 

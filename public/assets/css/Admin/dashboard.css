@@ -606,7 +606,7 @@
 }
 
 .dashboard-content {
-    padding: 28px 30px;
+    padding: 24px;
     box-sizing: border-box;
 }
 
@@ -615,7 +615,7 @@
 ========================================================= */
 
 .dashboard-header {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 
 .dashboard-header h1 {
@@ -623,13 +623,13 @@
     font-size: var(--fs-2xl);
     line-height: 1.5;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--primary-color);
 }
 
 .dashboard-header p {
     margin: 5px 0 0;
     font-size: var(--fs-sm);
-    color: var(--text-main);
+    color: var(--primary-color);
 }
 
 /* =========================================================
@@ -639,8 +639,8 @@
 .dashboard-cards {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
 .stat-card {
@@ -731,15 +731,15 @@
 .dashboard-middle {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 18px;
-    margin-bottom: 20px;
+    gap: 16px;
+    margin-bottom: 24px;
     align-items: stretch;
 }
 
 .dashboard-panel {
     min-width: 0;
     min-height: 245px;
-    padding: 15px 18px;
+    padding: 16px;
     background: #fff;
     border: 1px solid var(--primary-color);
     border-radius: var(--radius-md);
@@ -1001,13 +1001,13 @@
 .dashboard-bottom {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .latest-panel {
     min-width: 0;
-    padding: 12px 14px;
+    padding: 16px;
     background: #fff;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
@@ -1107,7 +1107,7 @@
 
 @media (max-width: 1200px) {
     .dashboard-content {
-        padding: 24px 22px;
+        padding: 24px;
     }
 
     .dashboard-cards {
@@ -1157,7 +1157,7 @@
     }
 
     .dashboard-panel {
-        padding: 13px;
+        padding: 16px;
     }
 
     .layanan-stat-label span {
@@ -1166,5 +1166,11 @@
 
     .chart-legend {
         gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding: 18px 0;
     }
 }
