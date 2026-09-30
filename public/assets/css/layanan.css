@@ -1,20 +1,26 @@
 /* =========================================================
-   LAYANAN PAGE
+   LAYANAN PAGE - DINAS SOSIAL PPKB KABUPATEN BANYUWANGI
+   Styling Formal, Bersih & Profesional untuk Portal Layanan Publik
 ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    background: #f8fafc;
+    color: var(--text-main, #1e293b);
+}
 
 .layanan-page {
     width: 100%;
-    max-width: 1280px;
-
+    max-width: 1240px;
     margin: 0 auto;
-
-    /* HAPUS min-height: 990px */
+    padding: 35px 24px 70px;
     height: auto;
     min-height: 0;
-
-    padding: 42px 70px 50px;
-
-    box-sizing: border-box;
 }
 
 
@@ -26,34 +32,33 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-
-    gap: 11px;
-
-    font-size: var(--fs-base);
-    color: var(--text-muted);
-
-    margin-bottom: 32px;
-}
-
-.breadcrumb i {
-    font-size: var(--fs-sm);
-    color: var(--text-main);
-}
-
-.breadcrumb span {
-    font-weight: 700;
-    color: var(--primary-color);
+    gap: 10px;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 30px;
 }
 
 .breadcrumb a {
-    color: var(--text-muted);
+    color: #64748b;
     text-decoration: none;
-
-    transition: .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
 }
 
 .breadcrumb a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color, #650019);
+}
+
+.breadcrumb i {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.breadcrumb span {
+    font-weight: 600;
+    color: var(--primary-color, #650019);
 }
 
 
@@ -63,32 +68,39 @@
 
 .page-heading {
     text-align: center;
-
-    margin-bottom: 25px;
-
-    height: auto;
+    margin-bottom: 35px;
 }
 
 .page-heading h1 {
-    font-size: var(--fs-4xl);
-
-    line-height: 1.5;
-
+    font-size: clamp(1.85rem, 3.2vw, 2.35rem);
+    line-height: 1.3;
     font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 12px;
+    letter-spacing: -0.3px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
 
-    color: var(--primary-color);
-
-    margin: 0 0 13px;
+.page-heading h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color, #650019);
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .page-heading p {
     margin: 0;
-
-    font-size: var(--fs-base);
-
-    line-height: 1.55;
-
-    color: var(--primary-color);
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -97,1142 +109,316 @@
 ========================================================= */
 
 .search-wrapper {
-    width: 295px;
-
-    height: 25px;
-
-    margin-bottom: 33px;
-
+    width: 100%;
+    max-width: 380px;
+    height: 44px;
+    margin: 0 0 35px 0;
     position: relative;
 }
 
 .search-wrapper input {
     width: 100%;
-
     height: 100%;
-
-    border: 1.5px solid var(--primary-color);
-
-    border-radius: var(--radius-pill);
-
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
     outline: none;
-
-    padding: 0 35px 0 12px;
-
-    color: var(--primary-color);
-
-    background: #fff;
-
-    box-sizing: border-box;
+    padding: 0 42px 0 16px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #1e293b;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
 }
 
 .search-wrapper input::placeholder {
-    color: var(--text-muted);
+    color: #94a3b8;
 }
 
 .search-wrapper input:focus {
-    border-color: var(--primary-color);
+    border-color: var(--primary-color, #650019);
+    box-shadow: 0 0 0 3px rgba(101, 0, 25, 0.12);
 }
 
 .search-wrapper i {
     position: absolute;
-
-    right: 18px;
-
+    right: 14px;
     top: 50%;
-
     transform: translateY(-50%);
-
-    color: var(--primary-color);
-
-    font-size: var(--fs-sm);
-
+    color: #64748b;
+    font-size: 16px;
     pointer-events: none;
 }
 
 
 /* =========================================================
-   GRID
+   GRID DAFTAR LAYANAN
 ========================================================= */
 
 .layanan-grid {
     width: 100%;
-
     display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    column-gap: 34px;
-
-    row-gap: 31px;
-
-    /* PENTING
-       Tinggi grid mengikuti card yang ada */
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 26px;
     height: auto;
+    margin-bottom: 40px;
 }
 
 
 /* =========================================================
-   CARD
+   CARD LAYANAN
 ========================================================= */
 
 .layanan-card {
     width: 100%;
-
-    min-height: 210px;
-
-    height: auto;
-
-    border: 1px solid var(--primary-color);
-
-    border-radius: var(--radius-md);
-
-    padding: 17px 16px 16px;
-
+    min-height: 220px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 3.5px solid var(--primary-color, #650019);
+    border-radius: 12px;
+    padding: 24px 22px 20px;
     display: flex;
-
     flex-direction: column;
-
-    background: #fff;
-
-    box-sizing: border-box;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-.layanan-card:hover {
-    transform: translateY(-3px);
-
-    box-shadow: var(--card-shadow);
-}
-
-
-/* =========================================================
-   CARD TOP
-========================================================= */
-
-.card-top {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 16px;
-
-    min-height: 72px;
-
-    height: auto;
-}
-
-
-/* =========================================================
-   ICON
-========================================================= */
-
-.layanan-icon {
-    width: 64px;
-
-    height: 64px;
-
-    min-width: 64px;
-
-    background: #d7c0c5;
-
-    border-radius: var(--radius-md);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-}
-
-.layanan-icon i {
-    font-size: var(--fs-4xl);
-
-    color: var(--primary-color);
-}
-
-
-/* =========================================================
-   TITLE
-========================================================= */
-
-.layanan-card h3 {
-    margin: 0;
-
-    font-size: var(--fs-base);
-
-    line-height: 1.35;
-
-    font-weight: 700;
-
-    color: var(--primary-color);
-
-    padding-top: 2px;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.layanan-card p {
-    font-size: var(--fs-xs);
-
-    line-height: 1.45;
-
-    color: var(--primary-color);
-
-    margin: 11px 0 14px;
-}
-
-
-/* =========================================================
-   DETAIL BUTTON
-========================================================= */
-
-.btn-detail {
-    width: 110px;
-
-    height: 25px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-
-    background: var(--primary-color);
-
-    color: #fff;
-
-    border-radius: var(--radius-pill);
-
-    font-size: var(--fs-xs);
-
-    font-weight: 500;
-
-    text-decoration: none;
-
-    margin-top: auto;
-
-    box-sizing: border-box;
-
-    transition: .2s;
-}
-
-.btn-detail i {
-    font-size: var(--fs-sm);
-}
-
-.btn-detail:hover {
-    background: #4e0616;
-
-    color: #fff;
-}
-
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
-
-.back-wrapper {
-    margin-top: 20px;
-
-    padding-left: 0;
-
-    height: auto;
-}
-
-.btn-back {
-    width: 128px;
-
-    height: 31px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 14px;
-
-    border: 1px solid var(--primary-color);
-
-    border-radius: var(--radius-pill);
-
-    color: var(--primary-color);
-
-    background: #fff;
-
-    text-decoration: none;
-
-    font-size: var(--fs-sm);
-
-    font-weight: 700;
-
-    box-sizing: border-box;
-
-    transition: .2s;
-}
-
-.btn-back i {
-    font-size: var(--fs-xl);
-}
-
-.btn-back:hover {
-    background: var(--primary-color);
-
-    color: #fff;
-}
-
-
-/* =========================================================
-   JIKA TIDAK ADA DATA
-========================================================= */
-
-.empty-layanan {
-    width: 100%;
-
-    padding: 35px 20px;
-
-    border: 1px solid #d7c0c5;
-
-    border-radius: var(--radius-md);
-
-    text-align: center;
-
-    color: var(--primary-color);
-
-    background: #fff;
-
-    box-sizing: border-box;
-}
-
-.empty-layanan p {
-    margin: 0;
-
-    font-size: var(--fs-sm);
-}
-
-
-/* =========================================================
-   RESPONSIVE TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .layanan-page {
-        max-width: 100%;
-
-        padding-left: 35px;
-
-        padding-right: 35px;
-    }
-
-    .layanan-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-}
-
-
-/* =========================================================
-   TABLET KECIL
-========================================================= */
-
-@media (max-width: 800px) {
-
-    .layanan-page {
-        padding: 35px 25px 45px;
-    }
-
-    .layanan-grid {
-        column-gap: 25px;
-
-        row-gap: 25px;
-    }
-
-    .layanan-card {
-        min-height: 205px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .layanan-page {
-        width: 100%;
-
-        padding: 30px 20px 40px;
-    }
-
-
-    /* BREADCRUMB */
-
-    .breadcrumb {
-        font-size: var(--fs-base);
-
-        gap: 8px;
-
-        margin-bottom: 28px;
-    }
-
-
-    /* HEADING */
-
-    .page-heading {
-        margin-bottom: 23px;
-    }
-
-    .page-heading h1 {
-        font-size: var(--fs-4xl);
-
-        line-height: 1.15;
-    }
-
-    .page-heading p {
-        font-size: var(--fs-sm);
-
-        line-height: 1.55;
-    }
-
-    .page-heading p br {
-        display: none;
-    }
-
-
-    /* SEARCH */
-
-    .search-wrapper {
-        width: 100%;
-
-        max-width: 295px;
-
-        margin-bottom: 25px;
-    }
-
-
-    /* GRID */
-
-    .layanan-grid {
-        grid-template-columns: 1fr;
-
-        column-gap: 0;
-
-        row-gap: 20px;
-    }
-
-
-    /* CARD */
-
-    .layanan-card {
-        min-height: 210px;
-
-        padding: 17px 16px;
-    }
-
-
-    /* BACK */
-
-    .back-wrapper {
-        margin-top: 20px;
-
-        padding-left: 0;
-    }
-}
-
-
-/* =========================================================
-   MOBILE KECIL
-========================================================= */
-
-@media (max-width: 450px) {
-
-    .layanan-page {
-        padding: 25px 15px 35px;
-    }
-
-    .breadcrumb {
-        font-size: var(--fs-sm);
-
-        gap: 7px;
-    }
-
-    .page-heading h1 {
-        font-size: var(--fs-3xl);
-    }
-
-    .page-heading p {
-        font-size: var(--fs-sm);
-    }
-
-    .search-wrapper {
-        width: 100%;
-
-        max-width: none;
-    }
-
-    .layanan-card {
-        min-height: 200px;
-
-        padding: 15px;
-    }
-
-    .card-top {
-        gap: 12px;
-    }
-
-    .layanan-icon {
-        width: 55px;
-
-        height: 55px;
-
-        min-width: 55px;
-    }
-
-    .layanan-icon i {
-        font-size: var(--fs-4xl);
-    }
-
-    .layanan-card h3 {
-        font-size: var(--fs-sm);
-    }
-
-    .layanan-card p {
-        font-size: var(--fs-sm);
-    }
-
-    .btn-back {
-        width: 120px;/* =========================================================
-   LAYANAN PAGE
-========================================================= */
-
-.layanan-page {
-    width: 100%;
-    max-width: 1280px;
-
-    margin: 0 auto;
-
-    /* HAPUS min-height: 990px */
-    height: auto;
-    min-height: 0;
-
-    padding: 42px 70px 50px;
-
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   BREADCRUMB
-========================================================= */
-
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 11px;
-
-    font-size: var(--fs-base);
-    color: var(--text-muted);
-
-    margin-bottom: 32px;
-}
-
-.breadcrumb i {
-    font-size: var(--fs-sm);
-    color: var(--text-main);
-}
-
-.breadcrumb span {
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.breadcrumb a {
-    color: var(--text-muted);
-    text-decoration: none;
-
-    transition: .2s;
-}
-
-.breadcrumb a:hover {
-    color: var(--primary-color);
-}
-
-
-/* =========================================================
-   PAGE HEADING
-========================================================= */
-
-.page-heading {
-    text-align: center;
-
-    margin-bottom: 25px;
-
-    height: auto;
-}
-
-.page-heading h1 {
-    font-size: var(--fs-4xl);
-
-    line-height: 1.5;
-
-    font-weight: 800;
-
-    color: var(--primary-color);
-
-    margin: 0 0 13px;
-}
-
-.page-heading p {
-    margin: 0;
-
-    font-size: var(--fs-base);
-
-    line-height: 1.55;
-
-    color: var(--primary-color);
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.search-wrapper {
-    width: 295px;
-
-    height: 25px;
-
-    margin-bottom: 33px;
-
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     position: relative;
 }
 
-.search-wrapper input {
-    width: 100%;
-
-    height: 100%;
-
-    border: 1.5px solid var(--primary-color);
-
-    border-radius: var(--radius-pill);
-
-    outline: none;
-
-    padding: 0 35px 0 12px;
-
-    color: var(--primary-color);
-
-    background: #fff;
-
-    box-sizing: border-box;
-}
-
-.search-wrapper input::placeholder {
-    color: var(--text-muted);
-}
-
-.search-wrapper input:focus {
-    border-color: var(--primary-color);
-}
-
-.search-wrapper i {
-    position: absolute;
-
-    right: 18px;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: var(--primary-color);
-
-    font-size: var(--fs-sm);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   GRID
-========================================================= */
-
-.layanan-grid {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    column-gap: 34px;
-
-    row-gap: 31px;
-
-    /* PENTING
-       Tinggi grid mengikuti card yang ada */
-    height: auto;
-}
-
-
-/* =========================================================
-   CARD
-========================================================= */
-
-.layanan-card {
-    width: 100%;
-
-    min-height: 210px;
-
-    height: auto;
-
-    border: 1px solid var(--primary-color);
-
-    border-radius: var(--radius-md);
-
-    padding: 17px 16px 16px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    background: #fff;
-
-    box-sizing: border-box;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
 .layanan-card:hover {
     transform: translateY(-3px);
-
-    box-shadow: var(--card-shadow);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 24px -4px rgba(101, 0, 25, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
 }
 
-
-/* =========================================================
-   CARD TOP
-========================================================= */
-
+/* BAGIAN ATAS CARD */
 .card-top {
     display: flex;
-
     align-items: flex-start;
-
-    gap: 16px;
-
-    min-height: 72px;
-
-    height: auto;
+    gap: 15px;
+    margin-bottom: 12px;
 }
 
-
-/* =========================================================
-   ICON
-========================================================= */
-
+/* IKON LAYANAN */
 .layanan-icon {
-    width: 64px;
-
-    height: 64px;
-
-    min-width: 64px;
-
-    background: #d7c0c5;
-
-    border-radius: var(--radius-md);
-
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    background: rgba(101, 0, 25, 0.06);
+    border: 1px solid rgba(101, 0, 25, 0.12);
+    border-radius: 10px;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     flex-shrink: 0;
+    overflow: hidden;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.layanan-card:hover .layanan-icon {
+    background: rgba(101, 0, 25, 0.1);
+    transform: scale(1.03);
 }
 
 .layanan-icon i {
-    font-size: var(--fs-4xl);
-
-    color: var(--primary-color);
+    font-size: 24px;
+    color: var(--primary-color, #650019);
 }
 
+.layanan-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-/* =========================================================
-   TITLE
-========================================================= */
-
+/* JUDUL LAYANAN */
 .layanan-card h3 {
     margin: 0;
-
-    font-size: var(--fs-base);
-
-    line-height: 1.35;
-
+    font-size: 1.05rem;
+    line-height: 1.4;
     font-weight: 700;
-
-    color: var(--primary-color);
-
+    color: #1e293b;
     padding-top: 2px;
+    transition: color 0.2s ease;
 }
 
+.layanan-card:hover h3 {
+    color: var(--primary-color, #650019);
+}
 
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
+/* DESKRIPSI SINGKAT */
 .layanan-card p {
-    font-size: var(--fs-xs);
-
-    line-height: 1.45;
-
-    color: var(--primary-color);
-
-    margin: 11px 0 14px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #64748b;
+    margin: 0 0 20px;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-
-/* =========================================================
-   DETAIL BUTTON
-========================================================= */
-
+/* TOMBOL SELENGKAPNYA */
 .btn-detail {
-    width: 110px;
-
-    height: 18px;
-
-    display: flex;
-
+    display: inline-flex;
     align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-
-    background: var(--primary-color);
-
-    color: #fff;
-
-    border-radius: var(--radius-pill);
-
-    font-size: var(--fs-sm);
-
-    font-weight: 500;
-
+    justify-content: space-between;
+    width: 100%;
+    height: 38px;
+    padding: 0 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    color: var(--primary-color, #650019);
+    font-size: 13px;
+    font-weight: 600;
     text-decoration: none;
-
     margin-top: auto;
-
-    box-sizing: border-box;
-
-    transition: .2s;
+    transition: all 0.2s ease;
 }
 
 .btn-detail i {
-    font-size: var(--fs-sm);
+    font-size: 14px;
+    transition: transform 0.2s ease;
 }
 
 .btn-detail:hover {
-    background: #4e0616;
+    background: var(--primary-color, #650019);
+    color: #ffffff;
+    border-color: var(--primary-color, #650019);
+    box-shadow: 0 2px 6px rgba(101, 0, 25, 0.2);
+}
 
-    color: #fff;
+.btn-detail:hover i {
+    transform: translateX(4px);
 }
 
 
 /* =========================================================
-   BACK BUTTON
+   TOMBOL KEMBALI
 ========================================================= */
 
 .back-wrapper {
-    margin-top: 20px;
-
-    padding-left: 0;
-
-    height: auto;
+    margin-top: 35px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
 }
 
 .btn-back {
-    width: 128px;
-
-    height: 31px;
-
-    display: flex;
-
+    height: 40px;
+    padding: 0 20px;
+    display: inline-flex;
     align-items: center;
-
-    justify-content: center;
-
-    gap: 14px;
-
-    border: 1px solid var(--primary-color);
-
-    border-radius: var(--radius-pill);
-
-    color: var(--primary-color);
-
-    background: #fff;
-
+    gap: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    color: #334155;
+    background: #ffffff;
     text-decoration: none;
-
-    font-size: var(--fs-sm);
-
-    font-weight: 700;
-
-    box-sizing: border-box;
-
-    transition: .2s;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
 }
 
 .btn-back i {
-    font-size: var(--fs-xl);
+    font-size: 16px;
+    transition: transform 0.2s ease;
 }
 
 .btn-back:hover {
-    background: var(--primary-color);
+    background: #f8fafc;
+    border-color: var(--primary-color, #650019);
+    color: var(--primary-color, #650019);
+}
 
-    color: #fff;
+.btn-back:hover i {
+    transform: translateX(-3px);
 }
 
 
 /* =========================================================
-   JIKA TIDAK ADA DATA
+   STATE KOSONG & PENCARIAN TIDAK DITEMUKAN
 ========================================================= */
 
-.empty-layanan {
+.layanan-empty {
     width: 100%;
-
-    padding: 35px 20px;
-
-    border: 1px solid #d7c0c5;
-
-    border-radius: var(--radius-md);
-
+    grid-column: 1 / -1;
+    padding: 40px 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid var(--primary-color, #650019);
+    border-radius: 8px;
     text-align: center;
-
-    color: var(--primary-color);
-
-    background: #fff;
-
-    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    margin: 10px 0;
 }
 
-.empty-layanan p {
+.layanan-empty i {
+    font-size: 32px;
+    color: var(--primary-color, #650019);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.layanan-empty p {
     margin: 0;
-
-    font-size: var(--fs-sm);
+    font-size: 14.5px;
+    color: #475569;
+    font-weight: 500;
 }
 
 
 /* =========================================================
-   RESPONSIVE TABLET
+   RESPONSIVE DESIGN (TABLET & SMARTPHONE)
 ========================================================= */
 
-@media (max-width: 1000px) {
-
+@media (max-width: 992px) {
     .layanan-page {
-        max-width: 100%;
-
-        padding-left: 35px;
-
-        padding-right: 35px;
+        padding: 30px 20px 50px;
     }
 
     .layanan-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 }
 
-
-/* =========================================================
-   TABLET KECIL
-========================================================= */
-
-@media (max-width: 800px) {
-
+@media (max-width: 680px) {
     .layanan-page {
-        padding: 35px 25px 45px;
+        padding: 24px 16px 40px;
     }
-
-    .layanan-grid {
-        column-gap: 25px;
-
-        row-gap: 25px;
-    }
-
-    .layanan-card {
-        min-height: 205px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .layanan-page {
-        width: 100%;
-
-        padding: 30px 20px 40px;
-    }
-
-
-    /* BREADCRUMB */
-
-    .breadcrumb {
-        font-size: var(--fs-base);
-
-        gap: 8px;
-
-        margin-bottom: 28px;
-    }
-
-
-    /* HEADING */
 
     .page-heading {
-        margin-bottom: 23px;
-    }
-
-    .page-heading h1 {
-        font-size: var(--fs-4xl);
-
-        line-height: 1.15;
-    }
-
-    .page-heading p {
-        font-size: var(--fs-sm);
-
-        line-height: 1.55;
-    }
-
-    .page-heading p br {
-        display: none;
-    }
-
-
-    /* SEARCH */
-
-    .search-wrapper {
-        width: 100%;
-
-        max-width: 295px;
-
         margin-bottom: 25px;
     }
 
-
-    /* GRID */
-
-    .layanan-grid {
-        grid-template-columns: 1fr;
-
-        column-gap: 0;
-
-        row-gap: 20px;
-    }
-
-
-    /* CARD */
-
-    .layanan-card {
-        min-height: 210px;
-
-        padding: 17px 16px;
-    }
-
-
-    /* BACK */
-
-    .back-wrapper {
-        margin-top: 20px;
-
-        padding-left: 0;
-    }
-}
-
-
-/* =========================================================
-   MOBILE KECIL
-========================================================= */
-
-@media (max-width: 450px) {
-
-    .layanan-page {
-        padding: 25px 15px 35px;
-    }
-
-    .breadcrumb {
-        font-size: var(--fs-sm);
-
-        gap: 7px;
-    }
-
     .page-heading h1 {
-        font-size: var(--fs-3xl);
+        font-size: 1.75rem;
     }
 
     .page-heading p {
-        font-size: var(--fs-sm);
+        font-size: 14px;
     }
 
     .search-wrapper {
-        width: 100%;
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
 
-        max-width: none;
+    .layanan-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .layanan-card {
-        min-height: 200px;
-
-        padding: 15px;
-    }
-
-    .card-top {
-        gap: 12px;
-    }
-
-    .layanan-icon {
-        width: 55px;
-
-        height: 55px;
-
-        min-width: 55px;
-    }
-
-    .layanan-icon i {
-        font-size: var(--fs-4xl);
-    }
-
-    .layanan-card h3 {
-        font-size: var(--fs-sm);
-    }
-
-    .layanan-card p {
-        font-size: var(--fs-sm);
+        padding: 20px 18px;
     }
 
     .btn-back {
-        width: 120px;
-    }
-}
-
+        width: 100%;
+        justify-content: center;
     }
 }

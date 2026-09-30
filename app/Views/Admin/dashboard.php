@@ -14,7 +14,7 @@
                  HEADER
             ====================================================== -->
             <div class="dashboard-header">
-                <h1>Selamat datang, Dinsos</h1>
+                 <h2>Selamat Datang, <?= esc(session()->get('username') ?? 'Admin Dinsos') ?></h2>
                 <p>Kelola seluruh layanan</p>
             </div>
 
