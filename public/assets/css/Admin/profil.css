@@ -53,16 +53,30 @@ body {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
+<<<<<<< HEAD
     color: #1e293b;
     letter-spacing: -0.2px;
+=======
+
+    color: var(--primary-color);
+
+>>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
 }
 
 .profil-header p,
 .profil-create-header p,
 .anggota-create-header p {
     margin: 4px 0 0;
+<<<<<<< HEAD
     font-size: 0.875rem;
     color: #64748b;
+=======
+
+    font-size: var(--fs-base);
+
+    color: var(--primary-color);
+
+>>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
 }
 
 
@@ -507,7 +521,171 @@ body {
    VISI & MISI DALAM TAB
 ========================================================= */
 
+<<<<<<< HEAD
 .visi-misi-wrapper {
+=======
+@media (max-width: 1200px) {
+
+    .profil-content {
+
+        padding: 30px;
+
+    }
+
+    .anggota-grid {
+
+        gap: 20px;
+
+    }
+
+    .anggota-card {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .profil-content {
+
+        margin-left: 0;
+
+    }
+
+    .anggota-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .profil-content {
+
+        padding: 20px;
+
+    }
+
+    .profil-toolbar {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .profil-search {
+
+        width: 100%;
+
+    }
+
+    .btn-tambah {
+
+        width: 100%;
+
+    }
+
+    .anggota-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .sejarah-header {
+
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+    }
+
+    .sejarah-tabs {
+
+        height: auto;
+
+        padding: 0 15px;
+
+        gap: 15px;
+
+        overflow-x: auto;
+
+    }
+
+    .sejarah-tab {
+
+        white-space: nowrap;
+
+        padding: 12px 5px;
+
+    }
+
+    .sejarah-content {
+
+        padding: 20px;
+
+    }
+
+}
+
+/* =========================================================
+   TAMBAH SEJARAH DINAS
+========================================================= */
+
+.profil-create-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.profil-create-header {
+    margin-bottom: 42px;
+}
+
+.profil-create-header h1 {
+    margin: 0;
+
+    color: var(--primary-color);
+
+    font-size: var(--fs-2xl);
+
+    line-height: 1.5;
+
+    font-weight: 700;
+}
+
+.profil-create-header p {
+    margin: 5px 0 0;
+
+    color: var(--text-main);
+
+    font-size: var(--fs-base);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.profil-form-grid {
+>>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -636,7 +814,309 @@ body {
 
 
 /* =========================================================
+<<<<<<< HEAD
    FORM CREATE / EDIT PROFIL & ANGGOTA
+=======
+   TEXTAREA
+========================================================= */
+
+.editor-area {
+    width: 100%;
+
+    height: 192px;
+
+    display: block;
+
+    padding: 12px;
+
+    border: none;
+
+    outline: none;
+
+    resize: none;
+
+    background: #fff;
+
+    font-family: inherit;
+
+    font-size: var(--fs-sm);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   KONTAK / EMAIL / SOSIAL
+========================================================= */
+
+.profil-form-left .form-group:not(.editor-group) {
+    margin-bottom: 27px;
+}
+
+
+/* =========================================================
+   STRUKTUR ORGANISASI
+========================================================= */
+
+.struktur-group {
+    margin-top: 38px;
+
+    margin-bottom: 0;
+}
+
+
+.upload-box {
+    width: 100%;
+
+    height: 297px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    background: #fff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .2s;
+}
+
+
+.upload-box.drag-active {
+    border: 2px dashed var(--primary-color);
+
+    background: #fff8fa;
+}
+
+
+.upload-icon {
+    margin-bottom: 22px;
+
+    color: var(--text-main);
+
+    font-size: var(--fs-2xl);
+}
+
+
+.upload-title {
+    color: var(--text-main);
+
+    font-size: var(--fs-lg);
+
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+.upload-info {
+    margin-top: 7px;
+
+    color: var(--text-muted);
+
+    font-size: var(--fs-base);
+
+    text-align: center;
+}
+
+
+.btn-browse {
+    min-width: 136px;
+
+    height: 40px;
+
+    margin-top: 25px;
+
+    padding: 0 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #c7ccd8;
+
+    border-radius: var(--radius-md);
+
+    background: #fff;
+
+    color: var(--text-muted);
+
+    font-size: var(--fs-lg);
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.btn-browse:hover {
+    background: var(--bg-light);
+
+    border-color: var(--primary-color);
+
+    color: var(--primary-color);
+}
+
+
+/* =========================================================
+   BUTTON SIMPAN
+========================================================= */
+
+.button-wrapper {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 75px;
+
+    margin-bottom: 10px;
+}
+
+
+.btn-simpan-profil {
+    width: 217px;
+
+    height: 41px;
+
+    border: none;
+
+    border-radius: var(--radius-md);
+
+    background: var(--primary-color);
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: var(--fs-xl);
+
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.btn-simpan-profil:hover {
+    background: var(--primary-color-hover);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .profil-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profil-form-right {
+        margin-top: 20px;
+    }
+
+    .button-wrapper {
+        margin-top: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .profil-create-header {
+        margin-bottom: 25px;
+    }
+
+    .profil-create-header h1 {
+        font-size: var(--fs-2xl);
+    }
+
+    .form-group label {
+        font-size: var(--fs-lg);
+    }
+
+    .editor-wrapper {
+        height: 220px;
+    }
+
+    .editor-toolbar {
+        overflow-x: auto;
+    }
+
+    .upload-box {
+        height: 250px;
+    }
+
+    .upload-title {
+        font-size: var(--fs-base);
+    }
+
+    .upload-info {
+        font-size: var(--fs-sm);
+    }
+
+    .button-wrapper {
+        justify-content: stretch;
+    }
+
+    .btn-simpan-profil {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   TAMBAH ANGGOTA DINAS
+========================================================= */
+
+.anggota-create-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.anggota-create-header {
+    margin-bottom: 68px;
+}
+
+.anggota-create-header h1 {
+    margin: 0;
+
+    font-size: var(--fs-2xl);
+
+    line-height: 1.5;
+
+    font-weight: 700;
+
+    color: var(--primary-color);
+}
+
+.anggota-create-header p {
+    margin: 5px 0 0;
+
+    font-size: var(--fs-base);
+
+    color: var(--text-main);
+}
+
+
+/* =========================================================
+   GRID
+>>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
 ========================================================= */
 
 .profil-form-grid,

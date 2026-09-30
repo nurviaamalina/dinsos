@@ -1,16 +1,10 @@
 /* ============================================
    ROOT VARIABLES
    ============================================ */
-:root {
-    --primary-color: var(--info-color);
-    --primary-dark: var(--info-color);
+.datalayanan-container {
+    --primary-color: #650019;
+    --primary-dark: #4d0013;
     --secondary-color: var(--text-muted);
-    --success-color: var(--success-color);
-    --success-light: var(--success-light);
-    --danger-color: var(--danger-color);
-    --warning-color: var(--warning-color);
-    --warning-light: var(--warning-light);
-    --info-color: var(--info-color);
     --border-radius: var(--radius-md);
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
@@ -122,12 +116,12 @@ body > .sidebar {
 }
 
 .stat-icon.primary {
-    background: rgba(74, 108, 247, 0.15);
+    background: rgba(107, 6, 6, 0.591);
     color: var(--primary-color);
 }
 
 .stat-icon.success {
-    background: rgba(40, 167, 69, 0.15);
+    background: rgba(41, 11, 11, 0.15);
     color: var(--success-color);
 }
 
@@ -177,7 +171,7 @@ body > .sidebar {
 .alert-danger {
     background-color: var(--danger-light);
     border: 1px solid var(--danger-light);
-    color: #721c24;
+    color: #4f0d13;
 }
 
 .alert i {
@@ -485,7 +479,7 @@ table tbody tr:hover {
     --accent: #c98236;
     --page-bg: #f5f6f7;
     background: var(--page-bg);
-    padding: 30px 35px 38px;
+    padding: 24px;
 }
 
 .datalayanan-container .main-content {
@@ -903,22 +897,22 @@ table tbody tr:hover {
 }
 
 .import-format-table th {
-    padding: 7px 8px;
+    padding: 6px 8px;
 
-    background: var(--maroon);
-    color: #fff;
+    background: #fff;
+    color: var(--text-main);
 
-    border: 1px solid var(--maroon);
+    border: 1px solid #b77b87;
 
     font-size: var(--fs-sm);
-    font-weight: 600;
+    font-weight: 400;
     text-align: left;
 }
 
 .import-format-table td {
     padding: 6px 8px;
 
-    color: #5f303a;
+    color: var(--text-main);
 
     border: 1px solid #b77b87;
 
@@ -1495,4 +1489,16 @@ table tbody tr:hover {
     display: inline-flex;
     gap: 0.5rem;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .datalayanan-container:not(.import-page) {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .content > .datalayanan-container.import-page {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
