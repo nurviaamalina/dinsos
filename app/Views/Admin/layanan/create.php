@@ -8,13 +8,13 @@
 <div class="d-flex">
     <?= $this->include('admin/layout/sidebar') ?>
 
-    <div class="content flex-grow-1 p-4 bg-light">
+    <div class="content flex-grow-1 p-4 bg-light layanan-create-page">
         
         <!-- HEADER HALAMAN -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="layanan-create-header">
             <div>
-                <h2 style="color: #5c0f28; font-weight: 700;">Tambah Data Layanan</h2>
-                <p style="color: #666;">Kelola seluruh Data</p>
+                <h2>Tambah Data Layanan</h2>
+                <p>Kelola seluruh data layanan dan standar pelayanannya.</p>
             </div>
             <a href="<?= base_url('admin/layanan') ?>" class="btn btn-outline-maroon">
                 <i class="bi bi-arrow-left"></i> Kembali
@@ -31,11 +31,11 @@
             </div>
         <?php endif; ?>
 
-        <div class="form-container" style="max-width: 100%;">
+        <div class="form-container layanan-create-form">
             <form action="<?= base_url('admin/layanan/store') ?>" method="POST" enctype="multipart/form-data" id="formLayanan">
                 <?= csrf_field() ?>
                 
-                <div class="form-grid">
+            <div class="form-grid layanan-main-grid">
                     <!-- Nama Layanan -->
                     <div class="form-group">
                         <label>Nama Layanan</label>
@@ -56,12 +56,21 @@
                     </div>
 
                     <!-- Deskripsi Layanan (Editor) -->
-                    <div class="form-group">
+                    <div class="form-group layanan-description-group">
                         <label>Deskripsi Layanan</label>
                         <!-- Input hidden untuk menyimpan HTML dari Quill -->
                         <input type="hidden" name="deskripsi_layanan" id="deskripsi_layanan">
                         <div id="editor-deskripsi" style="min-height: 150px;"><?= old('deskripsi_layanan') ?></div>
                     </div>
+                </div>
+
+                <section class="layanan-standard-section">
+                    <div class="layanan-section-heading">
+                        <h3>Standar Pelayanan</h3>
+                        <p>Lengkapi informasi standar pelayanan untuk layanan ini.</p>
+                    </div>
+
+                    <div class="form-grid layanan-standard-grid">
 
                     <?php
                     $standarFields = [
@@ -88,22 +97,22 @@
                             <div id="editor-<?= esc($field) ?>" class="layanan-editor"><?= old($field) ?></div>
                         </div>
                     <?php endforeach; ?>
-                   
+                    </div>
+                </section>
 
-                    <!-- Unggah Dokumen SOP (Dropzone) -->
-                    <div class="form-group" style="margin-top: 50px;">
-                        <label>Unggah Dokumen SOP</label>
-                        <div id="dropzone" class="dropzone" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center;">
-                            <i class="bi bi-cloud-arrow-up"></i>
-                            <p>Drag & drop files or Browse</p>
-                            <small>Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT</small>
-                            <input type="file" name="dokumen" id="fileInput" class="d-none">
-                        </div>
+                <!-- Unggah Dokumen SOP (Dropzone) -->
+                <div class="form-group layanan-upload-group">
+                    <label>Unggah Dokumen SOP</label>
+                    <div id="dropzone" class="dropzone">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                        <p>Drag &amp; drop file atau pilih dari perangkat</p>
+                        <small>Format yang didukung: PDF, Word, PowerPoint, JPEG, dan PNG</small>
+                        <input type="file" name="dokumen" id="fileInput" class="d-none">
                     </div>
                 </div>
 
                 <!-- Footer Tombol -->
-                <div class="d-flex justify-content-end gap-2 mt-4">
+                <div class="form-footer layanan-create-footer">
                     <button type="submit" name="draft" value="1" class="btn btn-draft">Draft</button>
                     <button type="submit" class="btn btn-primary">Simpan & Publikasi</button>
                 </div>

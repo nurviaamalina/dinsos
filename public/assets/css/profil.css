@@ -183,7 +183,8 @@ body {
 
 .profil-sejarah-card:hover,
 .struktur-container:hover,
-.profil-sasaran-container:hover {
+.profil-sasaran-container:hover,
+.profil-maklumat-pelayanan-container:hover {
     box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
 }
 
@@ -364,25 +365,7 @@ body {
 }
 
 .profil-maklumat-pelayanan-container {
-    background: linear-gradient(180deg, #ffffff 0%, #fcfbfb 100%);
-    border: 1px solid #e2e8f0;
-    border-top: 4px solid var(--primary-color, #650019);
-    border-left: 6px solid var(--primary-color, #650019);
     position: relative;
-    overflow: hidden;
-}
-
-.profil-maklumat-pelayanan-container::before {
-    content: '\201C';
-    position: absolute;
-    top: 15px;
-    left: 28px;
-    font-size: 90px;
-    line-height: 1;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: rgba(101, 0, 25, 0.06);
-    pointer-events: none;
-    user-select: none;
 }
 
 .maklumat-pelayanan-content {

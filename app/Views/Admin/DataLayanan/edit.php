@@ -1,5 +1,5 @@
 <?= $this->include('admin/layout/header') ?>
-<link rel="stylesheet" href="<?= base_url('assets/css/admin/datalayanan.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/Admin/datalayanan.css') ?>">
 <?= $this->include('admin/layout/sidebar') ?>
 
 <div class="datalayanan-container">
@@ -9,6 +9,10 @@
                 <h3>Edit Data Pelayanan</h3>
                 <p class="subtitle">Kelola seluruh Data</p>
             </div>
+            <a href="<?= base_url('admin/datalayanan') ?>" class="create-back-link">
+                <i class="bi bi-arrow-left"></i>
+                Kembali
+            </a>
         </div>
 
         <?php if(session()->getFlashdata('errors')): ?>

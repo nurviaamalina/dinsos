@@ -691,6 +691,31 @@ table tbody tr:hover {
 /* Create form */
 .datalayanan-container .create-page-header {
     margin-bottom: 22px;
+    align-items: center;
+    gap: 16px;
+}
+
+.create-back-link {
+    min-height: 40px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid var(--maroon);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: var(--maroon);
+    text-decoration: none;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.create-back-link:hover {
+    background: var(--maroon);
+    color: #fff;
 }
 
 .datalayanan-container .create-card {
@@ -857,6 +882,8 @@ table tbody tr:hover {
 ========================================================= */
 
 .datalayanan-container .import-page-header {
+    display: flex;
+    justify-content: flex-start;
     margin-bottom: 20px;
 }
 
@@ -899,13 +926,13 @@ table tbody tr:hover {
 .import-format-table th {
     padding: 6px 8px;
 
-    background: #fff;
-    color: var(--text-main);
+    background: var(--maroon);
+    color: #ffffff !important;
 
     border: 1px solid #b77b87;
 
     font-size: var(--fs-sm);
-    font-weight: 400;
+    font-weight: 600;
     text-align: left;
 }
 

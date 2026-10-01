@@ -1721,7 +1721,7 @@ background: var(--primary-color-hover);
 
     background: var(--primary-color);
 
-    color: #ffffff;
+    color: #ffffff !important;
 
     font-size: var(--fs-sm);
 

@@ -2,7 +2,7 @@
 
 <link
     rel="stylesheet"
-    href="<?= base_url('assets/css/admin/profil.css') ?>"
+    href="<?= base_url('assets/css/Admin/profil.css') ?>"
 >
 
 

@@ -1164,7 +1164,7 @@
 
     padding: 7px 10px;
 
-    color: #ffffff;
+    color: #ffffff !important;
 
     background: var(--primary-color);
 

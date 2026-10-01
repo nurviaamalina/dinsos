@@ -2,7 +2,7 @@
 
 <link
     rel="stylesheet"
-    href="<?= base_url('assets/css/admin/hasil-skm.css') ?>"
+    href="<?= base_url('assets/css/Admin/hasil-skm.css') ?>"
 >
 
 <div class="d-flex">
@@ -14,7 +14,7 @@
     <!-- CONTENT -->
     <div class="content flex-grow-1 p-4">
 
-        <div class="skm-page">
+        <div class="skm-page skm-import-page">
 
             <!-- =====================================================
                  HEADER
@@ -56,7 +56,7 @@
                  IMPORT CARD
             ====================================================== -->
 
-            <div class="table-card">
+            <div class="table-card skm-import-card">
 
                 <div class="card-body">
 
