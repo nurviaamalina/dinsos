@@ -1,17 +1,11 @@
 /* ============================================
    ROOT VARIABLES
    ============================================ */
-:root {
-    --primary-color: #4a6cf7;
-    --primary-dark: #3a5cd7;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --success-light: #d4edda;
-    --danger-color: #dc3545;
-    --warning-color: #ffc107;
-    --warning-light: #fff3cd;
-    --info-color: #17a2b8;
-    --border-radius: 10px;
+.datalayanan-container {
+    --primary-color: #650019;
+    --primary-dark: #4d0013;
+    --secondary-color: var(--text-muted);
+    --border-radius: var(--radius-md);
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
     --transition: all 0.3s ease;
@@ -27,9 +21,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-primary);
     background: #f0f2f5;
-    color: #333;
+    color: var(--text-main);
     line-height: 1.6;
 }
 
@@ -72,15 +66,15 @@ body > .sidebar {
 }
 
 .page-header h3 {
-    font-size: 1.5rem;
+    font-size: var(--fs-2xl);
     font-weight: 700;
-    color: #1a1a2e;
+    color: var(--text-main);
     margin: 0;
 }
 
 .page-header .subtitle {
-    color: #666;
-    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
     margin-top: 0.2rem;
 }
 
@@ -117,17 +111,17 @@ body > .sidebar {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: var(--fs-xl);
     flex-shrink: 0;
 }
 
 .stat-icon.primary {
-    background: rgba(74, 108, 247, 0.15);
+    background: rgba(107, 6, 6, 0.591);
     color: var(--primary-color);
 }
 
 .stat-icon.success {
-    background: rgba(40, 167, 69, 0.15);
+    background: rgba(41, 11, 11, 0.15);
     color: var(--success-color);
 }
 
@@ -142,8 +136,8 @@ body > .sidebar {
 
 .stat-label {
     display: block;
-    font-size: 0.8rem;
-    color: #888;
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
@@ -151,9 +145,9 @@ body > .sidebar {
 
 .stat-value {
     display: block;
-    font-size: 1.8rem;
+    font-size: var(--fs-3xl);
     font-weight: 700;
-    color: #1a1a2e;
+    color: var(--text-main);
 }
 
 /* ============================================
@@ -170,24 +164,24 @@ body > .sidebar {
 
 .alert-success {
     background-color: var(--success-light);
-    border: 1px solid #c3e6cb;
-    color: #155724;
+    border: 1px solid var(--success-light);
+    color: var(--success-color);
 }
 
 .alert-danger {
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
+    background-color: var(--danger-light);
+    border: 1px solid var(--danger-light);
+    color: #4f0d13;
 }
 
 .alert i {
-    font-size: 1.2rem;
+    font-size: var(--fs-xl);
 }
 
 .close-btn {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: var(--fs-2xl);
     font-weight: 700;
     color: inherit;
     opacity: 0.5;
@@ -213,7 +207,7 @@ body > .sidebar {
 
 .table-header {
     padding: 1rem 1.5rem;
-    background: #f8f9fa;
+    background: var(--bg-light);
     border-bottom: 1px solid #e9ecef;
     display: flex;
     justify-content: space-between;
@@ -242,9 +236,9 @@ body > .sidebar {
 
 .search-box input {
     padding: 0.3rem 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
 }
 
 .search-box input:focus {
@@ -262,15 +256,15 @@ table {
 }
 
 table thead {
-    background: #f8f9fa;
+    background: var(--bg-light);
 }
 
 table th {
     padding: 0.75rem 1rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.85rem;
-    color: #555;
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
     border-bottom: 2px solid #e9ecef;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -283,7 +277,7 @@ table td {
 }
 
 table tbody tr:hover {
-    background: #f8f9fa;
+    background: var(--bg-light);
 }
 
 /* ============================================
@@ -292,8 +286,8 @@ table tbody tr:hover {
 .badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -301,12 +295,12 @@ table tbody tr:hover {
 
 .badge-success {
     background: var(--success-light);
-    color: #155724;
+    color: var(--success-color);
 }
 
 .badge-warning {
     background: var(--warning-light);
-    color: #856404;
+    color: var(--warning-color);
 }
 
 /* ============================================
@@ -324,8 +318,8 @@ table tbody tr:hover {
     gap: 0.5rem;
     padding: 0.5rem 1.2rem;
     border: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+    font-size: var(--fs-sm);
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
@@ -334,12 +328,12 @@ table tbody tr:hover {
 
 .btn-sm {
     padding: 0.3rem 0.8rem;
-    font-size: 0.8rem;
+    font-size: var(--fs-sm);
 }
 
 .btn-xs {
     padding: 0.2rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: var(--fs-xs);
 }
 
 .btn-primary {
@@ -358,7 +352,7 @@ table tbody tr:hover {
 }
 
 .btn-success:hover {
-    background: #218838;
+    background: var(--success-color);
     color: white;
 }
 
@@ -368,18 +362,18 @@ table tbody tr:hover {
 }
 
 .btn-danger:hover {
-    background: #c82333;
+    background: var(--danger-color);
     color: white;
 }
 
 .btn-warning {
     background: var(--warning-color);
-    color: #333;
+    color: var(--text-main);
 }
 
 .btn-warning:hover {
-    background: #e0a800;
-    color: #333;
+    background: var(--warning-color);
+    color: var(--text-main);
 }
 
 .btn-info {
@@ -388,7 +382,7 @@ table tbody tr:hover {
 }
 
 .btn-info:hover {
-    background: #138496;
+    background: var(--info-color);
     color: white;
 }
 
@@ -401,19 +395,19 @@ table tbody tr:hover {
 }
 
 .empty-state i {
-    font-size: 3rem;
-    color: #ddd;
+    font-size: var(--fs-4xl);
+    color: var(--border-color);
     margin-bottom: 1rem;
 }
 
 .empty-state h5 {
-    font-size: 1.2rem;
-    color: #555;
+    font-size: var(--fs-xl);
+    color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
 .empty-state p {
-    color: #888;
+    color: var(--text-muted);
     margin-bottom: 1rem;
 }
 
@@ -422,14 +416,14 @@ table tbody tr:hover {
    ============================================ */
 .table-footer {
     padding: 0.75rem 1.5rem;
-    background: #f8f9fa;
+    background: var(--bg-light);
     border-top: 1px solid #e9ecef;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem;
-    font-size: 0.85rem;
-    color: #666;
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
 }
 
 .table-footer i {
@@ -480,12 +474,12 @@ table tbody tr:hover {
 
 /* Data Pelayanan visual treatment */
 .datalayanan-container {
-    --maroon: #65091c;
-    --maroon-soft: #f7e9ec;
+    --maroon: var(--primary-color);
+    --maroon-soft: var(--primary-light);
     --accent: #c98236;
     --page-bg: #f5f6f7;
     background: var(--page-bg);
-    padding: 30px 35px 38px;
+    padding: 24px;
 }
 
 .datalayanan-container .main-content {
@@ -498,13 +492,13 @@ table tbody tr:hover {
 
 .datalayanan-container .page-header h3 {
     color: var(--maroon);
-    font-size: 21px;
+    font-size: var(--fs-xl);
     letter-spacing: 0;
 }
 
 .datalayanan-container .page-header .subtitle {
-    color: #65091c;
-    font-size: 12px;
+    color: var(--primary-color);
+    font-size: var(--fs-sm);
 }
 
 .datalayanan-container .stats-grid {
@@ -517,7 +511,7 @@ table tbody tr:hover {
     min-height: 72px;
     padding: 12px;
     border: 1px solid var(--maroon);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     box-shadow: none;
     gap: 10px;
 }
@@ -525,7 +519,7 @@ table tbody tr:hover {
 .datalayanan-container .stat-icon {
     width: 42px;
     height: 42px;
-    font-size: 18px;
+    font-size: var(--fs-lg);
 }
 
 .datalayanan-container .stat-icon.primary {
@@ -534,12 +528,12 @@ table tbody tr:hover {
 }
 
 .datalayanan-container .stat-icon.success {
-    background: #dcf9eb;
-    color: #30c98b;
+    background: var(--success-light);
+    color: var(--success-color);
 }
 
 .datalayanan-container .stat-icon.warning {
-    background: #fff3c9;
+    background: var(--warning-light);
     color: #f1be00;
 }
 
@@ -549,14 +543,14 @@ table tbody tr:hover {
 }
 
 .datalayanan-container .stat-label {
-    font-size: 8px;
+    font-size: var(--fs-sm);
     text-transform: none;
     letter-spacing: 0;
 }
 
 .datalayanan-container .stat-value {
-    font-size: 21px;
-    line-height: 1.1;
+    font-size: var(--fs-xl);
+    line-height: 1.5;
 }
 
 .datalayanan-container .table-wrapper {
@@ -583,7 +577,7 @@ table tbody tr:hover {
 .datalayanan-container .search-box {
     width: min(225px, 100%);
     border: 1px solid var(--maroon);
-    border-radius: 14px;
+    border-radius: var(--card-radius);
     padding: 0 9px;
 }
 
@@ -591,7 +585,7 @@ table tbody tr:hover {
     width: 100%;
     border: 0;
     padding: 5px 0;
-    font-size: 11px;
+    font-size: var(--fs-sm);
 }
 
 .datalayanan-container .search-box button {
@@ -602,8 +596,8 @@ table tbody tr:hover {
 
 .datalayanan-container .table-actions > a {
     padding: 4px 9px;
-    border-radius: 14px;
-    font-size: 9px;
+    border-radius: var(--card-radius);
+    font-size: var(--fs-sm);
 }
 
 .datalayanan-container .table-actions > a:first-of-type {
@@ -620,13 +614,13 @@ table tbody tr:hover {
 }
 
 .datalayanan-container table thead {
-    background: #e9e9e9;
+    background: var(--bg-light);
 }
 
 .datalayanan-container table th {
     padding: 8px 9px;
-    color: #222;
-    font-size: 9px;
+    color: var(--text-main);
+    font-size: var(--fs-sm);
     border-bottom: 1px solid #c7aab0;
     text-transform: none;
     letter-spacing: 0;
@@ -634,12 +628,12 @@ table tbody tr:hover {
 
 .datalayanan-container table td {
     padding: 9px;
-    font-size: 10px;
+    font-size: var(--fs-sm);
     border-bottom: 1px solid #d9b8bf;
 }
 
 .datalayanan-container table tbody tr:hover {
-    background: #fff8f9;
+    background: var(--primary-light);
 }
 
 .datalayanan-container .btn-warning,
@@ -648,12 +642,12 @@ table tbody tr:hover {
     height: 20px;
     padding: 0;
     justify-content: center;
-    border-radius: 4px;
-    font-size: 10px;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
 }
 
 .datalayanan-container .btn-warning {
-    background: #ffb52e;
+    background: var(--warning-color);
 }
 
 .datalayanan-container .btn-danger {
@@ -665,8 +659,8 @@ table tbody tr:hover {
     padding: 8px 12px;
     background: #fff;
     border-top: 0;
-    color: #777;
-    font-size: 10px;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
 }
 
 .datalayanan-container .empty-state .btn-primary {
@@ -675,7 +669,7 @@ table tbody tr:hover {
 }
 
 .datalayanan-container .empty-state .btn-primary:hover {
-    background: #4d0716;
+    background: var(--primary-color-hover);
     color: #fff;
 }
 
@@ -685,13 +679,13 @@ table tbody tr:hover {
     padding: 10px 20px;
     justify-content: center;
     gap: 15px;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-base);
 }
 
 .datalayanan-container .empty-state .btn-primary i {
     margin-bottom: 0;
-    font-size: 24px;
+    font-size: var(--fs-2xl);
 }
 
 /* Create form */
@@ -721,15 +715,15 @@ table tbody tr:hover {
     padding-bottom: 8px;
     border-bottom: 2px solid var(--maroon);
     color: var(--maroon);
-    font-size: 13px;
+    font-size: var(--fs-sm);
 }
 
 .create-import-link {
     padding: 4px 12px;
     border: 1px solid var(--maroon);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     color: var(--maroon);
-    font-size: 9px;
+    font-size: var(--fs-sm);
     text-decoration: none;
 }
 
@@ -757,7 +751,7 @@ table tbody tr:hover {
     display: block;
     margin-bottom: 7px;
     color: var(--maroon);
-    font-size: 10px;
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
 
@@ -766,10 +760,10 @@ table tbody tr:hover {
     min-height: 27px;
     padding: 5px 8px;
     border: 1px solid #d9b8bf;
-    border-radius: 4px;
-    color: #333;
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
     background: #fff;
-    font-size: 10px;
+    font-size: var(--fs-sm);
 }
 
 .create-form-grid .form-control:focus {
@@ -780,7 +774,7 @@ table tbody tr:hover {
 
 .create-form-grid .invalid-feedback {
     color: #b42318;
-    font-size: 9px;
+    font-size: var(--fs-sm);
 }
 
 .create-period-field {
@@ -822,8 +816,8 @@ table tbody tr:hover {
     min-width: 44px;
     justify-content: center;
     padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 9px;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
 }
 
 .create-form-actions .btn-secondary {
@@ -873,7 +867,7 @@ table tbody tr:hover {
 .import-format-card {
     background: #fff;
     border: 1px solid #d9b8bf;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     padding: 14px;
     margin-bottom: 26px;
 }
@@ -884,7 +878,7 @@ table tbody tr:hover {
     border-bottom: 2px solid var(--maroon);
 
     color: var(--maroon);
-    font-size: 13px;
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
 
@@ -892,7 +886,7 @@ table tbody tr:hover {
     margin: 8px 0 12px;
 
     color: #9a7078;
-    font-size: 8px;
+    font-size: var(--fs-sm);
 }
 
 .import-format-table {
@@ -903,26 +897,26 @@ table tbody tr:hover {
 }
 
 .import-format-table th {
-    padding: 7px 8px;
+    padding: 6px 8px;
 
-    background: var(--maroon);
-    color: #fff;
+    background: #fff;
+    color: var(--text-main);
 
-    border: 1px solid var(--maroon);
+    border: 1px solid #b77b87;
 
-    font-size: 8px;
-    font-weight: 600;
+    font-size: var(--fs-sm);
+    font-weight: 400;
     text-align: left;
 }
 
 .import-format-table td {
     padding: 6px 8px;
 
-    color: #5f303a;
+    color: var(--text-main);
 
     border: 1px solid #b77b87;
 
-    font-size: 8px;
+    font-size: var(--fs-sm);
     background: #fff;
 }
 
@@ -947,7 +941,7 @@ table tbody tr:hover {
     background: #fff;
 
     border: 1px solid #d9b8bf;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
     padding: 16px;
 }
@@ -963,7 +957,7 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 9px;
+    font-size: var(--fs-sm);
     font-weight: 500;
 }
 
@@ -979,7 +973,7 @@ table tbody tr:hover {
     padding: 16px;
 
     border: 1px solid #d9b8bf;
-    border-radius: 5px;
+    border-radius: var(--radius-md);
 
     display: flex;
     flex-direction: column;
@@ -990,14 +984,14 @@ table tbody tr:hover {
 
     background: #fff;
 
-    color: #777;
+    color: var(--text-muted);
 
     transition: .2s ease;
 }
 
 .upload-area.drag-over {
     border-color: var(--maroon);
-    background: #fff8f9;
+    background: var(--primary-light);
 }
 
 .upload-icon {
@@ -1005,19 +999,19 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 17px;
+    font-size: var(--fs-lg);
 }
 
 .upload-text {
-    color: #777;
+    color: var(--text-muted);
 
-    font-size: 9px;
+    font-size: var(--fs-sm);
 }
 
 .upload-info {
-    color: #aaa;
+    color: var(--border-color);
 
-    font-size: 7px;
+    font-size: var(--fs-sm);
 
     text-align: center;
     line-height: 1.5;
@@ -1033,14 +1027,14 @@ table tbody tr:hover {
 
     padding: 4px 10px;
 
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
 
     background: #fff;
 
-    color: #777;
+    color: var(--text-muted);
 
-    font-size: 8px;
+    font-size: var(--fs-sm);
 
     cursor: pointer;
 
@@ -1071,13 +1065,13 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 10px;
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
 
 .selected-file-header i {
-    color: #c9002b;
-    font-size: 12px;
+    color: var(--danger-color);
+    font-size: var(--fs-sm);
 }
 
 .selected-file-card {
@@ -1087,7 +1081,7 @@ table tbody tr:hover {
     padding: 12px;
 
     border: 1px solid #d9b8bf;
-    border-radius: 7px;
+    border-radius: var(--radius-md);
 
     background: #fff;
 
@@ -1106,9 +1100,9 @@ table tbody tr:hover {
     width: 42px;
     height: 42px;
 
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
-    background: #f8e8ec;
+    background: var(--primary-light);
 
     display: flex;
     align-items: center;
@@ -1119,7 +1113,7 @@ table tbody tr:hover {
 
 .selected-file-icon i {
     color: var(--maroon);
-    font-size: 22px;
+    font-size: var(--fs-2xl);
 }
 
 .selected-file-info {
@@ -1129,16 +1123,16 @@ table tbody tr:hover {
 }
 
 .selected-file-name {
-    color: #333;
+    color: var(--text-main);
 
-    font-size: 10px;
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
 
 .selected-file-size {
-    color: #999;
+    color: var(--text-muted);
 
-    font-size: 8px;
+    font-size: var(--fs-sm);
 }
 
 .remove-file {
@@ -1146,9 +1140,9 @@ table tbody tr:hover {
     height: 34px;
 
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
-    background: #dc263f;
+    background: var(--danger-color);
     color: #fff;
 
     display: flex;
@@ -1161,11 +1155,11 @@ table tbody tr:hover {
 }
 
 .remove-file:hover {
-    background: #b91c32;
+    background: var(--danger-color);
 }
 
 .remove-file i {
-    font-size: 15px;
+    font-size: var(--fs-base);
 }
 
 
@@ -1193,13 +1187,13 @@ table tbody tr:hover {
     padding: 5px 11px;
 
     border: 1px solid var(--maroon);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 
     background: #fff;
 
     color: var(--maroon);
 
-    font-size: 8px;
+    font-size: var(--fs-sm);
     text-decoration: none;
 
     cursor: pointer;
@@ -1221,24 +1215,24 @@ table tbody tr:hover {
     padding: 6px 11px;
 
     border: 1px solid var(--maroon);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 
     background: var(--maroon);
     color: #fff;
 
-    font-size: 8px;
+    font-size: var(--fs-sm);
     font-weight: 500;
 
     cursor: pointer;
 }
 
 .btn-import:hover {
-    background: #4d0716;
-    border-color: #4d0716;
+    background: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
 }
 
 .btn-import i {
-    font-size: 10px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -1257,7 +1251,7 @@ table tbody tr:hover {
 
     color: #6a3a43;
 
-    font-size: 8px;
+    font-size: var(--fs-sm);
     line-height: 1.6;
 }
 
@@ -1274,7 +1268,7 @@ table tbody tr:hover {
 
     color: var(--maroon);
 
-    font-size: 8px;
+    font-size: var(--fs-sm);
     font-weight: 600;
 
     text-decoration: none;
@@ -1311,7 +1305,7 @@ table tbody tr:hover {
 
 .import-dropzone.dragover {
     border-color: #720018;
-    background: #fff8f9;
+    background: var(--primary-light);
 }
 
 /* =========================================================
@@ -1372,19 +1366,19 @@ table tbody tr:hover {
     
     justify-content: center;
     
-    color: #333;
+    color: var(--text-main);
     
     background: #fff;
     
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     
-    font-size: 10px;
+    font-size: var(--fs-sm);
     
     font-weight: 400;
     
-    line-height: 1;
+    line-height: 1.5;
     
     text-decoration: none;
     
@@ -1395,31 +1389,31 @@ table tbody tr:hover {
 
 /* HOVER */
 .datalayanan-pagination .page-link:hover {
-    color: #6d061b;
+    color: var(--primary-color);
     
-    background: #fff7f8;
+    background: var(--primary-light);
     
-    border-color: #6d061b;
+    border-color: var(--primary-color);
 }
 
 /* ACTIVE */
 .datalayanan-pagination .page-item.active .page-link {
     color: #fff;
     
-    background: #6d061b;
+    background: var(--primary-color);
     
-    border-color: #6d061b;
+    border-color: var(--primary-color);
     
     font-weight: 600;
 }
 
 /* DISABLED */
 .datalayanan-pagination .page-item.disabled .page-link {
-    color: #aaa;
+    color: var(--border-color);
     
     background: #fff;
     
-    border-color: #ddd;
+    border-color: var(--border-color);
     
     cursor: default;
     
@@ -1464,7 +1458,7 @@ table tbody tr:hover {
         
         min-width: 27px;
         
-        font-size: 9px;
+        font-size: var(--fs-sm);
     }
 }
 
@@ -1479,7 +1473,7 @@ table tbody tr:hover {
 }
 
 .btn-group .btn {
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
 }
 
 .btn-group .btn:first-child {
@@ -1495,4 +1489,16 @@ table tbody tr:hover {
     display: inline-flex;
     gap: 0.5rem;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .datalayanan-container:not(.import-page) {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .content > .datalayanan-container.import-page {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }

@@ -1,5 +1,6 @@
+
 /* =========================================================
-   LAYANAN.CSS (GABUNGAN TABEL & FORM) — REVISI
+   LAYANAN.CSS
    ========================================================= */
 
 /* ---------------------------------------------------------
@@ -7,63 +8,102 @@
    --------------------------------------------------------- */
 :root {
   /* Brand Colors */
-  --primary: #8B1E3F;
-  --primary-dark: #5c0f28;
-  --primary-light: #fdf2f4;
+  --primary: var(--primary-color);
+  --primary-dark: var(--primary-color-hover);
+  --primary-light: var(--primary-light);
   --primary-focus: rgba(139, 30, 63, 0.18);
 
-  /* Neutral & Grayscale */
+  /* Alias agar kompatibel dengan CSS lama */
+  --maroon: var(--primary-color);
+  --dark-maroon: var(--primary-color-hover);
+
+  /* Neutral */
   --text-main: #2d3748;
   --text-muted: #718096;
-  --text-light: #a0aec0;
-  --bg-page: #f8fafc;
+  --text-light: var(--text-muted);
+
+  --bg-page: var(--bg-light);
   --bg-card: #ffffff;
-  --border-color: #e2e8f0;
+
+  --border-color: var(--border-color);
   --border-light: #edf2f7;
 
-  /* State & Alert Colors */
-  --success-bg: #d4edda;
-  --success-text: #155724;
-  --success-border: #c3e6cb;
+  /* Success */
+  --success-bg: var(--success-light);
+  --success-text: var(--success-color);
+  --success-border: var(--success-light);
 
-  --danger-bg: #f8d7da;
+  /* Danger */
+  --danger-bg: var(--danger-light);
   --danger-text: #721c24;
-  --danger-border: #f5c6cb;
-  --danger-btn: #dc3545;
-  --danger-btn-hover: #c82333;
+  --danger-border: var(--danger-light);
+  --danger-btn: var(--danger-color);
+  --danger-btn-hover: var(--danger-color);
 
-  --warning-btn: #ffc107;
-  --warning-btn-hover: #e0a800;
+  /* Warning */
+  --warning-btn: var(--warning-color);
+  --warning-btn-hover: var(--warning-color);
 
-  /* UI Tokens */
+  /* UI */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
   --radius-pill: 50px;
+
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
   --transition: all 0.2s ease-in-out;
 }
 
-/* Global box-sizing safeguard */
+
+/* ---------------------------------------------------------
+   GLOBAL
+   --------------------------------------------------------- */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* ---------------------------------------------------------
-   1. KOMPONEN UMUM (ALERTS & BUTTONS)
-   --------------------------------------------------------- */
 
-/* --- Alerts --- */
+/* ---------------------------------------------------------
+   1. PAGE HEADER
+   --------------------------------------------------------- */
+.layanan-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.layanan-page-header h2 {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.layanan-page-header p {
+  font-size: var(--fs-sm);
+  color: var(--primary-color);
+  margin: 5px 0 0;
+}
+
+
+/* ---------------------------------------------------------
+   2. ALERT
+   --------------------------------------------------------- */
 .layanan-alert-success,
 .layanan-alert-danger {
   padding: 12px 16px;
   border-radius: var(--radius-md);
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: var(--fs-sm);
   line-height: 1.5;
+
   display: flex;
   flex-direction: column;
 }
@@ -85,19 +125,27 @@
   padding-left: 20px;
 }
 
-/* --- Base Buttons --- */
+
+/* ---------------------------------------------------------
+   3. BUTTON
+   --------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
+
   padding: 9px 18px;
-  font-size: 14px;
+
+  font-size: var(--fs-sm);
   font-weight: 600;
+
   border: 1px solid transparent;
   border-radius: var(--radius-md);
+
   cursor: pointer;
   text-decoration: none;
+
   transition: var(--transition);
   font-family: inherit;
 }
@@ -107,6 +155,8 @@
   cursor: not-allowed;
 }
 
+
+/* Primary */
 .btn-primary,
 .btn-layanan-tambah {
   background-color: var(--primary);
@@ -121,34 +171,43 @@
   color: #ffffff;
 }
 
+
+/* Tombol Tambah */
 .btn-layanan-tambah {
   padding: 8px 18px;
   border-radius: var(--radius-pill);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   box-shadow: var(--shadow-sm);
 }
 
+
+/* Secondary */
 .btn-secondary {
-  background-color: #e2e8f0;
+  background-color: var(--border-color);
   color: var(--text-main);
-  border-color: #e2e8f0;
+  border-color: var(--border-color);
 }
 
 .btn-secondary:hover {
   background-color: #cbd5e1;
   border-color: #cbd5e1;
-  color: #1e293b;
+  color: var(--text-main);
 }
 
+
+/* Draft / Outline */
 .btn-draft,
 .btn-outline-maroon {
   background-color: transparent;
   border: 1px solid var(--primary);
   color: var(--primary);
+
   padding: 9px 18px;
   border-radius: var(--radius-md);
+
   font-weight: 600;
   text-decoration: none;
+
   transition: var(--transition);
 }
 
@@ -158,51 +217,37 @@
   color: #ffffff;
 }
 
+
 /* ---------------------------------------------------------
-   2. HALAMAN INDEX (TABEL & DAFTAR DATA)
+   4. CARD TABEL
    --------------------------------------------------------- */
-
-.layanan-page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.layanan-page-header h2 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.layanan-page-header p {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin: 5px 0 0;
-}
-
 .layanan-card {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+
   overflow: hidden;
   margin-bottom: 24px;
 }
 
 .layanan-card-header {
   padding: 16px 20px;
+
   border-bottom: 1px solid var(--border-light);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 12px;
   flex-wrap: wrap;
 }
 
+
+/* ---------------------------------------------------------
+   5. SEARCH
+   --------------------------------------------------------- */
 .layanan-search {
   position: relative;
   width: 100%;
@@ -211,22 +256,32 @@
 
 .layanan-search i {
   position: absolute;
+
   left: 14px;
   top: 50%;
+
   transform: translateY(-50%);
+
   color: var(--text-light);
+
   pointer-events: none;
-  font-size: 14px;
+
+  font-size: var(--fs-sm);
 }
 
 .layanan-search input {
   width: 100%;
+
   padding: 9px 14px 9px 38px;
+
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
-  font-size: 13px;
+
+  font-size: var(--fs-sm);
   color: var(--text-main);
-  background: #fdfdfd;
+
+  background: var(--bg-light);
+
   transition: var(--transition);
   outline: none;
 }
@@ -234,37 +289,76 @@
 .layanan-search input:focus {
   background: #ffffff;
   border-color: var(--primary);
+
   box-shadow: 0 0 0 3px var(--primary-focus);
 }
 
+
+/* ---------------------------------------------------------
+   6. TABLE
+   --------------------------------------------------------- */
 .layanan-table {
   width: 100%;
+  min-width: 900px;
+  table-layout: fixed;
   border-collapse: collapse;
+  border: 1px solid #cbd2dc !important;
 }
 
 .layanan-table thead {
-  background-color: #f8fafc;
+  background-color: var(--bg-light) !important;
 }
+
+.layanan-table th:nth-child(1),
+.layanan-table td:nth-child(1) { width: 5%; }
+
+.layanan-table th:nth-child(2),
+.layanan-table td:nth-child(2) { width: 23%; }
+
+.layanan-table th:nth-child(3),
+.layanan-table td:nth-child(3) { width: 14%; }
+
+.layanan-table th:nth-child(4),
+.layanan-table td:nth-child(4) { width: 31%; }
+
+.layanan-table th:nth-child(5),
+.layanan-table td:nth-child(5) { width: 8%; }
+
+.layanan-table th:nth-child(6),
+.layanan-table td:nth-child(6) { width: 10%; }
+
+.layanan-table th:nth-child(7),
+.layanan-table td:nth-child(7) { width: 9%; }
 
 .layanan-table th {
   padding: 14px 16px;
+
   text-align: left;
-  font-size: 12px;
+
+  font-size: var(--fs-xs);
   font-weight: 700;
+
   color: var(--text-muted);
+
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  border-bottom: 1px solid var(--border-color);
+
+  border: 1px solid #cbd2dc !important;
+
   white-space: nowrap;
 }
 
 .layanan-table td {
   padding: 14px 16px;
-  font-size: 13.5px;
+
+  font-size: var(--fs-sm);
   color: var(--text-main);
-  border-bottom: 1px solid var(--border-light);
+
+  border: 1px solid #cbd2dc !important;
+
   vertical-align: middle;
-  overflow-wrap: anywhere;   /* cegah kolom panjang merusak layout */
+
+  overflow-wrap: anywhere;
   word-break: break-word;
 }
 
@@ -273,40 +367,55 @@
   text-align: center;
 }
 
+.layanan-table tbody tr:hover {
+  background-color: var(--bg-light);
+}
+
 .dokumen-empty {
   color: var(--text-muted);
 }
 
-.layanan-table tbody tr:hover {
-  background-color: #fafbfc;
-}
 
-/* --- Status Badge --- */
+/* ---------------------------------------------------------
+   7. STATUS BADGE
+   --------------------------------------------------------- */
 .status-badge {
   border: 1px solid transparent;
+
   padding: 5px 12px;
+
   border-radius: var(--radius-pill);
-  font-size: 11px;
+
+  font-size: var(--fs-xs);
   font-weight: 700;
+
   text-transform: uppercase;
   letter-spacing: 0.03em;
+
   cursor: pointer;
+
   transition: var(--transition);
+
   font-family: inherit;
+
   display: inline-block;
 }
 
+
+/* Aktif */
 .status-badge.aktif {
-  background-color: #eaf5ea;
-  color: #2b6e22;
-  border-color: #d1ebd0;
+  background-color: var(--success-light);
+  color: var(--success-color);
+  border-color: var(--success-light);
 }
 
 .status-badge.aktif:hover {
-  background-color: #2b6e22;
+  background-color: var(--success-color);
   color: #ffffff;
 }
 
+
+/* Nonaktif */
 .status-badge.nonaktif {
   background-color: var(--danger-bg);
   color: var(--danger-text);
@@ -318,7 +427,10 @@
   color: #ffffff;
 }
 
-/* --- Aksi (Edit & Hapus) --- */
+
+/* ---------------------------------------------------------
+   8. AKSI EDIT & DELETE
+   --------------------------------------------------------- */
 .layanan-aksi {
   display: inline-flex;
   align-items: center;
@@ -329,29 +441,40 @@
 .aksi-delete {
   width: 32px;
   height: 32px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   border-radius: var(--radius-md);
-  font-size: 13px;
+
+  font-size: var(--fs-sm);
+
   text-decoration: none;
+
   transition: var(--transition);
 }
 
+
+/* Edit */
 .aksi-edit {
-  background: #fff8e1;
+  background: var(--warning-light);
   color: #8c6b00;
-  border: 1px solid #ffe082;
+
+  border: 1px solid var(--warning-light);
 }
 
 .aksi-edit:hover {
   background: var(--warning-btn);
-  color: #212529;
+  color: var(--text-main);
 }
 
+
+/* Delete */
 .aksi-delete {
   background: #fde8e8;
   color: var(--danger-btn);
+
   border: 1px solid #fbd5d5;
 }
 
@@ -360,20 +483,29 @@
   color: #ffffff;
 }
 
-/* --- Pagination --- */
+
+/* ---------------------------------------------------------
+   9. PAGINATION
+   --------------------------------------------------------- */
 .layanan-pagination {
   padding: 16px 20px;
+
   display: flex;
   justify-content: flex-end;
+
   border-top: 1px solid var(--border-light);
 }
 
 .pagination-custom {
   list-style: none;
+
   display: flex;
+
   gap: 6px;
+
   padding: 0;
   margin: 0;
+
   flex-wrap: wrap;
 }
 
@@ -381,87 +513,135 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   min-width: 34px;
   height: 34px;
+
   padding: 0 8px;
+
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
+
   text-decoration: none;
+
   color: var(--text-main);
-  font-size: 13px;
+
+  font-size: var(--fs-sm);
   font-weight: 600;
+
   background: #ffffff;
+
   transition: var(--transition);
 }
 
 .pagination-custom li a:hover {
   border-color: var(--primary);
+
   color: var(--primary);
+
   background-color: var(--primary-light);
 }
 
 .pagination-custom li.active a {
   background-color: var(--primary);
+
   border-color: var(--primary);
+
   color: #ffffff;
 }
 
 .pagination-custom li.disabled a {
   opacity: 0.5;
+
   cursor: not-allowed;
-  background: #f8f9fa;
+
+  background: var(--bg-light);
+
   border-color: var(--border-light);
+
   pointer-events: none;
 }
 
-/* --- Empty State --- */
-.layanan-empty {
-  padding: 50px 20px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 14px;
-}
 
 /* ---------------------------------------------------------
-   3. HALAMAN CREATE & EDIT (FORMULIR)
+   10. EMPTY STATE
    --------------------------------------------------------- */
+.layanan-empty {
+  padding: 50px 20px;
 
-.form-container {
-  background: var(--bg-card);
-  padding: 32px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
-  max-width: 860px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  width: 100%;
+  text-align: center;
+
+  color: var(--text-muted);
+
+  font-size: var(--fs-sm);
 }
 
+
+/* ---------------------------------------------------------
+   11. FORM CONTAINER
+   --------------------------------------------------------- */
+.form-container {
+  background: var(--bg-card);
+
+  padding: 32px;
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+
+  border: 1px solid var(--border-color);
+
+  max-width: 860px;
+
+  margin: 0 auto;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   12. FORM TITLE
+   --------------------------------------------------------- */
 .form-title {
   color: var(--primary);
-  font-size: 20px;
+
+  font-size: var(--fs-xl);
   font-weight: 700;
+
   margin-top: 0;
   margin-bottom: 24px;
+
   border-bottom: 2px solid var(--border-light);
+
   padding-bottom: 12px;
 }
 
-/* --- Form Groups & Inputs --- */
+
+/* ---------------------------------------------------------
+   13. FORM GROUP
+   --------------------------------------------------------- */
 .form-group {
   margin-bottom: 18px;
-  min-width: 0;   /* penting agar flex/grid tidak collapse */
+
+  min-width: 0;
 }
 
 .form-group label {
   display: block;
+
   margin-bottom: 6px;
-  font-size: 13.5px;
+
+  font-size: var(--fs-sm);
+
   color: var(--text-main);
+
   font-weight: 600;
 }
 
+
+/* Input */
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="email"],
@@ -470,50 +650,74 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
+
   padding: 10px 12px;
+
   border: 1px solid var(--border-color);
+
   border-radius: var(--radius-md);
-  font-size: 14px;
+
+  font-size: var(--fs-sm);
+
   color: var(--text-main);
+
   background-color: #ffffff;
+
   transition: var(--transition);
+
   outline: none;
+
   font-family: inherit;
+
   box-sizing: border-box;
 }
 
+
+/* Textarea */
 .form-group textarea {
   min-height: 120px;
+
   resize: vertical;
+
   line-height: 1.5;
 }
 
+
+/* Focus */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--primary);
+
   box-shadow: 0 0 0 3px var(--primary-focus);
 }
 
-/* --- Form Grid & Layout --- */
+
+/* ---------------------------------------------------------
+   14. FORM GRID
+   --------------------------------------------------------- */
 .row {
   display: flex;
+
   gap: 20px;
 }
 
 .col-half {
   flex: 1;
+
   min-width: 0;
 }
 
 .form-grid {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 20px;
+
   margin-bottom: 20px;
 }
 
-/* Override jika ada style inline margin-top */
 .form-grid > .form-group[style*="margin-top"] {
   margin-top: 20px !important;
 }
@@ -522,243 +726,390 @@
   grid-column: 1 / -1;
 }
 
+
+/* ---------------------------------------------------------
+   15. FORM FOOTER
+   --------------------------------------------------------- */
 .form-footer {
   display: flex;
+
   justify-content: flex-end;
+
   gap: 12px;
+
   margin-top: 28px;
+
   padding-top: 16px;
+
   border-top: 1px solid var(--border-light);
 }
 
-/* ---------------------------------------------------------
-   4. MODUL TAMBAHAN (QUILL EDITOR, DROPZONE, DOKUMEN)
-   --------------------------------------------------------- */
 
-/* --- Wrapper khusus editor agar tidak tumpang tindih --- */
+/* ---------------------------------------------------------
+   16. QUILL EDITOR
+   --------------------------------------------------------- */
 .ql-wrapper {
   position: relative;
+
   display: block;
+
   width: 100%;
+
   margin-bottom: 20px;
+
   overflow: visible;
+
   clear: both;
 }
 
-/* --- Rich Text Editor (Quill.js) --- */
+
+/* Toolbar */
 .ql-toolbar.ql-snow {
   border: 1px solid var(--border-color);
+
   border-bottom: none;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  background: #f8fafc;
+
+  border-radius:
+    var(--radius-lg)
+    var(--radius-lg)
+    0
+    0;
+
+  background: var(--bg-light);
+
   font-family: inherit;
+
   box-sizing: border-box;
 }
 
+
+/* Container */
 .ql-container.ql-snow {
   position: relative !important;
+
   border: 1px solid var(--border-color);
+
   border-top: none;
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+
+  border-radius:
+    0
+    0
+    var(--radius-lg)
+    var(--radius-lg);
+
   min-height: 180px;
+
   background: #ffffff;
+
   font-family: inherit;
-  font-size: 14px;
+
+  font-size: var(--fs-sm);
+
   box-sizing: border-box;
+
   height: auto !important;
+
   overflow-y: auto;
 }
 
+
+/* Editor */
 .layanan-editor {
   min-height: 140px;
+
   border: 1px solid var(--border-color);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+
+  border-radius:
+    0
+    0
+    var(--radius-lg)
+    var(--radius-lg);
+
   background: #ffffff;
-  font-size: 14px;
+
+  font-size: var(--fs-sm);
+
   line-height: 1.5;
 }
 
-.form-group:has(.layanan-editor) .ql-toolbar.ql-snow {
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+.form-group:has(.layanan-editor)
+.ql-toolbar.ql-snow {
+  border-radius:
+    var(--radius-lg)
+    var(--radius-lg)
+    0
+    0;
 }
 
-.form-group:has(.layanan-editor) .ql-container.ql-snow {
+.form-group:has(.layanan-editor)
+.ql-container.ql-snow {
   min-height: 140px;
 }
 
-/* Konten editor */
 .ql-editor {
   min-height: 160px;
+
   line-height: 1.6;
 }
 
-/* Pastikan elemen setelah editor turun ke bawah */
+
+/* Elemen setelah editor */
 .ql-wrapper + .form-group,
 .ql-wrapper + * {
   margin-top: 20px;
+
   clear: both;
 }
 
-/* Override untuk #editor-deskripsi */
+
+/* Editor Deskripsi */
 #editor-deskripsi {
   min-height: 180px !important;
 }
 
-/* --- Area Dropzone Upload --- */
+
+/* ---------------------------------------------------------
+   17. DROPZONE
+   --------------------------------------------------------- */
 #dropzone {
   border: 2px dashed var(--border-color);
+
   border-radius: var(--radius-lg);
+
   padding: 36px 20px;
+
   text-align: center;
-  background: #f8fafc;
+
+  background: var(--bg-light);
+
   cursor: pointer;
+
   transition: var(--transition);
 }
 
 #dropzone:hover {
   border-color: var(--primary);
+
   background: var(--primary-light);
 }
 
 #dropzone i {
-  font-size: 38px;
+  font-size: var(--fs-4xl);
+
   color: var(--primary);
+
   margin-bottom: 10px;
+
   display: inline-block;
 }
 
 #dropzone p {
   color: var(--text-main);
-  font-size: 14px;
+
+  font-size: var(--fs-sm);
+
   font-weight: 500;
+
   margin: 0 0 4px;
 }
 
 #dropzone small {
   color: var(--text-light);
-  font-size: 12px;
+
+  font-size: var(--fs-xs);
 }
 
-/* --- Dokumen Terlampir Saat Ini --- */
+
+/* ---------------------------------------------------------
+   18. DOKUMEN TERLAMPIR
+   --------------------------------------------------------- */
 .current-document {
   margin-top: 24px;
 }
 
 .current-doc-label {
-  font-size: 13.5px;
+  font-size: var(--fs-sm);
+
   font-weight: 600;
+
   color: var(--text-main);
+
   margin-bottom: 10px;
 }
 
 .doc-file-box {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
-  background: #f8fafc;
+
+  background: var(--bg-light);
+
   border: 1px solid var(--border-color);
+
   border-radius: var(--radius-md);
+
   padding: 12px 16px;
+
   margin-bottom: 10px;
+
   transition: var(--transition);
+
   gap: 10px;
 }
 
 .doc-file-box:hover {
   background: #ffffff;
+
   border-color: #cbd5e1;
 }
 
 .doc-icon {
-  font-size: 24px;
+  font-size: var(--fs-2xl);
+
   color: var(--danger-btn);
+
   margin-right: 12px;
+
   flex-shrink: 0;
 }
 
 .doc-name {
   flex-grow: 1;
-  font-size: 13.5px;
+
+  font-size: var(--fs-sm);
+
   font-weight: 500;
+
   color: var(--text-main);
+
   overflow: hidden;
+
   text-overflow: ellipsis;
+
   white-space: nowrap;
+
   padding-right: 12px;
+
   min-width: 0;
 }
 
 .doc-actions {
   display: flex;
+
   gap: 6px;
+
   flex-shrink: 0;
 }
 
 .doc-btn {
   width: 30px;
+
   height: 30px;
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
   border-radius: var(--radius-sm);
-  font-size: 13px;
+
+  font-size: var(--fs-sm);
+
   text-decoration: none;
+
   transition: var(--transition);
 }
 
+
+/* View */
 .doc-btn.btn-view {
-  background-color: #eaf5ea;
-  color: #28a745;
-  border: 1px solid #c3e6cb;
+  background-color: var(--success-light);
+
+  color: var(--success-color);
+
+  border: 1px solid var(--success-light);
 }
 
 .doc-btn.btn-view:hover {
-  background-color: #28a745;
+  background-color: var(--success-color);
+
   color: #ffffff;
 }
 
+
+/* Delete */
 .doc-btn.btn-delete {
   background-color: #fde8e8;
+
   color: var(--danger-btn);
+
   border: 1px solid #fbd5d5;
 }
 
 .doc-btn.btn-delete:hover {
   background-color: var(--danger-btn);
+
   color: #ffffff;
 }
 
+
 /* ---------------------------------------------------------
-   5. RESPONSIVE DESIGN (MEDIA QUERIES)
+   19. RESPONSIVE - TABLET / MOBILE
    --------------------------------------------------------- */
 @media (max-width: 768px) {
+
+  /* Header */
   .layanan-page-header {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
+
+  /* Card header */
   .layanan-card-header {
     flex-direction: column;
+
     align-items: stretch;
   }
 
+
+  /* Search */
   .layanan-search {
     max-width: 100%;
   }
 
+
+  /* Form */
   .form-container {
     padding: 20px;
+
     margin: 0 12px;
+
+    width: auto;
   }
 
-  .form-grid,
-  .row {
+
+  /* Form grid */
+  .form-grid {
     grid-template-columns: 1fr;
-    flex-direction: column;
+
     gap: 14px;
   }
 
-  /* Reset full-width override saat mobile */
+
+  /* Row */
+  .row {
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+
+  /* Footer */
   .form-footer {
     flex-direction: column-reverse;
   }
@@ -767,38 +1118,46 @@
     width: 100%;
   }
 
+
+  /* Pagination */
   .layanan-pagination {
     justify-content: center;
   }
 
-  /* Toolbar Quill: izinkan wrap di layar kecil */
+
+  /* Quill */
   .ql-toolbar.ql-snow {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 4px;
   }
 
-  /* Tabel: scroll horizontal di mobile */
-  .layanan-card {
-    overflow-x: auto;
-  }
 
+  /* Table horizontal scroll */
   .layanan-table {
-    min-width: 640px;
+    min-width: 900px;
   }
 }
 
-/* Mobile sangat kecil */
+
+/* ---------------------------------------------------------
+   20. RESPONSIVE - MOBILE KECIL
+   --------------------------------------------------------- */
 @media (max-width: 480px) {
+
   .layanan-page-header h2 {
-    font-size: 18px;
+    font-size: var(--fs-lg);
   }
 
   .form-title {
-    font-size: 17px;
+    font-size: var(--fs-lg);
   }
 
   .doc-file-box {
     flex-wrap: wrap;
   }
+
 }
+

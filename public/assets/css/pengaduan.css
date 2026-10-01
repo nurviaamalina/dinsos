@@ -20,8 +20,8 @@
 
     background: linear-gradient(
         to bottom,
-        #65091c 0,
-        #65091c 375px,
+        var(--primary-color) 0,
+        var(--primary-color) 375px,
         #ffffff 375px,
         #ffffff 100%
     );
@@ -46,7 +46,7 @@
 
     background: #ffffff;
 
-    border-radius: 28px;
+    border-radius: var(--radius-pill);
 
     box-shadow:
         0 7px 0 rgba(0, 0, 0, 0.20),
@@ -73,9 +73,9 @@
 
     color: #050505;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 40px;
+    font-size: var(--fs-4xl);
 
     line-height: 1.15;
 
@@ -97,9 +97,9 @@
 
     color: #292929;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 17px;
+    font-size: var(--fs-lg);
 
     line-height: 1.55;
 
@@ -117,11 +117,11 @@
 
     margin-top: 35px;
 
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
 
-    background: #65091c;
+    background: var(--primary-color);
 
-    border: 1px solid #b78b00;
+    border: 1px solid var(--warning-color);
 
     color: #ffffff;
 
@@ -131,16 +131,15 @@
     align-items: center;
     justify-content: center;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 28px;
+    font-size: var(--fs-3xl);
 
     font-weight: 700;
 
     letter-spacing: 0.5px;
 
-    box-shadow:
-        0 7px 18px rgba(101, 9, 28, 0.20);
+    box-shadow: var(--card-shadow);
 
     transition:
         transform 0.2s ease,
@@ -154,8 +153,7 @@
 
     transform: translateY(-2px);
 
-    box-shadow:
-        0 10px 22px rgba(101, 9, 28, 0.28);
+    box-shadow: var(--card-shadow);
 
     color: #ffffff;
 }
@@ -170,9 +168,9 @@
 
     color: #292929;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 17px;
+    font-size: var(--fs-lg);
 
     line-height: 1.5;
 
@@ -206,19 +204,19 @@
 
     gap: 14px;
 
-    border: 1.5px solid #65091c;
+    border: 1.5px solid var(--primary-color);
 
-    border-radius: 22px;
+    border-radius: var(--radius-pill);
 
-    color: #65091c;
+    color: var(--primary-color);
 
     background: #ffffff;
 
     text-decoration: none;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
 
-    font-size: 15px;
+    font-size: var(--fs-base);
 
     font-weight: 700;
 
@@ -229,14 +227,14 @@
 
 
 .btn-kembali i {
-    font-size: 20px;
+    font-size: var(--fs-xl);
 
-    line-height: 1;
+    line-height: 1.5;
 }
 
 
 .btn-kembali:hover {
-    background: #65091c;
+    background: var(--primary-color);
 
     color: #ffffff;
 }
@@ -249,7 +247,7 @@
 .site-footer {
     width: 100%;
 
-    background: #65091c;
+    background: var(--primary-color);
 
     color: #ffffff;
 
@@ -307,7 +305,7 @@
 
     flex-shrink: 0;
 
-    border-radius: 11px;
+    border-radius: var(--card-radius);
 
     background: #006b78;
 
@@ -318,16 +316,16 @@
 
     color: #ffffff;
 
-    font-family: Georgia, serif;
+    font-family: var(--font-primary);
 
-    font-size: 23px;
+    font-size: var(--fs-2xl);
 
     font-weight: 700;
 }
 
 
 .footer-small-title {
-    font-size: 10px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 
@@ -338,7 +336,7 @@
 
 
 .footer-main-title {
-    font-size: 16px;
+    font-size: var(--fs-base);
 
     font-weight: 700;
 }
@@ -351,7 +349,7 @@
 
     color: rgba(255, 255, 255, 0.90);
 
-    font-size: 12px;
+    font-size: var(--fs-sm);
 
     line-height: 1.8;
 }
@@ -375,7 +373,7 @@
 
     color: #ffffff;
 
-    font-size: 13px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 }
@@ -386,9 +384,9 @@
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: var(--fs-sm);
 
-    line-height: 1.3;
+    line-height: 1.5;
 
     transition:
         color 0.2s ease;
@@ -409,7 +407,7 @@
 .footer-map {
     width: 100%;
 
-    height: 180px;
+    min-height: 180px; height: auto;
 
     overflow: hidden;
 }
@@ -456,7 +454,7 @@
 
     color: rgba(255, 255, 255, 0.90);
 
-    font-size: 11px;
+    font-size: var(--fs-sm);
 
     line-height: 1.4;
 }
@@ -485,12 +483,12 @@
 
 
     .pengaduan-card h1 {
-        font-size: 37px;
+        font-size: var(--fs-4xl);
     }
 
 
     .pengaduan-description {
-        font-size: 17px;
+        font-size: var(--fs-lg);
     }
 
 
@@ -517,7 +515,7 @@
     .footer-map {
         grid-column: span 4;
 
-        height: 210px;
+        min-height: 210px; height: auto;
     }
 
 
@@ -546,8 +544,8 @@
 
         background: linear-gradient(
             to bottom,
-            #65091c 0,
-            #65091c 250px,
+            var(--primary-color) 0,
+            var(--primary-color) 250px,
             #ffffff 250px,
             #ffffff 100%
         );
@@ -562,7 +560,7 @@
 
         min-height: 450px;
 
-        border-radius: 22px;
+        border-radius: var(--radius-pill);
 
         padding:
             50px
@@ -573,9 +571,9 @@
 
     .pengaduan-card h1 {
 
-        font-size: 30px;
+        font-size: var(--fs-3xl);
 
-        line-height: 1.2;
+        line-height: 1.5;
 
         letter-spacing: -0.5px;
     }
@@ -583,7 +581,7 @@
 
     .pengaduan-description {
 
-        font-size: 16px;
+        font-size: var(--fs-base);
 
         line-height: 1.6;
     }
@@ -599,7 +597,7 @@
 
         margin-top: 30px;
 
-        font-size: 24px;
+        font-size: var(--fs-2xl);
     }
 
 
@@ -609,7 +607,7 @@
 
         margin-top: 30px;
 
-        font-size: 15px;
+        font-size: var(--fs-base);
 
         line-height: 1.5;
     }
@@ -658,7 +656,7 @@
 
         grid-column: span 2;
 
-        height: 200px;
+        min-height: 200px; height: auto;
     }
 
 
@@ -697,8 +695,8 @@
 
         background: linear-gradient(
             to bottom,
-            #65091c 0,
-            #65091c 220px,
+            var(--primary-color) 0,
+            var(--primary-color) 220px,
             #ffffff 220px,
             #ffffff 100%
         );
@@ -719,15 +717,15 @@
 
     .pengaduan-card h1 {
 
-        font-size: 27px;
+        font-size: var(--fs-3xl);
 
-        line-height: 1.2;
+        line-height: 1.5;
     }
 
 
     .pengaduan-description {
 
-        font-size: 15px;
+        font-size: var(--fs-base);
 
         line-height: 1.6;
     }
@@ -741,7 +739,7 @@
 
         height: 62px;
 
-        font-size: 22px;
+        font-size: var(--fs-2xl);
     }
 
 
@@ -749,7 +747,7 @@
 
     .pengaduan-note {
 
-        font-size: 14px;
+        font-size: var(--fs-sm);
     }
 
 
@@ -770,7 +768,7 @@
 
         height: 36px;
 
-        font-size: 14px;
+        font-size: var(--fs-sm);
     }
 
 
@@ -804,7 +802,7 @@
 
     .footer-map {
 
-        height: 190px;
+        min-height: 190px; height: auto;
     }
 
 

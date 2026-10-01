@@ -14,7 +14,7 @@
                  HEADER
             ====================================================== -->
             <div class="dashboard-header">
-                <h1>Selamat datang, Dinsos</h1>
+                 <h2>Selamat Datang, <?= esc(session()->get('username') ?? 'Admin Dinsos') ?></h2>
                 <p>Kelola seluruh layanan</p>
             </div>
 
@@ -23,53 +23,58 @@
             ====================================================== -->
             <div class="dashboard-cards">
 
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="bi bi-pencil-square"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>Layanan</h3>
-                        <p>Kelola Data Layanan</p>
-                        <a href="<?= base_url('admin/layanan') ?>" class="detail-button">Detail →</a>
-                    </div>
-                </div>
+    <!-- Card 1 -->
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="bi bi-pencil-square"></i>
+        </div>
+        <div class="stat-info">
+            <h3>Layanan</h3>
+            <p>Kelola Data Layanan</p>
+            <a href="<?= base_url('admin/layanan') ?>" class="detail-button">Detail →</a>
+        </div>
+    </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="bi bi-people-fill"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>Bidang</h3>
-                        <p>Kelola Data Bidang</p>
-                        <a href="<?= base_url('admin/bidang') ?>" class="detail-button">Detail →</a>
-                    </div>
-                </div>
+    <!-- Card 2 -->
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div class="stat-info">
+            <h3>Bidang</h3>
+            <p>Kelola Data Bidang</p>
+            <a href="<?= base_url('admin/bidang') ?>" class="detail-button">Detail →</a>
+        </div>
+    </div>
 
-                <div class="stat-card stat-number">
-                    <div class="stat-info">
-                        <h3>Total Berita</h3>
-                        <strong><?= number_format((int) ($totalBerita ?? 0), 0, ',', '.') ?></strong>
-                        <p>Keseluruhan Postingan</p>
-                    </div>
-                </div>
+    <!-- Card 3 -->
+    <div class="stat-card stat-number">
+        <div class="stat-info">
+            <h3>Total Berita</h3>
+            <strong><?= number_format((int) ($totalBerita ?? 0), 0, ',', '.') ?></strong>
+            <p>Keseluruhan Postingan</p>
+        </div>
+    </div>
 
-                <div class="stat-card stat-number">
-                    <div class="stat-info">
-                        <h3>Total Kegiatan</h3>
-                        <strong><?= number_format((int) ($totalKegiatan ?? 0), 0, ',', '.') ?></strong>
-                        <p>Keseluruhan Kegiatan</p>
-                    </div>
-                </div>
+    <!-- Card 4 -->
+    <div class="stat-card stat-number">
+        <div class="stat-info">
+            <h3>Total Kegiatan</h3>
+            <strong><?= number_format((int) ($totalKegiatan ?? 0), 0, ',', '.') ?></strong>
+            <p>Keseluruhan Kegiatan</p>
+        </div>
+    </div>
 
-                <div class="stat-card stat-number">
-                    <div class="stat-info">
-                        <h3>Total Postingan</h3>
-                        <strong><?= number_format((int) ($totalInstagram ?? 32), 0, ',', '.') ?></strong>
-                        <p>Keseluruhan Postingan</p>
-                    </div>
-                </div>
+    <!-- Card 5 -->
+    <div class="stat-card stat-number">
+        <div class="stat-info">
+            <h3>Total Postingan</h3>
+            <strong><?= number_format((int) ($totalInstagram ?? 949), 0, ',', '.') ?></strong>
+            <p>Keseluruhan Postingan</p>
+        </div>
+    </div>
 
-            </div>
+</div>
 
             <!-- =====================================================
                  STATISTIK UTAMA
@@ -297,25 +302,144 @@
                     <?php endif; ?>
                 </div>
 
-                <!-- INSTAGRAM -->
-                <div class="latest-panel">
-                    <div class="latest-header">
-                        <h3>Postingan Terbaru</h3>
-                        <a href="<?= base_url('admin/instagram') ?>" class="detail-button">Detail →</a>
-                    </div>
+              <!-- INSTAGRAM -->
+<div class="latest-panel">
 
-                    <?php foreach (($instagramTerbaru ?? []) as $index => $item): ?>
-                        <div class="latest-item">
-                            <div class="latest-number"><?= $index + 1 ?>.</div>
-                            <div class="latest-image"></div>
+    <div class="latest-header">
 
-                            <div class="latest-info">
-                                <strong><?= esc($item['judul'] ?? 'Caption Instagram') ?></strong>
-                                <span><?= esc($item['deskripsi'] ?? 'Postingan terbaru ...') ?></span>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+        <h3>Postingan Terbaru</h3>
+
+        <a
+            href="<?= base_url('admin/instagram') ?>"
+            class="detail-button"
+        >
+            Detail →
+        </a>
+
+    </div>
+
+
+    <?php if (!empty($instagramTerbaru)): ?>
+
+        <?php foreach ($instagramTerbaru as $index => $item): ?>
+
+            <?php
+
+            /*
+            |--------------------------------------------------------------------------
+            | THUMBNAIL INSTAGRAM
+            |--------------------------------------------------------------------------
+            */
+
+            $thumbnail = trim(
+                (string) ($item['thumbnail'] ?? '')
+            );
+
+            $thumbnailUrl = '';
+
+            if ($thumbnail !== '') {
+
+                $thumbnailUrl = base_url(
+                    'uploads/instagram/' . $thumbnail
+                );
+
+            } elseif (!empty($item['thumbnail_url'])) {
+
+                $thumbnailUrl = $item['thumbnail_url'];
+
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | CAPTION
+            |--------------------------------------------------------------------------
+            */
+
+            $caption = trim(
+                strip_tags(
+                    (string) ($item['caption'] ?? '')
+                )
+            );
+
+            if ($caption === '') {
+                $caption = 'Postingan Instagram';
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | DESKRIPSI SINGKAT
+            |--------------------------------------------------------------------------
+            */
+
+            $deskripsi = mb_strimwidth(
+                $caption,
+                0,
+                45,
+                '...'
+            );
+
+            ?>
+
+
+            <div class="latest-item">
+
+                <!-- NOMOR -->
+
+                <div class="latest-number">
+                    <?= $index + 1 ?>.
                 </div>
+
+
+                <!-- THUMBNAIL -->
+
+                <?php if ($thumbnailUrl !== ''): ?>
+
+                    <div
+                        class="latest-image has-image"
+                        style="
+                            background-image:
+                            url('<?= esc($thumbnailUrl, 'attr') ?>');
+                        "
+                    ></div>
+
+                <?php else: ?>
+
+                    <div class="latest-image"></div>
+
+                <?php endif; ?>
+
+
+                <!-- INFORMASI -->
+
+                <div class="latest-info">
+
+                    <strong>
+                        <?= esc($deskripsi) ?>
+                    </strong>
+
+                    <span>
+                        Postingan Instagram terbaru
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        <?php endforeach; ?>
+
+
+    <?php else: ?>
+
+        <div class="latest-empty">
+            Belum ada postingan Instagram.
+        </div>
+
+    <?php endif; ?>
+
+</div>
 
             </div>
 

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
 }
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
 }
 
 /* ==========================================
@@ -20,7 +20,7 @@ body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-primary);
     background: #ffffff;
 }
 
@@ -34,7 +34,7 @@ body {
 
     background: #ffffff;
 
-    border-bottom: 3px solid #650019;
+    border-bottom: 3px solid var(--primary-color);
 
     position: relative;
 
@@ -83,7 +83,7 @@ body {
 
 .brand img {
 
-    width: 115px;
+    width: 200px;
 
     height: auto;
 
@@ -123,23 +123,23 @@ body {
 
     height: 100%;
 
-    color: #111111;
+    color: var(--text-main);
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: var(--fs-sm);
 
     font-weight: 500;
 
     white-space: nowrap;
 
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 
 .nav-link:hover {
 
-    color: #650019;
+    color: var(--primary-color);
 }
 
 
@@ -149,7 +149,7 @@ body {
 
 .dropdown-toggle-custom i {
 
-    font-size: 9px;
+    font-size: var(--fs-sm);
 
     margin-top: 2px;
 }
@@ -185,10 +185,9 @@ body {
 
     background: #ffffff;
 
-    border-radius: 7px;
+    border-radius: var(--radius-md);
 
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--card-shadow);
 
     opacity: 0;
 
@@ -196,7 +195,7 @@ body {
 
     transform: translateY(8px);
 
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
 
     z-index: 999;
 }
@@ -218,19 +217,19 @@ body {
 
     padding: 10px 18px;
 
-    color: #333333;
+    color: var(--text-main);
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: var(--fs-sm);
 }
 
 
 .dropdown-menu-custom a:hover {
 
-    background: #f8eef1;
+    background: var(--bg-light);
 
-    color: #650019;
+    color: var(--primary-color);
 }
 
 
@@ -250,30 +249,29 @@ body {
 
     padding: 0 18px;
 
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
 
-    background: #650019;
+    background: var(--primary-color);
 
     color: #ffffff;
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: var(--fs-sm);
 
     font-weight: 700;
 
     white-space: nowrap;
 
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
 
-    box-shadow:
-        0 3px 8px rgba(101, 0, 25, 0.20);
+    box-shadow: var(--card-shadow);
 }
 
 
 .btn-pengaduan:hover {
 
-    background: #820021;
+    background: var(--primary-color-hover);
 
     color: #ffffff;
 
@@ -293,9 +291,9 @@ body {
 
     background: transparent;
 
-    font-size: 27px;
+    font-size: var(--fs-3xl);
 
-    color: #650019;
+    color: var(--primary-color);
 
     cursor: pointer;
 }
@@ -323,7 +321,7 @@ body {
 
     .nav-link {
 
-        font-size: 12px;
+        font-size: var(--fs-sm);
     }
 
     .brand img {
@@ -335,7 +333,7 @@ body {
 
         padding: 0 13px;
 
-        font-size: 9px;
+        font-size: var(--fs-sm);
     }
 }
 

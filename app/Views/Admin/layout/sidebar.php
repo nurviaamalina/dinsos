@@ -16,10 +16,6 @@ $isSuperadmin = ($role === 'superadmin');
 
     <div class="sidebar-logo">
 
-        <img
-            src="<?= base_url('assets/images/logo-dinsos.png') ?>"
-            alt="Logo Dinsos"
-        >
 
         <div>
 

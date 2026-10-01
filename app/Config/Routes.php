@@ -86,6 +86,7 @@ $routes->get('bidang/(:segment)', 'Bidang::detail/$1');
 // =====================================================
 
 $routes->get('instagram', 'Instagram::index');
+$routes->get('instagram-sync', 'InstagramSync::index');
 
 
 // =====================================================
@@ -651,4 +652,12 @@ $routes->group('admin', ['filter' => 'admin'], function ($routes) {
         'Admin\HasilSKM::delete/$1'
     );
 
+
+
+// =====================================================
+    // INSTAGRAM
+    // =====================================================
+
+    $routes->get('instagram', 'Admin\Instagram::index');
+    $routes->get('instagram/sync', 'Admin\Instagram::sync');
 });

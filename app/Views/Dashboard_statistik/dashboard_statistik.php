@@ -882,7 +882,7 @@
                                 display: false
                             },
 
-                            ticks: {
+8                            ticks: {
                                 maxRotation: 45,
                                 minRotation: 0
                             }
