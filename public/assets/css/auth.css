@@ -1,539 +1,314 @@
-/* =====================================================
-   LOGIN PAGE STYLES - DINAS SOSIAL
-   Pixel-Matched to Mockup & Fully Responsive
-===================================================== */
-
-:root {
-    --primary-maroon: #650918;
-    --primary-maroon-hover: #4f0613;
-    --surface-white: #ffffff;
-    --bg-gray: #f5f6f8;
-    --text-dark: #24252b;
-    --text-muted: #6b7280;
-    --border-light: #dedede;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-html,
-body {
+body, html {
     width: 100%;
-    min-height: 100%;
-    font-family: "Poppins", Arial, sans-serif;
-    background: var(--bg-gray);
-    color: var(--text-dark);
+    height: 100%;
+    overflow-x: hidden;
 }
 
-/* =====================================================
-   HALAMAN LOGIN (SPLIT SCREEN)
-===================================================== */
 .login-page {
-    width: 100%;
-    min-height: 100vh;
     display: flex;
-    overflow: hidden;
-    position: relative;
-}
-
-/* =====================================================
-   BAGIAN KIRI (FOTO GEDUNG & BRANDING)
-===================================================== */
-.login-left {
-    position: relative;
-    width: 54%;
     min-height: 100vh;
-    background-image: url("public/assets/images/foto.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-/* Overlay Gradasi Maroon */
-.left-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(80, 5, 15, 0.88) 0%,
-        rgba(101, 9, 24, 0.72) 36%,
-        rgba(101, 9, 24, 0.35) 70%,
-        rgba(101, 9, 24, 0.15) 100%
-    );
-    z-index: 1;
-}
-
-/* Dekorasi Sudut Kiri Bawah */
-.left-decoration {
-    position: absolute;
-    width: 330px;
-    height: 330px;
-    left: -190px;
-    bottom: -190px;
-    background: var(--primary-maroon);
-    transform: rotate(45deg);
-    z-index: 4;
-}
-
-.left-decoration::before {
-    content: "";
-    position: absolute;
-    width: 260px;
-    height: 260px;
-    left: 35px;
-    top: 35px;
-    border: 6px solid rgba(255, 255, 255, 0.85);
-    z-index: 5;
-}
-
-/* Konten Brand Kiri */
-.left-content {
-    position: relative;
-    z-index: 10;
     width: 100%;
-    padding: 80px 40px 40px 65px;
+    background-color: #ffffff;
+}
+
+/* ==================================================
+   BAGIAN KIRI (GEDUNG & BRANDING RATA KIRI)
+=================================================== */
+.login-left {
+    flex: 1.2;
+    position: relative;
+    background: url('../images/dinsos1.png') no-repeat center center / cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Rata kiri */
+    padding: 40px 50px;
+    overflow: hidden;
+}
+
+/* Overlay Warna Maroon Transparan */
+/* Overlay Warna Maroon Transparan (Di-nonaktifkan) */
+.left-overlay {
+    display: none;
+}
+
+/* BRANDING DI KIRI ATAS */
+.left-content-top {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 20px;
-}
-
-.brand-logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    gap: 16px;
+    text-align: left;
 }
 
 .brand-logo {
-    display: block;
-    width: 82px;
-    height: 82px;
+    width: 65px;
+    height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
-}
-
-.brand-text {
-    padding-left: 20px;
-    border-left: 2px solid rgba(255, 255, 255, 0.85);
-    color: #ffffff;
 }
 
 .brand-text h1 {
-    margin: 0 0 4px;
-    font-size: 26px;
-    line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: 0.8px;
     color: #ffffff;
-}
-
-.brand-text p {
-    margin: 0;
-    font-size: 13.5px;
-    line-height: 1.4;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.2;
 }
 
-/* =====================================================
-   BAGIAN KANAN (FORMULIR LOGIN)
-===================================================== */
+.brand-text .brand-sub {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.brand-text .brand-country {
+    color: #e0e0e0;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Dekorasi Segitiga Pojok Kiri Bawah */
+.left-decoration-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    height: 180px;
+    
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    z-index: 2;
+}
+
+/* ==================================================
+   BAGIAN KANAN (FULL PUTIH BERSIH TANPA CORAK MERAH)
+=================================================== */
 .login-right {
+    flex: 1;
     position: relative;
-    width: 46%;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 24px;
-    background: #f8f9fa;
+    padding: 40px 20px;
+    background-color: #ffffff !important; /* Full Putih */
     overflow: hidden;
 }
 
-/* Dekorasi Sudut Kanan Atas */
-.login-right::before {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    right: -125px;
-    top: -125px;
-    background: var(--primary-maroon);
-    transform: rotate(45deg);
-    z-index: 1;
+/* Sembunyikan Dekorasi Merah di Bagian Kanan */
+.right-decoration-top,
+.right-decoration-bottom {
+    display: none !important;
 }
 
-/* Dekorasi Sudut Kanan Bawah */
-.login-right::after {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    right: -125px;
-    bottom: -125px;
-    background: var(--primary-maroon);
-    transform: rotate(45deg);
-    z-index: 1;
-}
-
-/* =====================================================
-   KARTU LOGIN
-===================================================== */
+/* Kartu Login */
 .login-card {
     position: relative;
-    z-index: 10;
+    z-index: 2;
+    background: #ffffff;
     width: 100%;
-    max-width: 440px;
-    background: var(--surface-white);
-    border-radius: 14px;
-    padding: 38px 40px 32px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid #f0f1f4;
-    box-sizing: border-box;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    /* Soft Shadow agar kartu login tetap menonjol anggun di atas latar putih */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    text-align: center;
 }
 
-/* Logo Garuda Pancasila */
-.card-logo-garuda {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-}
-
+/* Logo  */
 .card-logo-garuda img {
-    display: block;
-    width: 72px;
+    width: 200px; /* Ukuran sedang-besar yang mirip proporsinya dengan sebelah kiri */
+    max-width: 100%;
     height: auto;
-    max-height: 72px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+    /* Memberikan efek bayangan lembut agar logo lebih tegas di atas latar putih */
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12)); 
+    transition: transform 0.2s ease;
 }
 
 /* Header Kartu */
-.login-card-header {
-    text-align: center;
-    margin-bottom: 24px;
-}
-
 .login-card-header h2 {
-    margin: 0 0 8px;
-    color: var(--primary-maroon);
-    font-size: 24px;
-    line-height: 1.25;
+    font-size: 22px;
     font-weight: 700;
+    color: #611217;
+    margin-bottom: 6px;
 }
 
 .login-card-header p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 12.5px;
+    font-size: 13px;
+    color: #718096;
     line-height: 1.5;
-    font-weight: 400;
+    margin-bottom: 22px;
 }
 
-/* =====================================================
-   ALERT NOTIFIKASI
-===================================================== */
-.login-alert {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 11px 14px;
-    margin-bottom: 18px;
-    border-radius: 8px;
-    font-size: 12.5px;
-    line-height: 1.45;
-    animation: fadeIn 0.25s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.alert-error {
-    color: #842029;
-    background: #f8d7da;
-    border: 1px solid #f5c2c7;
-}
-
-.alert-success {
-    color: #0f5132;
-    background: #d1e7dd;
-    border: 1px solid #badbcc;
-}
-
-.login-alert i {
-    flex-shrink: 0;
-    margin-top: 1px;
-    font-size: 15px;
-}
-
-/* =====================================================
-   INPUT FORM
-===================================================== */
+/* Form & Input */
 .login-form {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .login-input-group {
     position: relative;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .login-input-icon {
     position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--primary-maroon);
-    font-size: 17px;
+    left: 14px;
+    color: #a0aec0;
+    font-size: 16px;
     pointer-events: none;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+/* Menghilangkan icon bawaan browser (Edge/Chrome/Safari) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    display: none !important;
 }
 
 .login-input-group input {
     width: 100%;
-    height: 100%;
-    padding: 0 48px 0 50px;
-    border: 1px solid var(--border-light);
+    padding: 12px 42px 12px 42px;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
-    outline: none;
-    background: #ffffff;
-    color: #24252b;
-    font-family: inherit;
-    font-size: 13.5px;
-    font-weight: 400;
-    box-sizing: border-box;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.login-input-group input::placeholder {
-    color: #9ca3af;
-    opacity: 1;
-}
-
-.login-input-group input:hover {
-    border-color: #c9c9c9;
+    font-size: 14px;
+    color: #2d3748;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
 }
 
 .login-input-group input:focus {
-    border-color: var(--primary-maroon);
-    box-shadow: 0 0 0 3px rgba(101, 9, 24, 0.08);
+    outline: none;
+    border-color: #611217;
+    box-shadow: 0 0 0 3px rgba(97, 18, 23, 0.1);
 }
 
-/* Password Toggle Button */
+/* Tombol Toggle Mata Password */
 .password-toggle-btn {
     position: absolute;
-    right: 14px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
+    background: transparent;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: #9ca3af;
-    font-size: 17px;
-    cursor: pointer;
-    z-index: 3;
-    transition: color 0.15s ease;
+    padding: 4px;
+    z-index: 2;
+    outline: none;
 }
 
 .password-toggle-btn:hover {
-    color: var(--primary-maroon);
+    color: #4a5568;
 }
 
-/* =====================================================
-   TOMBOL LOGIN SUBMIT
-===================================================== */
+/* Tombol Submit */
 .btn-login-submit {
     width: 100%;
-    height: 50px;
-    margin-top: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    padding: 12px;
+    background-color: #611217;
+    color: #ffffff;
     border: none;
     border-radius: 8px;
-    background: var(--primary-maroon);
-    color: #ffffff;
-    font-family: inherit;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(101, 9, 24, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    margin-top: 5px;
 }
 
 .btn-login-submit:hover {
-    background: var(--primary-maroon-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(101, 9, 24, 0.28);
+    background-color: #4a0d11;
 }
 
-.btn-login-submit:active {
-    transform: translateY(0);
-}
-
-.btn-login-submit i {
-    font-size: 16px;
-    transition: transform 0.2s ease;
-}
-
-.btn-login-submit:hover i {
-    transform: translateX(4px);
-}
-
-/* =====================================================
-   FOOTER KARTU
-===================================================== */
+/* Footer Kartu */
 .login-card-footer {
-    width: 100%;
-    margin-top: 28px;
-    text-align: center;
-}
-
-.footer-divider {
-    width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid #edf2f7;
+    padding-top: 18px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 10px;
 }
 
-.divider-line {
-    display: block;
-    flex: 1;
-    height: 1px;
-    background: #e5e7eb;
-}
-
-.divider-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-maroon);
+.footer-icon {
+    color: #611217;
     font-size: 20px;
+    margin-bottom: 4px;
 }
 
 .footer-copyright {
-    margin: 0 0 3px;
-    color: var(--text-muted);
-    font-size: 11.5px;
+    font-size: 12px;
+    color: #718096;
     font-weight: 500;
 }
 
 .footer-motto {
-    display: block;
-    color: #9ca3af;
-    font-size: 10px;
-    font-style: italic;
+    font-size: 11px;
+    color: #a0aec0;
+    margin-top: 2px;
 }
 
-/* =====================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
-===================================================== */
-@media (max-width: 1080px) {
-    .login-left {
-        width: 50%;
-    }
-
-    .login-right {
-        width: 50%;
-    }
-
-    .left-content {
-        padding-left: 40px;
-    }
+/* Alert Notification */
+.login-alert {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
 }
 
+.alert-error {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border: 1px solid #fed7d7;
+}
+
+.alert-success {
+    background-color: #f0fff4;
+    color: #38a169;
+    border: 1px solid #c6f6d5;
+}
+
+/* Responsive Layout */
 @media (max-width: 900px) {
     .login-page {
         flex-direction: column;
-        overflow-y: auto;
     }
-
     .login-left {
-        width: 100%;
-        min-height: 250px;
-    }
-
-    .left-content {
-        padding: 50px 30px;
-    }
-
-    .login-right {
-        width: 100%;
-        min-height: auto;
-        padding: 35px 20px 50px;
-    }
-
-    .login-card {
-        max-width: 440px;
-        padding: 32px 28px 26px;
-    }
-}
-
-@media (max-width: 540px) {
-    .login-left {
-        min-height: 200px;
-    }
-
-    .left-content {
-        padding: 35px 20px;
-    }
-
-    .brand {
-        gap: 14px;
-    }
-
-    .brand-logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    .brand-text {
-        padding-left: 14px;
-    }
-
-    .brand-text h1 {
-        font-size: 20px;
-    }
-
-    .brand-text p {
-        font-size: 11px;
-    }
-
-    .login-card {
-        padding: 26px 20px;
-        border-radius: 12px;
-    }
-
-    .login-card-header h2 {
-        font-size: 21px;
+        min-height: 180px;
+        padding: 20px;
+        align-items: flex-start;
     }
 }
