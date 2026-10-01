@@ -35,17 +35,5 @@
     </section>
 
 
-    <!-- =========================================
-         KEMBALI
-    ========================================== -->
-    <div class="pengaduan-back-wrapper">
-
-        <a href="<?= base_url('/') ?>" class="btn-kembali">
-            <i class="bi bi-arrow-left"></i>
-            <span>Kembali</span>
-        </a>
-
-    </div>
-
 </main>
 <?= $this->include('layout/footer') ?>

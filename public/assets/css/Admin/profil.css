@@ -53,30 +53,23 @@ body {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
-<<<<<<< HEAD
     color: #1e293b;
     letter-spacing: -0.2px;
-=======
-
-    color: var(--primary-color);
-
->>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
 }
 
 .profil-header p,
 .profil-create-header p,
 .anggota-create-header p {
     margin: 4px 0 0;
-<<<<<<< HEAD
+
     font-size: 0.875rem;
     color: #64748b;
-=======
 
     font-size: var(--fs-base);
 
     color: var(--primary-color);
 
->>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
+
 }
 
 
@@ -521,9 +514,9 @@ body {
    VISI & MISI DALAM TAB
 ========================================================= */
 
-<<<<<<< HEAD
+
 .visi-misi-wrapper {
-=======
+
 @media (max-width: 1200px) {
 
     .profil-content {
@@ -685,7 +678,7 @@ body {
 ========================================================= */
 
 .profil-form-grid {
->>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -1116,7 +1109,7 @@ body {
 
 /* =========================================================
    GRID
->>>>>>> e3f081253d9c0ae1926643bac94b848dad299abb
+
 ========================================================= */
 
 .profil-form-grid,
@@ -1513,4 +1506,5 @@ body {
     .btn-simpan-anggota {
         width: 100%;
     }
+}
 }
