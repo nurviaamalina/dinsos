@@ -23,53 +23,58 @@
             ====================================================== -->
             <div class="dashboard-cards">
 
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="bi bi-pencil-square"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>Layanan</h3>
-                        <p>Kelola Data Layanan</p>
-                        <a href="<?= base_url('admin/layanan') ?>" class="detail-button">Detail →</a>
-                    </div>
-                </div>
+    <!-- Card 1 -->
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="bi bi-pencil-square"></i>
+        </div>
+        <div class="stat-info">
+            <h3>Layanan</h3>
+            <p>Kelola Data Layanan</p>
+            <a href="<?= base_url('admin/layanan') ?>" class="detail-button">Detail →</a>
+        </div>
+    </div>
 
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="bi bi-people-fill"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>Bidang</h3>
-                        <p>Kelola Data Bidang</p>
-                        <a href="<?= base_url('admin/bidang') ?>" class="detail-button">Detail →</a>
-                    </div>
-                </div>
+    <!-- Card 2 -->
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div class="stat-info">
+            <h3>Bidang</h3>
+            <p>Kelola Data Bidang</p>
+            <a href="<?= base_url('admin/bidang') ?>" class="detail-button">Detail →</a>
+        </div>
+    </div>
 
-                <div class="stat-card stat-number">
-                    <div class="stat-info">
-                        <h3>Total Berita</h3>
-                        <strong><?= number_format((int) ($totalBerita ?? 0), 0, ',', '.') ?></strong>
-                        <p>Keseluruhan Postingan</p>
-                    </div>
-                </div>
+    <!-- Card 3 -->
+    <div class="stat-card stat-number">
+        <div class="stat-info">
+            <h3>Total Berita</h3>
+            <strong><?= number_format((int) ($totalBerita ?? 0), 0, ',', '.') ?></strong>
+            <p>Keseluruhan Postingan</p>
+        </div>
+    </div>
 
-                <div class="stat-card stat-number">
-                    <div class="stat-info">
-                        <h3>Total Kegiatan</h3>
-                        <strong><?= number_format((int) ($totalKegiatan ?? 0), 0, ',', '.') ?></strong>
-                        <p>Keseluruhan Kegiatan</p>
-                    </div>
-                </div>
+    <!-- Card 4 -->
+    <div class="stat-card stat-number">
+        <div class="stat-info">
+            <h3>Total Kegiatan</h3>
+            <strong><?= number_format((int) ($totalKegiatan ?? 0), 0, ',', '.') ?></strong>
+            <p>Keseluruhan Kegiatan</p>
+        </div>
+    </div>
 
-                <div class="stat-card stat-number">
-                    <div class="stat-info">
-                        <h3>Total Postingan</h3>
-                        <strong><?= number_format((int) ($totalInstagram ?? 32), 0, ',', '.') ?></strong>
-                        <p>Keseluruhan Postingan</p>
-                    </div>
-                </div>
+    <!-- Card 5 -->
+    <div class="stat-card stat-number">
+        <div class="stat-info">
+            <h3>Total Postingan</h3>
+            <strong><?= number_format((int) ($totalInstagram ?? 949), 0, ',', '.') ?></strong>
+            <p>Keseluruhan Postingan</p>
+        </div>
+    </div>
 
-            </div>
+</div>
 
             <!-- =====================================================
                  STATISTIK UTAMA
