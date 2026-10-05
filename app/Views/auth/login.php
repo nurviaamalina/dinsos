@@ -36,7 +36,7 @@
             <div class="left-content-top">
                 <div class="brand">
                     <div class="brand-logo-wrapper">
-                        <img src="<?= base_url('assets/images/logo.jfif') ?>" alt="Logo Dinas Sosial" class="brand-logo">
+                        <img src="<?= base_url('assets/images/logo1.png') ?>" alt="Logo Dinas Sosial" class="brand-logo">
                     </div>
                     <div class="brand-text">
                         <h1>DINAS SOSIAL</h1>
