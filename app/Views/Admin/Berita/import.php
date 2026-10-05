@@ -2,7 +2,7 @@
 
 <link
     rel="stylesheet"
-    href="<?= base_url('assets/css/admin/berita.css') ?>"
+    href="<?= base_url('assets/css/Admin/berita.css') ?>"
 >
 
 <div class="d-flex">

@@ -9,6 +9,10 @@
                 <h3>Tambah Data Pelayanan</h3>
                 <p class="subtitle">Kelola seluruh Data</p>
             </div>
+            <a href="<?= base_url('admin/datalayanan') ?>" class="create-back-link">
+                <i class="bi bi-arrow-left"></i>
+                Kembali
+            </a>
         </div>
 
         <?php if(session()->getFlashdata('errors')): ?>

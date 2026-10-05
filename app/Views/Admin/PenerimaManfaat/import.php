@@ -2,7 +2,7 @@
 
 <link
     rel="stylesheet"
-    href="<?= base_url('assets/css/admin/penerima_manfaat.css') ?>"
+    href="<?= base_url('assets/css/Admin/penerima_manfaat.css') ?>"
 >
 
 <div class="d-flex">

@@ -1,6 +1,6 @@
 <?= $this->include('admin/layout/header') ?>
 
-<link rel="stylesheet" href="<?= base_url('assets/css/admin/datalayanan.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/Admin/datalayanan.css') ?>">
 
 <div class="d-flex">
 

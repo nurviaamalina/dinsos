@@ -9,7 +9,7 @@
     <!-- Google Font Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -23,39 +23,43 @@
     <div class="login-page">
 
         <!-- ==================================================
-             BAGIAN KIRI (FOTO GEDUNG, OVERLAY, & BRANDING)
+             BAGIAN KIRI (GEDUNG & BRANDING RATA KIRI)
         =================================================== -->
         <div class="login-left">
             <!-- Overlay Gradasi Maroon -->
             <div class="left-overlay"></div>
 
-            <!-- Dekorasi Sudut Kiri Bawah -->
-            <div class="left-decoration"></div>
+            <!-- Dekorasi Segitiga Pojok Kiri Bawah -->
+            <div class="left-decoration-bottom"></div>
 
-            <!-- Konten Brand Kiri -->
-            <div class="left-content">
+            <!-- BRANDING (Rata Kiri Atas) -->
+            <div class="left-content-top">
                 <div class="brand">
                     <div class="brand-logo-wrapper">
-                        <img src="<?= base_url('assets/images/images.jfif') ?>" alt="Logo Dinas Sosial" class="brand-logo">
+                        <img src="<?= base_url('assets/images/logo.jfif') ?>" alt="Logo Dinas Sosial" class="brand-logo">
                     </div>
                     <div class="brand-text">
                         <h1>DINAS SOSIAL</h1>
-                        <p>KABUPATEN BANYUWANGI</p>
-                        <p>REPUBLIK INDONESIA</p>
+                        <p class="brand-sub">KABUPATEN BANYUWANGI</p>
+                        <p class="brand-country">REPUBLIK INDONESIA</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ==================================================
-             BAGIAN KANAN (KARTU LOGIN)
+             BAGIAN KANAN (FORM LOGIN & DEKORASI POJOK)
         =================================================== -->
         <div class="login-right">
+            <!-- Dekorasi Segitiga Merah Pojok Kanan Atas & Kanan Bawah -->
+            <div class="right-decoration-top"></div>
+            <div class="right-decoration-bottom"></div>
+
             <div class="login-card">
 
                 <!-- LOGO GARUDA PANCASILA -->
                 <div class="card-logo-garuda">
-                    <img src="<?= base_url('assets/images/garuda.png') ?>" alt="Garuda Pancasila">
+                    <img src="<?= base_url('assets/images/logo1.png') ?>" alt="logo">
                 </div>
 
                 <!-- HEADER KARTU -->
@@ -137,18 +141,14 @@
                     <!-- TOMBOL LOGIN -->
                     <button type="submit" class="btn-login-submit">
                         <span>Login</span>
-                        <i class="bi bi-arrow-right"></i>
+                        
                     </button>
                 </form>
 
                 <!-- FOOTER KARTU -->
                 <div class="login-card-footer">
-                    <div class="footer-divider">
-                        <span class="divider-line"></span>
-                        <span class="divider-icon">
-                            <i class="bi bi-bank2"></i>
-                        </span>
-                        <span class="divider-line"></span>
+                    <div class="footer-icon">
+                        <i class="bi bi-bank2"></i>
                     </div>
 
                     <p class="footer-copyright">

@@ -2,7 +2,7 @@
 
 <link
     rel="stylesheet"
-    href="<?= base_url('assets/css/admin/kegiatan.css') ?>"
+    href="<?= base_url('assets/css/Admin/kegiatan.css') ?>"
 >
 
 

@@ -53,14 +53,14 @@ body {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1e293b;
-    letter-spacing: -0.2px;
+    color: var(--primary-color);
 }
 
 .profil-header p,
 .profil-create-header p,
 .anggota-create-header p {
     margin: 4px 0 0;
+
 
     font-size: 0.875rem;
     color: #64748b;
@@ -69,6 +69,10 @@ body {
 
     color: var(--primary-color);
 
+
+
+    font-size: 0.875rem;
+    color: var(--text-muted, #64748b);
 
 }
 
@@ -515,7 +519,16 @@ body {
 ========================================================= */
 
 
+
 .visi-misi-wrapper {
+
+.visi-misi-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+}
+
 
 @media (max-width: 1200px) {
 
@@ -679,6 +692,7 @@ body {
 
 .profil-form-grid {
 
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -807,10 +821,7 @@ body {
 
 
 /* =========================================================
-<<<<<<< HEAD
    FORM CREATE / EDIT PROFIL & ANGGOTA
-=======
-   TEXTAREA
 ========================================================= */
 
 .editor-area {
@@ -1109,7 +1120,10 @@ body {
 
 /* =========================================================
    GRID
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6816227a83bea0af28ddfe2b4b5d0dcd34ddc60d
 ========================================================= */
 
 .profil-form-grid,
@@ -1507,4 +1521,193 @@ body {
         width: 100%;
     }
 }
+
 }
+
+
+
+/* =========================================================
+   ADD MEMBER FORM LAYOUT
+========================================================= */
+.anggota-create-page {
+    padding: 8px 0 32px;
+}
+
+.anggota-create-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+}
+
+.anggota-create-header h1 {
+    color: var(--primary-color) !important;
+    font-size: var(--fs-2xl) !important;
+    line-height: 1.3 !important;
+}
+
+.anggota-create-header p {
+    margin-top: 6px;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+}
+
+.anggota-create-page .alert {
+    margin-bottom: 20px;
+}
+
+.anggota-form-grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+    gap: 24px;
+}
+
+.anggota-form-left,
+.anggota-form-right {
+    min-width: 0;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(31, 41, 55, 0.06);
+}
+
+.anggota-form-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.anggota-form-group {
+    margin-bottom: 18px;
+}
+
+.anggota-form-group label,
+.foto-form-group > label {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.anggota-form-left > .anggota-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.caption-group {
+    min-width: 0;
+}
+
+.caption-editor {
+    height: 280px;
+}
+
+.caption-toolbar {
+    background: var(--primary-lighter);
+}
+
+.caption-area {
+    min-height: 0;
+}
+
+.anggota-form-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.foto-form-group {
+    min-width: 0;
+}
+
+.foto-upload-box {
+    min-height: 260px;
+    height: auto;
+    border-color: rgba(101, 0, 25, 0.28);
+    background: #fcf8f9;
+}
+
+.foto-upload-box:hover,
+.foto-upload-box.drag-active {
+    border-color: var(--primary-color);
+    background: var(--primary-lighter);
+}
+
+.foto-upload-info {
+    max-width: 250px;
+    line-height: 1.5;
+}
+
+.foto-preview-wrapper {
+    padding: 12px;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.foto-preview-wrapper img {
+    max-width: 100%;
+    max-height: 260px;
+}
+
+.anggota-button-wrapper {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .anggota-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .anggota-form-right {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .anggota-button-wrapper {
+        align-self: end;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .anggota-create-page {
+        padding: 0 0 24px;
+    }
+
+    .anggota-create-header {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .anggota-form-grid {
+        gap: 16px;
+    }
+
+    .anggota-form-left,
+    .anggota-form-right {
+        padding: 18px;
+    }
+
+    .anggota-form-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .caption-editor {
+        height: 240px;
+    }
+
+    .anggota-button-wrapper {
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
