@@ -935,7 +935,7 @@ body {
 .kegiatan-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 1fr);
 
     gap: 18px 24px;
 }
@@ -1159,18 +1159,100 @@ body {
 
     min-height: 390px;
 
+    isolation: isolate;
+
     background-image:
-        url('../images/hero-banyuwangi.jpg');
+        url('../images/banner.jpeg');
 
     background-size: cover;
 
-    background-position: center;
+    background-position: center top;
 
     overflow: visible;
 
     display: flex;
 
     align-items: flex-start;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    background-size: cover;
+    background-position: center top;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.hero-slide-main {
+    background-image: url('../images/banner.jpeg');
+    animation-name: hero-slide-main-cycle;
+}
+
+.hero-slide-one {
+    background-image: url('../images/banner1.jpeg');
+    animation-name: hero-slide-one-cycle;
+}
+
+.hero-slide-two {
+    background-image: url('../images/banner2.jpeg');
+    animation-name: hero-slide-two-cycle;
+}
+
+@keyframes hero-slide-main-cycle {
+    0%,
+    16.667%,
+    83.333%,
+    100% {
+        opacity: 1;
+    }
+
+    33.333%,
+    66.667% {
+        opacity: 0;
+    }
+}
+
+@keyframes hero-slide-one-cycle {
+    0%,
+    16.667%,
+    66.667%,
+    100% {
+        opacity: 0;
+    }
+
+    33.333%,
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes hero-slide-two-cycle {
+    0%,
+    33.333%,
+    83.333%,
+    100% {
+        opacity: 0;
+    }
+
+    50%,
+    66.667% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+        animation: none;
+        opacity: 0;
+    }
+
+    .hero-slide-main {
+        opacity: 1;
+    }
 }
 
 
@@ -1186,9 +1268,9 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(70, 0, 15, 0.80),
-            rgba(70, 0, 15, 0.35),
-            rgba(0, 0, 0, 0.05)
+            rgba(0, 0, 0, 0.24),
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.02)
         );
 
     z-index: 1;
@@ -1461,7 +1543,7 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    min-height: 145px; height: auto;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
     border-radius: var(--radius-md);
     text-decoration: none;
@@ -1618,13 +1700,6 @@ body {
     }
 
 
-    .kegiatan-tahun-card-home {
-
-        min-height: 145px; height: auto;
-
-    }
-
-
     .kegiatan-tahun-text {
 
         font-size: var(--fs-3xl);
@@ -1642,11 +1717,5 @@ body {
 
     }
 
-
-    .kegiatan-tahun-card-home {
-
-        min-height: 170px; height: auto;
-
-    }
 
 }
