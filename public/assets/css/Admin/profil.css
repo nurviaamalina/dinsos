@@ -60,20 +60,8 @@ body {
 .profil-create-header p,
 .anggota-create-header p {
     margin: 4px 0 0;
-
-
-    font-size: 0.875rem;
-    color: #64748b;
-
-    font-size: var(--fs-base);
-
-    color: var(--primary-color);
-
-
-
     font-size: 0.875rem;
     color: var(--text-muted, #64748b);
-
 }
 
 
@@ -545,17 +533,12 @@ body {
    VISI & MISI DALAM TAB
 ========================================================= */
 
-
-
-.visi-misi-wrapper {
-
 .visi-misi-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-top: 8px;
 }
-
 
 @media (max-width: 1200px) {
 
@@ -750,8 +733,6 @@ body {
 ========================================================= */
 
 .profil-form-grid {
-
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -1186,10 +1167,6 @@ body {
 
 /* =========================================================
    GRID
-<<<<<<< HEAD
-
-=======
->>>>>>> 6816227a83bea0af28ddfe2b4b5d0dcd34ddc60d
 ========================================================= */
 
 .profil-form-grid,
@@ -1592,9 +1569,6 @@ body {
     }
 }
 
-}
-
-
 
 /* =========================================================
    ADD MEMBER FORM LAYOUT
@@ -1780,4 +1754,3 @@ body {
         border-top: 1px solid var(--border-color);
     }
 }
-
