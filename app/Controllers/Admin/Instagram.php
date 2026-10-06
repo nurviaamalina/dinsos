@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\InstagramModel;
+use App\Libraries\InstagramSyncService;
 
 class Instagram extends BaseController
 {
@@ -46,43 +47,36 @@ class Instagram extends BaseController
 }
 
     public function sync()
-    {
-        $syncUrl = base_url('instagram-sync');
+{
+    try {
+        $result = (new InstagramSyncService())->sync();
 
-        $client = \Config\Services::curlrequest([
-            'timeout' => 60,
-        ]);
-
-        try {
-            $response = $client->get($syncUrl);
-            $result = json_decode($response->getBody(), true);
-
-            if (!empty($result['status'])) {
-                return redirect()
-                    ->to(base_url('admin/instagram'))
-                    ->with(
-                        'success',
-                        'Sinkronisasi berhasil. ' .
-                        'Data baru: ' . ($result['posting_baru'] ?? 0) .
-                        ', diperbarui: ' . ($result['posting_update'] ?? 0)
-                    );
-            }
-
+        if (!empty($result['status'])) {
             return redirect()
                 ->to(base_url('admin/instagram'))
                 ->with(
-                    'error',
-                    $result['message'] ?? 'Sinkronisasi gagal.'
-                );
-
-        } catch (\Throwable $e) {
-            return redirect()
-                ->to(base_url('admin/instagram'))
-                ->with(
-                    'error',
-                    'Gagal melakukan sinkronisasi Instagram: '
-                    . $e->getMessage()
+                    'success',
+                    'Sinkronisasi berhasil. ' .
+                    'Data baru: ' . ($result['posting_baru'] ?? 0) .
+                    ', diperbarui: ' . ($result['posting_update'] ?? 0) .
+                    ', dihapus: ' . ($result['posting_dihapus'] ?? 0)
                 );
         }
+
+        return redirect()
+            ->to(base_url('admin/instagram'))
+            ->with(
+                'error',
+                $result['message'] ?? 'Sinkronisasi gagal.'
+            );
+
+    } catch (\Throwable $e) {
+        return redirect()
+            ->to(base_url('admin/instagram'))
+            ->with(
+                'error',
+                'Gagal melakukan sinkronisasi Instagram: ' . $e->getMessage()
+            );
     }
+}
 }

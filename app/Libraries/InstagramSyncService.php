@@ -6,7 +6,25 @@ use App\Models\InstagramModel;
 
 class InstagramSyncService
 {
+    /**
+     * Jumlah posting Instagram yang dipertahankan di database.
+     * Posting lama tetap ada di akun Instagram, hanya tidak disimpan di DB.
+     */
     private const MAX_POSTS = 20;
+
+    /**
+     * Batas waktu request ke Instagram API.
+     */
+    private const API_CONNECT_TIMEOUT = 5;
+    private const API_TIMEOUT = 20;
+
+    /**
+     * Batas waktu download thumbnail.
+     * Thumbnail di-download secara paralel agar 20 posting tidak
+     * menunggu 20 request secara berurutan.
+     */
+    private const IMAGE_CONNECT_TIMEOUT = 5;
+    private const IMAGE_TIMEOUT = 10;
 
     public function sync(): array
     {
@@ -45,99 +63,98 @@ class InstagramSyncService
         $jumlahUpdate = 0;
         $totalDiproses = 0;
         $halaman = 0;
-        $retainedInstagramIds = [];
+        $retainedIds = [];
+        $postsToProcess = [];
 
-        while ($nextUrl && count($retainedInstagramIds) < self::MAX_POSTS) {
+        while ($nextUrl && count($postsToProcess) < self::MAX_POSTS) {
             $halaman++;
-            $ch = curl_init();
 
-            curl_setopt_array($ch, [
-                CURLOPT_URL => $nextUrl,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CONNECTTIMEOUT => 5,
-                CURLOPT_TIMEOUT => 20,
-                CURLOPT_SSL_VERIFYPEER => true,
-            ]);
+            $responseData = $this->requestJson($nextUrl);
 
-            $response = curl_exec($ch);
-            $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            $curlError = curl_error($ch);
-            curl_close($ch);
-
-            if ($response === false) {
+            if (!$responseData['success']) {
                 return [
                     'status' => false,
-                    'message' => 'Gagal menghubungi Instagram API.',
-                    'error' => $curlError,
+                    'message' => $responseData['message'],
+                    'error' => $responseData['error'] ?? null,
                     'halaman_terakhir' => $halaman,
                 ];
             }
 
-            $result = json_decode($response, true);
-
-            if ($httpCode !== 200) {
-                return [
-                    'status' => false,
-                    'message' => 'Instagram API mengembalikan error.',
-                    'httpCode' => $httpCode,
-                    'halaman' => $halaman,
-                    'response' => $result,
-                ];
-            }
-
-            if (!is_array($result)) {
-                return [
-                    'status' => false,
-                    'message' => 'Respons Instagram API tidak valid.',
-                    'halaman' => $halaman,
-                ];
-            }
+            $result = $responseData['data'];
 
             foreach ($result['data'] ?? [] as $post) {
                 $instagramId = (string) ($post['id'] ?? '');
 
-                if ($instagramId === '') {
+                if ($instagramId === '' || isset($retainedIds[$instagramId])) {
                     continue;
                 }
 
-                $existing = $model
-                    ->where('instagram_id', $instagramId)
-                    ->first();
+                $retainedIds[$instagramId] = true;
+                $postsToProcess[] = $post;
 
-                $retainedInstagramIds[] = $instagramId;
-
-                $localThumbnail = $this->downloadThumbnail($post, $instagramId);
-
-                if ($localThumbnail === null && $existing) {
-                    $localThumbnail = $existing['thumbnail'] ?? null;
+                if (count($postsToProcess) >= self::MAX_POSTS) {
+                    break;
                 }
+            }
 
-                $caption = (string) ($post['caption'] ?? '');
-                $judul = trim(preg_replace('/\s+/', ' ', $caption));
+            if (count($postsToProcess) >= self::MAX_POSTS) {
+                break;
+            }
 
-                if ($judul === '') {
-                    $judul = 'Posting Instagram';
-                } elseif (strlen($judul) > 255) {
-                    $judul = substr($judul, 0, 252) . '...';
+            $nextUrl = $result['paging']['next'] ?? null;
+        }
+
+        if ($postsToProcess === []) {
+            return [
+                'status' => true,
+                'message' => 'Sinkronisasi selesai. Tidak ada posting Instagram yang ditemukan.',
+                'posting_baru' => 0,
+                'posting_update' => 0,
+                'posting_dihapus' => 0,
+                'total_diproses' => 0,
+                'halaman_diproses' => $halaman,
+                'batas_postingan' => false,
+            ];
+        }
+
+        $preparedPosts = [];
+        $thumbnailJobs = [];
+
+        foreach ($postsToProcess as $post) {
+            $instagramId = (string) ($post['id'] ?? '');
+
+            $existing = $model
+                ->where('instagram_id', $instagramId)
+                ->first();
+
+            $caption = (string) ($post['caption'] ?? '');
+            $judul = trim((string) preg_replace('/\s+/', ' ', $caption));
+
+            if ($judul === '') {
+                $judul = 'Posting Instagram';
+            } elseif (strlen($judul) > 255) {
+                $judul = substr($judul, 0, 252) . '...';
+            }
+
+            $postedAt = null;
+            $tanggalPost = null;
+
+            if (!empty($post['timestamp'])) {
+                try {
+                    $date = new \DateTime($post['timestamp']);
+                    $postedAt = $date->format('Y-m-d H:i:s');
+                    $tanggalPost = $date->format('Y-m-d');
+                } catch (\Exception $exception) {
+                    $postedAt = null;
+                    $tanggalPost = null;
                 }
+            }
 
-                $postedAt = null;
-                $tanggalPost = null;
-
-                if (!empty($post['timestamp'])) {
-                    try {
-                        $date = new \DateTime($post['timestamp']);
-                        $postedAt = $date->format('Y-m-d H:i:s');
-                        $tanggalPost = $date->format('Y-m-d');
-                    } catch (\Exception $exception) {
-                        $postedAt = null;
-                        $tanggalPost = null;
-                    }
-                }
-
-                $data = [
+            $preparedPosts[$instagramId] = [
+                'existing' => $existing,
+                'data' => [
                     'judul' => $judul,
-                    'thumbnail' => $localThumbnail,
+                    'thumbnail' => $existing['thumbnail'] ?? null,
                     'instagram_url' => $post['permalink'] ?? null,
                     'tanggal_post' => $tanggalPost,
                     'caption' => $caption,
@@ -147,40 +164,63 @@ class InstagramSyncService
                     'permalink' => $post['permalink'] ?? null,
                     'media_type' => $post['media_type'] ?? 'IMAGE',
                     'posted_at' => $postedAt,
-                ];
+                ],
+            ];
 
-                if ($existing) {
-                    if ($this->hasChanges($existing, $data)) {
-                        $model->update($existing['id'], $data);
-                    }
+            $existingThumbnail = $existing['thumbnail'] ?? null;
+            $existingPath = $existingThumbnail
+                ? FCPATH . 'uploads/instagram/' . basename($existingThumbnail)
+                : null;
 
-                    $jumlahUpdate++;
-                } else {
-                    $model->insert($data);
-                    $jumlahBaru++;
+            if ($existingPath && is_file($existingPath) && filesize($existingPath) > 0) {
+                continue;
+            }
+
+            $thumbnailUrl = $this->getThumbnailUrl($post);
+
+            if ($thumbnailUrl) {
+                $thumbnailJobs[$instagramId] = $thumbnailUrl;
+            }
+        }
+
+        $downloadedThumbnails = $this->downloadThumbnailsParallel($thumbnailJobs);
+
+        foreach ($preparedPosts as $instagramId => &$prepared) {
+            if (isset($downloadedThumbnails[$instagramId])) {
+                $prepared['data']['thumbnail'] = $downloadedThumbnails[$instagramId];
+            }
+        }
+        unset($prepared);
+
+        foreach ($preparedPosts as $prepared) {
+            $existing = $prepared['existing'];
+            $data = $prepared['data'];
+
+            if ($existing) {
+                if ($this->hasChanges($existing, $data)) {
+                    $model->update($existing['id'], $data);
                 }
 
-                $totalDiproses++;
+                $jumlahUpdate++;
+            } else {
+                $model->insert($data);
+                $jumlahBaru++;
             }
 
-            if (count($retainedInstagramIds) >= self::MAX_POSTS) {
-                break;
-            }
-
-            $nextUrl = $result['paging']['next'] ?? null;
+            $totalDiproses++;
         }
 
-        $staleQuery = $model->where('instagram_id IS NOT NULL', null, false);
+        $retainedInstagramIds = array_keys($retainedIds);
 
-        if ($retainedInstagramIds !== []) {
-            $staleQuery->whereNotIn('instagram_id', $retainedInstagramIds);
-        }
+        $staleQuery = $model->where('instagram_id IS NOT NULL', null, false)
+            ->whereNotIn('instagram_id', $retainedInstagramIds);
 
         $stalePosts = $staleQuery->findAll();
-        $staleIds = array_column($stalePosts, 'id');
         $jumlahDihapus = 0;
 
-        if ($staleIds !== []) {
+        if ($stalePosts !== []) {
+            $staleIds = array_column($stalePosts, 'id');
+
             $deleted = db_connect()
                 ->table('instagram_posts')
                 ->whereIn('id', $staleIds)
@@ -196,7 +236,7 @@ class InstagramSyncService
                         $thumbnailPath = FCPATH . 'uploads/instagram/' . basename($thumbnail);
 
                         if (is_file($thumbnailPath)) {
-                            unlink($thumbnailPath);
+                            @unlink($thumbnailPath);
                         }
                     }
                 }
@@ -215,6 +255,62 @@ class InstagramSyncService
         ];
     }
 
+    /**
+     * Request JSON ke Instagram Graph API.
+     */
+    private function requestJson(string $url): array
+    {
+        $ch = curl_init();
+
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => self::API_CONNECT_TIMEOUT,
+            CURLOPT_TIMEOUT => self::API_TIMEOUT,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER => ['Accept: application/json'],
+        ]);
+
+        $response = curl_exec($ch);
+        $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlError = curl_error($ch);
+
+        curl_close($ch);
+
+        if ($response === false) {
+            return [
+                'success' => false,
+                'message' => 'Gagal menghubungi Instagram API.',
+                'error' => $curlError,
+            ];
+        }
+
+        $result = json_decode($response, true);
+
+        if ($httpCode !== 200) {
+            return [
+                'success' => false,
+                'message' => 'Instagram API mengembalikan error.',
+                'error' => [
+                    'httpCode' => $httpCode,
+                    'response' => $result,
+                ],
+            ];
+        }
+
+        if (!is_array($result)) {
+            return [
+                'success' => false,
+                'message' => 'Respons Instagram API tidak valid.',
+            ];
+        }
+
+        return [
+            'success' => true,
+            'data' => $result,
+        ];
+    }
+
     private function hasChanges(array $existing, array $data): bool
     {
         foreach ($data as $key => $value) {
@@ -226,78 +322,125 @@ class InstagramSyncService
         return false;
     }
 
-    private function downloadThumbnail(array $post, string $instagramId): ?string
+    /**
+     * Menentukan URL thumbnail berdasarkan tipe media.
+     */
+    private function getThumbnailUrl(array $post): ?string
     {
         $mediaType = $post['media_type'] ?? '';
-        $url = null;
 
         if ($mediaType === 'IMAGE') {
-            $url = $post['media_url'] ?? null;
-        } elseif ($mediaType === 'VIDEO') {
-            $url = $post['thumbnail_url'] ?? null;
-        } elseif ($mediaType === 'CAROUSEL_ALBUM') {
+            return $post['media_url'] ?? null;
+        }
+
+        if ($mediaType === 'VIDEO') {
+            return $post['thumbnail_url'] ?? null;
+        }
+
+        if ($mediaType === 'CAROUSEL_ALBUM') {
             $firstChild = $post['children']['data'][0] ?? [];
-            $url = ($firstChild['media_type'] ?? '') === 'VIDEO'
+
+            return ($firstChild['media_type'] ?? '') === 'VIDEO'
                 ? ($firstChild['thumbnail_url'] ?? null)
                 : ($firstChild['media_url'] ?? null);
         }
 
-        return $this->downloadInstagramImage($url, $instagramId);
+        return null;
     }
 
-    private function downloadInstagramImage(?string $url, string $instagramId): ?string
+    /**
+     * Download banyak thumbnail secara paralel.
+     *
+     * @param array<string,string> $jobs [instagramId => imageUrl]
+     * @return array<string,string> [instagramId => localFilename]
+     */
+    private function downloadThumbnailsParallel(array $jobs): array
     {
-        if (empty($url)) {
-            return null;
+        if ($jobs === []) {
+            return [];
         }
 
         $uploadPath = FCPATH . 'uploads/instagram/';
 
-        if (!is_dir($uploadPath) && !mkdir($uploadPath, 0777, true) && !is_dir($uploadPath)) {
-            return null;
+        if (
+            !is_dir($uploadPath)
+            && !mkdir($uploadPath, 0777, true)
+            && !is_dir($uploadPath)
+        ) {
+            return [];
         }
 
-        $safeId = preg_replace('/[^A-Za-z0-9_-]/', '', $instagramId);
-        $fileName = $safeId . '.jpg';
-        $filePath = $uploadPath . $fileName;
+        $multiHandle = curl_multi_init();
+        $handles = [];
+        $results = [];
 
-        if (is_file($filePath) && filesize($filePath) > 0) {
-            return $fileName;
+        foreach ($jobs as $instagramId => $url) {
+            $safeId = preg_replace('/[^A-Za-z0-9_-]/', '', $instagramId);
+            $fileName = $safeId . '.jpg';
+            $filePath = $uploadPath . $fileName;
+
+            if (is_file($filePath) && filesize($filePath) > 0) {
+                $results[$instagramId] = $fileName;
+                continue;
+            }
+
+            $ch = curl_init($url);
+
+            curl_setopt_array($ch, [
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_CONNECTTIMEOUT => self::IMAGE_CONNECT_TIMEOUT,
+                CURLOPT_TIMEOUT => self::IMAGE_TIMEOUT,
+                CURLOPT_SSL_VERIFYPEER => true,
+                CURLOPT_USERAGENT => 'Mozilla/5.0 (compatible; DinsosInstagramSync/1.0)',
+                CURLOPT_HTTPHEADER => ['Accept: image/*'],
+            ]);
+
+            curl_multi_add_handle($multiHandle, $ch);
+
+            $handles[$instagramId] = [
+                'handle' => $ch,
+                'fileName' => $fileName,
+                'filePath' => $filePath,
+            ];
         }
 
-        $ch = curl_init($url);
+        if ($handles !== []) {
+            $running = null;
 
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_CONNECTTIMEOUT => 5,
-            CURLOPT_TIMEOUT => 15,
-            CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_USERAGENT => 'Mozilla/5.0 (compatible; DinsosInstagramSync/1.0)',
-            CURLOPT_HTTPHEADER => ['Accept: image/*'],
-        ]);
+            do {
+                $status = curl_multi_exec($multiHandle, $running);
 
-        $image = curl_exec($ch);
-        $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-        $curlError = curl_error($ch);
-        curl_close($ch);
+                if ($running > 0 && $status === CURLM_OK) {
+                    curl_multi_select($multiHandle, 1.0);
+                }
+            } while ($running > 0 && $status === CURLM_OK);
 
-        if ($image === false || $httpCode !== 200 || $image === '') {
-            log_message('error', 'Gagal mengunduh thumbnail Instagram: ' . $curlError);
-            return null;
+            foreach ($handles as $instagramId => $job) {
+                $ch = $job['handle'];
+
+                $image = curl_multi_getcontent($ch);
+                $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                $contentType = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
+
+                if (
+                    $image !== false
+                    && $image !== ''
+                    && $httpCode === 200
+                    && (!$contentType || strpos($contentType, 'image/') === 0)
+                ) {
+                    if (file_put_contents($job['filePath'], $image) !== false) {
+                        $results[$instagramId] = $job['fileName'];
+                    }
+                }
+
+                curl_multi_remove_handle($multiHandle, $ch);
+                curl_close($ch);
+            }
         }
 
-        if ($contentType && strpos($contentType, 'image/') !== 0) {
-            log_message('error', 'Respons thumbnail Instagram bukan gambar: ' . $contentType);
-            return null;
-        }
+        curl_multi_close($multiHandle);
 
-        if (file_put_contents($filePath, $image) === false) {
-            log_message('error', 'Gagal menyimpan thumbnail Instagram: ' . $filePath);
-            return null;
-        }
-
-        return $fileName;
+        return $results;
     }
 }
