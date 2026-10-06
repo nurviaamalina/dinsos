@@ -574,9 +574,11 @@ body {
 
     color: var(--text-muted);
 
-    font-size: var(--fs-sm);
+    font-size: 0.68rem;
 
-    white-space: nowrap;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .survey-info strong {
@@ -589,9 +591,10 @@ body {
 
     font-weight: 700;
 
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
+    overflow-wrap: anywhere;
 }
 
 .survey-info small {
@@ -604,9 +607,10 @@ body {
     font-size: var(--fs-sm);
     line-height: 1.25;
 
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
+    overflow-wrap: anywhere;
 }
 
 .survey-good {
@@ -1306,6 +1310,32 @@ body {
     .survey-info {
         grid-template-columns:
             repeat(3, minmax(0, 1fr));
+
+        gap: 5px;
+    }
+
+    .survey-info > div {
+        padding: 7px 4px;
+    }
+
+    .survey-info span {
+        font-size: 0.62rem;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .survey-info strong {
+        font-size: 0.9rem;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .survey-info small {
+        font-size: 0.72rem;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
 
     .survey-score strong {
@@ -1371,7 +1401,7 @@ body {
    MOBILE SANGAT KECIL
    ========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
 
     .statistik-main {
         padding-left: 8px;
@@ -1383,11 +1413,18 @@ body {
     }
 
     .survey-info {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
         gap: 4px;
     }
 
+    .survey-info > div:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
     .survey-info > div {
-        padding: 7px 5px;
+        padding: 7px 3px;
     }
 
     .penerima-grid {
@@ -1416,5 +1453,17 @@ body {
     .kategori-chart {
         width: 125px;
         height: 125px;
+    }
+}
+
+
+@media (max-width: 320px) {
+
+    .survey-info {
+        grid-template-columns: 1fr;
+    }
+
+    .survey-info > div:nth-child(3) {
+        grid-column: auto;
     }
 }
