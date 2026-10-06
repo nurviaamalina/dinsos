@@ -315,8 +315,10 @@ body .statistik-grid > .statistik-card {
 
     color: var(--primary-color);
 
-    font-size: var(--fs-sm);
+    font-size: 0.68rem;
+    line-height: 1.2;
     font-weight: 600;
+    overflow-wrap: anywhere;
 }
 
 .survey-info strong {
@@ -1023,6 +1025,34 @@ body .statistik-grid > .statistik-card {
         grid-column: auto;
     }
 
+    .survey-info {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 5px;
+    }
+
+    .survey-info > div {
+        padding: 7px 4px;
+    }
+
+    .survey-info span {
+        font-size: 0.62rem;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .survey-info strong {
+        font-size: 0.9rem;
+        overflow-wrap: anywhere;
+    }
+
+    .survey-info small {
+        font-size: 0.72rem;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
     .layanan-unggulan-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
@@ -1051,6 +1081,31 @@ body .statistik-grid > .statistik-card {
         height: auto;
     }
 
+}
+
+
+@media (max-width: 480px) {
+
+    .survey-info {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .survey-info > div:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 320px) {
+
+    .survey-info {
+        grid-template-columns: 1fr;
+    }
+
+    .survey-info > div:nth-child(3) {
+        grid-column: auto;
+    }
 }
 
 
