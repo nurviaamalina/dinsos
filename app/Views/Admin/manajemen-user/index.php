@@ -23,41 +23,12 @@
                 </button>
                 <div class="welcome-text">
                     <h2>Selamat Datang, <?= esc(session()->get('username') ?? 'Admin Dinsos') ?></h2>
-                    <p>Dinas Sosial Kabupaten / Kota</p>
+                    <p>Dinas Sosial Banyuwangi</p>
                 </div>
             </div>
 
             <div class="topbar-right">
-                <!-- Notifikasi Lonceng -->
-                <div class="notification-bell" title="Notifikasi">
-                    <i class="bi bi-bell-fill"></i>
-                    <span class="bell-badge">3</span>
-                </div>
-
-                <!-- Profil Dropdown -->
-                <div class="topbar-profile dropdown">
-                    <div class="profile-trigger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" role="button">
-                        <div class="profile-avatar">
-                            <i class="bi bi-person-fill"></i>
-                        </div>
-                        <span class="profile-name"><?= esc(session()->get('username') ?? 'Admin Dinsos') ?></span>
-                        <i class="bi bi-chevron-down profile-chevron"></i>
-                    </div>
-                    <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
-                        <li>
-                            <a class="dropdown-item py-2" href="<?= base_url('admin/profil') ?>">
-                                <i class="bi bi-person me-2 text-secondary"></i> Profil Saya
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider my-1"></li>
-                        <li>
-                            <a class="dropdown-item py-2 text-danger" href="<?= site_url('logout') ?>">
-                                <i class="bi bi-box-arrow-left me-2"></i> Keluar
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+             
         </header>
 
         <!-- =====================================================
