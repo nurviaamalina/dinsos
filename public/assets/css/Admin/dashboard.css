@@ -76,7 +76,7 @@ body {
     width: 100% !important;
     min-width: 0 !important;
     margin: 0 !important;
-    background: #ffffff;
+    background: transparent;
     border: 1px solid #e2e8f0;
     border-top: 3.5px solid var(--primary-color, #650019);
     border-radius: 10px;
@@ -87,6 +87,10 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     box-sizing: border-box !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body .dashboard-cards > .stat-card {
+    background-color: transparent !important;
 }
 
 .stat-card:hover {

@@ -790,7 +790,7 @@ body .admin-layout {
     color: var(--text-main);
 }
 
-body [class*="-card"]:not(.statistik-card-title),
+body [class*="-card"]:not(.statistik-card-title):not(.dashboard-cards),
 body [class$="-panel"],
 body .dashboard-panel,
 body .latest-panel,
