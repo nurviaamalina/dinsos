@@ -29,6 +29,14 @@
 
             </div>
 
+            <a
+                href="<?= base_url('admin/penerima-manfaat') ?>"
+                class="penerima-back-button"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Kembali
+            </a>
+
         </div>
 
 
@@ -64,7 +72,7 @@
                     class="btn-import-outline"
                 >
 
-                    <i class="bi bi-box-arrow-in-down"></i>
+                    <i class="bi bi-file-earmark-arrow-up-fill"></i>
 
                     Import Data
 

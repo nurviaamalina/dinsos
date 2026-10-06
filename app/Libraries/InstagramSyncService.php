@@ -32,12 +32,12 @@ class InstagramSyncService
             @set_time_limit(0);
         }
 
-        $token  = env('INSTAGRAM_ACCESS_TOKEN');
+        $token = env('INSTAGRAM_ACCESS_TOKEN');
         $userId = env('INSTAGRAM_USER_ID');
 
         if (!$token || !$userId) {
             return [
-                'status'  => false,
+                'status' => false,
                 'message' => 'Instagram Access Token atau User ID belum tersedia.',
             ];
         }
@@ -53,29 +53,19 @@ class InstagramSyncService
             'children{media_type,media_url,thumbnail_url}',
         ]);
 
-        // Ambil posting terbaru saja. Instagram mengembalikan data
-        // terbaru terlebih dahulu.
         $nextUrl = 'https://graph.instagram.com/v23.0/me/media?fields='
             . urlencode($fields)
             . '&limit=' . self::MAX_POSTS
             . '&access_token=' . urlencode($token);
 
         $model = new InstagramModel();
-
-        $jumlahBaru     = 0;
-        $jumlahUpdate   = 0;
-        $totalDiproses  = 0;
-        $halaman        = 0;
-        $retainedIds    = [];
+        $jumlahBaru = 0;
+        $jumlahUpdate = 0;
+        $totalDiproses = 0;
+        $halaman = 0;
+        $retainedIds = [];
         $postsToProcess = [];
 
-        /*
-         * Ambil maksimal 20 posting terbaru.
-         *
-         * Normalnya cukup 1 request karena limit = 20.
-         * Pagination hanya digunakan jika API mengembalikan kurang dari
-         * 20 data pada halaman pertama.
-         */
         while ($nextUrl && count($postsToProcess) < self::MAX_POSTS) {
             $halaman++;
 
@@ -83,9 +73,9 @@ class InstagramSyncService
 
             if (!$responseData['success']) {
                 return [
-                    'status'         => false,
-                    'message'        => $responseData['message'],
-                    'error'          => $responseData['error'] ?? null,
+                    'status' => false,
+                    'message' => $responseData['message'],
+                    'error' => $responseData['error'] ?? null,
                     'halaman_terakhir' => $halaman,
                 ];
             }
@@ -95,11 +85,7 @@ class InstagramSyncService
             foreach ($result['data'] ?? [] as $post) {
                 $instagramId = (string) ($post['id'] ?? '');
 
-                if ($instagramId === '') {
-                    continue;
-                }
-
-                if (isset($retainedIds[$instagramId])) {
+                if ($instagramId === '' || isset($retainedIds[$instagramId])) {
                     continue;
                 }
 
@@ -118,29 +104,21 @@ class InstagramSyncService
             $nextUrl = $result['paging']['next'] ?? null;
         }
 
-        /*
-         * Jika API berhasil tetapi tidak mengembalikan data, jangan pernah
-         * menghapus isi database. Ini mencegah database kosong jika API
-         * sedang bermasalah.
-         */
         if ($postsToProcess === []) {
             return [
-                'status'           => true,
-                'message'          => 'Sinkronisasi selesai. Tidak ada posting Instagram yang ditemukan.',
-                'posting_baru'     => 0,
-                'posting_update'   => 0,
-                'posting_dihapus'  => 0,
-                'total_diproses'   => 0,
+                'status' => true,
+                'message' => 'Sinkronisasi selesai. Tidak ada posting Instagram yang ditemukan.',
+                'posting_baru' => 0,
+                'posting_update' => 0,
+                'posting_dihapus' => 0,
+                'total_diproses' => 0,
                 'halaman_diproses' => $halaman,
-                'batas_postingan'  => false,
+                'batas_postingan' => false,
             ];
         }
 
-        /*
-         * Siapkan data dasar sekaligus cari data lama.
-         */
         $preparedPosts = [];
-        $thumbnailJobs  = [];
+        $thumbnailJobs = [];
 
         foreach ($postsToProcess as $post) {
             $instagramId = (string) ($post['id'] ?? '');
@@ -150,7 +128,7 @@ class InstagramSyncService
                 ->first();
 
             $caption = (string) ($post['caption'] ?? '');
-            $judul   = trim((string) preg_replace('/\s+/', ' ', $caption));
+            $judul = trim((string) preg_replace('/\s+/', ' ', $caption));
 
             if ($judul === '') {
                 $judul = 'Posting Instagram';
@@ -158,7 +136,7 @@ class InstagramSyncService
                 $judul = substr($judul, 0, 252) . '...';
             }
 
-            $postedAt   = null;
+            $postedAt = null;
             $tanggalPost = null;
 
             if (!empty($post['timestamp'])) {
@@ -175,24 +153,20 @@ class InstagramSyncService
             $preparedPosts[$instagramId] = [
                 'existing' => $existing,
                 'data' => [
-                    'judul'         => $judul,
-                    'thumbnail'     => $existing['thumbnail'] ?? null,
+                    'judul' => $judul,
+                    'thumbnail' => $existing['thumbnail'] ?? null,
                     'instagram_url' => $post['permalink'] ?? null,
-                    'tanggal_post'  => $tanggalPost,
-                    'caption'       => $caption,
-                    'instagram_id'  => $instagramId,
-                    'media_url'     => $post['media_url'] ?? null,
+                    'tanggal_post' => $tanggalPost,
+                    'caption' => $caption,
+                    'instagram_id' => $instagramId,
+                    'media_url' => $post['media_url'] ?? null,
                     'thumbnail_url' => $post['thumbnail_url'] ?? null,
-                    'permalink'     => $post['permalink'] ?? null,
-                    'media_type'    => $post['media_type'] ?? 'IMAGE',
-                    'posted_at'     => $postedAt,
+                    'permalink' => $post['permalink'] ?? null,
+                    'media_type' => $post['media_type'] ?? 'IMAGE',
+                    'posted_at' => $postedAt,
                 ],
             ];
 
-            /*
-             * Hanya download thumbnail jika file lokal belum ada.
-             * Ini membuat sync berikutnya jauh lebih ringan.
-             */
             $existingThumbnail = $existing['thumbnail'] ?? null;
             $existingPath = $existingThumbnail
                 ? FCPATH . 'uploads/instagram/' . basename($existingThumbnail)
@@ -209,13 +183,6 @@ class InstagramSyncService
             }
         }
 
-        /*
-         * Download thumbnail secara PARALEL.
-         *
-         * Sebelumnya 20 thumbnail di-download satu per satu.
-         * Jika masing-masing lambat, total waktunya bisa melewati 60 detik.
-         * Dengan curl_multi, 20 request berjalan bersamaan.
-         */
         $downloadedThumbnails = $this->downloadThumbnailsParallel($thumbnailJobs);
 
         foreach ($preparedPosts as $instagramId => &$prepared) {
@@ -225,12 +192,9 @@ class InstagramSyncService
         }
         unset($prepared);
 
-        /*
-         * Simpan/update maksimal 20 posting terbaru.
-         */
-        foreach ($preparedPosts as $instagramId => $prepared) {
+        foreach ($preparedPosts as $prepared) {
             $existing = $prepared['existing'];
-            $data     = $prepared['data'];
+            $data = $prepared['data'];
 
             if ($existing) {
                 if ($this->hasChanges($existing, $data)) {
@@ -246,12 +210,6 @@ class InstagramSyncService
             $totalDiproses++;
         }
 
-        /*
-         * Hapus posting yang lebih lama dari 20 posting terbaru
-         * HANYA dari database.
-         *
-         * Posting aslinya di Instagram tidak disentuh sama sekali.
-         */
         $retainedInstagramIds = array_keys($retainedIds);
 
         $staleQuery = $model->where('instagram_id IS NOT NULL', null, false)
@@ -286,14 +244,14 @@ class InstagramSyncService
         }
 
         return [
-            'status'           => true,
-            'message'          => 'Sinkronisasi Instagram berhasil.',
-            'posting_baru'     => $jumlahBaru,
-            'posting_update'   => $jumlahUpdate,
-            'posting_dihapus'  => $jumlahDihapus,
-            'total_diproses'   => $totalDiproses,
+            'status' => true,
+            'message' => 'Sinkronisasi Instagram berhasil.',
+            'posting_baru' => $jumlahBaru,
+            'posting_update' => $jumlahUpdate,
+            'posting_dihapus' => $jumlahDihapus,
+            'total_diproses' => $totalDiproses,
             'halaman_diproses' => $halaman,
-            'batas_postingan'  => count($retainedIds) >= self::MAX_POSTS,
+            'batas_postingan' => count($retainedInstagramIds) >= self::MAX_POSTS,
         ];
     }
 
@@ -305,12 +263,12 @@ class InstagramSyncService
         $ch = curl_init();
 
         curl_setopt_array($ch, [
-            CURLOPT_URL            => $url,
+            CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CONNECTTIMEOUT => self::API_CONNECT_TIMEOUT,
-            CURLOPT_TIMEOUT        => self::API_TIMEOUT,
+            CURLOPT_TIMEOUT => self::API_TIMEOUT,
             CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_HTTPHEADER     => ['Accept: application/json'],
+            CURLOPT_HTTPHEADER => ['Accept: application/json'],
         ]);
 
         $response = curl_exec($ch);
@@ -323,7 +281,7 @@ class InstagramSyncService
             return [
                 'success' => false,
                 'message' => 'Gagal menghubungi Instagram API.',
-                'error'   => $curlError,
+                'error' => $curlError,
             ];
         }
 
@@ -333,7 +291,7 @@ class InstagramSyncService
             return [
                 'success' => false,
                 'message' => 'Instagram API mengembalikan error.',
-                'error'   => [
+                'error' => [
                     'httpCode' => $httpCode,
                     'response' => $result,
                 ],
@@ -349,7 +307,7 @@ class InstagramSyncService
 
         return [
             'success' => true,
-            'data'    => $result,
+            'data' => $result,
         ];
     }
 
@@ -432,16 +390,16 @@ class InstagramSyncService
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_CONNECTTIMEOUT => self::IMAGE_CONNECT_TIMEOUT,
-                CURLOPT_TIMEOUT        => self::IMAGE_TIMEOUT,
+                CURLOPT_TIMEOUT => self::IMAGE_TIMEOUT,
                 CURLOPT_SSL_VERIFYPEER => true,
-                CURLOPT_USERAGENT      => 'Mozilla/5.0 (compatible; DinsosInstagramSync/1.0)',
-                CURLOPT_HTTPHEADER     => ['Accept: image/*'],
+                CURLOPT_USERAGENT => 'Mozilla/5.0 (compatible; DinsosInstagramSync/1.0)',
+                CURLOPT_HTTPHEADER => ['Accept: image/*'],
             ]);
 
             curl_multi_add_handle($multiHandle, $ch);
 
             $handles[$instagramId] = [
-                'handle'   => $ch,
+                'handle' => $ch,
                 'fileName' => $fileName,
                 'filePath' => $filePath,
             ];

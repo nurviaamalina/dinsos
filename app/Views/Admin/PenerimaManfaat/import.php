@@ -31,6 +31,14 @@
 
             </div>
 
+            <a
+                href="<?= base_url('admin/penerima-manfaat') ?>"
+                class="penerima-back-button"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Kembali
+            </a>
+
         </div>
 
 

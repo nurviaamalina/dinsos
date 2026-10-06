@@ -38,7 +38,7 @@
                         class="btn-tambah-kegiatan"
                     >
 
-                        <i class="bi bi-plus-circle"></i>
+                        <i class="bi bi-plus-circle-fill"></i>
 
                         Tambah Kegiatan
 
@@ -49,7 +49,7 @@
                     class="btn-import-berita"
                 >
 
-                    <i class="bi bi-plus-circle"></i>
+                    <i class="bi bi-file-earmark-arrow-up-fill"></i>
 
                     Import Data
 

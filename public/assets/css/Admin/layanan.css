@@ -174,10 +174,36 @@
 
 /* Tombol Tambah */
 .btn-layanan-tambah {
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  font-size: var(--fs-sm);
-  box-shadow: var(--shadow-sm);
+  height: auto;
+  padding: 12px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: var(--radius-md, 6px);
+  background: var(--primary-color, #650019);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: var(--fs-base, 16px);
+  font-weight: 600;
+  box-shadow: none;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.btn-layanan-tambah:hover {
+  background: var(--primary-color-hover, #4d0013);
+  border-color: var(--primary-color-hover, #4d0013);
+  color: #ffffff;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-layanan-tambah i {
+  flex: 0 0 auto;
+  font-size: var(--fs-xl, 22px);
+  line-height: 1;
 }
 
 

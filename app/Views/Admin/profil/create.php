@@ -31,13 +31,23 @@
 
             <div class="profil-create-header">
 
-                <h1>
-                    Tambah Sejarah Dinas
-                </h1>
+                <div class="profil-create-heading">
+                    <h1>
+                        Edit Sejarah Dinas
+                    </h1>
 
-                <p>
-                    Kelola informasi profil dinas
-                </p>
+                    <p>
+                        Kelola informasi profil dinas
+                    </p>
+                </div>
+
+                <a
+                    href="<?= base_url('admin/profil') ?>"
+                    class="profil-back-button"
+                >
+                    <i class="bi bi-arrow-left"></i>
+                    Kembali
+                </a>
 
             </div>
 

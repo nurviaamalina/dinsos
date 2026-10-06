@@ -68,7 +68,7 @@
     class="btn-tambah-profil"
 >
 
-    <i class="bi bi-plus-circle"></i>
+    <i class="bi bi-plus-circle-fill"></i>
 
     Tambah Anggota
 

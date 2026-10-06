@@ -6,12 +6,6 @@
    CSS KHUSUS HALAMAN DASHBOARD STATISTIK
 ========================================================= */
 
-/* =========================================================
-   FONT GLOBAL — POPPINS
-   ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
 html,
 body,
 button,
@@ -32,7 +26,10 @@ textarea,
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 18px;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .statistik-header h2 {
@@ -44,8 +41,16 @@ textarea,
 
 .statistik-header p {
     margin: 4px 0 0;
-    color: var(--primary-color);
-    font-size: var(--fs-base);
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+}
+
+.statistik-dashboard-content {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 30px 32px 48px;
+    box-sizing: border-box;
 }
 
 
@@ -55,8 +60,8 @@ textarea,
 
 .statistik-grid {
     display: grid;
-    gap: 26px;
-    margin-bottom: 26px;
+    gap: 22px;
+    margin-bottom: 28px;
 }
 
 
@@ -96,11 +101,21 @@ textarea,
 
 .statistik-card {
     background: #ffffff;
-    border: 1px solid var(--primary-color);
-    border-radius: var(--radius-md);
-    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-top: 3.5px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 22px 24px;
     min-width: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
     box-sizing: border-box;
+}
+
+body .statistik-grid > .statistik-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-top: 3.5px solid var(--primary-color) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 
@@ -126,15 +141,16 @@ textarea,
 ========================================================= */
 
 .layanan-stat-list {
-    margin-top: 3px;
+    margin-top: 4px;
 }
 
 .layanan-stat-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
 
-    padding: 9px 2px;
+    padding: 10px 2px;
 
     border-bottom: 1px solid var(--primary-light);
 
@@ -146,6 +162,7 @@ textarea,
     display: flex;
     align-items: center;
     gap: 9px;
+    min-width: 0;
 }
 
 .layanan-stat-item i {
@@ -154,6 +171,7 @@ textarea,
 }
 
 .layanan-stat-item strong {
+    flex-shrink: 0;
     color: var(--primary-color);
     font-size: var(--fs-sm);
 }
@@ -164,11 +182,11 @@ textarea,
 ========================================================= */
 
 .capaian-overall {
-    width: 168px;
-    height: 39px;
+    width: 100%;
+    min-height: 56px;
 
-    margin-top: 9px;
-    padding: 5px 9px;
+    margin-top: 14px;
+    padding: 10px 14px;
 
     box-sizing: border-box;
 
@@ -182,7 +200,10 @@ textarea,
 
 .capaian-overall div {
     display: flex;
-    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
 }
 
 .capaian-overall small {
@@ -193,10 +214,14 @@ textarea,
 
 .capaian-overall strong {
     color: var(--primary-color);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .capaian-overall i {
+    flex-shrink: 0;
+    margin-left: 12px;
     color: var(--primary-color);
     font-size: var(--fs-lg);
 }
@@ -277,7 +302,7 @@ textarea,
 
     padding: 7px 3px;
 
-    border: 1px solid #8d3040;
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
 
     text-align: center;
@@ -408,21 +433,22 @@ textarea,
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
 
-    gap: 11px;
+    gap: 14px;
 }
 
 .layanan-unggulan-item {
-    min-height: 151px;
+    min-height: 178px;
 
-    padding: 10px 8px 8px;
+    padding: 14px 12px 12px;
 
-    border: 1px solid #8d3040;
+    border: 1px solid var(--border-color);
 
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
 
     text-align: center;
 
@@ -430,25 +456,33 @@ textarea,
 }
 
 .layanan-unggulan-item h6 {
-    min-height: 30px;
+    min-height: 2.8em;
 
     margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     color: var(--primary-color);
 
     font-size: var(--fs-sm);
 
-    line-height: 1.5;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
 }
 
 
 /* ICON */
 
 .unggulan-icon {
-    width: 49px;
-    height: 49px;
+    width: 46px;
+    height: 46px;
 
     margin: 0 auto;
+
+    flex: 0 0 auto;
 
     border-radius: 50%;
 
@@ -471,12 +505,18 @@ textarea,
     display: grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+        repeat(2, minmax(0, 1fr));
+
+    align-items: stretch;
 }
 
 .unggulan-bottom > div:first-child {
     border-right: 1px solid var(--border-color);
+}
+
+.unggulan-bottom > div {
+    min-width: 0;
+    padding: 0 6px;
 }
 
 .unggulan-bottom strong {
@@ -485,16 +525,20 @@ textarea,
     color: var(--primary-color);
 
     font-size: var(--fs-base);
+
+    line-height: 1.25;
 }
 
 .unggulan-bottom small {
     display: block;
 
+    margin-top: 3px;
+
     color: var(--primary-color);
 
     font-size: var(--fs-xs);
 
-    line-height: 1.5;
+    line-height: 1.35;
 }
 
 
@@ -520,7 +564,7 @@ textarea,
 
     padding: 5px 3px;
 
-    border: 1px solid #8d3040;
+    border: 1px solid var(--border-color);
 
     border-radius: var(--radius-sm);
 
@@ -612,7 +656,9 @@ textarea,
 
     flex-direction: column;
 
-    gap: 5px;
+    flex: 1;
+    min-width: 0;
+    gap: 8px;
 }
 
 .kategori-legend > div {
@@ -620,12 +666,12 @@ textarea,
 
     grid-template-columns:
         31px
-        24px
-        minmax(80px, auto);
+        58px
+        minmax(0, 1fr);
 
     align-items: center;
 
-    gap: 5px;
+    gap: 8px;
 }
 
 .kategori-legend .legend {
@@ -636,35 +682,37 @@ textarea,
 }
 
 .legend-1 {
-    background: var(--primary-color);
+    background: #4a0012;
 }
 
 .legend-2 {
-    background: var(--primary-color);
+    background: #650019;
 }
 
 .legend-3 {
-    background: var(--danger-color);
+    background: #8b1e3f;
 }
 
 .legend-4 {
-    background: #f08da0;
+    background: #b8536d;
 }
 
 .legend-5 {
-    background: var(--danger-light);
+    background: #e3a0b0;
 }
 
 .kategori-legend strong {
     color: var(--primary-color);
 
     font-size: var(--fs-sm);
+    white-space: nowrap;
 }
 
 .kategori-legend small {
-    color: var(--primary-color);
+    color: #64748b;
 
     font-size: var(--fs-xs);
+    line-height: 1.35;
 }
 
 
@@ -674,6 +722,11 @@ textarea,
 
 .kecamatan-card {
     min-width: 0;
+}
+
+.kecamatan-wrapper.kecamatan-list-only {
+    height: auto;
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .kecamatan-wrapper {
@@ -718,7 +771,7 @@ textarea,
 
     border-radius: 40%;
 
-    background: var(--danger-color);
+    background: var(--primary-color);
 }
 
 .map-1 {
@@ -744,7 +797,7 @@ textarea,
     left: 98px;
     top: 45px;
 
-    background: #850a20;
+    background: #10b981;
 }
 
 .map-4 {
@@ -770,7 +823,7 @@ textarea,
     left: 125px;
     top: 96px;
 
-    background: #850a20;
+    background: #10b981;
 }
 
 .map-7 {
@@ -780,7 +833,7 @@ textarea,
     left: 39px;
     top: 142px;
 
-    background: #f58fa0;
+    background: #64748b;
 }
 
 .map-8 {
@@ -797,7 +850,8 @@ textarea,
 ========================================================= */
 
 .top-kecamatan {
-    padding-top: 7px;
+    width: 100%;
+    padding-top: 0;
 }
 
 .top-kecamatan h6 {
@@ -811,18 +865,22 @@ textarea,
 }
 
 .top-item {
-    display: flex;
-
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
     align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 11px 4px;
+    border-bottom: 1px solid #e2e8f0;
+}
 
-    gap: 8px;
-
-    margin-bottom: 9px;
+.top-item:last-child {
+    border-bottom: 0;
 }
 
 .top-item span {
-    width: 16px;
-    min-height: 16px; height: auto;
+    width: 28px;
+    height: 28px;
 
     flex-shrink: 0;
 
@@ -836,9 +894,13 @@ textarea,
     justify-content: center;
     align-items: center;
 
-    font-size: var(--fs-sm);
+    font-size: var(--fs-xs);
 
     font-weight: 700;
+}
+
+.top-item > div {
+    min-width: 0;
 }
 
 .top-item p {
@@ -846,7 +908,30 @@ textarea,
 
     color: var(--primary-color);
 
-    font-size: var(--fs-sm);
+    font-size: var(--fs-base);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.top-item small {
+    display: block;
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-size: var(--fs-xs);
+    line-height: 1.4;
+}
+
+.top-item > strong {
+    min-width: 76px;
+    color: var(--primary-color);
+    font-size: var(--fs-base);
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.top-item:hover {
+    background: #f8fafc;
 }
 
 
@@ -888,11 +973,11 @@ textarea,
 }
 
 .legend-medium {
-    background: var(--danger-color);
+    background: #10b981;
 }
 
 .legend-low {
-    background: #f58fa0;
+    background: #64748b;
 }
 
 
@@ -920,6 +1005,15 @@ textarea,
 
 
 @media (max-width: 768px) {
+
+    .statistik-dashboard-content {
+        padding: 24px 20px 32px;
+    }
+
+    .statistik-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 
     .statistik-grid-top {
         grid-template-columns: 1fr;
@@ -949,6 +1043,12 @@ textarea,
 
 
 @media (max-width: 480px) {
+
+    .capaian-overall div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+    }
 
     .layanan-unggulan-grid {
         grid-template-columns: 1fr;

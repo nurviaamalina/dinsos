@@ -3,14 +3,11 @@
 <link rel="stylesheet"
       href="<?= base_url('assets/css/admin/dashboard_statistik.css') ?>">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet">
-
-<div class="d-flex">
+<div class="d-flex min-vh-100 dashboard-page">
 
     <?= $this->include('admin/layout/sidebar') ?>
 
-    <div class="content flex-grow-1 p-4 bg-light">
+    <div class="content flex-grow-1 d-flex flex-column bg-light statistik-dashboard-content">
 
         <!-- =====================================================
              HEADER
@@ -797,7 +794,7 @@
 
                             data: dataPermohonan,
 
-                            backgroundColor: '#650719',
+                            backgroundColor: '#650019',
 
                             borderRadius: 5,
 
@@ -809,7 +806,7 @@
 
                             data: dataSelesai,
 
-                            backgroundColor: '#f3a0ae',
+                            backgroundColor: '#b8536d',
 
                             borderRadius: 5,
 
@@ -826,7 +823,13 @@
                     plugins: {
                         legend: {
                             display: true,
-                            position: 'bottom'
+                            position: 'bottom',
+                            labels: {
+                                color: '#64748b',
+                                font: {
+                                    family: 'Poppins'
+                                }
+                            }
                         },
 
                         tooltip: {
@@ -850,6 +853,7 @@
                             beginAtZero: true,
 
                             ticks: {
+                                color: '#64748b',
                                 callback: function(value) {
                                     return new Intl.NumberFormat(
                                         'id-ID'
@@ -868,6 +872,7 @@
                             },
 
                             ticks: {
+                                color: '#64748b',
                                 maxRotation: 45,
                                 minRotation: 0
                             }
@@ -934,14 +939,15 @@
                             data: kategoriValues,
 
                             backgroundColor: [
-                                '#650719',
-                                '#a50e28',
-                                '#e83152',
-                                '#f08da0',
-                                '#f7cbd2'
+                                '#4a0012',
+                                '#650019',
+                                '#8b1e3f',
+                                '#b8536d',
+                                '#e3a0b0'
                             ],
 
-                            borderWidth: 0
+                            borderColor: '#ffffff',
+                            borderWidth: 2
                         }
                     ]
                 },
