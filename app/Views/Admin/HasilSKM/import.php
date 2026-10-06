@@ -34,6 +34,14 @@
 
                 </div>
 
+                <a
+                    href="<?= base_url('admin/hasil-skm') ?>"
+                    class="skm-back-button"
+                >
+                    <i class="bi bi-arrow-left"></i>
+                    Kembali
+                </a>
+
             </div>
 
 

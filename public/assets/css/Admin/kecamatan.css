@@ -279,29 +279,71 @@
 ========================================================= */
 
 .kecamatan-pagination {
+    min-height: 76px;
+    padding: 19px 58px;
     display: flex;
-
     justify-content: flex-end;
-
-    padding: 10px;
+    align-items: center;
+    background: #ffffff;
+    border-top: 1px solid var(--bg-light);
 }
 
-.kecamatan-pagination .pagination {
+.kecamatan-pagination ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.kecamatan-pagination .page-link {
-    color: var(--primary-color);
+.kecamatan-pagination li {
+    margin: 0;
+    padding: 0;
+}
 
+.kecamatan-pagination a {
+    width: 25px;
+    min-height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: #ffffff;
+    color: var(--text-main);
+    text-decoration: none;
     font-size: var(--fs-sm);
 }
 
-.kecamatan-pagination .active .page-link {
-    background: var(--primary-color);
-
+.kecamatan-pagination a:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
     border-color: var(--primary-color);
+}
 
-    color: #fff;
+.kecamatan-pagination .active a {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.kecamatan-pagination .disabled a {
+    background: var(--bg-light);
+    border-color: var(--border-color);
+    color: var(--border-color);
+    cursor: default;
+    pointer-events: none;
+}
+
+.kecamatan-pagination .pagination-item {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .kecamatan-pagination {
+        padding: 19px 20px;
+    }
 }
 
 

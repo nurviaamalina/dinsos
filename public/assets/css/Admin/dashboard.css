@@ -143,7 +143,7 @@ body .dashboard-cards > .stat-card {
     margin: 3px 0 0;
     font-size: 11px;
     line-height: 1.3;
-    color: #94a3b8;
+    color: #8b1e3f;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -155,7 +155,7 @@ body .dashboard-cards > .stat-card {
     font-size: 1.5rem;
     line-height: 1.2;
     font-weight: 800;
-    color: #1e293b;
+    color: var(--primary-color, #650019);
     letter-spacing: -0.5px;
 }
 
@@ -282,7 +282,7 @@ body .dashboard-cards > .stat-card {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    color: #334155;
+    color: #8b1e3f;
     transition: background 0.15s ease;
 }
 
@@ -297,7 +297,7 @@ body .dashboard-cards > .stat-card {
     gap: 9px;
     font-size: 13.5px;
     font-weight: 500;
-    color: #475569;
+    color: #8b1e3f;
 }
 
 .layanan-stat-label i {
@@ -318,7 +318,7 @@ body .dashboard-cards > .stat-card {
     flex-shrink: 0;
     font-size: 14.5px;
     font-weight: 700;
-    color: #1e293b;
+    color: var(--primary-color, #650019);
 }
 
 /* TOTAL CAPAIAN KESELURUHAN */
@@ -417,7 +417,7 @@ body .dashboard-cards > .stat-card {
 }
 
 .chart-bar-light {
-    background: #10b981;
+    background: #b8536d;
 }
 
 .chart-label {
@@ -466,7 +466,7 @@ body .dashboard-cards > .stat-card {
 }
 
 .legend-light {
-    background: #10b981;
+    background: #b8536d;
 }
 
 

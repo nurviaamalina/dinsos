@@ -26,15 +26,16 @@
 
 /* Header in Create/Edit */
 .form-header-back {
+    min-height: 36px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    height: 40px;
-    padding: 0 18px;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
     border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--primary-color);
     background: #ffffff;
-    color: #4b5563 !important;
+    color: var(--primary-color) !important;
     font-size: var(--fs-sm);
     font-weight: 600;
     text-decoration: none !important;
@@ -43,9 +44,9 @@
 }
 
 .form-header-back:hover {
-    background: var(--bg-light);
-    border-color: var(--text-muted);
-    color: var(--text-main) !important;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff !important;
 }
 
 /* Form Grid */
@@ -227,16 +228,16 @@
 }
 
 .btn-form-cancel {
-    height: 42px;
+    min-height: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 0 22px;
+    gap: 6px;
+    padding: 6px 12px;
     border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--primary-color);
     background: #ffffff;
-    color: #4b5563 !important;
+    color: var(--primary-color) !important;
     font-size: var(--fs-sm);
     font-weight: 600;
     text-decoration: none !important;
@@ -245,18 +246,18 @@
 }
 
 .btn-form-cancel:hover {
-    background: var(--bg-light);
-    border-color: var(--text-muted);
-    color: var(--text-main) !important;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff !important;
 }
 
 .btn-form-save {
-    height: 42px;
+    min-height: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 0 26px;
+    gap: 6px;
+    padding: 6px 12px;
     border-radius: var(--radius-md);
     border: 1px solid var(--form-primary);
     background: var(--form-primary);
@@ -266,14 +267,14 @@
     text-decoration: none !important;
     transition: all 0.2s ease;
     cursor: pointer;
-    box-shadow: 0 3px 8px rgba(101, 9, 24, 0.2);
+    box-shadow: none;
 }
 
 .btn-form-save:hover {
     background: var(--form-primary-hover);
     border-color: var(--form-primary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 5px 12px rgba(101, 9, 24, 0.25);
+    transform: none;
+    box-shadow: none;
 }
 
 /* Responsive */

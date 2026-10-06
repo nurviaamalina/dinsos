@@ -223,7 +223,7 @@
                         class="btn-import-kategori"
                     >
 
-                        <i class="bi bi-box-arrow-in-down"></i>
+                        <i class="bi bi-file-earmark-arrow-up-fill"></i>
 
                         Import Data
 
@@ -237,7 +237,7 @@
                         class="btn-tambah-kategori"
                     >
 
-                        <i class="bi bi-plus-circle"></i>
+                        <i class="bi bi-plus-circle-fill"></i>
 
                         Tambah Data
 

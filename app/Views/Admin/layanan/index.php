@@ -14,7 +14,7 @@
                 <p>Kelola seluruh Data</p>
             </div>
             <a href="<?= base_url('admin/layanan/create') ?>" class="btn-layanan-tambah">
-                <i class="bi bi-plus-lg"></i> Tambah Layanan
+                <i class="bi bi-plus-circle-fill"></i> Tambah Layanan
             </a>
         </div>
 

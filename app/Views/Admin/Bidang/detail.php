@@ -45,7 +45,7 @@
                     class="btn-bidang-tambah"
                 >
 
-                    <i class="bi bi-plus-lg"></i>
+                    <i class="bi bi-plus-circle-fill"></i>
 
                     Tambah Detail
 
@@ -504,7 +504,7 @@
 
                 <a
                     href="<?= base_url('admin/bidang') ?>"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary btn-bidang-kembali"
                 >
 
                     <i class="bi bi-arrow-left me-1"></i>

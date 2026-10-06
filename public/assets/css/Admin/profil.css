@@ -144,6 +144,17 @@ body {
     white-space: nowrap;
 }
 
+.btn-tambah-profil {
+    margin-left: auto;
+    height: auto;
+    padding: 12px 20px;
+    gap: 10px;
+    border-radius: var(--radius-md, 6px);
+    font-size: var(--fs-base, 16px);
+    box-shadow: none;
+    transition: 0.2s;
+}
+
 .btn-tambah:hover,
 .btn-tambah-profil:hover {
     background: var(--primary-color-hover, #4d0013);
@@ -152,9 +163,21 @@ body {
     box-shadow: 0 4px 10px rgba(101, 0, 25, 0.25);
 }
 
+.btn-tambah-profil:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 .btn-tambah i,
 .btn-tambah-profil i {
     font-size: 16px;
+}
+
+.btn-tambah-profil i {
+    display: block;
+    flex: 0 0 auto;
+    font-size: var(--fs-xl, 22px);
+    line-height: 1;
 }
 
 
@@ -372,29 +395,33 @@ body {
 
 /* TOMBOL EDIT SEJARAH */
 .btn-edit-sejarah {
-    height: 36px;
-    padding: 0 16px;
+    height: auto;
+    padding: 12px 20px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background: var(--primary-color, #650019);
-    border-radius: 6px;
+    border-radius: var(--radius-md, 6px);
     color: #ffffff;
     text-decoration: none;
-    font-size: 13.5px;
+    font-size: var(--fs-base, 16px);
     font-weight: 600;
-    box-shadow: 0 1px 3px rgba(101, 0, 25, 0.15);
-    transition: all 0.2s ease;
+    box-shadow: none;
+    transition: 0.2s;
 }
 
 .btn-edit-sejarah:hover {
     background: var(--primary-color-hover, #4d0013);
     color: #ffffff;
-    transform: translateY(-1px);
+    transform: none;
+    box-shadow: none;
 }
 
 .btn-edit-sejarah i {
-    font-size: 15px;
+    display: block;
+    flex: 0 0 auto;
+    font-size: var(--fs-xl, 22px);
+    line-height: 1;
 }
 
 
@@ -645,7 +672,39 @@ body {
 ========================================================= */
 
 .profil-create-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
     margin-bottom: 42px;
+}
+
+.profil-back-button {
+    height: 45px;
+    padding: 0 18px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    color: var(--primary-color, #650019);
+    border: 1px solid var(--primary-color, #650019);
+    border-radius: var(--radius-md, 6px);
+    text-decoration: none;
+    font-size: var(--fs-sm, 14px);
+    font-weight: 600;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.profil-back-button:hover {
+    background: var(--primary-color, #650019);
+    color: #ffffff;
+}
+
+.profil-back-button i {
+    font-size: var(--fs-sm, 14px);
 }
 
 .profil-create-header h1 {
@@ -1020,7 +1079,14 @@ body {
 @media (max-width: 600px) {
 
     .profil-create-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
         margin-bottom: 25px;
+    }
+
+    .profil-back-button {
+        align-self: flex-start;
     }
 
     .profil-create-header h1 {
@@ -1469,6 +1535,10 @@ body {
         width: 100%;
     }
 
+    .btn-tambah-profil {
+        margin-left: 0;
+    }
+
     .anggota-grid {
         grid-template-columns: 1fr;
     }
@@ -1509,7 +1579,7 @@ body {
 
 .anggota-create-header {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
     margin-bottom: 24px;

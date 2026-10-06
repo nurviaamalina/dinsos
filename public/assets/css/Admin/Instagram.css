@@ -70,42 +70,54 @@
 ========================================================= */
 
 .btn-sync-instagram {
-    height: 40px;
+    height: auto;
 
-    padding: 0 17px;
+    padding: 12px 20px;
 
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 9px;
+    gap: 10px;
 
-    border: 2px solid #550B18;
+    border: 0;
 
-    border-radius: 10px;
+    border-radius: var(--radius-md, 6px);
 
-    background: #ffffff;
+    background: var(--primary-color, #650019);
 
-    color: #550B18;
+    color: #ffffff;
 
     text-decoration: none;
 
-    font-size: 15px;
+    font-size: var(--fs-base, 16px);
 
     font-weight: 600;
 
-    transition: all .3s ease;
+    box-shadow: none;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
 }
 
 .btn-sync-instagram:hover {
-    background: #550B18;
+    background: var(--primary-color-hover, #4d0013);
 
     color: #ffffff;
+
+    transform: none;
+
+    box-shadow: none;
 }
 
 .btn-sync-instagram i {
-    font-size: 16px;
+    flex: 0 0 auto;
+
+    font-size: var(--fs-xl, 22px);
+
+    line-height: 1;
 }
 
 
@@ -456,7 +468,9 @@
 .instagram-pagination span {
     width: 25px;
 
-    height: 25px;
+    min-height: 25px;
+
+    height: auto;
 
     display: inline-flex;
 
@@ -464,17 +478,17 @@
 
     justify-content: center;
 
-    border: 1px solid #dddddd;
+    border: 1px solid var(--border-color);
 
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
 
     background: #ffffff;
 
-    color: #111111;
+    color: var(--text-main);
 
     text-decoration: none;
 
-    font-size: 10px;
+    font-size: var(--fs-sm);
 }
 
 
@@ -483,11 +497,11 @@
 ========================================================= */
 
 .instagram-pagination a:hover {
-    background: #f5f5f5;
+    background: var(--bg-light);
 
-    color: #65091c;
+    color: var(--primary-color);
 
-    border-color: #65091c;
+    border-color: var(--primary-color);
 }
 
 
@@ -497,9 +511,9 @@
 
 .instagram-pagination .active a,
 .instagram-pagination .active span {
-    background: #65091c;
+    background: var(--primary-color);
 
-    border-color: #65091c;
+    border-color: var(--primary-color);
 
     color: #ffffff;
 }
@@ -510,11 +524,25 @@
 ========================================================= */
 
 .instagram-pagination .disabled span {
-    color: #aaaaaa;
+    color: var(--border-color);
 
-    background: #f5f5f5;
+    background: var(--bg-light);
 
-    border-color: #dddddd;
+    border-color: var(--border-color);
+
+    pointer-events: none;
+}
+
+.instagram-pagination .pagination-item {
+    text-decoration: none;
+}
+
+.instagram-pagination .page-item.disabled .pagination-item {
+    color: var(--border-color);
+    background: var(--bg-light);
+    border-color: var(--border-color);
+    cursor: default;
+    pointer-events: none;
 }
 
 
@@ -563,7 +591,7 @@
     .instagram-pagination {
         padding: 19px 20px;
 
-        justify-content: flex-start;
+        justify-content: flex-end;
     }
 
 }

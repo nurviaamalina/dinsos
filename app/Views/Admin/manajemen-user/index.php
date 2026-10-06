@@ -79,7 +79,7 @@
 
                 <?php if (session()->get('role') === 'superadmin') : ?>
                     <a href="<?= base_url('admin/manajemen-user/create') ?>" class="btn-add-user">
-                        <i class="bi bi-plus-lg"></i>
+                        <i class="bi bi-plus-circle-fill"></i>
                         Tambah User
                     </a>
                 <?php endif; ?>
@@ -163,7 +163,10 @@
                         <i class="bi bi-chevron-down select-chevron"></i>
                     </div>
 
-                    <button type="submit" class="btn-search">Cari</button>
+                    <button type="submit" class="btn-search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                        Cari
+                    </button>
                 </form>
             </div>
 

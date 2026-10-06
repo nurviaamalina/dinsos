@@ -469,7 +469,7 @@
 
                 <?php if (!empty($hasilSKM)) : ?>
 
-                    <div class="mt-3">
+                    <div class="skm-pagination">
 
                         <?php
                         $currentPage = $pager->getCurrentPage();

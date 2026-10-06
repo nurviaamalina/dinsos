@@ -603,16 +603,15 @@
 ========================================================= */
 
 /* WRAPPER PAGINATION */
-.skm-page .mt-3 {
+.skm-page .skm-pagination {
     width: 100%;
-    margin-top: 18px !important;
-    padding: 0 !important;
-
+    min-height: 76px;
+    padding: 19px 24px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-    border: none !important;
+    background: #ffffff;
+    border-top: 1px solid var(--bg-light);
 }
 
 /* UL */
@@ -622,7 +621,7 @@
     align-items: center !important;
     justify-content: flex-end !important;
 
-    gap: 6px !important;
+    gap: 8px !important;
 
     width: auto !important;
     height: auto !important;
@@ -651,9 +650,10 @@
 
 /* SEMUA LINK PAGINATION */
 .skm-page ul.pagination li a {
-    width: 28px !important;
-    height: 28px !important;
-    min-width: 28px !important;
+    width: 25px !important;
+    height: auto !important;
+    min-width: 25px !important;
+    min-height: 25px !important;
 
     padding: 0 !important;
 
@@ -670,7 +670,7 @@
     border: 1px solid var(--border-color) !important;
     border-radius: var(--radius-sm) !important;
 
-    font-size: var(--fs-xs) !important;
+    font-size: var(--fs-sm) !important;
     font-weight: 400 !important;
     line-height: 1 !important;
 
@@ -1211,9 +1211,43 @@
 }
 
 .skm-import-page .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
     margin-bottom: 24px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--border-color);
+}
+
+.skm-back-button {
+    min-height: 36px;
+    padding: 6px 12px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    background: #ffffff;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.skm-back-button:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+.skm-back-button i {
+    font-size: var(--fs-base);
+    line-height: 1;
 }
 
 .skm-import-page .page-header h1 {
@@ -1301,6 +1335,9 @@
     }
 
     .skm-import-page .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
         margin-bottom: 18px;
     }
 

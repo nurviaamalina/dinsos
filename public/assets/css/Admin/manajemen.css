@@ -229,12 +229,12 @@
 }
 
 .btn-add-user {
-    height: 42px;
+    min-height: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 0 22px;
+    gap: 6px;
+    padding: 6px 12px;
     border-radius: var(--radius-md);
     background: var(--user-primary);
     color: #ffffff !important;
@@ -242,15 +242,21 @@
     font-weight: 600;
     text-decoration: none !important;
     border: none;
-    box-shadow: 0 3px 8px rgba(101, 9, 24, 0.2);
-    transition: all 0.2s ease;
+    box-shadow: none;
+    transition: 0.2s ease;
     white-space: nowrap;
 }
 
 .btn-add-user:hover {
     background: var(--user-primary-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 5px 12px rgba(101, 9, 24, 0.25);
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-add-user i {
+    flex: 0 0 auto;
+    font-size: var(--fs-base);
+    line-height: 1;
 }
 
 /* =========================================================
@@ -473,7 +479,11 @@
 
 .btn-search {
     height: 42px;
-    padding: 0 28px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
     border: none;
     border-radius: var(--radius-md);
     background: var(--user-primary);
@@ -484,6 +494,11 @@
     transition: background 0.2s ease;
     white-space: nowrap;
     flex-shrink: 0;
+}
+
+.btn-search i {
+    font-size: var(--fs-base);
+    line-height: 1;
 }
 
 .btn-search:hover {

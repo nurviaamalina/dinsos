@@ -33,28 +33,35 @@
 ========================================================= */
 
 .btn-bidang-tambah {
+    min-height: 46px;
+    padding: 12px 20px;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-
-    padding: 10px 16px;
-
-    background: var(--primary-color);
-    color: #fff;
-
-    border-radius: var(--radius-sm);
-
+    justify-content: center;
+    gap: 10px;
+    border: 0;
+    border-radius: var(--radius-md, 6px);
+    background: var(--primary-color, #650019);
+    color: #ffffff;
     text-decoration: none;
-
-    font-size: var(--fs-sm);
+    font-size: var(--fs-base, 16px);
     font-weight: 600;
-
-    transition: .2s;
+    box-shadow: none;
+    transition: 0.2s;
+    white-space: nowrap;
 }
 
 .btn-bidang-tambah:hover {
-    background: #820022;
-    color: #fff;
+    background: var(--primary-color-hover, #4d0013);
+    color: #ffffff;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-bidang-tambah i {
+    flex: 0 0 auto;
+    font-size: var(--fs-xl, 22px);
+    line-height: 1;
 }
 
 
@@ -300,12 +307,71 @@
 ========================================================= */
 
 .bidang-pagination {
+    min-height: 76px;
+    padding: 19px 58px;
     display: flex;
     justify-content: flex-end;
-
-    padding: 15px;
-
+    align-items: center;
+    background: #ffffff;
     border-top: 1px solid var(--bg-light);
+}
+
+.bidang-pagination ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bidang-pagination li {
+    margin: 0;
+    padding: 0;
+}
+
+.bidang-pagination a {
+    width: 25px;
+    min-height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: #ffffff;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: var(--fs-sm);
+}
+
+.bidang-pagination a:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.bidang-pagination .active a {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.bidang-pagination .disabled a {
+    background: var(--bg-light);
+    border-color: var(--border-color);
+    color: var(--border-color);
+    cursor: default;
+    pointer-events: none;
+}
+
+.bidang-pagination .pagination-item {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .bidang-pagination {
+        padding: 19px 20px;
+    }
 }
 
 
@@ -484,7 +550,8 @@
 }
 
 .btn-bidang-batal,
-.btn-bidang-simpan {
+.btn-bidang-simpan,
+.btn-bidang-kembali {
     display: inline-flex;
 
     align-items: center;
@@ -503,11 +570,43 @@
 }
 
 .btn-bidang-batal {
-    background: #fff;
+    height: 45px;
+    padding: 0 18px;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid var(--primary-color, #650019);
+    border-radius: var(--radius-md, 6px);
+    color: var(--primary-color, #650019);
+    font-size: var(--fs-sm, 14px);
+    font-weight: 600;
+    box-sizing: border-box;
+    box-shadow: none;
+    transition: 0.2s ease;
+}
 
-    border: 1px solid var(--border-color);
+.btn-bidang-kembali {
+    height: 45px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid var(--primary-color, #650019);
+    border-radius: var(--radius-md, 6px);
+    color: var(--primary-color, #650019);
+    text-decoration: none;
+    font-size: var(--fs-sm, 14px);
+    font-weight: 600;
+    box-sizing: border-box;
+    box-shadow: none;
+    transition: 0.2s ease;
+}
 
-    color: var(--text-muted);
+.btn-bidang-batal i,
+.btn-bidang-kembali i {
+    font-size: var(--fs-sm, 14px);
 }
 
 .btn-bidang-simpan {
@@ -519,9 +618,14 @@
 }
 
 .btn-bidang-batal:hover {
-    background: var(--bg-light);
+    background: var(--primary-color, #650019);
+    color: #ffffff;
+}
 
-    color: var(--text-main);
+.btn-bidang-kembali:hover {
+    background: var(--primary-color, #650019);
+    border-color: var(--primary-color, #650019);
+    color: #ffffff;
 }
 
 .btn-bidang-simpan:hover {
