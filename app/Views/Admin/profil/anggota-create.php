@@ -2,7 +2,7 @@
 
 <link
     rel="stylesheet"
-    href="<?= base_url('assets/css/Admin/profil.css') ?>?v=<?= filemtime(FCPATH . 'assets/css/Admin/profil.css') ?>"
+    href="<?= base_url('assets/css/Admin/profil.css') ?>"
 >
 
 
