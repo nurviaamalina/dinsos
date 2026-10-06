@@ -9,6 +9,10 @@
 
 <section class="hero-home">
 
+    <div class="hero-slide hero-slide-main" aria-hidden="true"></div>
+    <div class="hero-slide hero-slide-one" aria-hidden="true"></div>
+    <div class="hero-slide hero-slide-two" aria-hidden="true"></div>
+
     <div class="hero-overlay"></div>
 
 
