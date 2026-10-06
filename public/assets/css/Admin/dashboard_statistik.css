@@ -437,9 +437,9 @@ body .statistik-grid > .statistik-card {
 }
 
 .layanan-unggulan-item {
-    min-height: 178px;
+    min-height: 150px;
 
-    padding: 14px 12px 12px;
+    padding: 8px 7px 10px;
 
     border: 1px solid var(--border-color);
 
@@ -448,7 +448,7 @@ body .statistik-grid > .statistik-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
+    gap: 6px;
 
     text-align: center;
 
@@ -456,7 +456,7 @@ body .statistik-grid > .statistik-card {
 }
 
 .layanan-unggulan-item h6 {
-    min-height: 2.8em;
+    min-height: 10em;
 
     margin: 0;
 
@@ -466,21 +466,21 @@ body .statistik-grid > .statistik-card {
 
     color: var(--primary-color);
 
-    font-size: var(--fs-sm);
-
-    line-height: 1.4;
+    font-size: 0.68rem;
+    line-height: 1.25;
 
     overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 
 /* ICON */
 
 .unggulan-icon {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
 
-    margin: 0 auto;
+    margin: 4px auto;
 
     flex: 0 0 auto;
 
@@ -524,9 +524,8 @@ body .statistik-grid > .statistik-card {
 
     color: var(--primary-color);
 
-    font-size: var(--fs-base);
-
-    line-height: 1.25;
+    font-size: 0.76rem;
+    line-height: 1.1;
 }
 
 .unggulan-bottom small {
@@ -536,9 +535,10 @@ body .statistik-grid > .statistik-card {
 
     color: var(--primary-color);
 
-    font-size: var(--fs-xs);
+    font-size: 0.52rem;
 
-    line-height: 1.35;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
 }
 
 
@@ -1028,6 +1028,18 @@ body .statistik-grid > .statistik-card {
             repeat(2, minmax(0, 1fr));
     }
 
+    .layanan-unggulan-item h6 {
+        font-size: 0.72rem;
+    }
+
+    .unggulan-bottom strong {
+        font-size: 0.98rem;
+    }
+
+    .unggulan-bottom small {
+        font-size: 0.62rem;
+    }
+
     .penerima-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
@@ -1052,6 +1064,14 @@ body .statistik-grid > .statistik-card {
 
     .layanan-unggulan-grid {
         grid-template-columns: 1fr;
+    }
+
+    .layanan-unggulan-item h6 {
+        font-size: 0.68rem;
+    }
+
+    .unggulan-bottom strong {
+        font-size: 0.92rem;
     }
 
     .penerima-grid {

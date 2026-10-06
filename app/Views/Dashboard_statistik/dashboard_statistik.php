@@ -366,7 +366,7 @@
 
                         <?php
                         $unggulanIcons = [
-                            'bi-hand-heart',
+                            'bi-shield-check',
                             'bi-people',
                             'bi-heart',
                             'bi-person-check'
