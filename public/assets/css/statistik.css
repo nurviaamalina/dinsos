@@ -574,11 +574,10 @@ body {
 
     color: var(--text-muted);
 
-    font-size: 0.68rem;
+    font-size: 0.6rem;
 
     text-align: center;
-    white-space: normal;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
 }
 
 .survey-info strong {
@@ -604,12 +603,11 @@ body {
 
     color: var(--text-muted);
 
-    font-size: var(--fs-sm);
+    font-size: 0.62rem;
     line-height: 1.25;
+    text-align: center;
 
     white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
     overflow-wrap: anywhere;
 }
 
@@ -1319,9 +1317,9 @@ body {
     }
 
     .survey-info span {
-        font-size: 0.62rem;
+        font-size: 0.6rem;
         text-align: center;
-        white-space: normal;
+        white-space: nowrap;
     }
 
     .survey-info strong {
@@ -1332,7 +1330,7 @@ body {
     }
 
     .survey-info small {
-        font-size: 0.72rem;
+        font-size: 0.62rem;
         text-align: center;
         white-space: normal;
         overflow-wrap: anywhere;

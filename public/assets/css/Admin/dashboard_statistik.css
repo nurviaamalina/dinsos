@@ -315,10 +315,10 @@ body .statistik-grid > .statistik-card {
 
     color: var(--primary-color);
 
-    font-size: 0.68rem;
+    font-size: 0.6rem;
     line-height: 1.2;
     font-weight: 600;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
 }
 
 .survey-info strong {
@@ -338,7 +338,10 @@ body .statistik-grid > .statistik-card {
 
     color: var(--text-muted);
 
-    font-size: var(--fs-xs);
+    font-size: 0.62rem;
+    line-height: 1.2;
+    text-align: center;
+    overflow-wrap: anywhere;
 }
 
 .survey-good {
@@ -1037,9 +1040,9 @@ body .statistik-grid > .statistik-card {
     }
 
     .survey-info span {
-        font-size: 0.62rem;
+        font-size: 0.6rem;
         line-height: 1.2;
-        overflow-wrap: anywhere;
+        white-space: nowrap;
     }
 
     .survey-info strong {
@@ -1048,7 +1051,7 @@ body .statistik-grid > .statistik-card {
     }
 
     .survey-info small {
-        font-size: 0.72rem;
+        font-size: 0.62rem;
         line-height: 1.2;
         overflow-wrap: anywhere;
     }
