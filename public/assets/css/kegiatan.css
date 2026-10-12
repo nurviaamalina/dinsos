@@ -63,7 +63,7 @@
 .kegiatan-tahun-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 16px;
     margin-bottom: 45px;
 }
 
@@ -71,8 +71,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 22px;
+    justify-content: center;
+    gap: 1px;
+    min-height: 80px;
+    padding: 6px 10px 6px;
     border-radius: var(--card-radius);
     background: var(--primary-color);
     color: #fff;
@@ -86,18 +88,19 @@
 }
 
 .kegiatan-tahun-card span {
-    font-size: var(--fs-sm);
+    font-size: 0.875rem;
 }
 
 .kegiatan-tahun-card strong {
-    font-size: var(--fs-2xl);
+    font-size: clamp(1.2rem, 1.3vw, 1.5rem);
+    line-height: 1.2;
 }
 
 .kegiatan-tahun-card i {
     position: absolute;
-    right: 20px;
-    bottom: 20px;
-    font-size: var(--fs-xl);
+    right: 14px;
+    bottom: 12px;
+    font-size: 1.2rem;
 }
 
 
