@@ -33,25 +33,61 @@ body {
     position: relative;
     width: 100%;
     min-height: 340px;
-    background: linear-gradient(135deg, #3d020e 0%, #650019 60%, #4a0312 100%);
-    background-image: url("../images/hero-profil.jpg"), linear-gradient(135deg, #3d020e 0%, #650019 60%, #4a0312 100%);
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     overflow: hidden;
     border-bottom: 4px solid rgba(255, 255, 255, 0.15);
+    isolation: isolate;
+    background: #000;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    background-size: cover;
+    background-position: center top;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.hero-slide-main {
+    background-image: url('../images/banner.jpeg');
+    animation-name: hero-slide-main-cycle;
+}
+
+.hero-slide-one {
+    background-image: url('../images/banner1.jpeg');
+    animation-name: hero-slide-one-cycle;
+}
+
+.hero-slide-two {
+    background-image: url('../images/banner2.jpeg');
+    animation-name: hero-slide-two-cycle;
+}
+
+@keyframes hero-slide-main-cycle {
+    0%, 16.667%, 83.333%, 100% { opacity: 1; }
+    33.333%, 66.667% { opacity: 0; }
+}
+
+@keyframes hero-slide-one-cycle {
+    0%, 16.667%, 66.667%, 100% { opacity: 0; }
+    33.333%, 50% { opacity: 1; }
+}
+
+@keyframes hero-slide-two-cycle {
+    0%, 33.333%, 83.333%, 100% { opacity: 0; }
+    50%, 66.667% { opacity: 1; }
 }
 
 .profil-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(45, 2, 10, 0.95) 0%,
-        rgba(101, 0, 25, 0.85) 50%,
-        rgba(30, 2, 7, 0.75) 100%
-    );
+    background: rgba(0, 0, 0, 0.12);
+    z-index: 1;
 }
 
 .profil-hero-content {
@@ -113,7 +149,7 @@ body {
 
 .tentang-title h2 {
     margin: 0;
-    color: #3d020e;
+    color: var(--primary-color, #650019);
     font-size: clamp(1.75rem, 2.8vw, 2.2rem);
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -236,7 +272,7 @@ body {
 }
 
 .misi-card {
-    border-top: 4px solid #8b1834;
+    border-top: 4px solid var(--primary-color, #650019);
 }
 
 .visi-card:hover,
@@ -274,7 +310,7 @@ body {
     display: inline-block;
     width: 6px;
     height: 18px;
-    background: #8b1834;
+    background: var(--primary-color, #650019);
     border-radius: 2px;
 }
 
